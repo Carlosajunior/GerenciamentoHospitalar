@@ -4,12 +4,12 @@
     <h2>Entrar </h2>
   <form>
   <div class="form-group" style="border-width:2px">
-  <div class="col-md-6 offset-md-3">
+  <div class="col-md-9 offset-md-3">
     <label for="exampleInputEmail1" class="form-label">Usuário</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <p class="subtitle">Não compartilhe seu nome de usuário e senha com mais ninguém</p>
   </div>
-  <div class="col-md-6 offset-md-3">
+  <div class="col-md-9 offset-md-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
     <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
@@ -33,6 +33,8 @@
 export default {
   name: 'Login'
 }
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

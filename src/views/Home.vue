@@ -3,10 +3,10 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <img src="../assets/enfCapa.jpg" alt="Enfermeiros sorrindo">
+      <div class="col-md-8">
+        <img class= "img-fluid" style="margin-top:5%" src="../assets/enfCapa.jpg" alt="Enfermeiros sorrindo">
       </div>
-          <div class="col-md-6 col-lg-6">
+          <div class="col-md-4">
           <div class="login">
           <Login/>
           </div>
@@ -33,11 +33,11 @@ export default {
 
 <style>
 img #foto{
-
+    margin-top: 3%;
 }
 
 .login{
   margin-top: 20%;
-  border:1px solid black
+  
 }
 </style>
