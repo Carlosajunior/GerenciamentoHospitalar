@@ -1,25 +1,27 @@
 <template>
   <div class="login" >
   <div class="container">
+    <div class="col-md-10 offset-md-3">
     <h2>Entrar </h2>
+    </div>
   <form>
   <div class="form-group" style="border-width:2px">
-  <div class="col-md-9 offset-md-3">
+  <div class="col-md-10 offset-md-3">
     <label for="exampleInputEmail1" class="form-label">Usuário</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apelido">
     <p class="subtitle">Não compartilhe seu nome de usuário e senha com mais ninguém</p>
   </div>
-  <div class="col-md-9 offset-md-3">
+  <div class="col-md-10 offset-md-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
   </div>
   <div class="mb-3 form-check">
     
   </div>
-  <div class="col-md-12">
+  <div class="col-md-10 offset-md-3">
     <router-link to= "/about">Esqueceu a senha? </router-link>
   </div>
-  <div style="margin-top:3%">
+  <div class="col-md-10 offset-md-3" style="margin-top:3%">
   <button type="submit" class="btn btn-primary">Entrar</button>
   </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
  <header>
-   <nav class="navbar navbar-dark " style="background-color: rgb(201, 215, 221)">
+   <nav class="navbar navbar-dark " style="background-color: #f2f2f2">
    <h1> Syscam </h1>
    </nav>
  </header>
