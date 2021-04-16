@@ -3,13 +3,15 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <div class="container">
     <div class="row">
-      <div class="col-md-3"/>
+      <div class="col-md-6">
+        <img src="../assets/enfCapa.jpg" alt="Enfermeiros sorrindo">
+      </div>
           <div class="col-md-6 col-lg-6">
           <div class="login">
           <Login/>
           </div>
           </div>
-      <div class="col-md-3"/>
+      
     </div>
     </div>
   </div>
@@ -30,16 +32,8 @@ export default {
 </script>
 
 <style>
-.profile{
-  width: 60px;
-  height: 60px;
-  overflow: hidden;
-  align-content: center;
-}
+img #foto{
 
-.profile img{
-  width: 100%;
-  align-self: center;
 }
 
 .login{
