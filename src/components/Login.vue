@@ -1,0 +1,74 @@
+<template>
+  <div class="login" >
+  <div class="container">
+    <h2>Entrar </h2>
+  <form>
+  <div class="form-group" style="border-width:2px">
+  <div class="col-md-6 offset-md-3">
+    <label for="exampleInputEmail1" class="form-label">Usuário</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <p class="subtitle">Não compartilhe seu nome de usuário e senha com mais ninguém</p>
+  </div>
+  <div class="col-md-6 offset-md-3">
+    <label for="exampleInputPassword1" class="form-label">Senha</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    
+  </div>
+  <div class="col-md-12">
+    <router-link to= "/about">Esqueceu a senha? </router-link>
+  </div>
+  <div style="margin-top:3%">
+  <button type="submit" class="btn btn-primary">Entrar</button>
+  </div>
+  </div>
+</form>
+  </div>
+  </div>
+
+</template>
+
+<script>
+export default {
+  name: 'Login'
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+  font-size: small;
+}
+
+p{
+  font-size: xx-small;
+}
+
+h2{
+  padding-top: 5%;
+}
+div .login{
+  align-content: center;
+  margin-top: auto;
+  margin-left: auto;
+  padding: auto;
+}
+
+label #lembrarSenha{
+  font-size: x-small;
+}
+
+</style>
