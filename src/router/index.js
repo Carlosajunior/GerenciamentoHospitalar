@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/homeAdm',
     name: 'HomeAdm',
-    component: () => import('../views/Adm/HomeAdm.vue')
+    component: () => import('../admViews/HomeAdm.vue')
   },
 
   {
