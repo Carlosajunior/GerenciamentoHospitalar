@@ -2,45 +2,35 @@
      <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
       <div class="sidebar-brand">
-        <h2><span class="lab la-accusoft"></span> <span>Accusoft</span>
+        <h2><span class="lab la-accusoft"></span> <span>Administrador</span>
         </h2>
       </div>
 
       <div class="sidebar-menu">
         <ul>
-          <li>
+        <li>
             <a href="" class="active">
-              <span class="las la-igloo"></span><span>Dashboard</span>
+              <span class="las la-igloo"></span><span>Home</span>
             </a>
           </li>
           <li>
             <a href="">
-              <span class="las la-users"></span><span>Costumers</span>
+              <span class="las la-igloo"></span><span>Cadastrar Usuário</span>
             </a>
           </li>
           <li>
             <a href="">
-              <span class="las la-clipboard-list"></span><span>Projects</span>
+              <span class="las la-users"></span><span>Log de Alterações</span>
             </a>
           </li>
           <li>
             <a href="">
-              <span class="las la-shopping-bag"></span><span>Orders</span>
+              <span class="las la-clipboard-list"></span><span>Editar Usuário</span>
             </a>
           </li>
           <li>
             <a href="">
-              <span class="las la-receipt"></span><span>Inventory</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <span class="las la-user-circle"></span><span>Accounts</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <span class="las la-clipboard-list"></span><span>Tasks</span>
+              <span class="las la-shopping-bag"></span><span>Backup</span>
             </a>
           </li>
         </ul>
@@ -59,7 +49,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');  
 
 :root {
-  --main-color: #dd2f6e;
+  --main-color: #f2f2f2;
   --color-dark: #1d2231;
   --text-grey: #8390a2;
 }
