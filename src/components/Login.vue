@@ -7,6 +7,7 @@
   <form id="form" @submit="checkForm" method="POST">
   <div class="form-group" style="border-width:2px">
   <div class="col-md-10 offset-md-3">
+
     <label for="exampleInputEmail1" class="form-label">Usuário</label>
     <input v-model="apelido"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apelido">
     <p class="subtitle">Não compartilhe seu nome de usuário e senha com mais ninguém</p>
@@ -14,6 +15,7 @@
   <div class="col-md-10 offset-md-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
     <input v-model="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+
   </div>
   <div class="mb-3 form-check">
     
@@ -80,6 +82,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.form-label{
+  margin-right: 70%;
+}
+h6{
+  font-size: 17px;
+  margin:0%;
+}
 h3 {
   margin: 40px 0 0;
 }
