@@ -77,7 +77,7 @@ export default {
 .sidebar-brand {
   height: 90px;
   padding: 1rem 0rem 1rem 2rem;
-  color: #fff;
+  color: black;
 }
 
 .sidebar-brand span {
@@ -98,12 +98,12 @@ export default {
 .sidebar-menu a {
   padding-left: 1rem;
   display: block;
-  color: #fff;
+  color: black;
   font-size: 1.1rem;
 }
 
 .sidebar-menu a.active {
-  background: #fff;
+  background: rgb(78, 15, 15);
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: var(--main-color);
