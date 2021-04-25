@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
@@ -20,6 +21,18 @@ const routes = [
     path: '/homeAdm',
     name: 'HomeAdm',
     component: () => import('../views/Adm/HomeAdm.vue')
+  },
+
+  {
+    path:'/homeEnfChefe',
+    name: 'HomeEnfChefe',
+    component: () => import('../views/enfChefe/HomeEnfChefe.vue')
+  },
+
+  {
+    path: '/homeEnf',
+    name: 'HomeEnf',
+    component:() => import('../views/enf/HomeEnf.vue')
   }
 ]
 

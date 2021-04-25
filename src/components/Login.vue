@@ -4,16 +4,16 @@
     <div class="col-md-10 offset-md-3">
     <h2>Entrar </h2>
     </div>
-  <form>
+  <form id="form" @submit="checkForm" method="POST">
   <div class="form-group" style="border-width:2px">
   <div class="col-md-10 offset-md-3">
     <label for="exampleInputEmail1" class="form-label">Usuário</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apelido">
+    <input v-model="apelido"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apelido">
     <p class="subtitle">Não compartilhe seu nome de usuário e senha com mais ninguém</p>
   </div>
   <div class="col-md-10 offset-md-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    <input v-model="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
   </div>
   <div class="mb-3 form-check">
     
@@ -31,9 +31,46 @@
 
 </template>
 
-<script>
+<script >
+
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  data(){
+    return{
+      apelido : null,
+      senha : null
+    }
+  },
+
+  methods:{
+    checkForm(){
+      if (this.apelido && this.senha){
+        alert('Verdade')
+        if (this.apelido=="Adm"){
+          alert('Gambiarra funcionou')
+          this.$router.push('HomeAdm')
+        }
+
+        if (this.apelido=="EnfChefe"){
+          this.$router.push('HomeEnfChefe')
+        }
+
+        if(this.apelido=="Enf"){
+          this.$router.push('HomeEnf')
+        }
+
+        
+      }
+
+      else{
+        alert('dont work')
+      }
+    }
+  }
+
+
+ 
 }
 
 
