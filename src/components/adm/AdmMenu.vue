@@ -44,6 +44,13 @@
             </a>
             </router-link>
           </li>
+          <li>
+            <router-link to= "/">
+              <a href="">
+              <span class="las la-shopping-bag"></span><span>Sair</span>
+            </a>
+            </router-link>
+          </li>
         </ul>
       </div>
 

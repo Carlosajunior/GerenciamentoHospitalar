@@ -26,7 +26,7 @@ const routes = [
   {
     path:'/homeEnfChefe',
     name: 'HomeEnfChefe',
-    component: () => import('../views/enfChefe/HomeEnfChefe.vue')
+    component: () => import('../enfChefeView/HomeEnfChefe.vue')
   },
 
   {

@@ -139,7 +139,7 @@ export default {
 }
 
 header {
-  background: #fff;
+  background: #f2f2f2;
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;
