@@ -1,5 +1,4 @@
 <template>
-     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
       <div class="sidebar-brand">
         <h2><span class="lab la-accusoft"></span> <span>Administrador</span>
