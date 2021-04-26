@@ -32,7 +32,7 @@ const routes = [
   {
     path: '/homeEnf',
     name: 'HomeEnf',
-    component:() => import('../views/enf/HomeEnf.vue')
+    component:() => import('../enfViews/HomeEnf.vue')
   },
 
   {
