@@ -1,36 +1,48 @@
 <template>
     <div class="sidebar">
       <div class="sidebar-brand">
+        <router-link to= '/homeAdm'> 
         <h2><span class="lab la-accusoft"></span> <span>Administrador</span>
         </h2>
+        </router-link>
       </div>
 
       <div class="sidebar-menu">
         <ul>
         <li>
+            <router-link to='/homeAdm'>
             <a href="" class="active">
               <span class="las la-igloo"></span><span>Home</span>
             </a>
+            </router-link>
           </li>
           <li>
+            <router-link to="AdmCadastrar">
             <a href="">
               <span class="las la-igloo"></span><span>Cadastrar Usuário</span>
             </a>
+            </router-link>
           </li>
           <li>
+            <router-link to="AdmLog">
             <a href="">
               <span class="las la-users"></span><span>Log de Alterações</span>
             </a>
+            </router-link>
           </li>
           <li>
+            <router-link to ="AdmEditar">
             <a href="">
               <span class="las la-clipboard-list"></span><span>Editar Usuário</span>
             </a>
+            </router-link>
           </li>
           <li>
+            <router-link to="AdmBackup">
             <a href="">
               <span class="las la-shopping-bag"></span><span>Backup</span>
             </a>
+            </router-link>
           </li>
         </ul>
       </div>

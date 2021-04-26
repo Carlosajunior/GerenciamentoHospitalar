@@ -33,6 +33,28 @@ const routes = [
     path: '/homeEnf',
     name: 'HomeEnf',
     component:() => import('../views/enf/HomeEnf.vue')
+  },
+
+  {
+    path: '/admBackup',
+    name : 'AdmBackup',
+    component:() => import('../admViews/AdmBackup.vue')
+  },
+  {
+    path:'/admCadastrar',
+    name:'AdmCadastrar',
+    component:() => import('../admViews/AdmCadastrar.vue')
+  },
+  {
+    path:'/admEditar',
+    name:'AdmEditar',
+    component:() => import ('../admViews/AdmEditar.vue')
+  },
+
+  {
+    path:'/admLog',
+    name:'AdmLog',
+    component:() => import('../admViews/AdmLog.vue')
   }
 ]
 
