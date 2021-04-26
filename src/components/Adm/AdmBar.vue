@@ -1,66 +1,36 @@
 <template>
-    <div class="sidebar">
-      <div class="sidebar-brand">
-        <router-link to= '/homeAdm'> 
-        <h2><span class="lab la-accusoft"></span> <span>Administrador</span>
+    <header>
+        <h2>
+          <label for="nav-toggle">
+            <span class="las la-bars"></span>
+          </label>
+        
         </h2>
-        </router-link>
-      </div>
-
-      <div class="sidebar-menu">
-        <ul>
-        <li>
-            <router-link to='/homeAdm'>
-            <a href="" class="active">
-              <span class="las la-igloo"></span><span>Home</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="AdmCadastrar">
-            <a href="">
-              <span class="las la-igloo"></span><span>Cadastrar Usuário</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="AdmLog">
-            <a href="">
-              <span class="las la-users"></span><span>Log de Alterações</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to ="AdmEditar">
-            <a href="">
-              <span class="las la-clipboard-list"></span><span>Editar Usuário</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="AdmBackup">
-            <a href="">
-              <span class="las la-shopping-bag"></span><span>Backup</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to= "/">
-              <a href="">
-              <span class="las la-shopping-bag"></span><span>Sair</span>
-            </a>
-            </router-link>
-          </li>
-        </ul>
-      </div>
-
-    </div>
+        <div class="user-wrapper">
+          <img  src="../assetsComponents/menusybl.png" width="50px" height="50px" alt="">
+          <div>
+            <h4>Lembrar de trocar</h4>
+            <small>Lembrar de interpolar</small>
+          </div>
+        </div>
+      </header>
 </template>
 
 <script>
+
 export default {
-    name: 'AdmMenu'
+    name:'AdmBar',
+
+    data: function(){
+        return {
+            t: ""
+        };
+    },
+
+    props:['title']
 }
+
+
 </script>
 
 <style>
@@ -169,7 +139,7 @@ export default {
 }
 
 header {
-  background: #fff;
+  background: #f2f2f2;
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;

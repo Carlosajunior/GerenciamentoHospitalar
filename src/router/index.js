@@ -26,13 +26,35 @@ const routes = [
   {
     path:'/homeEnfChefe',
     name: 'HomeEnfChefe',
-    component: () => import('../views/enfChefe/HomeEnfChefe.vue')
+    component: () => import('../enfChefeView/HomeEnfChefe.vue')
   },
 
   {
     path: '/homeEnf',
     name: 'HomeEnf',
-    component:() => import('../views/enf/HomeEnf.vue')
+    component:() => import('../enfViews/HomeEnf.vue')
+  },
+
+  {
+    path: '/admBackup',
+    name : 'AdmBackup',
+    component:() => import('../admViews/AdmBackup.vue')
+  },
+  {
+    path:'/admCadastrar',
+    name:'AdmCadastrar',
+    component:() => import('../admViews/AdmCadastrar.vue')
+  },
+  {
+    path:'/admEditar',
+    name:'AdmEditar',
+    component:() => import ('../admViews/AdmEditar.vue')
+  },
+
+  {
+    path:'/admLog',
+    name:'AdmLog',
+    component:() => import('../admViews/AdmLog.vue')
   }
 ]
 
