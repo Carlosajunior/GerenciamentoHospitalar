@@ -22,7 +22,18 @@
         <label for="">Endereço</label>
         <input class="input-for" type="text"  name="Endereço" required  />
       </div>
-      
+      <div>
+        <label for="">Apelido</label>
+        <input class="input-for" type="text"  name="Apelido" required  />
+      </div>
+      <div>
+        <label for="">Senha</label>
+        <input class="input-for" type="password"  name="Senha" required  />
+      </div>
+      <div>
+        <label for="">Repetir senha</label>
+        <input class="input-for" type="password"  name="Repetir senha" required  />
+      </div>
     
         <label for="">Cargo</label>
         <br>
