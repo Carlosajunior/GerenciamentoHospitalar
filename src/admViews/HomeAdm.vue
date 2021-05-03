@@ -21,12 +21,7 @@ export default
     components:{
         AdmMenu,
         AdmBar
-    },
-
-    data: function(){
-         return {title:['Home']};
     }
-
     }
 
 </script>

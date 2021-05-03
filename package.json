@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@vue/cli": "^4.5.12",
+    "@websanova/vue-auth": "^4.1.1",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
+    "es6-promise": "^4.2.8",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "vue": "^3.0.0",

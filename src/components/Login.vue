@@ -4,7 +4,7 @@
     <div class="col-md-10 offset-md-3">
     <h2>Entrar </h2>
     </div>
-  <form id="form" @submit="checkForm" method="POST">
+  <form id="form" @submit.prevent="login" method="post" autocomplete="off">
   <div class="form-group" style="border-width:2px">
   <div class="col-md-10 offset-md-3">
 
@@ -35,47 +35,43 @@
 
 <script >
 
+import axios from 'axios'
 
 export default {
   name: 'Login',
   data(){
     return{
       apelido : null,
-      senha : null
+      senha : null,
+      hasErro: false,
+      response : null,
     }
   },
 
+
   methods:{
-    checkForm(){
-      if (this.apelido && this.senha){
-        alert('Verdade')
-        if (this.apelido=="Adm"){
-          alert('Gambiarra funcionou')
-          this.$router.push('HomeAdm')
-        }
+    login(){
+     if (this.apelido != null && this.senha !=null){
+       var loginDataLaravel = {"apelido" : this.apelido, "senha" : this.senha}
+       axios({methods:"POST", "url":"https://httpbin.org/post", "data": loginDataLaravel, "headers" : {"content-type": "aplication/json"}}).then(
+         result => {
+           this.response = result.data;
+         }
+       );
+       console.log(this.response);
+       if(this.apelido == "Adm" && this.senha == "Adm"){
+         this.$emit("authenticaded",true);
+         this.$router.replace({name:"HomeAdm"})
+       }
 
-        if (this.apelido=="EnfChefe"){
-          this.$router.push('HomeEnfChefe')
-        }
+       else{
+         console.log("Dados incorretos");
+       }
+     }
 
-        if(this.apelido=="Enf"){
-          this.$router.push('HomeEnf')
-        }
-
-        
-      }
-
-      else{
-        alert('dont work')
-      }
-    }
-  }
-
-
- 
 }
-
-
+  }
+}
 
 
 </script>
