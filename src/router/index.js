@@ -55,6 +55,12 @@ const routes = [
     path:'/admLog',
     name:'AdmLog',
     component:() => import('../admViews/AdmLog.vue')
+  },
+
+  {
+    path: '/admEditarForm',
+    name : 'AdmEditarForm',
+    component: () => import('../admViews/AdmEditarForm.vue')
   }
 ]
 
