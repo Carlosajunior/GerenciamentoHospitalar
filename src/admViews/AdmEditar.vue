@@ -1,26 +1,36 @@
 <template>
         <div>
-        <adm-menu>
-        </adm-menu>
+            <adm-menu></adm-menu>
         <div id="main-content">
-            <adm-bar>
-            </adm-bar>
-        
-        <body class="formulario">
-            <h1> Editar Usuário </h1>
-                <ul>
-                    <li> </li>
-                     <adm-users name = "Sara" cargo= "Adm" apelido= "PisadoradeGatos"/>
-                </ul>
-           
+            <adm-bar></adm-bar>
             
-        </body>
-            
-        
         </div>
-
-    <!--last div-->
-    </div>
+        <div class="row" style="margin-top:50px">
+            <div class="col-md-3"/>
+            <div class="col-md-6">
+                <div class="table-reponsible">
+            <table class="table">
+                <thead>
+                
+                    <th scope="col"> Apelido </th>
+                    <th scope="col"> Nome </th>
+                    <th scope="col"> Cargo </th>
+                    <th scope="col">  Selecione</th>
+                    <th scope="col"> Selecione</th>
+                </thead>
+                <tbody v-for="(planeta,index) in response" :key="planeta">
+                    
+                     <adm-users :name="planeta.name" :apelido="index" :cargo="planeta.climate"/>
+                  
+                </tbody>
+            </table>
+                </div>
+            </div>
+            <div class="col-md-3"/>        
+            
+        </div>
+        </div>
+        
 </template>
 
 <script>
@@ -37,12 +47,13 @@ export default {
             response : null
         }
     },
-    usuarios: null,
-    mounted(){
-        axios({method:"GET","url":"https://swapi.dev/api/people/"}).then(result =>{
-            this.response = result.data;
+    usuarios: {},
+    created(){
+        axios({method:"GET","url":" https://swapi.dev/api/planets/"}).then(result =>{
+            this.response = result.data.results;
             console.log("Não deu erro!");
             console.log(this.response);
+           
         }, error =>{
             console.log("Erro");
             console.error(error);
@@ -58,5 +69,12 @@ export default {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;
+}
+main {
+  margin-top: 85px;
+  padding: 2rem 1.5rem;
+  background: #f1f5f9;
+  min-height: calc(100vh - 90px);
+  
 }
 </style>
