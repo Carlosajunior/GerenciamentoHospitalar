@@ -7,7 +7,7 @@
       <adm-bar> </adm-bar>
     </div>
     <div>
-      <adm-cad> </adm-cad>
+      <adm-cad h2Name="CadastrarUsuário" cadastro=true> </adm-cad>
     </div>
   </div>
 </template>
