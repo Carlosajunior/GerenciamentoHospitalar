@@ -1,26 +1,26 @@
 <template>
   <body class="formulario">
-    <h2>Cadastrar Usuário</h2>
-    <form action="">
+    <h2>{{h2Name}}</h2>
+    <form @submit.prevent="postForm">
       <div >
         <label for="">Nome completo</label>
-        <input class="input-for" type="text" name="Nome completo" required />
+        <input class="input-for" type="text" v-model="name" required />
       </div>
       <div>
         <label for="">CPF</label>
-        <input class="input-for" type="text" name="CPF" required />
+        <input class="input-for" type="text" v-model="cpf" required />
       </div>
       <div>
         <label for="">Email</label>
-        <input class="input-for" type="email"  name="EMAIL" required />
+        <input class="input-for" type="email"  v-model="email" required />
       </div>
       <div>
         <label for="">Telefone</label>
-        <input class="input-for" type="text" name="Telefone" required  />
+        <input class="input-for" type="text" v-model="telefone" required  />
       </div>
       <div>
         <label for="">Endereço</label>
-        <input class="input-for" type="text"  name="Endereço" required  />
+        <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
       <div>
         <label for="">Apelido</label>
@@ -52,8 +52,51 @@
 </template>
 
 <script>
+//import axios from 'axios' 
 export default {
   nome: "AdmCad",
+  props: {
+    h2Name : String,
+    cadastro : Boolean
+  },
+  data(){
+    return{
+    name : null,
+    cpf : null,
+    enderco:null,
+    telefone:null,
+    email:null,
+    response : null
+    }
+  },
+  methods:{
+    postForm(){
+      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "endereco" : this.enderco, "telefone" : this.telefone,
+        "email" : this.email, "operacao" : "Cadastro do usuário"}
+        
+      if (this.cadastro==true){
+        console.log("Cadastro")
+        /*
+        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
+          result =>{
+            this.response = result.data;
+          }
+        ) */ 
+      } 
+
+      else{
+        cadastroUser.operacao = "Editar Usuário"
+        console.log("Editar")
+        /*
+        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
+          result =>{
+            this.response = result.data;
+          }
+        )
+        */
+      }
+    }
+  }
 };
 </script>
 

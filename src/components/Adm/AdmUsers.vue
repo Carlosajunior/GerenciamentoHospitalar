@@ -1,20 +1,21 @@
 <template>
-        <ul class="list-group list-group-horizontal">
-            <li class="list-group-item">Apelido: {{apelido}}</li>
-            <li class="list-group-item">Nome: {{name}} </li>
-            <li class="list-group-item">Cargo: {{cargo}} </li>
-            <li class="list-group-item"> <router-link to="AdmEditarForm"> Editar</router-link> </li>
-            <li class="list-group-item"> Remover</li>
-        </ul>
+        <tr>
+            <th scope="col">Apelido: {{apelido}}</th>
+            <th scope="col">Nome: {{name}} </th>
+            <th scope="col">Cargo: {{cargo}} </th>
+            <th scope="lcol"> <router-link to="AdmEditarForm"> Editar</router-link> </th>
+            <th scope="col"> Remover</th>
+        </tr>
 </template>
 
 <script>
 export default {
     name :'AdmUsers',
     props:{
-        name : Text,
+        name : String,
         cargo : String,
-        apelido : String
+        apelido : String,
+        object : Object
 
     }
 }
