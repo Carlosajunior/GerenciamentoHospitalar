@@ -1,0 +1,562 @@
+<template>
+    <div class="sidebar">
+      <div class="sidebar-brand">
+        <router-link to= '/homeAdm'> 
+        <h2><span class="lab la-accusoft"></span> <span>Administrador</span>
+        </h2>
+        </router-link>
+      </div>
+
+      <div class="sidebar-menu">
+        <ul>
+        <li>
+            <router-link to='/homeAdm'>
+            <a href="" class="active">
+              <span class="las la-igloo"></span><span>Home</span>
+            </a>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="AdmCadastrar">
+            <a href="">
+              <span class="las la-igloo"></span><span>Cadastrar Usuário</span>
+            </a>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="AdmLog">
+            <a href="">
+              <span class="las la-users"></span><span>Log de Alterações</span>
+            </a>
+            </router-link>
+          </li>
+          <li>
+            <router-link to ="AdmEditar">
+            <a href="">
+              <span class="las la-clipboard-list"></span><span>Editar Usuário</span>
+            </a>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="AdmBackup">
+            <a href="">
+              <span class="las la-shopping-bag"></span><span>Backup</span>
+            </a>
+            </router-link>
+          </li>
+          <li>
+            <router-link to= "/">
+              <a href="">
+              <span class="las la-shopping-bag"></span><span>Sair</span>
+            </a>
+            </router-link>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'AdmMenu'
+}
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');  
+
+:root {
+  --main-color: #f2f2f2;
+  --color-dark: #1d2231;
+  --text-grey: #8390a2;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  width: 345px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--main-color);
+  z-index: 100;
+  transition: width 400ms;
+}
+
+.sidebar-brand {
+  height: 90px;
+  padding: 1rem 0rem 1rem 2rem;
+  color: black;
+}
+
+.sidebar-brand span {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.sidebar-menu {
+  margin-top: 1rem;
+}
+
+.sidebar-menu li {
+  width: 100%;
+  margin-bottom: 1.7rem;
+  padding-left: 2rem;
+}
+
+.sidebar-menu a {
+  padding-left: 1rem;
+  display: block;
+  color: black;
+  font-size: 1.1rem;
+}
+
+.sidebar-menu a.active {
+  background: rgb(78, 15, 15);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--main-color);
+  border-radius: 30px 0px 0px 30px;
+}
+
+.sidebar-menu a span:first-child {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+
+
+#nav-toggle:checked + .sidebar{
+  width: 70px;
+}
+
+#nav-toggle:checked + .sidebar .sidebar-brand,
+#nav-toggle:checked + .sidebar li {
+  padding-left: 1rem;
+  text-align: center;
+}
+
+#nav-toggle:checked + .sidebar li a {
+  padding-left: 0rem;
+}
+
+#nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked + .sidebar li a span:last-child{
+  display: none;
+}
+
+#nav-toggle:checked ~ .main-content {
+  margin-left: 70px;
+}
+
+#nav-toggle:checked ~ .main-content header {
+  width: calc(100% - 70px);
+  left: 70px;
+}
+
+.main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+}
+
+header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  box-shadow: 2px 2px 5px rgba(0,0, 0,0.2);
+  position: fixed;
+  left: 345px;
+  width: calc(100% - 345px);
+  top: 0;
+  z-index: 100;
+  transition: left 400ms;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+header h2 {
+  color: #222;
+}
+
+header label span {
+  font-size: 1.7rem;
+  padding-right: 1rem;
+} 
+
+.search-wrapper {
+  border: 1px solid #f0f0f0;
+  border-radius: 30px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.search-wrapper span {
+  display: inline-block;
+  padding: 0rem 1rem;
+  font-size: 1.5rem;
+}
+
+.search-wrapper input {
+  height: 100%;
+  padding: .5rem;
+  border: none;
+  outline: none;
+}
+
+.user-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.user-wrapper img {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.user-wrapper small {
+  display: inline-block;
+  color: var(--text-grey);
+}
+
+main {
+  margin-top: 85px;
+  padding: 2rem 1.5rem;
+  background: #f1f5f9;
+  min-height: calc(100vh - 90px);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.card-single {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2px;
+}
+
+.card-single div:last-child span {
+  font-size: 3rem;
+  color: var(--main-color);
+}
+
+.card-single div:first-child span {
+  color: var(--text-grey);
+}
+
+.card-single:last-child {
+  background: var(--main-color);
+}
+
+.card-single:last-child h1,
+.card-single:last-child div:first-child span,
+.card-single:last-child div:last-child span {
+  color: #fff;
+}
+
+.recent-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 65% auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 5px;
+}
+
+.card-header,
+.card-body {
+  padding: 1rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header button {
+  background: var(--main-color);
+  border-radius: 10px;
+  color: #fff;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--main-color);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+thead td {
+  font-weight: 700;
+}
+
+td {
+  padding: .5rem 1rem;
+  font-size: .9rem;
+  color: #222;
+}
+
+td .status {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+tr td:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.status.purple {
+  background: rebeccapurple;
+}
+
+.status.pink {
+  background: deeppink;
+}
+
+.status.orange {
+  background: orangered;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.customer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .7rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info img {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.info h4 {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.info small {
+  font-weight: 600;
+  color: var(--text-grey);
+}
+
+.contact span{
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-left: .5rem;
+  color: var(--main-color);
+}
+
+@media only screen and (max-width: 960px) {
+  .cards {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .recent-grid {
+    grid-template-columns: 60% 40%;
+  }
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .sidebar {
+    left: -100% !important;
+  }
+
+  header h2 {
+    display: flex;
+    align-items: center;
+  }
+
+  header h2 label {
+    display: inline-block;
+    text-align: center;
+    background: var(--main-color);
+    padding-right: 0rem;
+    margin-right: 1rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+  }
+
+  header h2 span {
+    text-align: center;
+    padding-right: 0rem;
+  }
+
+  header h2 {
+    font-size: 1.1rem;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0rem;
+  }
+
+  header {
+    width: 100% !important;
+    left: 0 !important;
+  }
+
+  #nav-toggle:checked + .sidebar {
+    left: 0 !important;
+    z-index: 100;
+    width: 345px;
+  }
+  
+  #nav-toggle:checked + .sidebar .sidebar-brand,
+  #nav-toggle:checked + .sidebar li {
+    padding-left: 2rem;
+    text-align: left;
+  }
+  
+  #nav-toggle:checked + .sidebar li a {
+    padding-left: 1rem;
+  }
+  
+  #nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+  #nav-toggle:checked + .sidebar li a span:last-child{
+    display: inline;
+  }
+
+  #nav-toggle:checked ~ .main-content {
+    margin-left: 0rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .recent-grid {
+    grid-template-columns: 100%;
+  }
+
+  .search-wrapper {
+    display: none;
+  }
+
+  .sidebar {
+    left: -100% !important;
+  }
+
+  header h2 {
+    display: flex;
+    align-items: center;
+  }
+
+  header h2 label {
+    display: inline-block;
+    text-align: center;
+    background: var(--main-color);
+    padding-right: 0rem;
+    margin-right: 1rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+  }
+
+  header h2 span {
+    text-align: center;
+    padding-right: 0rem;
+  }
+
+  header h2 {
+    font-size: 1.1rem;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0rem;
+  }
+
+  header {
+    width: 100% ;
+    left: 0 ;
+  }
+
+  #nav-toggle:checked + .sidebar {
+    left: 0 !important;
+    z-index: 100;
+    width: 345px;
+  }
+  
+  #nav-toggle:checked + .sidebar .sidebar-brand,
+  #nav-toggle:checked + .sidebar li {
+    padding-left: 2rem;
+    text-align: left;
+  }
+  
+  #nav-toggle:checked + .sidebar li a {
+    padding-left: 1rem;
+  }
+  
+  #nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+  #nav-toggle:checked + .sidebar li a span:last-child{
+    display: inline;
+  }
+
+  #nav-toggle:checked ~ .main-content {
+    margin-left: 0rem !important;
+  }
+}
+
+@media only screen and (max-width: 560px){
+  .cards {
+    grid-template-columns: 100%;
+  }
+}
+
+</style>
