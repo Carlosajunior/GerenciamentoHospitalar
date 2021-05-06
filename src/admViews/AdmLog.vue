@@ -8,15 +8,19 @@
             <adm-bar>
             </adm-bar>
         </div>
+        <div>
+            <adm-log-comp> </adm-log-comp>
+        </div>
     </div>
 </template>
 
 <script>
 import AdmBar from '../components/adm/AdmBar.vue'
+import AdmLogComp from '../components/adm/AdmLogComp.vue'
 import AdmMenu from '../components/adm/AdmMenu.vue'
 export default {
-    name: 'AdmCadastrar',
+    name: 'AdmLog',
     components: {AdmBar,
-    AdmMenu}
+    AdmMenu,AdmLogComp}
 }
 </script>

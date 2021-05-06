@@ -22,7 +22,18 @@
         <label for="">Endereço</label>
         <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
-      
+      <div>
+        <label for="">Apelido</label>
+        <input class="input-for" type="text"  name="Apelido" required  />
+      </div>
+      <div>
+        <label for="">Senha</label>
+        <input class="input-for" type="password"  name="Senha" required  />
+      </div>
+      <div>
+        <label for="">Repetir senha</label>
+        <input class="input-for" type="password"  name="Repetir senha" required  />
+      </div>
     
         <label for="">Cargo</label>
         <br>
@@ -35,7 +46,6 @@
     
           <button type="submit" class="b-salvar">Salvar</button>
           <button class="b-cancelar">Cancelar</button>
-    
       
     </form>
   </body>
@@ -111,11 +121,11 @@ export default {
 
 .input-for {
     border: 1px solid #ccc!important;
-    padding: 8px;
+    padding: 6px;
     display: block;
     border: none;
     border-bottom: 1px solid #ccc;
-    width: 60%;
+    width: 50%;
     padding: 1px 2px;
     margin-bottom: 5px;
 }
@@ -146,5 +156,38 @@ button{
 .b-cancelar{
   background:crimson;
   
+}
+
+
+@media only screen and (max-width: 960px) {
+.formulario{
+  margin-top: 12% ;
+}
+  .b-cancelar{
+  background: yellow;
+ 
+}
+}
+@media only screen and (max-width: 768px) {
+  .formulario{
+  margin-top: 15% ;
+}
+.input-radio{
+   display: block;
+    margin-left: 5%;
+}
+  .b-cancelar{
+  background: black;
+  
+}
+}
+@media only screen and (max-width: 560px){
+  .formulario{
+  margin-top: 25% ;
+}
+  .b-cancelar{
+  background: blueviolet;
+  
+}
 }
 </style>

@@ -9,6 +9,7 @@
     <div>
       <adm-cad h2Name="CadastrarUsuário" cadastro=true> </adm-cad>
     </div>
+
   </div>
 </template>
 
