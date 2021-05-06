@@ -153,39 +153,5 @@ button{
 }
 .b-cancelar{
   background:crimson;
-  
-}
-
-
-@media only screen and (max-width: 960px) {
-.formulario{
-  margin-top: 12% ;
-}
-  .b-cancelar{
-  background: yellow;
- 
-}
-}
-@media only screen and (max-width: 768px) {
-  .formulario{
-  margin-top: 15% ;
-}
-.input-radio{
-   display: block;
-    margin-left: 5%;
-}
-  .b-cancelar{
-  background: black;
-  
-}
-}
-@media only screen and (max-width: 560px){
-  .formulario{
-  margin-top: 25% ;
-}
-  .b-cancelar{
-  background: blueviolet;
-  
-}
-}
+  }
 </style>
