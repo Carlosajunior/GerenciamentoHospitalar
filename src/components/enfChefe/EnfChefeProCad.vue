@@ -3,38 +3,25 @@
     <h2></h2>
     <form @submit.prevent="postForm">
       <div >
-        <label for="">Nome completo</label>
+        <label for="">Paciente</label>
         <input class="input-for" type="text" v-model="name" required />
       </div>
       <div>
-        <label for="">CPF</label>
+        <label for="">Enfermeiro/Estagiário</label>
         <input class="input-for" type="text" v-model="cpf" required />
       </div>
       <div>
-        <label for="">Email</label>
+        <label for="">CID</label>
         <input class="input-for" type="email"  v-model="email" required />
       </div>
       <div>
-        <label for="">Telefone</label>
+        <label for="">Posologia</label>
         <input class="input-for" type="text" v-model="telefone" required  />
       </div>
       <div>
-        <label for="">Endereço</label>
+        <label for="">Quarto</label>
         <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
-      <div>
-        <label for="">Tipo sanguíneo</label>
-        <input class="input-for" type="text"  name="Tipo sanguineo" required  />
-      </div>
-      <div>
-        <label for="">Nome do responsável</label>
-        <input class="input-for" type="text"  name="Nome do responsavel" required  />
-      </div>
-      <div>
-        <label for="">Telefone do responsável</label>
-        <input class="input-for" type="text"  name="Telefone do responsavel" required  />
-      </div>    
-    
           <button type="submit" class="b-salvar">Salvar</button>
           <button class="b-cancelar">Cancelar</button>
       
@@ -45,7 +32,7 @@
 <script>
 //import axios from 'axios' 
 export default {
-  nome: "EnfChefeCad",
+  nome: "EnfChefeProCad",
   props: {
     h2Name : String,
     cadastro : Boolean
