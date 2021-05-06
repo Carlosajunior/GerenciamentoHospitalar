@@ -66,15 +66,17 @@ export default {
     enderco:null,
     telefone:null,
     email:null,
-    response : null
+    response : null,
+    cadastroData : this.cadastro
     }
   },
   methods:{
     postForm(){
+      console.log(this.cadastroData)
       var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "endereco" : this.enderco, "telefone" : this.telefone,
         "email" : this.email, "operacao" : "Cadastro do usuário"}
         
-      if (this.cadastro==true){
+      if (this.cadastroData){
         console.log("Cadastro")
         /*
         axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(

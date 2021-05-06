@@ -2,13 +2,14 @@
         <div>
             <adm-menu></adm-menu>
         <div id="main-content">
-            <adm-bar></adm-bar>
+            <adm-bar title="EditarUsuário" kindUser="Administrador"></adm-bar>
             
         </div>
         <div class="row" style="margin-top:50px">
             <div class="col-md-3"/>
             <div class="col-md-6">
-                <div class="table-reponsible">
+            <div class="table-reponsible">
+                <h2>Editar Usuário</h2>
             <table class="table">
                 <thead>
                 
