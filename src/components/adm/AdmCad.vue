@@ -1,6 +1,6 @@
 <template>
   <body class="formulario">
-    <h2>{{h2Name}}</h2>
+    <h2></h2>
     <form @submit.prevent="postForm">
       <div >
         <label for="">Nome completo</label>
