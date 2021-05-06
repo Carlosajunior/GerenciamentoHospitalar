@@ -1,8 +1,8 @@
 <template>
         <tr>
-            <th scope="col">Apelido: {{apelido}}</th>
-            <th scope="col">Nome: {{name}} </th>
-            <th scope="col">Cargo: {{cargo}} </th>
+            <th scope="col">{{apelido}}</th>
+            <th scope="col">{{name}} </th>
+            <th scope="col">{{cargo}} </th>
             <th scope="lcol"> <router-link to="AdmEditarForm"> Editar</router-link> </th>
             <th scope="col"> Remover</th>
         </tr>

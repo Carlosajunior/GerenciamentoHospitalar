@@ -2,7 +2,7 @@
     <div class="sidebar">
       <div class="sidebar-brand">
         <router-link to= '/homeAdm'> 
-        <h2><span class="lab la-accusoft"></span> <span>Administrador</span>
+        <h2><span class="lab la-accusoft"></span> <span>Syscam</span>
         </h2>
         </router-link>
       </div>
