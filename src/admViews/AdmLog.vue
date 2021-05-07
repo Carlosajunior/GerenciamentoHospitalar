@@ -50,7 +50,8 @@ export default {
     AdmMenu,AdmLogCell},
     data(){
         return {
-            dataDoLog : new Date()
+            dataDoLog : new Date(),
+            response : {}
         }
     },
     created(){

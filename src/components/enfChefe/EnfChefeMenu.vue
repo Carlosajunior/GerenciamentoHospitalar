@@ -10,28 +10,28 @@
       <div class="sidebar-menu">
         <ul>
         <li>
-            <router-link to=''>
+            <router-link to='EnfChefeCadastrarPaciente'>
             <a href="" class="active">
               <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="">
+            <router-link to="EnfChefeListaPacientes">
             <a href="">
               <span class="las la-igloo"></span><span>Lista de Pacientes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="">
+            <router-link to="EnfChefeProntuario">
             <a href="">
               <span class="las la-users"></span><span>Iniciar Prontuário</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to ="">
+            <router-link to ="EnfChefeAcompanhaProntuario">
             <a href="">
               <span class="las la-clipboard-list"></span><span>Acompanhar Prontuário
 
@@ -40,28 +40,28 @@
             </router-link>
           </li>
           <li>
-            <router-link to="">
+            <router-link to="EnfChefeAgendamentoPendentes">
             <a href="">
               <span class="las la-shopping-bag"></span><span>Agendamentos pendentes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "">
+            <router-link to= "EnfChefeAgendamentosConcluidos">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Agendamentos Concluídos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "">
+            <router-link to= "EnfChefeEstoqueMedicamentos">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Estoque de Medicamentos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "">
+            <router-link to= "EnfChefeRelatorio">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Relatório de Profissionais</span>
             </a>
