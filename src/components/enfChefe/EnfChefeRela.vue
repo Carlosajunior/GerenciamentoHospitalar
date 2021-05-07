@@ -1,40 +1,54 @@
 <template>
-        <tr>
-            <th scope="col">{{apelido}}</th>
-            <th scope="col">{{name}} </th>
-            <th scope="col">{{cargo}} </th>
-            <th scope="col">{{apelido}}</th>
-            <th scope="col">{{name}} </th>
-            <th scope="col">{{cargo}} </th>
-            <th scope="col">{{apelido}}</th>
-            <th scope="col">{{name}} </th>
-            <th scope="col">{{cargo}} </th>
-        </tr>
+<div>
+    <div class="filtro">
+        <input id="date" type="date">
+        <button>Filtrar</button>
+    </div>
+    
+    <tr class="titulo">
+        <th scope="col">Enfermeiro/Estagiário</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Agendamento</th>
+        <th scope="col">Data</th>
+        <th scope="col">Horário</th>
+    </tr>
+</div>
 </template>
 
 <script>
 export default {
-    name :'EnfChefeRela',
+    name:"EnfChefeRela",
     props:{
-        name : String,
-        cargo : String,
-        apelido : String,
-        object : Object
-
-    }
+            apelido:null,
+            cargo : null,
+            alteracao: null,
+            data:null,
+            hora:null
+        
+    } 
 }
 </script>
 
 <style>
-    .showUsers ul {
-        display: inline;
-    }
+.filtro{
+    padding: 2%;
+}
+button{
+    border: none;
+    background-color:  #35B736;
+    color: white;
+    padding: 3.2px;
+    margin-left: 5%;
+}
 
-    .buttonEditar{
-        color: cadetblue;
-        padding: 3%;
-
-    }
+th{
+    padding: 10px;
+    text-align: center;
+}
+th[scope="col"] {
+    background-color:rgb(238, 238, 238);
+   
+}
 
     
 </style>
