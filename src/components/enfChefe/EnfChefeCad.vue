@@ -23,26 +23,17 @@
         <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
       <div>
-        <label for="">Apelido</label>
-        <input class="input-for" type="text"  name="Apelido" required  />
+        <label for="">Tipo sanguíneo</label>
+        <input class="input-for" type="text"  name="Tipo sanguineo" required  />
       </div>
       <div>
-        <label for="">Senha</label>
-        <input class="input-for" type="password"  name="Senha" required  />
+        <label for="">Nome do responsável</label>
+        <input class="input-for" type="text"  name="Nome do responsavel" required  />
       </div>
       <div>
-        <label for="">Repetir senha</label>
-        <input class="input-for" type="password"  name="Repetir senha" required  />
-      </div>
-    
-        <label for="">Cargo</label>
-        <br>
-        <input class="input-radio" type="radio" name="cargo" value="Enfermeiro"/> Enfermeiro 
-        <input class="input-radio" type="radio" name="cargo" value="Enfermeiro chefe"/> Enfermeiro chefe
-        <input class="input-radio" type="radio" name="cargo" value="Estagiário"/> Estagiário
-        <input class="input-radio" type="radio" name="cargo" value="Administrador"/> Administrador
-        <br>
-        
+        <label for="">Telefone do responsável</label>
+        <input class="input-for" type="text"  name="Telefone do responsavel" required  />
+      </div>    
     
           <button type="submit" class="b-salvar">Salvar</button>
           <button class="b-cancelar">Cancelar</button>
@@ -54,7 +45,7 @@
 <script>
 //import axios from 'axios' 
 export default {
-  nome: "AdmCad",
+  nome: "EnfChefeCad",
   props: {
     h2Name : String,
     cadastro : Boolean
@@ -70,37 +61,6 @@ export default {
     cadastroData : this.cadastro
     }
   },
-  methods:{
-    dataHora(){
-        
-    },
-    postForm(){
-      console.log(this.cadastroData)
-      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "endereco" : this.enderco, "telefone" : this.telefone,
-        "email" : this.email, "operacao" : "Cadastro do usuário"}
-      if (this.cadastroData){
-        console.log("Cadastro")
-        /*
-        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
-          result =>{
-            this.response = result.data;
-          }
-        ) */ 
-      } 
-
-      else{
-        cadastroUser.operacao = "Editar Usuário"
-        console.log("Editar")
-        /*
-        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
-          result =>{
-            this.response = result.data;
-          }
-        )
-        */
-      }
-    }
-  }
 };
 </script>
 
