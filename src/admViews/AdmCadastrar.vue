@@ -4,7 +4,7 @@
 
     <adm-menu> </adm-menu>
     <div id="main-content">
-      <adm-bar title="CadastrarUsuário" kindUser="Admnistrador"> </adm-bar>
+      <adm-bar :title="'Cadastrar Usuário'" kindUser="Admnistrador"> </adm-bar>
     </div>
     <div>
       <adm-cad h2Name="CadastrarUsuário" cadastro=true> </adm-cad>

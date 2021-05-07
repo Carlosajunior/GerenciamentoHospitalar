@@ -71,11 +71,13 @@ export default {
     }
   },
   methods:{
+    dataHora(){
+        
+    },
     postForm(){
       console.log(this.cadastroData)
       var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "endereco" : this.enderco, "telefone" : this.telefone,
         "email" : this.email, "operacao" : "Cadastro do usuário"}
-        
       if (this.cadastroData){
         console.log("Cadastro")
         /*

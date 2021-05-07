@@ -3,7 +3,7 @@
         <adm-menu></adm-menu>
         <div id="main-content">
         <div id= "main-content">
-            <adm-bar title="EditarUsuário" kindUser="Administrador"></adm-bar>
+            <adm-bar :title="'Editar Usuário'" kindUser="Administrador"></adm-bar>
         <adm-cad h2Name="EditarUsuário" cadastro=false > </adm-cad>
         </div>
     </div>
