@@ -1,24 +1,28 @@
 <template>
+  <div class="formulario">
     <div>
-        <enf-chefe-menu>
-        </enf-chefe-menu>
+      <enf-chefe-menu> </enf-chefe-menu>
     </div>
     <div>
-        <enf-chefebar>
-        </enf-chefebar>
+      <enf-chefebar> </enf-chefebar>
     </div>
-        
- 
+    <enf-chefe-paciente> </enf-chefe-paciente>
+  </div>
 </template>
 
 <script>
-import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
-import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
+import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
+import EnfChefebar from "../components/enfChefe/EnfChefebar.vue";
+import EnfChefePaciente from "../components/enfChefe/EnfChefePaciente.vue";
 export default {
-    components:{EnfChefeMenu, EnfChefebar} 
-}
+  components: { EnfChefeMenu, EnfChefebar, EnfChefePaciente },
+};
 </script>
 
 <style>
-
+.formulario {
+  width: 800px;
+  margin-top: 8%;
+  margin-left: 30%;
+}
 </style>
