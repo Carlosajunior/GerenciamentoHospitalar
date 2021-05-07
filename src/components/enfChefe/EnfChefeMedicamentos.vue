@@ -1,35 +1,39 @@
 <template>
 <div>
     <div class="filtro">
+        <label for="">Data de validade:  </label>
         <input id="date" type="date">
         <button>Filtrar</button>
     </div>
     
     <tr class="titulo">
-        <th scope="col">Enfermeiro/Estagiário</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Agendamento</th>
-        <th scope="col">Data</th>
-        <th scope="col">Horário</th>
+        <th scope="col">Medicação</th>
+        <th scope="col">Lote</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Data de validade</th>
+        <th scope="col">Farmacêutico</th>
     </tr>
 </div>
 </template>
 
 <script>
 export default {
-    name:"EnfChefeRela",
+    name:"EnfChefeMedicamentos",
     props:{
-            EnfermeiroEstagiário :null,
-            estado : null,
-            agendamento: null,
-            data:null,
-            hora:null
+            medicacao:null,
+            lote : null,
+            quantidade: null,
+            validade:null,
+            farmaceutico:null
         
     } 
 }
 </script>
 
 <style>
+label{
+    margin-right: 1%;
+}
 .filtro{
     padding: 2%;
 }
