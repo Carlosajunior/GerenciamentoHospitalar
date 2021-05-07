@@ -12,7 +12,7 @@
       <th scope="col">Hora da baixa</th>
       <th scope="col">Data da baixa</th>
       <th scope="col">Medicação</th>
-    </tr>
+    </tr>=
   </div>
 </template>
 
