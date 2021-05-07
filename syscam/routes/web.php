@@ -1,7 +1,6 @@
 <?php
-
+use App\Http\Controllers\cadastroController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +12,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
