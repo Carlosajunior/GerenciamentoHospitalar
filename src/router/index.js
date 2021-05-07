@@ -101,10 +101,10 @@ const routes = [{
             import ('../enfChefeView/EnfChefeEstoqueMedicamentos.vue')
     },
     {
-        path: '/EnfChefeProntuario',
-        name: 'EnfChefeProntuario',
+        path: '/EnfChefeIniciarProntuario',
+        name: 'EnfChefeIniciarProntuario',
         component: () =>
-            import ('../enfChefeView/EnfChefeProntuario.vue')
+            import ('../enfChefeView/EnfChefeIniciarProntuario')
     },
     {
         path: '/EnfChefeRelatorio',

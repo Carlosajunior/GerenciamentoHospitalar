@@ -20,7 +20,7 @@ import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
 import EnfChefeProCad from '../components/enfChefe/EnfChefeProCad.vue'
 export default {
-    components:{EnfChefeMenu, EnfChefebar, EnfChefeProCad} 
+    components:{EnfChefeMenu, EnfChefebar, EnfChefeProCad}
 }
 </script>
 

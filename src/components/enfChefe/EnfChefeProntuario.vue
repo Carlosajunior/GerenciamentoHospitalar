@@ -7,11 +7,10 @@
     </div>
      <tr>
         <th scope="col">Nome do paciente</th>
-        <th scope="col">Enfermeiro/Estagiário</th>
-        <th scope="col">Prontuário</th>
-        <th scope="col">Horário</th>
-        <th scope="col">Data</th>
-        <th scope="col">Cadastrar alarme</th>
+        <th scope="col">ID do prontuário</th>
+        <th scope="col">Editar prontuário</th>
+        <th scope="col">Baixa prontuário</th>
+        <th scope="col">Visualizar prontuário</th>
     </tr>
 </div>
    
@@ -19,14 +18,13 @@
 
 <script>
 export default {
-    name:"EnfChefePendentes",
+    name:"EnfChefeProntuario",
     props:{
             paciente:null,
-            idEnf : null,
-            prontuario: null,
-            hora:null,
-            data:null,
-            alarme:null
+            idProntuario : null,
+            editarProntuario: null,
+            baixaProntuário:null,
+            visualizarProntuário:null
         
     }
     
