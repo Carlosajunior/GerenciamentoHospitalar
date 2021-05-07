@@ -1,10 +1,10 @@
 <template>
     <tr>
-        <th scope="col">Apelido</th>
-        <th scope="col">Cargo</th>
-        <th scope="col">Alteração</th>
-        <th scope="col">Data</th>
-        <th scope="col">Horário</th>
+        <th scope="col">{{apelido}}</th>
+        <th scope="col">{{cargo}}</th>
+        <th scope="col">{{alteracao}}</th>
+        <th scope="col">{{data}}</th>
+        <th scope="col">{{hora}}</th>
     </tr>
 </template>
 
