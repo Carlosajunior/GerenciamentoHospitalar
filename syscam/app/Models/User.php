@@ -20,7 +20,7 @@ class User extends Authenticatable
         'nome',
         'email',
         'senha',
-        'idUsuario',
+        'username',//troquei o "idUsuario" para "username", id remete a número na tabela. Carlos
         'telefone',
         'cargo',
         'cpf',
