@@ -12,4 +12,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+Route::get("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);

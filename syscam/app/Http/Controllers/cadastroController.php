@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class cadastroController extends Controller
 {   
     public function criarUsuario(Request $request){
-        return $request->all();
+        return print("testando controller cadastro");
+        //return $request->all();
         // $usuario = User::create([
         //     'nome' => $request -> nome,
         //     'email' => $request -> email,
