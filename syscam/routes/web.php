@@ -12,4 +12,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< Updated upstream
 Route::get("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Route::post("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+=======
+Route::get("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+>>>>>>> 68fe9fcfbfd50a89141343a7ae0fc8ee1599b579
+=======
+Route::get("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+>>>>>>> 68fe9fcfbfd50a89141343a7ae0fc8ee1599b579
+>>>>>>> Stashed changes

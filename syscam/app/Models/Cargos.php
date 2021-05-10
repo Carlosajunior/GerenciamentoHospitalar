@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paciente extends Model
+class Cargos extends Model
 {
     use HasFactory;
-
 
      /**
      * The attributes that are mass assignable.
@@ -16,16 +15,8 @@ class Paciente extends Model
      * @var array
      */
     protected $fillable = [
-        'idPaciente',
+        'idCargo',
         'nome',
-        'email',
-        'cpf',
-        'nomeResponsavel',
-        'telefone',
-        'telefoneResponsavel',
-        'endereco',
-        'tipoSanguineo',
-        'fatorRH',
     ];
 
     /**
