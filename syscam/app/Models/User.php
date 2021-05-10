@@ -22,7 +22,7 @@ class User extends Authenticatable
         'senha',
         'username',//troquei o "idUsuario" para "username", id remete a número na tabela. Carlos
         'telefone',
-        'cargo',
+        'cargo_id',
         'cpf',
         'apelido',
     ];
@@ -34,7 +34,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'senha',
-        'idUsuario',
         'remember_token',
     ];
 
