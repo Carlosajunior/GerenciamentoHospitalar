@@ -52,7 +52,7 @@
 </template>
 
 <script>
-//import axios from 'axios' 
+import axios from 'axios' 
 export default {
   nome: "AdmCad",
   props: {
@@ -71,21 +71,21 @@ export default {
     }
   },
   methods:{
-    dataHora(){
-        
-    },
+    
     postForm(){
       console.log(this.cadastroData)
       var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "endereco" : this.enderco, "telefone" : this.telefone,
         "email" : this.email, "operacao" : "Cadastro do usuário"}
       if (this.cadastroData){
         console.log("Cadastro")
-        /*
-        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
+        
+        axios({methods:"POST","url":"http://127.0.0.1:8000/cadastrar-usuario", "data" : cadastroUser,"headers" : {"content-type": "aplication/json",
+        "Access-Control-Allow-Origin":"*"}}).then(
           result =>{
             this.response = result.data;
           }
-        ) */ 
+        ) 
+        console.log(this.response)
       } 
 
       else{
