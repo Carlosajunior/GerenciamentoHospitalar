@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prontuario extends Model
 {
+    protected $table = 'prontuario';
     use HasFactory;
 }
