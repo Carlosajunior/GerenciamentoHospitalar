@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ponto_digital extends Model
 {
     protected $table = 'ponto_digital';
+    public $timestamps = false;
     use HasFactory;
 }

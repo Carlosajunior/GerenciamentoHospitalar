@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     protected $table = 'usuario';
+    public $timestamps = false;
     use HasFactory, Notifiable;
 
     /**

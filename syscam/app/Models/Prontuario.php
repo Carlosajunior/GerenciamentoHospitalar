@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Prontuario extends Model
 {
     protected $table = 'prontuario';
+    public $timestamps = false;
     use HasFactory;
 }

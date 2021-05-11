@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class acao extends Model
 {
     protected $table = 'acao';
+    public $timestamps = false;
     use HasFactory;
 }
