@@ -1,24 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class cadastroController extends Controller
 {   
     public function criarUsuario(Request $request){
-        return print("testando controller cadastro");
-        //return $request->all();
-        // $usuario = User::create([
-        //     'nome' => $request -> nome,
-        //     'email' => $request -> email,
-        //     'senha'=> $request -> senha,
-        //     'username'=> $request -> username,
-        //     'telefone'=> $request -> telefone,
-        //     'cargo'=> $request -> cargo,
-        //     'cpf'=> $request -> cpf,
-        //     'apelido'=> $request -> apelido,
-        // ]);
-        // return $usuario;
+        $usuario = new Usuario;
+        $usuario = Usuario::create([
+            'nome' => $request -> nome,
+            'email' => $request -> email,
+            'senha'=> $request -> senha,                
+            'telefone'=> $request -> telefone,
+            'cpf'=> $request -> cpf,
+            'apelido'=> $request -> apelido,
+            'id_Cargo'=> $request -> id_Cargo
+        ]);
+        return $usuario;
+    }
+
+    public function mostrarUsuarios(){
+        $usuario = new Usuario;
+        foreach (Usuario::all() as $Usuario)
+        echo $Usuario->nome; 
     }
 }

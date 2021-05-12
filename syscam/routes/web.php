@@ -12,4 +12,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+Route::post("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+
+Route::get("/mostrar-usuarios", [cadastroController::class, "mostrarUsuarios"]);
