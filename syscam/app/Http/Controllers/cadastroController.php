@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class cadastroController extends Controller
 {   
     public function criarUsuario(Request $request){
@@ -19,10 +19,13 @@ class cadastroController extends Controller
         ]);
         return $usuario;
     }
+   
 
-    public function mostrarUsuarios(){
-        $usuario = new Usuario;
-        foreach (Usuario::all() as $Usuario)
-        echo $Usuario->nome; 
-    }
+    // public function login(Request $request){
+    //     if(Auth::attempt(['apelido' => $request -> apelido, 'senha' => $request -> senha])){
+    //        return print("login validado");
+    //     }
+    //     return print("credenciais incorretas");
+    // }
+
 }
