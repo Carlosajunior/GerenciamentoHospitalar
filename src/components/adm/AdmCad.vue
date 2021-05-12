@@ -6,7 +6,7 @@
         <label for="">Nome completo</label>
         <input class="input-for" type="text" v-model="name" required />
       </div>
-      <div>
+      <div v-if="this.cadastroData==true">
         <label for="">CPF</label>
         <input class="input-for" type="text" v-model="cpf" required />
       </div>
@@ -24,11 +24,11 @@
       </div>
       <div>
         <label for="">Apelido</label>
-        <input class="input-for" type="text"  name="Apelido" required  />
+        <input class="input-for" type="text"  v-model="apelido" required  />
       </div>
       <div>
         <label for="">Senha</label>
-        <input class="input-for" type="password"  name="Senha" required  />
+        <input class="input-for" type="password"  v-model="senha" required  />
       </div>
       <div>
         <label for="">Repetir senha</label>
@@ -36,12 +36,13 @@
       </div>
     
         <label for="">Cargo</label>
-        <br>
-        <input class="input-radio" type="radio" name="cargo" value="Enfermeiro"/> Enfermeiro 
-        <input class="input-radio" type="radio" name="cargo" value="Enfermeiro chefe"/> Enfermeiro chefe
-        <input class="input-radio" type="radio" name="cargo" value="Estagiário"/> Estagiário
-        <input class="input-radio" type="radio" name="cargo" value="Administrador"/> Administrador
-        <br>
+        <select v-model="selected">
+          <option disabled value="">Escolha um cargo</option>
+          <option value=0>Administrador</option>
+          <option value=1> Enfermeiro-Chefe </option>
+          <option value=2> Enfermeiro </option>
+          <option value=3 > Estagiário </option>
+        </select>
         
     
           <button type="submit" class="b-salvar">Salvar</button>
@@ -52,7 +53,7 @@
 </template>
 
 <script>
-//import axios from 'axios' 
+import axios from 'axios' 
 export default {
   nome: "AdmCad",
   props: {
@@ -61,31 +62,37 @@ export default {
   },
   data(){
     return{
-    name : null,
-    cpf : null,
-    enderco:null,
-    telefone:null,
-    email:null,
+    name : "Nome",
+    cpf : "CPF",
+    enderco:"Endereço",
+    telefone:"Telefone",
+    email:"Email",
+    senha : null,
+    apelido : "Apelido",
     response : null,
+    selected: "",
     cadastroData : this.cadastro
     }
   },
   methods:{
-    dataHora(){
-        
-    },
+    
     postForm(){
       console.log(this.cadastroData)
-      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "endereco" : this.enderco, "telefone" : this.telefone,
-        "email" : this.email, "operacao" : "Cadastro do usuário"}
+      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
+        "email" : this.email, "apelido" : this.apelido, "id_Cargo" : this.selected}
       if (this.cadastroData){
         console.log("Cadastro")
-        /*
-        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
+        
+        axios({methods:"POST","url":"http://127.0.0.1:8000/cadastrar-usuario", "data" : cadastroUser,"headers" : {"content-type": "aplication/json",
+        "Access-Control-Allow-Origin":"*"}}).then(
           result =>{
             this.response = result.data;
+            alert("Formulário enviado")
           }
-        ) */ 
+        ) 
+        console.log(this.response)
+        //this.$router.push('HomeAdm')
+
       } 
 
       else{

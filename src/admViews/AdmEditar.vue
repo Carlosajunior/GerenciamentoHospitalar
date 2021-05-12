@@ -49,7 +49,7 @@ export default {
     },
     usuarios: {},
     created(){
-        axios({method:"GET","url":" https://swapi.dev/api/planets/"}).then(result =>{
+        axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios"}).then(result =>{
             this.response = result.data.results;
             console.log("Não deu erro!");
             console.log(this.response);

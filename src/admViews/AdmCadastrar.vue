@@ -7,7 +7,7 @@
       <adm-bar :title="'Cadastrar Usuário'" kindUser="Admnistrador"> </adm-bar>
     </div>
     <div>
-      <adm-cad h2Name="CadastrarUsuário" cadastro=true> </adm-cad>
+      <adm-cad h2Name="CadastrarUsuário" :cadastro="true"> </adm-cad>
     </div>
 
   </div>
