@@ -7,7 +7,7 @@
         <div id="main-content">
             <adm-bar :title="'Log De Alterações'" kindUser="Administrador">
             </adm-bar>
-
+            <div class="container">
             <div class="row" style="margin-top:50px">
                 <div class="col-md-3"/>
                 <div class="col-md-6">
@@ -36,6 +36,7 @@
             
         </div>
     </div>
+        </div>
 </template>
 
 <script>
