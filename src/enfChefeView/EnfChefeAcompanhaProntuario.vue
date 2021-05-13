@@ -19,10 +19,7 @@
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
 import EnfChefeProntuario from '../components/enfChefe/EnfChefeProntuario.vue'
-<<<<<<< HEAD
 
-=======
->>>>>>> fefbf5f32c08294177e3b3e334c501f178f536b8
 export default {
     components:{EnfChefeMenu, EnfChefebar, EnfChefeProntuario} 
 };
