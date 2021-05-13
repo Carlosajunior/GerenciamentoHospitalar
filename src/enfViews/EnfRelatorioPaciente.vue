@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-   .formulario {
+.formulario {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;

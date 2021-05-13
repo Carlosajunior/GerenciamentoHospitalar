@@ -159,7 +159,37 @@ const routes = [{
         component: () =>
             import ('../enfViews/EnfAgendamentoConcluidos.vue')
     
-    }
+    },{
+        path: '/HomeEstag',
+        name: 'HomeEstag',
+        component: () =>
+            import ('../estagViews/HomeEstag.vue')
+    
+    },{
+        path: '/EstagAgendamentoPendentes',
+        name: 'EstagAgendamentoPendentes',
+        component: () =>
+            import ('../estagViews/EstagAgendamentoPendentes.vue')
+    
+    },{
+        path: '/EstagEstoqueMedicamentos',
+        name: 'EstagEstoqueMedicamentos',
+        component: () =>
+            import ('../estagViews/EstagEstoqueMedicamentos.vue')
+    
+    },{
+        path: '/EstagRelatorioPaciente',
+        name: 'EstagRelatorioPaciente',
+        component: () =>
+            import ('../estagViews/EstagRelatorioPaciente.vue')
+    
+    },{
+        path: '/EstagAgendamentoConcluidos',
+        name: 'EstagAgendamentoConcluidos',
+        component: () =>
+            import ('../estagViews/EstagAgendamentoConcluidos.vue')
+    
+    },
 ]
 
 const router = createRouter({

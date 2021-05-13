@@ -7,34 +7,39 @@
     </div>
 
     <tr class="titulo">
-      <th scope="col">Nome do paciente</th>
-      <th scope="col">identificador</th>
-      <th scope="col">Prontuários</th>
+      <th  style=" width:400px" scope="col">Nome</th>
+      <th  style=" width:100px" scope="col">Identificador</th>
+      <th  style=" width:300px" scope="col">Prontuários</th>
     </tr>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "EnfChefePaciente",
+  name: "EstagRela",
   props: {
-    paciente: null,
-    id: null,
-    prontuario: null,
+    EnfermeiroEstagiário: null,
+    estado: null,
+    agendamento: null,
+    data: null,
+    hora: null,
   },
 };
 </script>
 
 <style>
-label {
-  margin-right: 1%;
-}
 .filtro {
   padding: 2%;
 }
+
+.titulo {
+  width:100%;
+}
+
 button {
   border: none;
-  background-color: #2BA9F1;
+  background-color: #35b736;
   color: white;
   padding: 3.2px;
   margin-left: 5%;

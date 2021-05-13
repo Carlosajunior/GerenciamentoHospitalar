@@ -32,7 +32,7 @@
 <script>
 //import axios from 'axios' 
 export default {
-  nome: "EnfChefeProCad",
+  nome: "EstagProCad",
   props: {
     h2Name : String,
     cadastro : Boolean

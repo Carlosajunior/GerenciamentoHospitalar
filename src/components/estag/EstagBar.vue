@@ -19,7 +19,7 @@
 <script>
 
 export default {
-    name:'AdmBar',
+    name:'EstagBar',
 
     data: function(){
         return {

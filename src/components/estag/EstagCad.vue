@@ -45,7 +45,7 @@
 <script>
 //import axios from 'axios' 
 export default {
-  nome: "EnfChefeCad",
+  nome: "EstagCad",
   props: {
     h2Name : String,
     cadastro : Boolean

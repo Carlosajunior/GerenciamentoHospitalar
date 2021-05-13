@@ -1,36 +1,43 @@
 <template>
   <div>
     <div class="filtro">
+      <label for="">Data da baixa: </label>
       <input id="date" type="date" />
       <button>Filtrar</button>
     </div>
 
     <tr class="titulo">
+      <th scope="col">Nome do paciente</th>
       <th scope="col">Enfermeiro/Estagiário</th>
-      <th scope="col">Estado</th>
-      <th scope="col">Agendamento</th>
-      <th scope="col">Data</th>
-      <th scope="col">Horário</th>
+      <th scope="col">Hora da baixa</th>
+      <th scope="col">Data da baixa</th>
+      <th scope="col">Medicação</th>
     </tr>
   </div>
 </template>
 
 <script>
 export default {
-  name: "EnfChefeRela",
+  name: "EstagConcluidos",
   props: {
-    EnfermeiroEstagiário: null,
-    estado: null,
-    agendamento: null,
-    data: null,
-    hora: null,
+    enfermeiro: null,
+    paciente: null,
+    horaBaixa: null,
+    dataBaixa: null,
+    medicacao: null,
   },
 };
 </script>
 
 <style>
+label {
+  margin-right: 1%;
+}
 .filtro {
   padding: 2%;
+}
+.titulo {
+  width:800px;
 }
 button {
   border: none;

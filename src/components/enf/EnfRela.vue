@@ -7,45 +7,11 @@
     </div>
 
     <tr class="titulo">
-      <th scope="col">Nome</th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">      Identificador  </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">       Prontuários   </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
-      <th scope="col">                     </th>
+      <th  style=" width:400px" scope="col">Nome</th>
+      <th  style=" width:100px" scope="col">Identificador</th>
+      <th  style=" width:300px" scope="col">Prontuários</th>
     </tr>
+
   </div>
 </template>
 
@@ -66,6 +32,11 @@ export default {
 .filtro {
   padding: 2%;
 }
+
+.titulo {
+  width:100%;
+}
+
 button {
   border: none;
   background-color: #35b736;

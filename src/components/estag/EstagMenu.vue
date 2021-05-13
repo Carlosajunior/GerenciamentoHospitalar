@@ -1,8 +1,8 @@
 <template>
     <div class="sidebar">
       <div class="sidebar-brand">
-        <router-link to= 'HomeEnfChefe'> 
-        <h2><span class="lab la-accusoft"></span> <span>Enfermeiro Chefe</span>
+        <router-link to= 'HomeEstag'> 
+        <h2><span class="lab la-accusoft"></span> <span>Estagiário</span>
         </h2>
         </router-link>
       </div>
@@ -10,65 +10,42 @@
       <div class="sidebar-menu">
         <ul>
         <li>
-            <router-link to='EnfChefeCadastrarPaciente'>
+            <router-link to='HomeEstag'>
             <a href="" class="active">
-              <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
+              <span class="las la-igloo"></span><span>Home</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeListaPacientes">
+            <router-link to="EstagAgendamentoPendentes">
             <a href="">
-              <span class="las la-igloo"></span><span>Lista de Pacientes</span>
+              <span class="las la-users"></span><span>Agendamento Pendentes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeProntuario">
+            <router-link to ="EstagEstoqueMedicamentos">
             <a href="">
-              <span class="las la-users"></span><span>Iniciar Prontuário</span>
+              <span class="las la-clipboard-list"></span><span>Estoque de Medicamentos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to ="EnfChefeAcompanhaProntuario">
+            <router-link to="EstagRelatorioPaciente">
             <a href="">
-              <span class="las la-clipboard-list"></span><span>Acompanhar Prontuário
-
-              </span>
+              <span class="las la-shopping-bag"></span><span>Relatório de Pacientes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeAgendamentoPendentes">
-            <a href="">
-              <span class="las la-shopping-bag"></span><span>Agendamentos pendentes</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to= "EnfChefeAgendamentosConcluidos">
+            <router-link to= "EstagAgendamentoConcluidos">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Agendamentos Concluídos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "EnfChefeEstoqueMedicamentos">
-              <a href="">
-              <span class="las la-shopping-bag"></span><span>Estoque de Medicamentos</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to= "EnfChefeRelatorio">
-              <a href="">
-              <span class="las la-shopping-bag"></span><span>Relatório de Profissionais</span>
-            </a>
-            </router-link>
-          </li>
-          <li>
-            <router-link to= "">
+            <router-link to= "/">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Sair</span>
             </a>
@@ -82,7 +59,7 @@
 
 <script>
 export default {
-    
+    name: "Estag"
 }
 </script>
 

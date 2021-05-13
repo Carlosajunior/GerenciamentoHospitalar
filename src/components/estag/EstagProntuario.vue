@@ -5,7 +5,7 @@
       <input id="text" type="text" />
       <button>Buscar</button>
     </div>
-     <tr>
+     <tr class="titulo">
         <th scope="col">Nome do paciente</th>
         <th scope="col">ID do prontuário</th>
         <th scope="col">Editar prontuário</th>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-    name:"EnfChefeProntuario",
+    name:"EstagProntuario",
     props:{
             paciente:null,
             idProntuario : null,
@@ -45,7 +45,9 @@ button {
   padding: 3.2px;
   margin-left: 5%;
 }
-
+.titulo {
+  width:100%;
+}
 th {
   padding: 10px;
   text-align: center;

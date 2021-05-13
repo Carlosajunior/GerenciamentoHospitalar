@@ -1,21 +1,21 @@
 <template>
     <div>
-        <enf-chefe-menu>
-        </enf-chefe-menu>
+        <estag-menu>
+        </estag-menu>
     </div>
     <div>
-        <enf-chefebar>
-        </enf-chefebar>
+        <estag-bar>
+        </estag-bar>
     </div>
         
  
 </template>
 
 <script>
-import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
-import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
+import EstagMenu from '../components/estag/EstagMenu.vue'
+import EstagBar from '../components/estag/EstagBar.vue'
 export default {
-    components:{EnfChefeMenu, EnfChefebar} 
+    components:{EstagMenu, EstagBar} 
 }
 </script>
 

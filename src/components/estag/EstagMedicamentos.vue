@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "EnfChefeMedicamentos",
+  name: "EstagMedicamentos",
   props: {
     medicacao: null,
     lote: null,
@@ -43,7 +43,9 @@ button {
   padding: 3.2px;
   margin-left: 5%;
 }
-
+.titulo {
+  width:800px;
+}
 th {
   padding: 10px;
   text-align: center;

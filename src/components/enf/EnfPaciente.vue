@@ -32,6 +32,9 @@ label {
 .filtro {
   padding: 2%;
 }
+.titulo {
+  width:100%;
+}
 button {
   border: none;
   background-color: #2BA9F1;

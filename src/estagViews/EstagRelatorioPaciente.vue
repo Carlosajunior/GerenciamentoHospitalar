@@ -1,29 +1,28 @@
 <template>
-    <div class="formulario">
+  <div class="formulario">
     <div>
-        <enf-chefe-menu>
-        </enf-chefe-menu>
+      <estag-menu> </estag-menu>
     </div>
     <div>
-        <enf-chefebar>
-        </enf-chefebar>
+      <estag-bar> </estag-bar>
     </div>
-        <enf-chefe-rela>
-        </enf-chefe-rela>   
- </div>
+    <div>
+      <estag-rela> </estag-rela>
+    </div>
+  </div>
 </template>
 
 <script>
-import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
-import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
-import EnfChefeRela from '../components/enfChefe/EnfChefeRela.vue'
+import  EstagMenu from "../components/estag/EstagMenu.vue";
+import  EstagBar from "../components/estag/EstagBar.vue";
+import  EstagRela from '../components/estag/EstagRela.vue'
 export default {
-    components:{EnfChefeMenu, EnfChefebar, EnfChefeRela} 
+    components:{EstagMenu, EstagBar, EstagRela} 
 }
 </script>
 
 <style>
-   .formulario {
+.formulario {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;

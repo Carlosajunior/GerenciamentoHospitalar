@@ -5,7 +5,7 @@
       <input id="text" type="text" />
       <button>Buscar</button>
     </div>
-     <tr>
+     <tr class="titulo">
         <th scope="col">Nome do paciente</th>
         <th scope="col">Enfermeiro/Estagiário</th>
         <th scope="col">Prontuário</th>
@@ -39,6 +39,9 @@ label {
 }
 .filtro {
   padding: 2%;
+}
+.titulo {
+  width:100%;
 }
 button {
   border: none;

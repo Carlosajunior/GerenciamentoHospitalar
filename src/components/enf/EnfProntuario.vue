@@ -5,7 +5,7 @@
       <input id="text" type="text" />
       <button>Buscar</button>
     </div>
-     <tr>
+     <tr class="titulo">
         <th scope="col">Nome do paciente</th>
         <th scope="col">ID do prontuário</th>
         <th scope="col">Editar prontuário</th>
@@ -18,15 +18,15 @@
 
 <script>
 export default {
-    name:"EnfProntuario",
-    props:{
-            paciente:null,
-            idProntuario : null,
-            editarProntuario: null,
-            baixaProntuário:null,
-            visualizarProntuário:null
-        
-    }
+  name:"EnfProntuario",
+  props:{
+    paciente:null,
+    idProntuario : null,
+    editarProntuario: null,
+    baixaProntuário:null,
+    visualizarProntuário:null
+      
+  }
     
 }
 </script>
@@ -37,6 +37,9 @@ label {
 }
 .filtro {
   padding: 2%;
+}
+.titulo {
+  width:100%;
 }
 button {
   border: none;

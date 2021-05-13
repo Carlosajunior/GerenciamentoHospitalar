@@ -1,23 +1,23 @@
 <template>
   <div class="formulario">
     <div>
-      <enf-chefe-menu> </enf-chefe-menu>
+      <estag-menu> </estag-menu>
     </div>
     <div>
-      <enf-chefebar> </enf-chefebar>
+      <estag-bar> </estag-bar>
     </div>
     <div>
-      <enf-chefe-concluidos> </enf-chefe-concluidos>
+      <estag-concluidos> </estag-concluidos>
     </div>
   </div>
 </template>
 
 <script>
-import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
-import EnfChefebar from "../components/enfChefe/EnfChefebar.vue";
-import EnfChefeConcluidos from "../components/enfChefe/EnfChefeConcluidos.vue";
+import  EstagMenu from "../components/estag/EstagMenu.vue";
+import  EstagBar from "../components/estag/EstagBar.vue";
+import  EstagConcluidos from "../components/estag/EstagConcluidos.vue";
 export default {
-  components: { EnfChefeMenu, EnfChefebar, EnfChefeConcluidos },
+  components: {  EstagMenu,  EstagBar,  EstagConcluidos },
 };
 </script>
 
