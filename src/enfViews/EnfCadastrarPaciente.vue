@@ -7,15 +7,19 @@
         <enf-bar>
         </enf-bar>
     </div>
-        
+    <div>
+        <enf-cad>
+        </enf-cad>
+    </div>   
  
 </template>
 
 <script>
 import EnfMenu from '../components/enf/EnfMenu.vue'
-import EnfBar from '../components/enf/Enfbar.vue'
+import EnfBar from '../components/enf/EnfBar.vue'
+import EnfCad from '../components/enf/EnfCad.vue'
 export default {
-    components:{EnfMenu, EnfBar} 
+    components:{EnfMenu, EnfBar, EnfCad} 
 }
 </script>
 

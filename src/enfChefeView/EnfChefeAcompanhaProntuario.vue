@@ -18,11 +18,11 @@
 <script>
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
-<<<<<<< HEAD
 import EnfChefeProntuario from '../components/enfChefe/EnfChefeProntuario.vue'
-=======
+<<<<<<< HEAD
 
->>>>>>> f4fc9acd13708efca2ed92b96c09a445455102b7
+=======
+>>>>>>> fefbf5f32c08294177e3b3e334c501f178f536b8
 export default {
     components:{EnfChefeMenu, EnfChefebar, EnfChefeProntuario} 
 };
