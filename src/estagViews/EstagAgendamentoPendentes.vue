@@ -9,19 +9,19 @@
         </enf-chefebar>
     </div>
     <div>
-        <enf-chefe-prontuario>
-        </enf-chefe-prontuario>
+        <enf-chefe-pendentes>
+        </enf-chefe-pendentes>
     </div>
-</div>
+</div> 
 </template>
 
 <script>
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
-import EnfChefeProntuario from '../components/enfChefe/EnfChefeProntuario.vue'
+import EnfChefePendentes from '../components/enfChefe/EnfChefePendentes.vue'
 export default {
-    components:{EnfChefeMenu, EnfChefebar, EnfChefeProntuario} 
-};
+    components:{EnfChefeMenu, EnfChefebar, EnfChefePendentes} 
+}
 </script>
 
 <style>

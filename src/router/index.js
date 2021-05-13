@@ -118,6 +118,48 @@ const routes = [{
         component: () =>
             import ('../enfChefeView/EnfChefeListaPacientes.vue')
     },
+    {
+        path: '/HomeEnf',
+        name: 'HomeEnf',
+        component: () =>
+            import ('../enfViews/HomeEnf.vue')
+    
+    },
+    {
+        path: '/EnfCadastrarPaciente',
+        name: 'EnfCadastrarPaciente',
+        component: () =>
+            import ('../enfViews/EnfCadastrarPaciente.vue')
+    
+    },
+    {
+        path: '/EnfAgendamentoPendentes',
+        name: 'EnfAgendamentoPendentes',
+        component: () =>
+            import ('../enfViews/EnfAgendamentoPendentes.vue')
+    
+    },
+    {
+        path: '/EnfEstoqueMedicamentos',
+        name: 'EnfEstoqueMedicamentos',
+        component: () =>
+            import ('../enfViews/EnfEstoqueMedicamentos.vue')
+    
+    },
+    {
+        path: '/EnfRelatorioPaciente',
+        name: 'EnfRelatorioPaciente',
+        component: () =>
+            import ('../enfViews/EnfRelatorioPaciente.vue')
+    
+    },
+    {
+        path: '/EnfAgendamentoConcluidos',
+        name: 'EnfAgendamentoConcluidos',
+        component: () =>
+            import ('../enfViews/EnfAgendamentoConcluidos.vue')
+    
+    }
 ]
 
 const router = createRouter({

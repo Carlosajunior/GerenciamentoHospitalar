@@ -1,0 +1,30 @@
+<template>
+  <div class="formulario">
+    <div>
+      <enf-menu> </enf-menu>
+    </div>
+    <div>
+      <enf-bar> </enf-bar>
+    </div>
+    <div>
+      <enf-concluidos> </enf-concluidos>
+    </div>
+  </div>
+</template>
+
+<script>
+import EnfMenu from "../components/enf/EnfMenu.vue";
+import EnfBar from "../components/enf/EnfBar.vue";
+import EnfConcluidos from "../components/enf/EnfConcluidos.vue";
+export default {
+  components: { EnfMenu, EnfBar, EnfConcluidos },
+}
+</script>
+
+<style>
+.formulario {
+  width: 800px;
+  margin-top: 8%;
+  margin-left: 30%;
+}
+</style>

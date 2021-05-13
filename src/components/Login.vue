@@ -61,7 +61,7 @@ export default {
        console.log(this.response);
        if(this.apelido == "Adm" && this.senha == "Adm"){
          this.$emit("authenticaded",true);
-         this.$router.replace({name:"HomeAdm"})
+         this.$router.replace({name:"HomeEnf"})
        }
 
        else{

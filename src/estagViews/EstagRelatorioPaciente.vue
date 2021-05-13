@@ -1,5 +1,5 @@
 <template>
-<div class="formulario">
+    <div class="formulario">
     <div>
         <enf-chefe-menu>
         </enf-chefe-menu>
@@ -8,24 +8,22 @@
         <enf-chefebar>
         </enf-chefebar>
     </div>
-    <div>
-        <enf-chefe-prontuario>
-        </enf-chefe-prontuario>
-    </div>
-</div>
+        <enf-chefe-rela>
+        </enf-chefe-rela>   
+ </div>
 </template>
 
 <script>
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
-import EnfChefeProntuario from '../components/enfChefe/EnfChefeProntuario.vue'
+import EnfChefeRela from '../components/enfChefe/EnfChefeRela.vue'
 export default {
-    components:{EnfChefeMenu, EnfChefebar, EnfChefeProntuario} 
-};
+    components:{EnfChefeMenu, EnfChefebar, EnfChefeRela} 
+}
 </script>
 
 <style>
-.formulario {
+   .formulario {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;

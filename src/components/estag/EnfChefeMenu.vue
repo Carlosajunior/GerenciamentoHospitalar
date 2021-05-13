@@ -10,15 +10,8 @@
       <div class="sidebar-menu">
         <ul>
         <li>
-          <router-link to='HomeEnfChefe'>
-          <a href="" class="active">
-            <span class="las la-igloo"></span><span>Home</span>
-          </a>
-          </router-link>
-        </li>
-        <li>
             <router-link to='EnfChefeCadastrarPaciente'>
-            <a href="" class="">
+            <a href="" class="active">
               <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
             </a>
             </router-link>
@@ -31,7 +24,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeIniciarProntuario">
+            <router-link to="EnfChefeProntuario">
             <a href="">
               <span class="las la-users"></span><span>Iniciar Prontuário</span>
             </a>
