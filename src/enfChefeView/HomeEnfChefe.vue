@@ -6,7 +6,7 @@
     <div id ="main-content">
         <enf-chefebar :title="'Home'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
-                    <img class="img-fluid" src="../assets/enfCapa.jpg">
+        <img class="img-fluid" src="../assets/enfCapa.jpg">
 
     </div>
         
@@ -26,4 +26,8 @@ export default {
   transition: margin-left 400ms;
   margin-left: 345px;
 }
+.img-fluid{
+    padding: 10%;
+}
+
 </style>
