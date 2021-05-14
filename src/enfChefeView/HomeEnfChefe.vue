@@ -3,9 +3,11 @@
         <enf-chefe-menu>
         </enf-chefe-menu>
     </div>
-    <div>
+    <div id ="main-content">
         <enf-chefebar>
         </enf-chefebar>
+                    <img class="img-fluid" src="../assets/enfCapa.jpg">
+
     </div>
         
  
@@ -20,5 +22,8 @@ export default {
 </script>
 
 <style>
-
+#main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+}
 </style>

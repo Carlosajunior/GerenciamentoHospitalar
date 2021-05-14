@@ -7,6 +7,9 @@
         <div id="main-content">
             <adm-bar>
             </adm-bar>
+            
+            <img class="img-fluid" src="../assets/enfCapa.jpg">
+            
         </div>
     </div>
 </template>

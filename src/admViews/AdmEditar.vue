@@ -21,7 +21,7 @@
                 </thead>
                 <tbody v-for="(planeta,index) in response" :key="planeta">
                     
-                     <adm-users :name="planeta.name" :apelido="index" :cargo="planeta.climate"/>
+                     <adm-users :name="planeta" :apelido="index" :cargo="planeta.climate"/>
                   
                 </tbody>
             </table>
@@ -50,7 +50,7 @@ export default {
     usuarios: {},
     created(){
         axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios"}).then(result =>{
-            this.response = result.data.results;
+            this.response = result;
             console.log("Não deu erro!");
             console.log(this.response);
            

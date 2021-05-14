@@ -4,7 +4,7 @@
         </enf-menu>
     </div>
     <div>
-        <enf-bar>
+        <enf-bar :title="'Cadastrar Paciente'">
         </enf-bar>
     </div>
     <div>

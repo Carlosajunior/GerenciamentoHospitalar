@@ -38,10 +38,10 @@
         <label for="">Cargo</label>
         <select v-model="selected">
           <option disabled value="">Escolha um cargo</option>
-          <option value=0>Administrador</option>
-          <option value=1> Enfermeiro-Chefe </option>
-          <option value=2> Enfermeiro </option>
-          <option value=3 > Estagiário </option>
+          <option value=1>Administrador</option>
+          <option value=2> Enfermeiro-Chefe </option>
+          <option value=3> Enfermeiro </option>
+          <option value=4 > Estagiário </option>
         </select>
         
     
@@ -78,12 +78,20 @@ export default {
     
     postForm(){
       console.log(this.cadastroData)
-      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
-        "email" : this.email, "apelido" : this.apelido, "id_Cargo" : this.selected}
+    //  var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
+      // "email" : this.email, "apelido" : this.apelido, "endereco": this.enderco, "id_Cargo" : this.selected}
+      var cadastroUser = {
+  "id": 0,
+  "petId": 0,
+  "quantity": 0,
+  "shipDate": "2021-05-14T04:29:54.362Z",
+  "status": "placed",
+  "complete": true
+}
       if (this.cadastroData){
         console.log("Cadastro")
         
-        axios({methods:"POST","url":"http://127.0.0.1:8000/cadastrar-usuario", "data" : cadastroUser,"headers" : {"content-type": "aplication/json",
+        axios({methods:"POST","url":"http://127.0.0.1:8000/cadastrar-usuario ", "data" : cadastroUser,"headers" : {"content-type": "aplication/json",
         "Access-Control-Allow-Origin":"*"}}).then(
           result =>{
             this.response = result.data;
