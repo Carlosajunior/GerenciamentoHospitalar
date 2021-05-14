@@ -53,7 +53,8 @@
 </template>
 
 <script>
-import axios from 'axios' 
+//import axios from 'axios'
+import admServices from "../../services/admServices"
 export default {
   nome: "AdmCad",
   props: {
@@ -62,34 +63,34 @@ export default {
   },
   data(){
     return{
-    name : "Nome",
-    cpf : "CPF",
-    enderco:"Endereço",
-    telefone:"Telefone",
-    email:"Email",
+      // form: {
+      //   name: undefined,
+      //   cpf: undefined,
+      //   enderco
+      // }
+    name : undefined,
+    cpf : undefined,
+    enderco:undefined,
+    telefone:undefined,
+    email:undefined,
     senha : null,
-    apelido : "Apelido",
+    apelido : undefined,
     response : null,
-    selected: "",
+    selected: undefined,
     cadastroData : this.cadastro
     }
   },
   methods:{
     
-    postForm(){
+    async postForm(){
       console.log(this.cadastroData)
-     var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
-       "email" : this.email, "apelido" : this.apelido, "endereco": this.enderco, "id_Cargo" : this.selected}
+      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
+      "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
+     
       if (this.cadastroData){
         console.log("Cadastro")
-        
-        axios.post("http://127.0.0.1:8000/cadastrar-usuario ", {"data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
-          result =>{
-            this.response = result.data;
-            alert("Formulário enviado")
-          }
-        ) 
-        console.log(this.response)
+        var cadastrar = await admServices.post(cadastroUser)
+        console.log(cadastrar)
         //this.$router.push('HomeAdm')
 
       } 
