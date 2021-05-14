@@ -18,7 +18,6 @@ class Usuario extends Model
         'email',
         'senha',
         'telefone',
-        'cargo',
         'cpf',
         'apelido',
         'id_Cargo'
