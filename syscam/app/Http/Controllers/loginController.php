@@ -11,8 +11,8 @@ class loginController extends Controller
         $apelido = $request -> apelido;
         $senha = $request -> senha;
         $usuario = Usuario::where('apelido', "=", $apelido)->first();
-        if($usuario->senha == $senha)
-            return print("Login validado com sucesso.") ;
-        return print("credenciais inválidos.");
+        if($usuario && $usuario->senha == $senha)
+            return true ;
+        return false;
     }
 }
