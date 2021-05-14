@@ -5,7 +5,7 @@
         </enf-chefe-menu>
     </div>
     <div>
-        <enf-chefebar>
+        <enf-chefebar :title="'Estoque de Medicamentos'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
         <enf-chefe-medicamentos>

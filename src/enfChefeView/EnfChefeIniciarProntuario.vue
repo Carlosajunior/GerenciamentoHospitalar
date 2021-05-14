@@ -5,7 +5,7 @@
         </enf-chefe-menu>
     </div>
     <div>
-        <enf-chefebar>
+        <enf-chefebar :title="'Iniciar Prontuário'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
     <div>

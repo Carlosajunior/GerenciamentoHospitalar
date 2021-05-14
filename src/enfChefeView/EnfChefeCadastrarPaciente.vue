@@ -1,17 +1,20 @@
 <template>
+<div>
+    <h2></h2>
+
     <div>
         <enf-chefe-menu>
         </enf-chefe-menu>
     </div>
     <div>
-        <enf-chefebar>
+        <enf-chefebar :title="'Cadastrar Paciente'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
     <div>
         <enf-chefe-cad>
         </enf-chefe-cad>
     </div>   
- 
+ </div>
 </template>
 
 <script>

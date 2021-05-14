@@ -5,7 +5,7 @@
         </enf-chefe-menu>
     </div>
     <div>
-        <enf-chefebar>
+        <enf-chefebar :title="'Agendamentos Pendentes'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
     <div>

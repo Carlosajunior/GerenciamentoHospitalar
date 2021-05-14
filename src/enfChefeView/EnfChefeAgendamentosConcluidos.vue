@@ -4,7 +4,7 @@
       <enf-chefe-menu> </enf-chefe-menu>
     </div>
     <div>
-      <enf-chefebar> </enf-chefebar>
+      <enf-chefebar :title="'Agendamentos Concluídos'" kindUser="Enfermeiro Chefe"> </enf-chefebar>
     </div>
     <div>
       <enf-chefe-concluidos> </enf-chefe-concluidos>

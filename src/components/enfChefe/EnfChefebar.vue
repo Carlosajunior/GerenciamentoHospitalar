@@ -4,13 +4,13 @@
           <label for="nav-toggle">
             <span class="las la-bars"></span>
           </label>
-        
+        {{title}}
         </h2>
         <div class="user-wrapper">
           <img  src="../assetsComponents/menusybl.png" width="50px" height="50px" alt="">
           <div>
-            <h4>Lembrar de trocar</h4>
-            <small>Lembrar de interpolar</small>
+            <p>Lembrar de trocar</p>
+            <small>{{kindUser}}</small>
           </div>
         </div>
       </header>
@@ -19,7 +19,7 @@
 <script>
 
 export default {
-    name:'AdmBar',
+    name:'EnfChefebar',
 
     data: function(){
         return {
@@ -27,7 +27,11 @@ export default {
         };
     },
 
-    props:['title']
+    props:{
+      title : String,
+      user : String,
+      kindUser : String
+    }
 }
 
 

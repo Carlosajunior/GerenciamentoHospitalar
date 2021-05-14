@@ -5,7 +5,7 @@
         </enf-chefe-menu>
     </div>
     <div>
-        <enf-chefebar>
+        <enf-chefebar :title="'Relatório de Profissionais'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
         <enf-chefe-rela>

@@ -4,7 +4,7 @@
       <enf-chefe-menu> </enf-chefe-menu>
     </div>
     <div>
-      <enf-chefebar> </enf-chefebar>
+      <enf-chefebar :title="'Lista de Pacientes'" kindUser="Enfermeiro Chefe"> </enf-chefebar>
     </div>
     <enf-chefe-paciente> </enf-chefe-paciente>
   </div>
