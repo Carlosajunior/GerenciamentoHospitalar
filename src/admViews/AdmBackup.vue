@@ -1,12 +1,15 @@
 <template>
-    <div>
-    <input type="checkbox" id="nav-toggle">
+    <div class="container" id="divdiv">
 
+    <input type="checkbox" id="nav-toggle">
+   
         <adm-menu>
         </adm-menu>
+        
         <div id="main-content">
             <adm-bar :title="'Backup'" :kindUser="'Administrador'">
             </adm-bar>
+            
             <div class="formulario">
                 <form  @submit.prevent="backup">
                     <div class="mb-3">
@@ -17,7 +20,8 @@
                 </form>
             </div>
         </div>
-    </div>
+        </div>
+    
 </template>
 
 <script>
@@ -35,5 +39,9 @@ export default {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;
+}
+
+#divdiv {
+    margin-top:10%
 }
 </style>
