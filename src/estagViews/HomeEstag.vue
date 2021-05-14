@@ -3,9 +3,10 @@
         <estag-menu>
         </estag-menu>
     </div>
-    <div>
+    <div class="main-content">
         <estag-bar>
         </estag-bar>
+        <img class="img-fluid" src="../assets/enfCapa.jpg">
     </div>
         
  
@@ -20,5 +21,11 @@ export default {
 </script>
 
 <style>
-
+#main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+}
+.img-fluid{
+    padding: 10%;
+}
 </style>
