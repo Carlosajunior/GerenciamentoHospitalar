@@ -28,11 +28,11 @@
       </div>
       <div>
         <label for="">Senha</label>
-        <input class="input-for" type="password"  v-model="senha" required  />
+        <input class="input-for" type="password" id="senha" v-model="senha" required  />
       </div>
       <div>
         <label for="">Repetir senha</label>
-        <input class="input-for" type="password"  name="Repetir senha" required  />
+        <input class="input-for" type="password" id="senha2" required  />
       </div>
     
         <label for="">Cargo</label>
@@ -115,7 +115,24 @@ export default {
         */
       }
     }
+  },
+
+  creat :{ validarSenha() {
+  var senha1 = document.getElementById("senha");
+  var senha2 = document.getElementById("senha2");
+  
+  var s1 = senha1.value;
+  var s2 = senha2.value;
+  if (s1 == s2) {
+    alert("Dados Cadastrados");
+    return true;
+  } else {
+    alert("Senhas não batem. Verifique o valor digitado.");
+    return false;
   }
+}
+}
+
 };
 </script>
 

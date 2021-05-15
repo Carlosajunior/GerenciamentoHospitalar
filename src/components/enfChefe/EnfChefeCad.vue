@@ -3,7 +3,7 @@
     <form @submit.prevent="postForm">
       <div >
         <label for="">Nome completo</label>
-        <input class="input-for" type="text" v-model="name" required />
+        <input class="input-for" type="text" v-model="nome" required />
       </div>
       <div>
         <label for="">CPF</label>
@@ -23,15 +23,15 @@
       </div>
       <div>
         <label for="">Tipo sanguíneo</label>
-        <input class="input-for" type="text"  name="Tipo sanguineo" required  />
+        <input class="input-for" type="text"  name="Tipo sanguineo" v-model="TipoSanguineo" required  />
       </div>
       <div>
         <label for="">Nome do responsável</label>
-        <input class="input-for" type="text"  name="Nome do responsavel" required  />
+        <input class="input-for" type="text"  name="Nome do responsavel" v-model="NomeResponsavel" required  />
       </div>
       <div>
         <label for="">Telefone do responsável</label>
-        <input class="input-for" type="text"  name="Telefone do responsavel" required  />
+        <input class="input-for" type="text"  name="Telefone do responsavel"  v-model="TelResponsavel" required  />
       </div>    
     
           <button type="submit" class="b-salvar">Salvar</button>
@@ -45,18 +45,16 @@
 //import axios from 'axios' 
 export default {
   nome: "EnfChefeCad",
-  props: {
-    h2Name : String,
-    cadastro : Boolean
-  },
   data(){
     return{
-    name : null,
-    cpf : null,
-    enderco:null,
-    telefone:null,
-    email:null,
-    response : null,
+    name : "nome",
+    cpf : "cpf",
+    enderco: "endereco",
+    telefone: "telefone",
+    email: "email",
+    TipoSanguineo : "TipoSanguineo",
+    NomeResponsavel: "NomeResponsavel",
+    TelResponsavel: "TelResponsavel",
     cadastroData : this.cadastro
     }
   },
