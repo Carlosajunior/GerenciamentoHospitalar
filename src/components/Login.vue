@@ -35,8 +35,8 @@
 
 <script >
 
-import axios from 'axios'
 
+import loginService from "../services/loginService"
 export default {
   name: 'Login',
   data(){
@@ -50,15 +50,16 @@ export default {
 
 
   methods:{
-    login(){
+    async login(){
      if (this.apelido != null && this.senha !=null){
        var loginDataLaravel = {"apelido" : this.apelido, "senha" : this.senha}
-       axios({methods:"POST", "url":"https://httpbin.org/post", "data": loginDataLaravel, "headers" : {"content-type": "aplication/json"}}).then(
-         result => {
-           this.response = result.data;
-         }
-       );
-       console.log(this.response);
+      //  axios({methods:"POST", "url":"https://127.0.0.1:8000/login", "data": loginDataLaravel, "headers" : {"content-type": "aplication/json"}}).then(
+      //    result => {
+      //      this.response = result.data;
+      //    }
+      //  );
+      var teste = await loginService.post(loginDataLaravel)
+       console.log(teste.data);
        if(this.apelido == "Adm" && this.senha == "Adm"){
          this.$emit("authenticaded",true);
          this.$router.replace({name:"HomeEnf"})
