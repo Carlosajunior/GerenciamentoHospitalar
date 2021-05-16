@@ -20,5 +20,5 @@ Route::get("/mostrar-usuarios", [Usuario::class, "mostrarUsuarios"]);
 
 Route::post("/login", [loginController::class, "login"]);
 
-Route::post("/usuario/editar/{id}", [editarController::class, "edit"])->name('usuario-edit');
+Route::get("/usuario/editar/{id}", [editarController::class, "edit"])->name('usuario-edit');
 Route::post("/usuario/editar/{id}", [editarController::class, "Update"])->name('usuario-update');

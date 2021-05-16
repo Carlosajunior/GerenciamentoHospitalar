@@ -16,11 +16,11 @@ class editarController extends Controller
     }
 
 
-    public function edit($id)
-    {
-        $usuario = Usuario::find($id);
-        return view('usuario.update', ['user' => $usuario]);
-    }
+    //public function edit($id)
+    //{
+    //    $usuario = Usuario::find($id);
+    //    return view('usuario.update', ['user' => $usuario]);
+    //}
 
 
 }
