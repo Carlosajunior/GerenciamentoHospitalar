@@ -21,17 +21,26 @@
         <label for="">Endereço</label>
         <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
-      <div>
-        <label for="">Tipo sanguíneo</label>
-        <input class="input-for" type="text"  name="Tipo sanguineo" v-model="TipoSanguineo" required  />
-      </div>
+      <label for="">Tipo sanguíneo</label>
+        <select v-model="TipoSanguineo">
+          <option disabled value="">Escolha um tipo sanguíneo</option>
+          <option value=1>A+</option>
+          <option value=2>A-</option>
+          <option value=3>B+ </option>
+          <option value=4 >B- </option>
+          <option value=5 >AB+ </option>
+          <option value=6 >AB- </option>
+          <option value=7 >O+ </option>
+          <option value=8 >O- </option>
+        </select>
+        
       <div>
         <label for="">Nome do responsável</label>
-        <input class="input-for" type="text"  name="Nome do responsavel" v-model="NomeResponsavel" required  />
+        <input class="input-for" type="text"  v-model="NomeResponsavel" required  />
       </div>
       <div>
         <label for="">Telefone do responsável</label>
-        <input class="input-for" type="text"  name="Telefone do responsavel"  v-model="TelResponsavel" required  />
+        <input class="input-for" type="text"  v-model="TelResponsavel" required  />
       </div>    
     
           <button type="submit" class="b-salvar">Salvar</button>
@@ -42,22 +51,35 @@
 </template>
 
 <script>
-//import axios from 'axios' 
+//import axios from 'axios'
+import enfChefeServices from "../../services/enfChefeServices"
 export default {
+  
   nome: "EnfChefeCad",
   data(){
     return{
-    name : "nome",
-    cpf : "cpf",
-    enderco: "endereco",
-    telefone: "telefone",
-    email: "email",
-    TipoSanguineo : "TipoSanguineo",
-    NomeResponsavel: "NomeResponsavel",
-    TelResponsavel: "TelResponsavel",
+    name : undefined,
+    cpf : undefined,
+    enderco: undefined,
+    telefone: undefined,
+    email: undefined,
+    TipoSanguineo : undefined,
+    NomeResponsavel: undefined,
+    TelResponsavel: undefined,
     cadastroData : this.cadastro
     }
   },
+   methods:{
+    
+    async postForm(){
+      console.log(this.cadastroData)
+      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
+      "email" : this.email, "TipoSanguineo" : this.TipoSanguineo, "NomeResponsavel": this.NomeResponsavel,
+      "endereco": this.enderco, "TelResponsavel" : this.TelResponsavel}
+      var cadastrar = await enfChefeServices.post(cadastroUser)
+      console.log(cadastrar)
+      }
+      }
 };
 </script>
 
