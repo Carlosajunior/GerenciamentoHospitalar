@@ -55,6 +55,7 @@
 <script>
 //import axios from 'axios'
 import admServices from "../../services/admServices"
+import admEditarService from "../../services/admEditarService"
 export default {
   nome: "AdmCad",
   props: {
@@ -96,8 +97,9 @@ export default {
       } 
 
       else{
-        cadastroUser.operacao = "Editar Usuário"
         console.log("Editar")
+        var editar = await admEditarService.post(cadastroUser)
+        console.log(editar)
         /*
         axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
           result =>{
