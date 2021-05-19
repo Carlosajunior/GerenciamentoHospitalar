@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\cadastroController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\editarController;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Route;
 /*
@@ -22,3 +23,5 @@ Route::post("/login", [loginController::class, "login"]);
 
 Route::get("/usuario/editar/{id}", [editarController::class, "edit"])->name('usuario-edit');
 Route::post("/usuario/editar/{id}", [editarController::class, "Update"])->name('usuario-update');
+
+Route::patch("/editar", [editarController::class, "update"]);

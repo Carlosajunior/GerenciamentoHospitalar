@@ -20,7 +20,6 @@ class Usuario extends Model
         'telefone',
         'cpf',
         'apelido',
-        'id_Cargo'
     ];
 
     /**
@@ -30,7 +29,7 @@ class Usuario extends Model
      */
     protected $hidden = [
         'senha',
-        'idUsuario',
+        'id',
         'remember_token',
     ];
     
