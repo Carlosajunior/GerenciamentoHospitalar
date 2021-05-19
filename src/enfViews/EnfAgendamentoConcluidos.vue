@@ -14,7 +14,7 @@
 
 <script>
 import EnfMenu from "../components/enf/EnfMenu.vue";
-import EnfBar from "../components/enf/EnfBar.vue";
+import EnfBar from '../components/adm/AdmBar.vue'
 import EnfConcluidos from "../components/enf/EnfConcluidos.vue";
 export default {
   components: { EnfMenu, EnfBar, EnfConcluidos },
