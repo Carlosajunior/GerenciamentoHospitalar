@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
-
-class editarController extends Controller
+class controllerUsuario extends Controller
 {
-    
-    public function update(Request $request)
+    public function mostrarUsuarios(){
+        $array = collect([]);
+       foreach (Usuario::all() as $Usuario)
+            $array->push($Usuario);
+        return($array);
+    }
+
+    public function editarCadastro(Request $request)
     {
         $usuario = Usuario::firstWhere('id','=',$request->id);
         if($usuario != null){
@@ -22,7 +27,6 @@ class editarController extends Controller
                 $usuario -> telefone = $request -> telefone;
             if($request-> cpf != null){
                 $usuarioAux = Usuario::firstWhere('cpf','=',$request->cpf);
-                $teste = $usuarioAux->cpf;
                 if($usuarioAux == null)
                     $usuario -> cpf = $request -> cpf;
                 else
@@ -43,12 +47,17 @@ class editarController extends Controller
             print('não foram encontrados usuários cadastrados com o id informado.');
     }
 
-
-    //public function edit($id)
-    //{
-    //    $usuario = Usuario::find($id);
-    //    return view('usuario.update', ['user' => $usuario]);
-    //}
-
-
+    public function criarUsuario(Request $request){
+        $usuario = new Usuario;
+        $usuario = Usuario::create([
+            'nome' => $request -> nome,
+            'email' => $request -> email,
+            'senha'=> $request -> senha,                
+            'telefone'=> $request -> telefone,
+            'cpf'=> $request -> cpf,
+            'apelido'=> $request -> apelido,
+            'id_Cargo'=> $request -> id_Cargo
+        ]);
+        return $usuario;
+    }
 }

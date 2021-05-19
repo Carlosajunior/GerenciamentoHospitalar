@@ -20,6 +20,7 @@ class Usuario extends Model
         'telefone',
         'cpf',
         'apelido',
+        'id_Cargo'
     ];
 
     /**
@@ -35,9 +36,5 @@ class Usuario extends Model
     
     protected $table = 'usuario';
     public $timestamps = false;
-
-    public function mostrarUsuarios(){
-       foreach (Usuario::all() as $Usuario)
-        echo $Usuario->nome; 
-    }
+    
 }

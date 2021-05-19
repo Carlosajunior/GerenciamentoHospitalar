@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\cadastroController;
+use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\editarController;
 use App\Models\Usuario;
@@ -15,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post("/cadastrar-usuario", [cadastroController::class, "criarUsuario"]);
+Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
-Route::get("/mostrar-usuarios", [Usuario::class, "mostrarUsuarios"]);
+Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 
 Route::post("/login", [loginController::class, "login"]);
 
-Route::patch("/editar", [editarController::class, "update"]);
+Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
