@@ -15,7 +15,7 @@ class controllerUsuario extends Controller
 
     public function editarCadastro(Request $request)
     {
-        $usuario = Usuario::firstWhere('id','=',$request->id);
+        $usuario = Usuario::firstWhere('cpf','=',$request->cpf);
         if($usuario != null){
             if($request -> nome != null)
                 $usuario -> nome = $request -> nome;
@@ -44,7 +44,7 @@ class controllerUsuario extends Controller
             return print('dados alterados com sucesso.');
         }
         else
-            print('não foram encontrados usuários cadastrados com o id informado.');
+            print('CPF inválido.');
     }
 
     public function criarUsuario(Request $request){
