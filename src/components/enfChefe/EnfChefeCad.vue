@@ -7,7 +7,7 @@
       </div>
       <div>
         <label for="">CPF</label>
-        <input class="input-for" type="text" v-model="cpf" required />
+        <input class="input-for" type="text"  placeholder="Ex.: 000.000.000-00" pattern="\d{3}.\d{3}.\d{3}-\d{2}" v-model="cpf" required />
       </div>
       <div>
         <label for="">Email</label>
@@ -15,7 +15,7 @@
       </div>
       <div>
         <label for="">Telefone</label>
-        <input class="input-for" type="text" v-model="telefone" required  />
+        <input class="input-for" type="text"  v-model="telefone" required  />
       </div>
       <div>
         <label for="">Endereço</label>
@@ -23,7 +23,7 @@
       </div>
       <label for="">Tipo sanguíneo</label>
         <select v-model="TipoSanguineo">
-          <option disabled value="">Escolha um tipo sanguíneo</option>
+          <option disabled value="">Escolha um tipo sanguíneo:</option>
           <option value=1>A+</option>
           <option value=2>A-</option>
           <option value=3>B+ </option>
