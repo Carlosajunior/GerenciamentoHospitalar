@@ -10,7 +10,7 @@ class editarController extends Controller
     
     public function update(Request $request)
     {
-        $usuario = Usuario::where('id','=',$request->id);
+        $usuario = Usuario::firstWhere('id','=',$request->id);
         if($usuario != null){
             if($request -> nome != null)
                 $usuario -> nome = $request -> nome;
@@ -21,7 +21,8 @@ class editarController extends Controller
             if($request-> telefone != null)
                 $usuario -> telefone = $request -> telefone;
             if($request-> cpf != null){
-                $usuarioAux = Usuario::where('cpf','=',$request->cpf);
+                $usuarioAux = Usuario::firstWhere('cpf','=',$request->cpf);
+                $teste = $usuarioAux->cpf;
                 if($usuarioAux == null)
                     $usuario -> cpf = $request -> cpf;
                 else
@@ -29,7 +30,7 @@ class editarController extends Controller
             }
                 $usuario -> cpf = $request -> cpf;
             if($request -> apelido != null){
-                $usuarioAux = Usuario::where('apelido','=',$request->apelido);
+                $usuarioAux = Usuario::firstWhere('apelido','=',$request->apelido);
                 if($usuarioAux == null)
                     $usuario -> apelido = $request -> apelido;
                 else
