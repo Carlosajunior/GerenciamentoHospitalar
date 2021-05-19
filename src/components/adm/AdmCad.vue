@@ -55,6 +55,7 @@
 <script>
 //import axios from 'axios'
 import admServices from "../../services/admServices"
+import admEditarService from "../../services/admEditarService"
 export default {
   nome: "AdmCad",
   props: {
@@ -83,21 +84,21 @@ export default {
   methods:{
     
     async postForm(){
-      console.log(this.cadastroData)
+      var x = this.cadastroData
+      console.log(x)
       var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
       "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
      
-      if (this.cadastroData){
-        console.log("Cadastro")
+      if (this.cadastroData==true){
+        console.log("Cadastro") 
         var cadastrar = await admServices.post(cadastroUser)
         console.log(cadastrar)
         //this.$router.push('HomeAdm')
 
-      } 
-
-      else{
-        cadastroUser.operacao = "Editar Usuário"
+      }else{
         console.log("Editar")
+        var editar = await admEditarService.post(cadastroUser)
+        console.log(editar)
         /*
         axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
           result =>{
@@ -107,25 +108,9 @@ export default {
         */
       }
     }
-  },
-
-  creat :{ validarSenha() {
-  var senha1 = document.getElementById("senha");
-  var senha2 = document.getElementById("senha2");
-  
-  var s1 = senha1.value;
-  var s2 = senha2.value;
-  if (s1 == s2) {
-    alert("Dados Cadastrados");
-    return true;
-  } else {
-    alert("Senhas não batem. Verifique o valor digitado.");
-    return false;
   }
-}
-}
-
 };
+
 </script>
 
 <style>

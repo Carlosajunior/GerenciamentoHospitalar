@@ -2,7 +2,7 @@
         <div>
             <adm-menu></adm-menu>
         <div id="main-content">
-            <adm-bar :title="'Editar Usuário'" kindUser="Administrador"></adm-bar>
+            <adm-bar :title="'Editar Usuário'" :cadastro="false"></adm-bar>
             
         </div>
         <div class="row" style="margin-top:50px">
