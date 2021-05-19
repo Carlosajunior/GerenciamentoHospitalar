@@ -10,21 +10,31 @@ class editarController extends Controller
     
     public function update(Request $request)
     {
-        $usuario = Usuario::find($request->id);
+        $usuario = Usuario::where('id','=',$request->id);
         if($usuario != null){
-            print($usuario -> nome);
             if($request -> nome != null)
                 $usuario -> nome = $request -> nome;
-            else if($request -> email != null)
+            if($request -> email != null)
                 $usuario -> email = $request->email;
-            else if($request -> senha != null)
+            if($request -> senha != null)
                 $usuario -> senha = $request->senha;
-            else if($request-> telefone != null)
+            if($request-> telefone != null)
                 $usuario -> telefone = $request -> telefone;
-            else if($request-> cpf != null)
+            if($request-> cpf != null){
+                $usuarioAux = Usuario::where('cpf','=',$request->cpf);
+                if($usuarioAux == null)
+                    $usuario -> cpf = $request -> cpf;
+                else
+                    return print('CPF inválido.');
+            }
                 $usuario -> cpf = $request -> cpf;
-            else if($request -> apelido != null)
-                $usuario -> apelido = $request -> apelido;
+            if($request -> apelido != null){
+                $usuarioAux = Usuario::where('apelido','=',$request->apelido);
+                if($usuarioAux == null)
+                    $usuario -> apelido = $request -> apelido;
+                else
+                    return print('Este apelido já está em uso, escolha outro.');
+            }                
             $usuario->save();
             return print('dados alterados com sucesso.');
         }
