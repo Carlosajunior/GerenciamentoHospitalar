@@ -29,6 +29,7 @@ class Usuario extends Model
      * @var array
      */
     protected $hidden = [
+        'cpf',
         'senha',
         'id',
         'remember_token',

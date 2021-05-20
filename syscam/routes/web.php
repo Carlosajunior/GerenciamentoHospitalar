@@ -3,6 +3,7 @@ use App\Http\Controllers\cadastroController;
 use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\editarController;
+use App\Http\Controllers\controllerPaciente;
 use App\Models\Usuario;
 use App\Models\log;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,10 @@ Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
 Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 
-Route::post("/login", [loginController::class, "login"]);
+Route::post("/login", [controllerLogin::class, "login"]);
 
 Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 
 Route::get("/logs", [log::class, "mostrarLogs"]);
+
+Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);

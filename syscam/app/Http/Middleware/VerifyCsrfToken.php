@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'cadastrar-usuario',
         'login',
-        'editar-cadastro'
+        'editar-cadastro',
+        'cadastrar-paciente'
     ];
 }
