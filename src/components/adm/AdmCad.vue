@@ -83,8 +83,8 @@ export default {
   },
   methods:{
     async editarForm(){
-      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
-      "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
+      var cadastroUser ={"nome" : this.name, "telefone" : this.telefone,
+      "email" : this.email, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
       var editar = await admEditarService.pacth(cadastroUser)
       console.log(editar);
     },
