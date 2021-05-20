@@ -1,10 +1,8 @@
 <?php
-use App\Http\Controllers\cadastroController;
+use App\Http\Controllers\controllerMedicamento;
 use App\Http\Controllers\controllerUsuario;
-use App\Http\Controllers\loginController;
-use App\Http\Controllers\editarController;
+use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
-use App\Models\Usuario;
 use App\Models\log;
 use Illuminate\Support\Facades\Route;
 /*
@@ -29,3 +27,5 @@ Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 Route::get("/logs", [log::class, "mostrarLogs"]);
 
 Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
+
+Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);

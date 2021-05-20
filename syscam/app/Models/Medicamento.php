@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Medicamento extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $fillable = [
+        'lote',
+        'quantidade',
+        'senha',
+        'nome'
+    ];
 }
