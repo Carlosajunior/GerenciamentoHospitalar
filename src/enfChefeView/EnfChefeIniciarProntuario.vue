@@ -17,7 +17,7 @@
 
 <script>
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
-import EnfChefebar from '../components/enfChefe/EnfChefebar.vue'
+import EnfChefebar from '../components/adm/AdmBar.vue'
 import EnfChefeProCad from '../components/enfChefe/EnfChefeProCad.vue'
 export default {
     components:{EnfChefeMenu, EnfChefebar, EnfChefeProCad}

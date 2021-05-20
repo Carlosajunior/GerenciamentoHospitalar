@@ -1,29 +1,30 @@
 <template>
   <body class="formulario">
     <form @submit.prevent="postForm">
-      <div >
+      <div class="divs">
         <label for="">Nome completo</label>
         <input class="input-for" type="text" v-model="nome" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">CPF</label>
-        <input class="input-for" type="text" v-model="cpf" required />
+        <input class="input-for-menor" type="text"  placeholder="Ex.: 000.000.000-00" pattern="\d{3}.\d{3}.\d{3}-\d{2}" v-model="cpf" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Email</label>
         <input class="input-for" type="email"  v-model="email" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Telefone</label>
-        <input class="input-for" type="text" v-model="telefone" required  />
+        <input class="input-for-menor" type="text"  v-model="telefone" required  />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Endereço</label>
         <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
-      <label for="">Tipo sanguíneo</label>
+      <div class="divs">
+      <label for="">Tipo sanguíneo </label>
         <select v-model="TipoSanguineo">
-          <option disabled value="">Escolha um tipo sanguíneo</option>
+          <option disabled value="">Escolha um tipo sanguíneo:</option>
           <option value=1>A+</option>
           <option value=2>A-</option>
           <option value=3>B+ </option>
@@ -33,14 +34,14 @@
           <option value=7 >O+ </option>
           <option value=8 >O- </option>
         </select>
-        
-      <div>
+      </div>  
+      <div class="divs">
         <label for="">Nome do responsável</label>
         <input class="input-for" type="text"  v-model="NomeResponsavel" required  />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Telefone do responsável</label>
-        <input class="input-for" type="text"  v-model="TelResponsavel" required  />
+        <input class="input-for-menor" type="text"  v-model="TelResponsavel" required  />
       </div>    
     
           <button type="submit" class="b-salvar">Salvar</button>
@@ -99,17 +100,29 @@ export default {
   margin-left: 30%;
 }
 
+.divs{
+ padding: 3px;
+}
 
-.input-for {
+input , select{
     border: 1px solid #ccc!important;
-    padding: 6px;
     display: block;
     border: none;
     border-bottom: 1px solid #ccc;
-    width: 50%;
-    padding: 1px 2px;
-    margin-bottom: 5px;
+    padding: 3px 3px;
+    border-radius: 5px;
 }
+select{
+   width: 30%;
+}
+.input-for {
+  width: 60%
+}
+
+.input-for-menor{
+  width: 30%;
+}
+
 button, input {
     overflow: visible;
 }
@@ -117,9 +130,7 @@ button, input {
 input:focus {
   border: 3px solid #555;
 }
-.input-radio{
-  margin-left: 3%;
-}
+
 button{
   display: inline-block;
   width: 15%;
@@ -127,14 +138,21 @@ button{
   border: none;
   padding: 4px;
   color: white;
-  
+  border-radius: 5px;
 }
+
+label{
+  margin-bottom: 0%;
+}
+
 .b-salvar{
   margin-left: 100px;
-  background: blue;
+  background: #2BA9F1;
  
 }
 .b-cancelar{
-  background:crimson;
+  background: red;
   }
+
+
 </style>

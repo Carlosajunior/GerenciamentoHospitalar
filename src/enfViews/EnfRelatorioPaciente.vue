@@ -15,7 +15,7 @@
 
 <script>
 import EnfMenu from '../components/enf/EnfMenu.vue'
-import EnfBar from '../components/enf/EnfBar.vue'
+import EnfBar from '../components/adm/AdmBar.vue'
 import EnfRela from '../components/enf/EnfRela.vue'
 export default {
     components:{EnfMenu, EnfBar, EnfRela} 
