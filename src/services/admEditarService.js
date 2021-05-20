@@ -1,6 +1,6 @@
 import api from "./api.js"
 export default{
-    post:(obj)=>{
-        return api.post("/editar", obj)
+    patch:(obj)=>{
+        return api.patch("/editar-cadastro", obj)
     }
 }

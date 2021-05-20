@@ -22,7 +22,7 @@
         <label for="">Endereço</label>
         <input class="input-for" type="text"  v-model="endereco" required  />
       </div>
-      <div>
+      <div v-if="this.cadastroData==true">
         <label for="">Apelido</label>
         <input class="input-for" type="text"  v-model="apelido" required  />
       </div>
@@ -82,7 +82,12 @@ export default {
     }
   },
   methods:{
-    
+    async editarForm(){
+      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
+      "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
+      var editar = await admEditarService.pacth(cadastroUser)
+      console.log(editar);
+    },
     async postForm(){
       var x = this.cadastroData
       console.log(x)
@@ -97,8 +102,7 @@ export default {
 
       }else{
         console.log("Editar")
-        var editar = await admEditarService.post(cadastroUser)
-        console.log(editar)
+        this.editarForm();
         /*
         axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
           result =>{
