@@ -4,6 +4,7 @@ use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\editarController;
 use App\Models\Usuario;
+use App\Models\log;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 Route::post("/login", [loginController::class, "login"]);
 
 Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
+
+Route::get("/logs", [log::class, "mostrarLogs"]);

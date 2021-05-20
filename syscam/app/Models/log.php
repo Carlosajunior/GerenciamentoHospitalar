@@ -10,6 +10,21 @@ class log extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'log'
+        'data_alteracao',
+        'nome',
+        'telefone',
+        'cpf',
+        'email',
+        'senha',
+        'apelido',
+        'id_Cargo'
+
     ];
+
+    public function mostrarLogs(){
+        $array = collect([]);
+        foreach (log::all() as $Log)
+            $array->push($Log);
+        return($array);
+    }
 }
