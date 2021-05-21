@@ -50,17 +50,19 @@ const routes = [{
         component: () =>
             import ('../admViews/AdmCadastrar.vue')
     },
-    {
-        path: '/admEditarForm',
-        name: 'AdmEditarForm',
-        component: () =>
-            import ('../admViews/AdmEditarForm.vue')
-    },
+    
+    
     {
         path: '/admEditar',
         name: 'AdmEditar',
         component: () =>
             import ('../admViews/AdmEditar.vue')
+    },
+    {
+        path: '/admEditar/:nickname',
+        name: 'AdmEditarForm',
+        component: () =>
+            import ('../admViews/AdmEditarForm.vue')
     },
 
     {
