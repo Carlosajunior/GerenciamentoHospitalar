@@ -7,39 +7,39 @@
         </router-link>
       </div>
 
-      <div class="sidebar-menu">
+      <div class="sidebar-menu" >  
         <ul>
         <li>
-          <router-link to='HomeEnfChefe'>
-          <a href="" class="active">
+          <router-link to='/HomeEnfChefe' active-class="ativo"> 
+          <a href="" >
             <span class="las la-igloo"></span><span>Home</span>
           </a>
           </router-link>
         </li>
         <li>
-            <router-link to='EnfChefeCadastrarPaciente'>
-            <a href="" class="">
+            <router-link to='/EnfChefeCadastrarPaciente' active-class="ativo">
+            <a href="" >
               <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeListaPacientes">
+            <router-link to='/EnfChefeListaPacientes' active-class="ativo">
             <a href="">
               <span class="las la-igloo"></span><span>Lista de Pacientes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeIniciarProntuario">
+            <router-link to='/EnfChefeIniciarProntuario' active-class="ativo">
             <a href="">
               <span class="las la-users"></span><span>Iniciar Prontuário</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to ="EnfChefeAcompanhaProntuario">
-            <a href="">
+            <router-link to ='/EnfChefeAcompanhaProntuario' active-class="ativo">
+            <a href="" >
               <span class="las la-clipboard-list"></span><span>Acompanhar Prontuário
 
               </span>
@@ -47,35 +47,35 @@
             </router-link>
           </li>
           <li>
-            <router-link to="EnfChefeAgendamentoPendentes">
-            <a href="">
+            <router-link to='/EnfChefeAgendamentoPendentes' active-class="ativo">
+            <a href="" >
               <span class="las la-shopping-bag"></span><span>Agendamentos pendentes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "EnfChefeAgendamentosConcluidos">
+            <router-link to= '/EnfChefeAgendamentosConcluidos' active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Agendamentos Concluídos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "EnfChefeEstoqueMedicamentos">
+            <router-link to= '/EnfChefeEstoqueMedicamentos' active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Estoque de Medicamentos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "EnfChefeRelatorio">
+            <router-link to= '/EnfChefeRelatorio' active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Relatório de Profissionais</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "">
+            <router-link to= "" active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Sair</span>
             </a>
@@ -139,7 +139,7 @@ export default {
 
 .sidebar-menu li {
   width: 100%;
-  margin-bottom: 1.7rem;
+  margin-bottom: 1em;
   padding-left: 2rem;
 }
 
@@ -148,15 +148,24 @@ export default {
   display: block;
   color: black;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
-.sidebar-menu a.active {
-  background: rgb(78, 15, 15);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: var(--main-color);
+.sidebar-menu a:hover{
+  background: #9C4747;
+  font-size: 110%;
+  color: white;
   border-radius: 30px 0px 0px 30px;
 }
+
+.sidebar-menu a.ativo{
+  background: #9C4747;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: 1px 5px 5px 1px black;
+  color: #fff;
+}
+
+
 
 .sidebar-menu a span:first-child {
   font-size: 1.5rem;

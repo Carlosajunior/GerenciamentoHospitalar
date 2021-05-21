@@ -3,7 +3,7 @@
     <h2></h2>
 
     <div>
-        <enf-chefe-menu>
+        <enf-chefe-menu >
         </enf-chefe-menu>
     </div>
     <div>
@@ -11,7 +11,7 @@
         </enf-chefebar>
     </div>
     <div>
-        <enf-chefe-cad>
+        <enf-chefe-cad >
         </enf-chefe-cad>
     </div>   
  </div>
