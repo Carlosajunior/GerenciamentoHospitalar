@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Prontuario extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'numero_quarto',
+        'data_internacao',
+        'nome_responsavel',
+        'id_baixa_prontuario',
+        'id_paciente',
+        'idCID',
+        'data_diagnostico'
+    ];
+    
+    protected $hidden = [
+        'id'
+    ];
+    protected $table = 'prontuario';
+    public $timestamps = false;
 }
