@@ -19,9 +19,9 @@
                     <th scope="col">  Selecione</th>
                     <th scope="col"> Selecione</th>
                 </thead>
-                <tbody v-for="(planeta,index) in response" :key="planeta">
+                <tbody v-for="(users) in response" :key="users">
                     
-                     <adm-users :name="planeta" :apelido="index" :cargo="planeta.climate"/>
+                     <adm-users :name="users.nome" :apelido="users.apelido" :cargo="users.id_Cargo"/>
                   
                 </tbody>
             </table>
@@ -50,7 +50,7 @@ export default {
     usuarios: {},
     created(){
         axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios"}).then(result =>{
-            this.response = result;
+            this.response = result.data;
             console.log("Não deu erro!");
             console.log(this.response);
            

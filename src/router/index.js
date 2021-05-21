@@ -51,6 +51,12 @@ const routes = [{
             import ('../admViews/AdmCadastrar.vue')
     },
     {
+        path: '/admEditarForm',
+        name: 'AdmEditarForm',
+        component: () =>
+            import ('../admViews/AdmEditarForm.vue')
+    },
+    {
         path: '/admEditar',
         name: 'AdmEditar',
         component: () =>
@@ -64,12 +70,7 @@ const routes = [{
             import ('../admViews/AdmLog.vue')
     },
 
-    {
-        path: '/admEditarForm',
-        name: 'AdmEditarForm',
-        component: () =>
-            import ('../admViews/AdmEditarForm.vue')
-    },
+ 
     {
         path: '/EnfChefeCadastrarPaciente',
         name: 'EnfChefeCadastrarPaciente',
