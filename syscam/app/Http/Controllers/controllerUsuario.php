@@ -51,7 +51,7 @@ class controllerUsuario extends Controller
             ]);
             $log ->save();           
             $usuario->save();
-            return print('dados alterados com sucesso.');
+            return $usuario;
         }
         else
             print('CPF inválido.');
