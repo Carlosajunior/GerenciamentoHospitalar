@@ -3,6 +3,7 @@ use App\Http\Controllers\controllerMedicamento;
 use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
+use App\Http\Controllers\controllerEnfermeiro;
 use App\Models\log;
 use Illuminate\Support\Facades\Route;
 /*
@@ -29,3 +30,19 @@ Route::get("/logs", [log::class, "mostrarLogs"]);
 Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 
 Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
+
+
+// Rotas Enfermeiro e Estagiario :
+Route::get("/verificarAgendamento_Enf_Est", [controllerEnfermeiro::class, "verificarAgendamento"]);
+Route::get("/RelatorioPaciente_Enf_Est", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
+
+Route::path("/prepararMedicacao_Enf_Est", [controllerEnfermeiro::class, "prepararMedicacao"]);
+
+Route::post("/baixarAgendamento_Enf_Est", [controllerEnfermeiro::class, "baixarAgendamento"]);
+Route::post("/cadastrarPaciente_Enf", [controllerEnfermeiro::class, "cadastrarPaciente"]);
+
+
+/* Em processo Enfermeiro
+Route::get("/AgendamentoBaixados", [controllerEnfermeiro::class, "emitirRelatorioAgendamentoBaixados"]);
+Route::get("/MedicamentosPendentes", [controllerEnfermeiro::class, "emitirMedicamentoPendentes"]);
+*/
