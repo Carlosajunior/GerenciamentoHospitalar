@@ -33,16 +33,15 @@ Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarM
 
 
 // Rotas Enfermeiro e Estagiario :
-Route::get("/verificarAgendamento_Enf_Est", [controllerEnfermeiro::class, "verificarAgendamento"]);
-Route::get("/RelatorioPaciente_Enf_Est", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
+Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
+Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
 
-Route::path("/prepararMedicacao_Enf_Est", [controllerEnfermeiro::class, "prepararMedicacao"]);
+Route::post("/prepararMedicacao", [controllerEnfermeiro::class, "prepararMedicacao"]);
+Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
+Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
 
-Route::post("/baixarAgendamento_Enf_Est", [controllerEnfermeiro::class, "baixarAgendamento"]);
-Route::post("/cadastrarPaciente_Enf", [controllerEnfermeiro::class, "cadastrarPaciente"]);
-
-
-/* Em processo Enfermeiro
+/*
+ Em processo Enfermeiro
 Route::get("/AgendamentoBaixados", [controllerEnfermeiro::class, "emitirRelatorioAgendamentoBaixados"]);
 Route::get("/MedicamentosPendentes", [controllerEnfermeiro::class, "emitirMedicamentoPendentes"]);
 */

@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\controller;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\Prontuario;
 use App\Models\Medicamento;
 use App\Models\agendamento_medicacao;
+use Illuminate\Http\Request;
+
 
 class controllerEnfermeiro extends Controller
 {
     //---------------------------------------------------------------------------------
     public function verificarAgendamento (){   
         $array = collect([]);
-        foreach (Agendamento_medicacao::all() as $Agendamento_medicacao)
-            $array->push($Agendamento_medicacao);
+        foreach (agendamento_medicacao::all() as $agendamento_medicacao)
+            $array->push($agendamento_medicacao);
         return($array);
     }
 
@@ -63,8 +62,9 @@ class controllerEnfermeiro extends Controller
         foreach (Prontuario::all() as $Prontuario)
             $arrayProntuario->push($Prontuario);
 
-        return [$arrayPaciente, $arrayProntuario];
+        return [$arrayPaciente , $arrayProntuario];
     }
+
     /*
     //-----------------------------------------------------------------------------------
     public function emitirRelatorioAgendamentoBaixados(){ // COMO QUE FAZ ?!
@@ -83,7 +83,7 @@ class controllerEnfermeiro extends Controller
     }
     */ 
     //--------------------------------------------------------------------------------------
-    public function cadastrarPaciente(Request $request){        
+    public function cadastrarPacienteEnf(Request $request){        
         $paciente = new Paciente;
         $paciente = Paciente::create([
             'nome' => $request -> nome,
