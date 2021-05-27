@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar">
       <div class="sidebar-brand">
-        <router-link to= 'HomeEnfChefe'> 
+        <router-link to= 'HomeEnfChefe'>
         <h2><span class="lab la-accusoft"></span> <span>Enfermeiro Chefe</span>
         </h2>
         </router-link>
@@ -10,7 +10,7 @@
       <div class="sidebar-menu" >  
         <ul>
         <li>
-          <router-link to='/HomeEnfChefe' active-class="ativo"> 
+          <router-link to='/HomeEnfChefe' active-class="ativo">
           <a href="" >
             <span class="las la-igloo"></span><span>Home</span>
           </a>
@@ -75,7 +75,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to= "" active-class="ativo">
+            <router-link to= "/" active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Sair</span>
             </a>
@@ -140,7 +140,7 @@ export default {
 .sidebar-menu li {
   width: 100%;
   margin-bottom: 1em;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .sidebar-menu a {
@@ -165,6 +165,9 @@ export default {
   color: #fff;
 }
 
+a.ativo span{
+  color: #fff
+}
 
 
 .sidebar-menu a span:first-child {

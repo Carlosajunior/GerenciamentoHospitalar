@@ -70,7 +70,7 @@ const routes = [{
             import ('../admViews/AdmLog.vue')
     },
 
- 
+
     {
         path: '/EnfChefeCadastrarPaciente',
         name: 'EnfChefeCadastrarPaciente',
@@ -124,72 +124,72 @@ const routes = [{
         name: 'HomeEnf',
         component: () =>
             import ('../enfViews/HomeEnf.vue')
-    
+
     },
     {
         path: '/EnfCadastrarPaciente',
         name: 'EnfCadastrarPaciente',
         component: () =>
             import ('../enfViews/EnfCadastrarPaciente.vue')
-    
+
     },
     {
         path: '/EnfAgendamentoPendentes',
         name: 'EnfAgendamentoPendentes',
         component: () =>
             import ('../enfViews/EnfAgendamentoPendentes.vue')
-    
+
     },
     {
         path: '/EnfEstoqueMedicamentos',
         name: 'EnfEstoqueMedicamentos',
         component: () =>
             import ('../enfViews/EnfEstoqueMedicamentos.vue')
-    
+
     },
     {
         path: '/EnfRelatorioPaciente',
         name: 'EnfRelatorioPaciente',
         component: () =>
             import ('../enfViews/EnfRelatorioPaciente.vue')
-    
+
     },
     {
         path: '/EnfAgendamentoConcluidos',
         name: 'EnfAgendamentoConcluidos',
         component: () =>
             import ('../enfViews/EnfAgendamentoConcluidos.vue')
-    
-    },{
+
+    }, {
         path: '/HomeEstag',
         name: 'HomeEstag',
         component: () =>
             import ('../estagViews/HomeEstag.vue')
-    
-    },{
+
+    }, {
         path: '/EstagAgendamentoPendentes',
         name: 'EstagAgendamentoPendentes',
         component: () =>
             import ('../estagViews/EstagAgendamentoPendentes.vue')
-    
-    },{
+
+    }, {
         path: '/EstagEstoqueMedicamentos',
         name: 'EstagEstoqueMedicamentos',
         component: () =>
             import ('../estagViews/EstagEstoqueMedicamentos.vue')
-    
-    },{
+
+    }, {
         path: '/EstagRelatorioPaciente',
         name: 'EstagRelatorioPaciente',
         component: () =>
             import ('../estagViews/EstagRelatorioPaciente.vue')
-    
-    },{
+
+    }, {
         path: '/EstagAgendamentoConcluidos',
         name: 'EstagAgendamentoConcluidos',
         component: () =>
             import ('../estagViews/EstagAgendamentoConcluidos.vue')
-    
+
     },
 ]
 
