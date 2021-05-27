@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class agendamento_medicacao extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $fillable = [
         'alarme',
         'data_hora',

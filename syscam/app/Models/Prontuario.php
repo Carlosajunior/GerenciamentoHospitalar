@@ -12,7 +12,6 @@ class Prontuario extends Model
     protected $fillable = [
         'numero_quarto',
         'data_internacao',
-        'nome_responsavel',
         'id_baixa_prontuario',
         'id_paciente',
         'idCID',

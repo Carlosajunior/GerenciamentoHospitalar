@@ -16,6 +16,9 @@ class VerifyCsrfToken extends Middleware
         'login',
         'editar-cadastro',
         'cadastrar-paciente',
-        'cadastrar-medicamento'
+        'cadastrar-medicamento',
+        'baixarAgendamentoEnf',
+        'cadastrarPacienteEnf',
+        'PrepararMedicacaoEnf'
     ];
 }
