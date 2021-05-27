@@ -16,7 +16,7 @@
       </enf-chefebar>
     </div>
 
-      <table class="table">
+    <table class="table">
       <thead>
         <th scope="col">Enfermeiro/Estágiario</th>
         <th scope="col">Nome do paciente</th>
@@ -27,11 +27,13 @@
 
       <tbody v-for="planeta in response" :key="planeta">
         <enf-chefe-concluidos
-        :enfermeiro="planeta.climate"
+          :enfermeiro="planeta.climate"
           :paciente="planeta.name"
           :horaBaixa="planeta.orbital_period"
           :dataBaixa="planeta.population"
-          :medicacao="planeta.gravity"> </enf-chefe-concluidos>
+          :medicacao="planeta.gravity"
+        >
+        </enf-chefe-concluidos>
       </tbody>
     </table>
   </div>
@@ -44,7 +46,7 @@ import EnfChefeConcluidos from "../components/enfChefe/EnfChefeConcluidos.vue";
 import axios from "axios";
 export default {
   components: { EnfChefeMenu, EnfChefebar, EnfChefeConcluidos },
- data() {
+  data() {
     return {
       response: {},
     };
@@ -62,7 +64,6 @@ export default {
       }
     );
   },
-
 };
 </script>
 
@@ -85,8 +86,7 @@ button {
   padding: 3.2px;
   margin-left: 5%;
 }
-thead{
+thead {
   background-color: rgb(238, 238, 238);
-  text-align: center;
 }
 </style>
