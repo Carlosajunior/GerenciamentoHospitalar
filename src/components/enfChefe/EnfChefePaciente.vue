@@ -1,12 +1,13 @@
 <template>
   <tr class="titulo">
-    <th scope="col" class="paciente">{{ paciente }}</th>
+    <th scope="col">{{ paciente }}</th>
     <th scope="col">{{ id }}</th>
     <th scope="col">{{ prontuario }}</th>
   </tr>
 </template>
 
 <script>
+
 export default {
   name: "EnfChefePaciente",
   props: {
