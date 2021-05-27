@@ -21,7 +21,8 @@
                 </thead>
                 <tbody v-for="(users) in response" :key="users">
                     
-                     <adm-users :name="users.nome" :apelido="users.apelido" :cargo="users.id_Cargo"/>
+                     <adm-users :name="users.nome" :apelido="users.apelido" :cargo="users.id_Cargo" 
+                     :id="4" v-on:EditarUser="this.edi = $event"/>
                   
                 </tbody>
             </table>
@@ -44,7 +45,8 @@ export default {
     AdmMenu,AdmUsers},
     data(){
         return{
-            response : null
+            response : null,
+            edi : undefined
         }
     },
     usuarios: {},
@@ -58,6 +60,13 @@ export default {
             console.log("Erro");
             console.error(error);
         });
+    },
+
+    methods:{
+        editar(){
+            console.log("Escutei o evento")
+            this.$route.push({path:'AdmEditarForm',params:{nickname:this.edi}})
+        }
     }
 
     

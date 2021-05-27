@@ -22,9 +22,9 @@
                                 <th scope="col"> Hora </th>
                             </thead>
 
-                            <tbody v-for="(planeta,index) in response" :key="planeta">
+                            <tbody v-for="(alt,index) in response" :key="index">
                                 
-                                <adm-log-cell :apelido="index" :name="planeta.name" :alteracao="planeta.name" :cargo="planeta.climate" :data="dataDoLog" ></adm-log-cell>
+                                <adm-log-cell :apelido="alt.apelido" :name="alt.cargo" :alteracao="'Editar usuário'" :cargo="'Administrador'" :data="alt.data_alteracao" ></adm-log-cell>
                                 
                             </tbody>
                         </table>
@@ -52,12 +52,12 @@ export default {
     data(){
         return {
             dataDoLog : new Date(),
-            response : {}
+            response : undefined
         }
     },
     created(){
-        axios({method:"GET","url":" https://swapi.dev/api/planets/"}).then(result =>{
-            this.response = result.data.results;
+        axios({method:"GET","url":" http://127.0.0.1:8000/logs"}).then(result =>{
+            this.response = result.data;
             console.log("Não deu erro!");
             console.log(this.response);
            
