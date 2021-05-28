@@ -10,18 +10,18 @@
     </div>
     <div class="row" style="margin-top:140px">
         <div class="table-responsible">
-        <table class="table">
-            <thead>
+    <table class="table">
+    <thead>
       <th scope="col">Medicação</th>
       <th scope="col">Lote</th>
       <th scope="col">Quantidade</th>
       <th scope="col">Data de validade</th>
       <th scope="col">Farmacêutico</th>
     </thead>
-        <t-body v-for="(medicamentos) in response" :key="medicamentos">
+    <t-body v-for="(medicamentos) in response" :key="medicamentos">
         <enf-chefe-medicamentos-cell :medicacao="medicamentos.nome" :lote="medicamentos.cpf" :farmaceutico="medicamentos.apelido"
         :quantidade="medicamentos.cpf" :validade="medicamentos.cpf" />
-        </t-body>
+    </t-body>
         </table>
         </div>
     </div>

@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <tr class="titulo">
+  
+    <tr>
       <th scope="col">{{medicacao}}</th>
       <th scope="col">{{lote}}</th>
       <th scope="col">{{quantidade}}</th>
       <th scope="col">{{validade}}</th>
       <th scope="col">{{farmaceutica}}</th>
     </tr>
-  </div>
 </template>
 
 <script>
