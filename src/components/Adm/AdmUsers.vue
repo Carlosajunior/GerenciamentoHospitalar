@@ -19,14 +19,11 @@ export default {
         id : undefined
 
     },
-    mounted(){
-        console.log(this.$route.params.nickname);
-    },
-
     methods:{
-        editar(event){
-            this.$emit("EditarUser",this.id)
-            console.log(event)
+        editar(){
+            localStorage.setItem('admEditarUser',this.id);
+            console.log(localStorage.getItem('admEditarUser'));
+            this.$emit('EditarUser',this.id)
         }
     }
 }

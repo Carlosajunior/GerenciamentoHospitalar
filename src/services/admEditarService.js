@@ -1,6 +1,6 @@
 import api from "./api.js"
 export default{
-    patch:(obj)=>{
+    editar:(obj)=>{
         return api.patch("/editar-cadastro", obj)
     }
 }

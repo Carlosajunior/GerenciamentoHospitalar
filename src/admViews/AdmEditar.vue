@@ -3,9 +3,9 @@
             <adm-menu></adm-menu>
         <div id="main-content">
             <adm-bar :title="'Editar Usuário'" :cadastro="false"></adm-bar>
-            
+            <div v-show="!view"> <adm-cad :cadastro="false" /> </div>
         </div>
-        <div class="row" style="margin-top:50px">
+        <div class="row" style="margin-top:50px" v-show="view">
             <div class="col-md-3"/>
             <div class="col-md-6">
             <div class="table-reponsible">
@@ -22,7 +22,7 @@
                 <tbody v-for="(users) in response" :key="users">
                     
                      <adm-users :name="users.nome" :apelido="users.apelido" :cargo="users.id_Cargo" 
-                     :id="4" v-on:EditarUser="this.edi = $event"/>
+                     :id="users.cpf" @EditarUser="this.editar"/>
                   
                 </tbody>
             </table>
@@ -38,15 +38,18 @@
 import AdmBar from '../components/adm/AdmBar.vue'
 import AdmMenu from '../components/adm/AdmMenu.vue'
 import AdmUsers from '../components/adm/AdmUsers.vue'
+import AdmCad from '../components/adm/AdmCad.vue'
 import axios from 'axios'
 export default {
     name: 'AdmCadastrar',
     components: {AdmBar,
-    AdmMenu,AdmUsers},
+    AdmMenu,AdmUsers,AdmCad},
     data(){
         return{
             response : null,
-            edi : undefined
+            edi : undefined,
+            view : true,
+            idEd : undefined
         }
     },
     usuarios: {},
@@ -63,9 +66,11 @@ export default {
     },
 
     methods:{
-        editar(){
-            console.log("Escutei o evento")
-            this.$route.push({path:'AdmEditarForm',params:{nickname:this.edi}})
+        editar(valeu){
+            console.log(valeu + "Evento ouvido")
+        
+            this.view = false
+            
         }
     }
 
