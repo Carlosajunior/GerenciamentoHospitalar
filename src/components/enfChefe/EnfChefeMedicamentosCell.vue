@@ -1,5 +1,5 @@
 <template>
-  <div>
+  
     <tr>
       <th scope="col">{{medicacao}}</th>
       <th scope="col">{{lote}}</th>
@@ -7,7 +7,6 @@
       <th scope="col">{{validade}}</th>
       <th scope="col">{{farmaceutica}}</th>
     </tr>
-  </div>
 </template>
 
 <script>
@@ -44,5 +43,8 @@ th {
 }
 th[scope="col"] {
   background-color: rgb(238, 238, 238);
+}
+.titulo th[scope="col"] {
+  padding: 10px;
 }
 </style>

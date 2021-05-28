@@ -56,6 +56,7 @@
 //import axios from 'axios'
 import admServices from "../../services/admServices"
 import admEditarService from "../../services/admEditarService"
+
 export default {
   nome: "AdmCad",
   props: {
@@ -83,9 +84,9 @@ export default {
   },
   methods:{
     async editarForm(){
-      var cadastroUser ={"nome" : this.name, "telefone" : this.telefone,
+      var cadastroUser ={"cpf":sessionStorage.getItem('admEditarUser'),"nome" : this.name, "telefone" : this.telefone,
       "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
-      var editar = await admEditarService.pacth(cadastroUser)
+      var editar = await admEditarService.editar(cadastroUser)
       console.log(editar);
     },
     async postForm(){
@@ -103,13 +104,7 @@ export default {
       }else{
         console.log("Editar")
         this.editarForm();
-        /*
-        axios({methods:"POST","url":"httpblablba", "data" : cadastroUser,"headers" : {"content-type": "aplication/json"}}).then(
-          result =>{
-            this.response = result.data;
-          }
-        )
-        */
+        
       }
     }
   }

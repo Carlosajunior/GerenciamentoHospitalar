@@ -59,7 +59,7 @@ const routes = [{
             import ('../admViews/AdmEditar.vue')
     },
     {
-        path: '/admEditar/:nickname',
+        path: '/admEditarForm',
         name: 'AdmEditarForm',
         component: () =>
             import ('../admViews/AdmEditarForm.vue')
