@@ -1,5 +1,4 @@
 <template>
-  
     <tr>
       <th scope="col">{{medicacao}}</th>
       <th scope="col">{{lote}}</th>
@@ -37,14 +36,7 @@ button {
   margin-left: 5%;
 }
 
-th {
-  padding: 10px;
-  text-align: center;
-}
 th[scope="col"] {
-  background-color: rgb(238, 238, 238);
-}
-.titulo th[scope="col"] {
   padding: 10px;
 }
 </style>

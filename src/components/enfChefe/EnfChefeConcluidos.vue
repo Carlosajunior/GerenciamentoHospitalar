@@ -1,19 +1,11 @@
 <template>
-  <div>
-    <div class="filtro">
-      <label for="">Data da baixa: </label>
-      <input id="date" type="date" />
-      <button>Filtrar</button>
-    </div>
-
-    <tr class="titulo">
-      <th scope="col">Enfermeiro/Estagiário</th>
-      <th scope="col">Nome do paciente</th>
-      <th scope="col">Hora da baixa</th>
-      <th scope="col">Data da baixa</th>
-      <th scope="col">Medicação</th>
-    </tr>
-  </div>
+  <tr class="titulo">
+    <th scope="col">{{ enfermeiro }}</th>
+    <th scope="col">{{ paciente }}</th>
+    <th scope="col">{{ horaBaixa }}</th>
+    <th scope="col">{{ dataBaixa }}</th>
+    <th scope="col">{{ medicacao }}</th>
+  </tr>
 </template>
 
 <script>
@@ -30,25 +22,7 @@ export default {
 </script>
 
 <style>
-label {
-  margin-right: 1%;
-}
-.filtro {
-  padding: 2%;
-}
-button {
-  border: none;
-  background-color: #35b736;
-  color: white;
-  padding: 3.2px;
-  margin-left: 5%;
-}
-
-th {
-  padding: 10px;
-  text-align: center;
-}
 th[scope="col"] {
-  background-color: rgb(238, 238, 238);
+  padding: 10px;
 }
 </style>
