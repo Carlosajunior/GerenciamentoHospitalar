@@ -4,25 +4,82 @@
       <enf-chefe-menu> </enf-chefe-menu>
     </div>
     <div>
-      <enf-chefebar :title="'Lista de Pacientes'" kindUser="Enfermeiro Chefe"> </enf-chefebar>
+      <enf-chefebar :title="'Lista de Pacientes'" kindUser="Enfermeiro Chefe">
+      </enf-chefebar>
     </div>
-    <enf-chefe-paciente> </enf-chefe-paciente>
+    <div class="filtro">
+      <label for="">Nome do paciente ou identificador: </label>
+      <input id="text" type="text" />
+      <button>Buscar</button>
+    </div>
+
+    <table class="table">
+      <thead>
+        <th scope="col">Paciente</th>
+        <th scope="col">Identificador</th>
+        <th scope="col">Prontuário</th>
+      </thead>
+
+      <tbody v-for="(planeta, index) in response" :key="planeta">
+        <enf-chefe-paciente
+          :paciente="planeta.name"
+          :id="index"
+          :prontuario="planeta.climate"
+        >
+        </enf-chefe-paciente>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
-import EnfChefebar from '../components/adm/AdmBar.vue'
+import EnfChefebar from "../components/adm/AdmBar.vue";
 import EnfChefePaciente from "../components/enfChefe/EnfChefePaciente.vue";
+import axios from "axios";
 export default {
   components: { EnfChefeMenu, EnfChefebar, EnfChefePaciente },
+  data() {
+    return {
+      response: {},
+    };
+  },
+  created() {
+    axios({ method: "GET", url: " https://swapi.dev/api/planets/" }).then(
+      (result) => {
+        this.response = result.data.results;
+        console.log("Não deu erro!");
+        console.log(this.response);
+      },
+      (error) => {
+        console.log("Erro");
+        console.error(error);
+      }
+    );
+  },
 };
 </script>
 
 <style>
 .formulario {
   width: 800px;
-  margin-top: 8%;
+  margin-top: 10%;
   margin-left: 30%;
+}
+.filtro {
+  padding: 2%;
+}
+button {
+  border: none;
+  background-color: #2ba9f1;
+  color: white;
+  padding: 3.2px;
+  margin-left: 5%;
+}
+label {
+  margin-right: 1%;
+}
+thead{
+  background-color: rgb(238, 238, 238);
 }
 </style>
