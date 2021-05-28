@@ -3,7 +3,7 @@
             <th scope="col">{{apelido}}</th>
             <th scope="col">{{name}} </th>
             <th scope="col">{{cargo}} </th>
-            <th scope="lcol"> <button @click="editar"> Editar</button> </th>
+            <th scope="col"> <button @click="editar" class="btn btn-link"> Editar</button> </th>
             <th scope="col"> Remover</th>
         </tr>
 </template>

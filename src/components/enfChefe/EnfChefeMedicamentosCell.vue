@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tr>
+    <tr class="titulo">
       <th scope="col">{{medicacao}}</th>
       <th scope="col">{{lote}}</th>
       <th scope="col">{{quantidade}}</th>
@@ -44,5 +44,8 @@ th {
 }
 th[scope="col"] {
   background-color: rgb(238, 238, 238);
+}
+.titulo th[scope="col"] {
+  padding: 10px;
 }
 </style>
