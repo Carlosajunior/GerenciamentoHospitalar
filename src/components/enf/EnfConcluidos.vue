@@ -7,11 +7,12 @@
     </div>
 
     <tr class="titulo">
-      <th scope="col">Nome do paciente</th>
-      <th scope="col">Enfermeiro/Estagiário</th>
-      <th scope="col">Hora da baixa</th>
-      <th scope="col">Data da baixa</th>
+      <th scope="col">Identificador do Paciente</th>
       <th scope="col">Medicação</th>
+      <th scope="col">Dosagem</th>
+      <th scope="col">Quarto</th>
+      <th scope="col">Data</th>
+      <th scope="col">Horário </th>
     </tr>
   </div>
 </template>
