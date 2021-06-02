@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\Prontuario;
 use App\Models\Agendamento_medicacao;
+use App\Models\Medicamento;
 use Illuminate\Http\Request;
 
 class EnfermeiroChefe extends Controller
@@ -35,8 +36,12 @@ class EnfermeiroChefe extends Controller
         return $agendamento;
     }
 
-    public function Criar_Posologia(){
-
+    public function Criar_Posologia(Request $request){
+        $agendamento = Agendamento_medicacao::firstWhere('id','=',$request->id);
+        if($agendamento != null){
+            if($request -> posologia != null)
+                $agendamento->posologia = $request->posologia;
+        }
     }
 
     public function Cadastrar_Paciente(Request $request){
@@ -67,11 +72,17 @@ class EnfermeiroChefe extends Controller
     }
 
     public function Emitir_Pacientes(){
-
+        $array = collect([]);
+        foreach (Paciente::all() as $paciente)
+            $array->push($paciente);
+        return($array);
     }
 
     public function Emitir_Responsaveis_Agendamento(){
-
+        $array = collect([]);
+        foreach (Agendamento_medicacao::all() as $agendamento)
+            $array->push($agendamento->id_usuario);
+        return($array);
     }
 
     public function Verificar_Agendamento(){
@@ -83,10 +94,16 @@ class EnfermeiroChefe extends Controller
     }
 
     public function Emitir_Agendamentos(){
-
+        $array = collect([]);
+        foreach (Agendamento_medicacao::all() as $agendamento)
+            $array->push($agendamento);
+        return($array);
     }
 
     public function Emitir_Medicamentos(){
-
+        $array = collect([]);
+        foreach (Medicamento::all() as $medicamento)
+            $array->push($medicamento);
+        return($array);
     }
 }
