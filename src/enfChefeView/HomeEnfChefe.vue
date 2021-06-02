@@ -25,6 +25,7 @@ export default {
 #main-content {
   transition: margin-left 400ms;
   margin-left: 345px;
+  width: 95px;
 }
 .img-fluid{
     padding: 10%;

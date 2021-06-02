@@ -4,8 +4,11 @@
             <enf-menu>
             </enf-menu>
         </div>
-        <div>
-            <enf-bar :title="'Relatório de Pacientes'" kindUser="Enfermeiro">
+        <div id ="main-content">
+            <enf-bar 
+              :title="'Relatório de Pacientes'" 
+              kindUser="Enfermeiro"
+            >
             </enf-bar>
         </div>
         
@@ -68,6 +71,12 @@ export default {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;
+}
+
+.formulario #main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+  width: 95px;
 }
 
 .filtro {

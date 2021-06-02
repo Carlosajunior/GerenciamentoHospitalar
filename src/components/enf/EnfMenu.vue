@@ -2,7 +2,7 @@
     <div class="sidebar">
       <div class="sidebar-brand">
         <router-link to= 'HomeEnf'> 
-        <h2><span class="lab la-accusoft"></span> <span>Enfermeiro</span>
+        <h2> <span>Enfermeiro</span>
         </h2>
         </router-link>
       </div>
@@ -66,7 +66,7 @@
 
 <script>
 export default {
-    name: 'EnfMenu'
+  name: 'EnfMenu'
 }
 </script>
 
@@ -108,6 +108,12 @@ export default {
 .sidebar-brand span {
   display: inline-block;
   padding-right: 1rem;
+}
+
+.sidebar-brand h2 {
+  text-align: center;
+  padding: auto;
+  margin-top: 10px;
 }
 
 .sidebar-menu {

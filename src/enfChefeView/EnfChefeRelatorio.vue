@@ -7,7 +7,7 @@
     <div>
       <enf-chefe-menu> </enf-chefe-menu>
     </div>
-    <div>
+    <div id ="main-content">
       <enf-chefebar
         :title="'Relatório de Profissionais'"
         kindUser="Enfermeiro Chefe"
@@ -67,6 +67,12 @@ export default {
 </script>
 
 <style>
+#main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+  width: 95px;
+}
+
 .formulario {
   width: 800px;
   margin-top: 8%;

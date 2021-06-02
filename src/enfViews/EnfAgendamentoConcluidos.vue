@@ -3,8 +3,11 @@
     <div>
       <enf-menu> </enf-menu>
     </div>
-    <div>
-      <enf-bar> </enf-bar>
+    <div id ="main-content">
+      <enf-bar
+        :title="'Agendamentos Concluídos'"
+        kindUser="Enfermeiro"
+      > </enf-bar>
     </div>
     <div>
       <enf-concluidos> </enf-concluidos>
@@ -26,5 +29,11 @@ export default {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;
+}
+
+.formulario #main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+  width: 95px;
 }
 </style>

@@ -4,8 +4,11 @@
         <enf-menu>
         </enf-menu>
     </div>
-    <div>
-        <enf-bar>
+    <div id ="main-content">
+        <enf-bar
+            :title="'Estoque de Medicamentos'"
+            kindUser="Enfermeiro"
+        >
         </enf-bar>
     </div>
         <enf-medicamentos>
@@ -23,9 +26,15 @@ export default {
 </script>
 
 <style>
-   .formulario {
+.formulario {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;
+}
+
+.formulario #main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+  width: 95px;
 }
 </style>

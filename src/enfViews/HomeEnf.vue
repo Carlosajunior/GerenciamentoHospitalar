@@ -4,7 +4,10 @@
         </enf-menu>
     </div>
     <div id ="main-content">
-        <enf-bar :title="'Home'" kindUser="Enfermeiro">
+        <enf-bar 
+            :title="'Home'" 
+            kindUser="Enfermeiro"
+        >
         </enf-bar>
         <img class="img-fluid" src="../assets/enfCapa.jpg">
 
@@ -25,6 +28,7 @@ export default {
 #main-content {
   transition: margin-left 400ms;
   margin-left: 345px;
+  width: 95px;
 }
 
 .img-fluid{

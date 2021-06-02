@@ -162,6 +162,10 @@ header {
 
 header h2 {
   color: #222;
+  width: 500px;
+  text-align: start;
+  padding: auto;
+  margin-top: 10px;
 }
 
 header label span {

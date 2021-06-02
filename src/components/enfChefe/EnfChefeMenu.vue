@@ -2,7 +2,7 @@
     <div class="sidebar">
       <div class="sidebar-brand">
         <router-link to= 'HomeEnfChefe'>
-        <h2><span class="lab la-accusoft"></span> <span>Enfermeiro Chefe</span>
+        <h2> <span>Enfermeiro Chefe</span>
         </h2>
         </router-link>
       </div>
@@ -131,6 +131,12 @@ export default {
 .sidebar-brand span {
   display: inline-block;
   padding-right: 1rem;
+}
+
+.sidebar-brand h2 {
+  text-align: center;
+  padding: auto;
+  margin-top: 10px;
 }
 
 .sidebar-menu {
