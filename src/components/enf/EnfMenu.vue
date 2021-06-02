@@ -10,49 +10,49 @@
       <div class="sidebar-menu">
         <ul>
         <li>
-            <router-link to='HomeEnf'>
-            <a href="" class="active">
+            <router-link to='HomeEnf' active-class="ativo">
+            <a href="">
               <span class="las la-igloo"></span><span>Home</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfCadastrarPaciente">
+            <router-link to="EnfCadastrarPaciente" active-class="ativo">
             <a href="">
               <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfAgendamentoPendentes">
+            <router-link to="EnfAgendamentoPendentes" active-class="ativo">
             <a href="">
               <span class="las la-users"></span><span>Agendamento Pendentes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to ="EnfEstoqueMedicamentos">
+            <router-link to ="EnfEstoqueMedicamentos" active-class="ativo">
             <a href="">
               <span class="las la-clipboard-list"></span><span>Estoque de Medicamentos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to="EnfRelatorioPaciente">
+            <router-link to="EnfRelatorioPaciente" active-class="ativo">
             <a href="">
               <span class="las la-shopping-bag"></span><span>Relatório de Pacientes</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "EnfAgendamentoConcluidos">
+            <router-link to= "EnfAgendamentoConcluidos" active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Agendamentos Concluídos</span>
             </a>
             </router-link>
           </li>
           <li>
-            <router-link to= "/">
+            <router-link to= "/" active-class="ativo">
               <a href="">
               <span class="las la-shopping-bag"></span><span>Sair</span>
             </a>
@@ -116,8 +116,8 @@ export default {
 
 .sidebar-menu li {
   width: 100%;
-  margin-bottom: 1.7rem;
-  padding-left: 2rem;
+  margin-bottom: 1em;
+  padding-left: 1rem;
 }
 
 .sidebar-menu a {
@@ -125,15 +125,27 @@ export default {
   display: block;
   color: black;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
-.sidebar-menu a.active {
-  background: rgb(78, 15, 15);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: var(--main-color);
+.sidebar-menu a:hover{
+  background: #9C4747;
+  font-size: 110%;
+  color: white;
   border-radius: 30px 0px 0px 30px;
 }
+
+.sidebar-menu a.ativo{
+  background: #9C4747;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: 1px 5px 5px 1px black;
+  color: #fff;
+}
+
+a.ativo span{
+  color: #fff
+}
+
 
 .sidebar-menu a span:first-child {
   font-size: 1.5rem;

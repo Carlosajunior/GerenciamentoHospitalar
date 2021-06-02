@@ -21,12 +21,12 @@
 export default {
     name:"EnfChefePendentes",
     props:{
-            paciente:null,
-            idEnf : null,
-            prontuario: null,
-            hora:null,
-            data:null,
-            alarme:null
+      paciente:null,
+      idEnf : null,
+      prontuario: null,
+      hora:null,
+      data:null,
+      alarme:null
         
     }
     

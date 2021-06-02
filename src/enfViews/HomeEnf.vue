@@ -3,8 +3,8 @@
         <enf-menu>
         </enf-menu>
     </div>
-    <div class="main-content">
-        <enf-bar>
+    <div id ="main-content">
+        <enf-bar :title="'Home'" kindUser="Enfermeiro">
         </enf-bar>
         <img class="img-fluid" src="../assets/enfCapa.jpg">
 
@@ -26,6 +26,7 @@ export default {
   transition: margin-left 400ms;
   margin-left: 345px;
 }
+
 .img-fluid{
     padding: 10%;
 }

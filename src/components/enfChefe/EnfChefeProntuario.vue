@@ -20,12 +20,12 @@
 export default {
     name:"EnfChefeProntuario",
     props:{
-            paciente:null,
-            idProntuario : null,
-            editarProntuario: null,
-            baixaProntuário:null,
-            visualizarProntuário:null
-        
+      paciente:null,
+      idProntuario : null,
+      editarProntuario: null,
+      baixaProntuário:null,
+      visualizarProntuário:null
+  
     }
     
 }

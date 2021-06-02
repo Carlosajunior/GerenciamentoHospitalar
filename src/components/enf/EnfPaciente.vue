@@ -1,17 +1,9 @@
-<template>
-  <div>
-    <div class="filtro">
-      <label for="">Nome do paciente ou identificador: </label>
-      <input id="text" type="text" />
-      <button>Buscar</button>
-    </div>
-
-    <tr class="titulo">
-      <th scope="col">Nome do paciente</th>
-      <th scope="col">identificador</th>
-      <th scope="col">Prontuários</th>
-    </tr>
-  </div>
+<template>   
+  <tr class="titulo">
+    <th scope="col">{{paciente}}</th>
+    <th scope="col">{{id}}</th>
+    <th scope="col">{{prontuario}}</th>
+  </tr>
 </template>
 
 <script>
@@ -48,6 +40,9 @@ th {
   text-align: center;
 }
 th[scope="col"] {
+  background-color: rgb(238, 238, 238);
+}
+th[scope="row"] {
   background-color: rgb(238, 238, 238);
 }
 </style>
