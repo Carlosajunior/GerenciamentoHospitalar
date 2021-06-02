@@ -167,7 +167,7 @@ export default {
 .sidebar-menu a.ativo{
   background: #9C4747;
   border-radius: 30px 0px 0px 30px;
-  box-shadow: 1px 5px 5px 1px black;
+  box-shadow: -1px 5px 5px 1px black;
   color: #fff;
 }
 
