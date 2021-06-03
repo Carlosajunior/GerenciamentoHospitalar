@@ -1,42 +1,41 @@
 <template>
-  <body class="formulario">
-    <h2></h2>
+<div class="formulario">
     <form @submit.prevent="postForm">
-      <div >
+      <div>
         <label for="">Nome completo</label>
-        <input class="input-for" type="text" v-model="name" required />
+        <input class="form-control" type="text" v-model="name" required />
       </div>
       <div v-if="this.cadastroData==true">
         <label for="">CPF</label>
-        <input class="input-for" type="text" v-model="cpf" required />
+        <input class="form-control" type="text" v-model="cpf" required />
       </div>
       <div>
         <label for="">Email</label>
-        <input class="input-for" type="email"  v-model="email" required />
+        <input class="form-control" type="email"  v-model="email" required />
       </div>
       <div>
         <label for="">Telefone</label>
-        <input class="input-for" type="text" v-model="telefone" required  />
+        <input class="form-control" type="text" v-model="telefone" required  />
       </div>
       <div>
         <label for="">Endereço</label>
-        <input class="input-for" type="text"  v-model="endereco" required  />
+        <input class="form-control" type="text"  v-model="endereco" required  />
       </div>
-      <div v-if="this.cadastroData==true">
+      <div>
         <label for="">Apelido</label>
-        <input class="input-for" type="text"  v-model="apelido" required  />
+        <input class="form-control" type="text"  v-model="apelido" required  />
       </div>
       <div>
         <label for="">Senha</label>
-        <input class="input-for" type="password" id="senha" v-model="senha" required  />
+        <input class="form-control" type="password" id="senha" v-model="senha" required  />
       </div>
       <div>
         <label for="">Repetir senha</label>
-        <input class="input-for" type="password" id="senha2" required  />
+        <input class="form-control" type="password" id="senha2" required  />
       </div>
     
         <label for="">Cargo</label>
-        <select v-model="selected">
+        <select class="form-select" v-model="selected">
           <option disabled value="">Escolha um cargo</option>
           <option value=1>Administrador</option>
           <option value=2> Enfermeiro-Chefe </option>
@@ -45,11 +44,11 @@
         </select>
         
     
-          <button type="submit" class="b-salvar">Salvar</button>
-          <button class="b-cancelar">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+          <button class="btn btn-danger">Cancelar</button>
       
     </form>
-  </body>
+</div>
 </template>
 
 <script>
@@ -85,7 +84,7 @@ export default {
   methods:{
     async editarForm(){
       var cadastroUser ={"cpf":sessionStorage.getItem('admEditarUser'),"nome" : this.name, "telefone" : this.telefone,
-      "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
+      "email" : this.email, "apelido" : this.apelido, "senha": this.senha}
       var editar = await admEditarService.editar(cadastroUser)
       console.log(editar);
     },
@@ -124,8 +123,8 @@ export default {
 
 .formulario {
   width: 800px;
-  margin-top: 8%;
   margin-left: 30%;
+
 }
 
 
@@ -166,4 +165,7 @@ button{
 .b-cancelar{
   background:crimson;
   }
+
+
+
 </style>

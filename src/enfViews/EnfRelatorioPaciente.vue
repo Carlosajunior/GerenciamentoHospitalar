@@ -25,11 +25,11 @@
                 <th scope="col">Prontuário</th>
             </thead>
 
-            <tbody v-for="(planeta, index) in response" :key="planeta">
+            <tbody v-for="(val, index) in lista1" :key="index">
                 <enf-rela
-                    :paciente="planeta.name"
-                    :id="index"
-                    :prontuario="planeta.climate"
+                    :paciente="val.nome"
+                    :id="val.id"
+                    :prontuario="lista2[index]"
                 >
                 </enf-rela>
             </tbody>
@@ -47,14 +47,20 @@ export default {
     data() {
     return {
       response: {},
+      lista1 : undefined,
+      lista2 : undefined
     };
   },
   created() {
-    axios({ method: "GET", url: " https://swapi.dev/api/planets/" }).then(
+    axios({ method: "GET", url: " http://127.0.0.1:8000/RelatorioPacienteEnf" }).then(
       (result) => {
-        this.response = result.data.results;
+        this.response = result;
+        this.lista1 = result.data[0]
+        this.lista2 = result.data[1]
         console.log("Não deu erro!");
         console.log(this.response);
+        console.log(this.lista1)
+        console.log(this.lista2)
       },
       (error) => {
         console.log("Erro");

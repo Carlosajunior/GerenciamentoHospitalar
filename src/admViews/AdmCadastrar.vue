@@ -5,11 +5,9 @@
     <adm-menu> </adm-menu>
     <div id="main-content">
       <adm-bar :title="'Cadastrar Usuário'" kindUser="Admnistrador"> </adm-bar>
-    </div>
-    <div>
       <adm-cad h2Name="CadastrarUsuário" :cadastro="true"> </adm-cad>
+    
     </div>
-
   </div>
 </template>
 
@@ -24,5 +22,8 @@ export default {
 </script>
 
 <style>
-
+.main-content {
+  transition: margin-left 400ms;
+  margin-left: 345px;
+}
 </style>

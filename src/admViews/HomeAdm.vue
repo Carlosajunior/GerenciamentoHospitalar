@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="color">
     <input type="checkbox" id="nav-toggle">
 
         <adm-menu>
@@ -9,7 +9,6 @@
             </adm-bar>
             
             <img class="img-fluid" src="../assets/enfCapa.jpg">
-            <button @click="ola"> </button>
         </div>
     </div>
 </template>
@@ -44,5 +43,13 @@ export default
 .img-fluid{
     padding: 10%;
 }
+main {
+  margin-top: 85px;
+  padding: 1.5rem 1.5rem;
+  min-height: calc(100vh - 90px);
+}
 
+.color{
+    background: white;
+}
 </style>

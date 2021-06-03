@@ -73,13 +73,16 @@ export default {
           localStorage.setItem('user',this.apelido)
           if (this.selected==1){
             this.$router.replace({name:'HomeAdm'})
+            sessionStorage.setItem('kindUser','Administrador')
           }
           else if (this.selected==2){
               this.$router.replace({name:"HomeEnfChefe"})
+              sessionStorage.setItem('kindUser','Enfermeiro Chefe')
           }
 
           else if (this.selected==3){
             this.$router.replace({name:"HomeEnf"})
+            sessionStorage.setItem('kindUser','Enfermeiro')
           }
         }
         else{

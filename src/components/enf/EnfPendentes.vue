@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name:"EnfPendentes",
     props:{
@@ -28,7 +29,10 @@ export default {
       data:null,
       alarme:null
         
-    }
+    },
+    created(){
+        axios.get('http://127.0.0.1:8000/')
+    }  
     
 }
 </script>

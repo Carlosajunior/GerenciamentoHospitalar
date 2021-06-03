@@ -6,13 +6,11 @@
     <div id ="main-content">
         <enf-bar 
             :title="'Cadastrar Paciente'" 
-            kindUser="Enfermeiro"
         >
         </enf-bar>
     </div>
     <div>
-        <enf-cad>
-        </enf-cad>
+        <enf-chefe-cad/>
     </div>   
  
 </template>
@@ -20,9 +18,9 @@
 <script>
 import EnfMenu from '../components/enf/EnfMenu.vue'
 import EnfBar from '../components/adm/AdmBar.vue'
-import EnfCad from '../components/enf/EnfCad.vue'
+import EnfChefeCad from '../components/enfChefe/EnfChefeCad.vue'
 export default {
-    components:{EnfMenu, EnfBar, EnfCad} 
+    components:{EnfMenu, EnfBar,EnfChefeCad} 
 }
 </script>
 
