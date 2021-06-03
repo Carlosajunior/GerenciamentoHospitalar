@@ -9,8 +9,8 @@
         <div class="user-wrapper">
           <img  src="../assetsComponents/menusybl.png" width="50px" height="50px" alt="">
           <div>
-            <p>Lembrar de trocar</p>
-            <small>{{kindUser}}</small>
+            <p>{{userActivate}}</p>
+            <small>Administrador</small>
           </div>
         </div>
       </header>
@@ -23,10 +23,9 @@ export default {
 
     data: function(){
         return {
-            t: ""
+            userActivate: localStorage.user
         };
     },
-
     props:{
       title : String,
       user : String,

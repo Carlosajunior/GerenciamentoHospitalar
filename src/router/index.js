@@ -21,7 +21,16 @@ const routes = [{
         path: '/homeAdm',
         name: 'HomeAdm',
         component: () =>
-            import ('../admViews/HomeAdm.vue')
+            import ('../admViews/HomeAdm.vue'),
+        beforeEnter: (to,from,next) => {
+            if(localStorage.getItem('token') != undefined){
+                next();
+            }
+
+            else {
+                next("/");
+            }
+        }
     },
 
     {

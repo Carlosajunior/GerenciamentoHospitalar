@@ -17,8 +17,14 @@
     <input v-model="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
 
   </div>
-  <div class="mb-3 form-check">
-    
+  <div class="col-md-10 offset-md-3">
+    <select class= "form-select" v-model="selected">
+      <option disabled value="">Escolha um usuário</option>
+      <option value=1>Administrador</option>
+      <option value=2>Enfermeiro Chefe</option>
+      <option value=3>Enfermeiro</option>
+      <option value=4>Estágiario</option>
+    </select>
   </div>
   <div class="col-md-10 offset-md-3">
     <router-link to= "/about">Esqueceu a senha? </router-link>
@@ -45,6 +51,7 @@ export default {
       senha : null,
       hasErro: false,
       response : null,
+      selected : null,
     }
   },
 
@@ -60,12 +67,23 @@ export default {
       //  );
         var teste = await loginService.post(loginDataLaravel)
         console.log(teste.data);
-        if(this.apelido == "Adm" && this.senha == "Adm"){
+        if(teste){
           this.$emit("authenticaded",true);
-          this.$router.replace({name:"HomeEnf"})
+          localStorage.setItem('token',teste.toString())
+          localStorage.setItem('user',this.apelido)
+          if (this.selected==1){
+            this.$router.replace({name:'HomeAdm'})
+          }
+          else if (this.selected==2){
+              this.$router.replace({name:"HomeEnfChefe"})
+          }
+
+          else if (this.selected==3){
+            this.$router.replace({name:"HomeEnf"})
+          }
         }
         else{
-          console.log("Dados incorretos");
+          alert("Dados incorretos");
         }
       }
     }

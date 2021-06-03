@@ -9,12 +9,13 @@
             </adm-bar>
             
             <img class="img-fluid" src="../assets/enfCapa.jpg">
-            
+            <button @click="ola"> </button>
         </div>
     </div>
 </template>
 
 <script>
+
 
 import AdmBar from '../components/adm/AdmBar.vue'
 import AdmMenu from '../components/adm/AdmMenu.vue'
@@ -24,6 +25,12 @@ export default
     components:{
         AdmMenu,
         AdmBar
+    },
+    mounted(){
+        if (localStorage.user){
+            console.log("Graças a deus")
+            console.log(localStorage.user)
+        }
     }
     }
 
