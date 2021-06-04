@@ -21,17 +21,14 @@ use App\Models\log;
 
 //rotas protegidas que requerem autenticação para serem acessadas
 Route::group(['middleware' => ['auth:sanctum']], function(){
+    Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
+    Route::get("/logs", [log::class, "mostrarLogs"]);
+    Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 });
 
 Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
-Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
-
 Route::post("/login", [controllerLogin::class, "login"]);
-
-Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
-
-Route::get("/logs", [log::class, "mostrarLogs"]);
 
 Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 

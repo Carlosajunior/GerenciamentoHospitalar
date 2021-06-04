@@ -11,7 +11,7 @@ class controllerLogin extends Controller
         $senha = $request -> senha;
         $usuario = Usuario::firstWhere('apelido', "=", $apelido);
         if($usuario && $usuario->senha == $senha){
-            $token = $usuario->createToken('userToken')->plainTextToken;
+            $token = $usuario->createToken($apelido)->plainTextToken;
             $response = [
                 'token' => $token
             ];
