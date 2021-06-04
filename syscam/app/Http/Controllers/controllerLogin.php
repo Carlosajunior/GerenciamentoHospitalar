@@ -13,7 +13,8 @@ class controllerLogin extends Controller
         if($usuario && $usuario->senha == $senha){
             $token = $usuario->createToken($apelido)->plainTextToken;
             $response = [
-                'token' => $token
+                'token' => $token,
+                'id_cargo' => $usuario->id_Cargo
             ];
             return response($response);
         }
