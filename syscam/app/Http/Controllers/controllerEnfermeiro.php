@@ -24,7 +24,7 @@ class controllerEnfermeiro extends Controller
         ]);
         $paciente -> save();
         return $paciente;
-    }
+    } 
     //---------------------------------------------------------------------------------
     public function EstoqueMedicamentos(){ //Gera uma lista com os Medicamentos em estoque 
         $array = collect([]);
@@ -99,23 +99,24 @@ class controllerEnfermeiro extends Controller
         return $novaBaixa;
     }
     
-    /*
     //-----------------------------------------------------------------------------------
-    public function historicoAgendamentos(){ // COMO QUE FAZ ?!
+    public function historicoAgendamentos(Request $request){ // Retorna um array com agendamentos já feitos pelo enfermeiro
         $array = collect([]);
         foreach (Agendamento_medicacao::all() as $Agendamento_medicacao)
-            $array->push($Agendamento_medicacao);
+            if($Agendamento_medicacao -> id_usuario == $request -> id_usuario  && $Agendamento_medicacao -> feito == 1)
+                    $array->push($Agendamento_medicacao);
         return($array);
     }
 
-    //------------------------------------------------------------------------------------
-    public function MedicamentoPendentes(){
+    //-----------------------------------------------------------------------------------------
+
+    public function AgendamentosPendentes(){ //Retorna um array com agendamentos pendentes
         $array = collect([]);
         foreach (Agendamento_medicacao::all() as $Agendamento_medicacao)
-            $array->push($Agendamento_medicacao);
+            if($Agendamento_medicacao -> feito == 0)
+                $array->push($Agendamento_medicacao);
         return($array);
     }
-    */ 
-    //--------------------------------------------------------------------------------------
 
+    //------------------------------------------------------------------------------------------
 }

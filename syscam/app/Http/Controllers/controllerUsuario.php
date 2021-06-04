@@ -71,4 +71,26 @@ class controllerUsuario extends Controller
         ]);
         return $usuario;
     }
+    /*
+    public function criaBackup (Request $request){    
+        //recebendo os dados do banco    
+        $Banco = new Banco;
+        $banco = Banco::create([
+            'servidor' => $request -> servidor,
+            'usuario' => $request -> usuario,
+            'senha'=> $request -> senha,                
+            'dbname'=> $request -> dbname,
+        ]);
+        //criando a conexão
+        %conn = mysqli_conect ($servidor, $usuario, $senha, $dbname);
+
+        //incluir o arquivo que gera o backup
+        include_once ("gerar_backup.php");
+    }*/
+
+
+
+
+
+
 }
