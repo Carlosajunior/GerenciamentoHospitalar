@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prontuario extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'numero_quarto',
         'data_internacao',

@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agendamento_medicacao extends Model
+class Agendamento_Medicacao extends Model
 {
     use HasFactory;
+
     protected $table = 'agendamento_medicacao';
     public $timestamps = false;
     protected $fillable = [

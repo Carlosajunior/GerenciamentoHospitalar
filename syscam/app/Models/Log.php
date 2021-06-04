@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Log extends Model
 {
     use HasFactory;
+
     public $timestamps = false;
     protected $fillable = [
         'data_alteracao',
