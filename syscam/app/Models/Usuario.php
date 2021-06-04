@@ -32,8 +32,6 @@ class Usuario extends Model
     protected $hidden = [
         'cpf',
         'senha',
-        'id',
-        'remember_token',
     ];
     
     protected $table = 'usuario';
