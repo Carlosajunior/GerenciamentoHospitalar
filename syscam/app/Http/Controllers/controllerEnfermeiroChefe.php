@@ -7,7 +7,7 @@ use App\Models\Agendamento_medicacao;
 use App\Models\Medicamento;
 use Illuminate\Http\Request;
 
-class controllerEnfermeiroChefe extends Controller
+class EnfermeiroChefe extends Controller
 {
     public function Criar_Protuario(Request $request){
         $prontuario = new Prontuario();
