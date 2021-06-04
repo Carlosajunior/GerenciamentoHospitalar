@@ -37,14 +37,10 @@ Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedi
 Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
 Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
 Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
+Route::get("/HistoricoAgendamentosEnf", [controllerEnfermeiro::class, "historicoAgendamentos"]);
+Route::get("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
 
 Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
 
 Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
-
-/*
- Em processo Enfermeiro
-Route::get("/AgendamentoBaixados", [controllerEnfermeiro::class, "historicoAgendamentos"]);
-Route::get("/MedicamentosPendentes", [controllerEnfermeiro::class, "MedicamentoPendentes"]);
-*/
