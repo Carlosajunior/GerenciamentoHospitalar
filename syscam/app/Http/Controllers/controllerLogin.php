@@ -10,8 +10,13 @@ class controllerLogin extends Controller
         $apelido = $request -> apelido;
         $senha = $request -> senha;
         $usuario = Usuario::firstWhere('apelido', "=", $apelido);
-        if($usuario && $usuario->senha == $senha)
-            return true ;
-        return false;
+        if($usuario && $usuario->senha == $senha){
+            $token = $usuario->createToken('userToken')->plainTextToken;
+            $response = [
+                'token' => $token
+            ];
+            return response($response);
+        }
+        return response('credenciais inválidas',401);
     }
 }

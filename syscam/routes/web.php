@@ -18,6 +18,11 @@ use App\Models\log;
 |
 */
 
+//rotas que necessitam de autenticação para serem acessadas
+Route::group(['middleware' => ['auth:sanctum']], function(){
+    
+});
+
 Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
 Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
