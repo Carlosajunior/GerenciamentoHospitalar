@@ -1,7 +1,7 @@
 <template>
 <div class="formulario">
     <div class="filtro">
-      <label class="labelinvisivel"></label>
+      <h2></h2>
     </div>
     <div>
         <enf-menu> </enf-menu>
@@ -13,7 +13,7 @@
         >
         </enf-bar>
     </div>        
-    <table class="table">
+    <table class="table" id="tableM">
         <thead>
             <th scope="col">Medicação</th>
             <th scope="col">Lote</th>
@@ -67,13 +67,15 @@ export default {
 </script>
 
 <style>
+
 .formulario {
-  width: 800px;
-  margin-top: 8%;
-  margin-left: 30%;
+    width: 800px;
+    margin-top: 8%;
+    margin-left: 30%;
 }
 
-.labelinvisivel {
-    margin-top: 20px !important;
+.formulario #tableM {
+    margin-top: 5.4% !important;
 }
+
 </style>

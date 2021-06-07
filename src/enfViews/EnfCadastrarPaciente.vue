@@ -3,14 +3,16 @@
         <enf-menu>
         </enf-menu>
     </div>
-    <div id ="main-content">
+    <div>
         <enf-bar 
             :title="'Cadastrar Paciente'" 
-        >
+            kindUser="Enfermeiro">
         </enf-bar>
     </div>
     <div>
-        <enf-chefe-cad/>
+
+        <enf-chefe-cad>
+        </enf-chefe-cad>
     </div>   
  
 </template>
@@ -25,9 +27,5 @@ export default {
 </script>
 
 <style>
-#main-content {
-  transition: margin-left 400ms;
-  margin-left: 345px;
-  width: 95px;
-}
+
 </style>

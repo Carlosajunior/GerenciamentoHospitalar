@@ -141,7 +141,7 @@ button{
   border-radius: 5px;
 }
 
-label{
+label {
   margin-bottom: 0%;
 }
 
