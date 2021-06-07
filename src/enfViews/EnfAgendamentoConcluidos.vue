@@ -8,8 +8,12 @@
     <div>
       <enf-menu> </enf-menu>
     </div>
-    <div id="main-content">
-      <enf-bar> </enf-bar>
+    <div>
+      <enf-bar
+        :title="'Agendamentos Concluidos'"
+        kindUser="Enfermeiro"
+      >
+      </enf-bar>
     </div>
     
     <table class="table">
