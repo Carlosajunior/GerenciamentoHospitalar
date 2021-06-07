@@ -1,6 +1,5 @@
 <template>
   <body class="formulario">
-    <h2></h2>
     <form @submit.prevent="postForm">
       <div >
         <label for="">Nome completo</label>
@@ -82,15 +81,17 @@ export default {
 
 
 .input-for {
-    border: 1px solid #ccc!important;
-    padding: 6px;
-    display: block;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: 50%;
-    padding: 1px 2px;
-    margin-bottom: 5px;
+  border: 1px solid #ccc!important;
+  padding: 6px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 50%;
+  padding: 1px 2px;
+  margin-bottom: 5px;
 }
+
+
 button, input {
     overflow: visible;
 }

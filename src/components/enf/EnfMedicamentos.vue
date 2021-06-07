@@ -1,17 +1,11 @@
 <template>
-  <div>
-    <div class="filtro">
-      <label for="">Data de validade: </label>
-      <input id="date" type="date" />
-      <button>Filtrar</button>
-    </div>
-
-    <tr class="titulo">
-      <th scope="col">Medicação</th>
-      <th scope="col">Lote</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Data de validade</th>
-      <th scope="col">Farmacêutico</th>
+  <div>    
+    <tr>
+      <th scope="col">{{medicacao}}</th>
+      <th scope="col">{{lote}}</th>
+      <th scope="col">{{quantidade}}</th>
+      <th scope="col">{{validade}}</th>
+      <th scope="col">{{farmaceutica}}</th>
     </tr>
   </div>
 </template>
@@ -36,9 +30,7 @@ label {
 .filtro {
   padding: 2%;
 }
-.titulo {
-  width:100%;
-}
+
 button {
   border: none;
   background-color: #35b736;
@@ -47,11 +39,8 @@ button {
   margin-left: 5%;
 }
 
-th {
-  padding: 10px;
-  text-align: center;
-}
 th[scope="col"] {
+  padding: 10px;
   background-color: rgb(238, 238, 238);
 }
 </style>

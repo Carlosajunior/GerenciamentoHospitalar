@@ -55,4 +55,8 @@ th {
 th[scope="col"] {
   background-color: rgb(238, 238, 238);
 }
+
+#text {
+  display: inline;
+}
 </style>

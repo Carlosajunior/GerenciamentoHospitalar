@@ -1,20 +1,12 @@
 <template>
-  <div>
-    <div class="filtro">
-      <label for="">Data da baixa: </label>
-      <input id="date" type="date" />
-      <button>Filtrar</button>
-    </div>
-
-    <tr class="titulo">
-      <th scope="col">Identificador do Paciente</th>
-      <th scope="col">Medicação</th>
-      <th scope="col">Dosagem</th>
-      <th scope="col">Quarto</th>
-      <th scope="col">Data</th>
-      <th scope="col">Horário </th>
-    </tr>
-  </div>
+  <tr class="titulo">
+    <th scope="col">Identificador do Paciente</th>
+    <th scope="col">Medicação</th>
+    <th scope="col">Dosagem</th>
+    <th scope="col">Quarto</th>
+    <th scope="col">Data</th>
+    <th scope="col">Horário </th>
+  </tr>
 </template>
 
 <script>

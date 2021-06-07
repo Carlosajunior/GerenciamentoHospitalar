@@ -6,6 +6,7 @@
     <th scope="col">{{ dataBaixa }}</th>
     <th scope="col">{{ medicacao }}</th>
   </tr>
+  
 </template>
 
 <script>

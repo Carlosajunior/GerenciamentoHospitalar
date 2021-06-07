@@ -1,35 +1,31 @@
 <template>
   <div class="formulario">
+    <div class="filtro">
+      <label for="">Data da baixa: </label>
+      <input id="date" type="date" />
+      <button>Filtrar</button>
+    </div>
     <div>
       <enf-menu> </enf-menu>
     </div>
     <div id="main-content">
       <enf-bar> </enf-bar>
     </div>
-    <div class="row">
-      <div class="col-md-3"/>
-      <div class="col-md-6">
-        <div class="table-responsible">
-        <table class="table">
-            <thead>
-                  <tr class="titulo">
-                  <th scope="col">Identificador do Paciente</th>
-                  <th scope="col">Medicação</th>
-                  <th scope="col">Dosagem</th>
-                  <th scope="col">Quarto</th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Horário </th>
-                </tr>
-            </thead>
+    
+    <table class="table">
+      <thead>
+        <th scope="col">Identificador do Paciente</th>
+        <th scope="col">Medicação</th>
+        <th scope="col">Dosagem</th>
+        <th scope="col">Quarto</th>
+        <th scope="col">Data</th>
+        <th scope="col">Horário </th>
+      </thead>
 
-            <tbody >
-                <enf-agendamentos-concluidos-cell/>
-            </tbody>
-        </table>
-        </div>
-      </div>
-      
-    </div>
+      <tbody >
+          <enf-agendamentos-concluidos-cell/>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -52,5 +48,9 @@ export default {
   width: 800px;
   margin-top: 8%;
   margin-left: 30%;
+}
+
+#date {
+  display: inline;
 }
 </style>

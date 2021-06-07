@@ -49,7 +49,7 @@
           <li>
             <router-link to='/EnfChefeAgendamentoPendentes' active-class="ativo">
             <a href="" >
-              <span class="las la-shopping-bag"></span><span>Agendamentos pendentes</span>
+              <span class="las la-shopping-bag"></span><span>Agendamentos Pendentes</span>
             </a>
             </router-link>
           </li>

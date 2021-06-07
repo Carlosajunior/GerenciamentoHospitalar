@@ -1,8 +1,7 @@
 <template>
     <header>
-        <h2>
+        <h2 style="width: 500px; text-align: start;">
           <label for="nav-toggle">
-            <span class="las la-bars"></span>
           </label>
         {{title}}
         </h2>
@@ -19,18 +18,18 @@
 <script>
 
 export default {
-    name:'AdmBar',
+  name:'AdmBar',
 
-    data: function(){
-        return {
-            userActivate: localStorage.user,
-            kindUser : localStorage.kindUser
-        };
-    },
-    props:{
-      title : String,
-      user : String,
-    }
+  data: function(){
+    return {
+      userActivate: localStorage.user,
+      kindUser : localStorage.kindUser
+    };
+  },
+  props:{
+    title : String,
+    user : String,
+  }
 }
 
 
@@ -38,6 +37,5 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');  
-
 
 </style>

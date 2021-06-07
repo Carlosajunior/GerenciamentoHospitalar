@@ -1,40 +1,40 @@
 <template>
-    <div class="formulario">
-        <div>
-            <enf-menu>
-            </enf-menu>
-        </div>
-        <div id ="main-content">
-            <enf-bar 
-              :title="'Relatório de Pacientes'" 
-              kindUser="Enfermeiro"
-            >
-            </enf-bar>
-        </div>
-        
-        <div class="filtro">
-            <label for="">Nome do paciente ou identificador: </label>
-            <input id="text" type="text" />
-            <button>Buscar</button>
-        </div>
+  <div class="formulario">
+    <div>
+      <enf-menu>
+      </enf-menu>
+    </div>
+    <div>
+      <enf-bar 
+        :title="'Relatório de Pacientes'" 
+        kindUser="Enfermeiro"
+      >
+      </enf-bar>
+    </div>
+    
+    <div class="filtro">
+      <label for="">Nome do paciente ou identificador: </label>
+      <input id="text" type="text"/>
+      <button>Buscar</button>
+    </div>
 
-        <table class="table">
-            <thead>
-                <th scope="col">Paciente</th>
-                <th scope="col">Identificador</th>
-                <th scope="col">Prontuário</th>
-            </thead>
+    <table class="table">
+      <thead>
+        <th scope="col">Paciente</th>
+        <th scope="col">Identificador</th>
+        <th scope="col">Prontuário</th>
+      </thead>
 
-            <tbody v-for="(val, index) in lista1" :key="index">
-                <enf-rela
-                    :paciente="val.nome"
-                    :id="val.id"
-                    :prontuario="lista2[index]"
-                >
-                </enf-rela>
-            </tbody>
-        </table>
-    </div>        
+      <tbody v-for="(val, index) in lista1" :key="index">
+        <enf-rela
+          :paciente="val.nome"
+          :id="val.id"
+          :prontuario="lista2[index]"
+        >
+        </enf-rela>
+      </tbody>
+    </table>
+  </div>        
 </template>
 
 <script>
@@ -103,6 +103,10 @@ label {
 
 thead{
   background-color: rgb(238, 238, 238);
+}
+
+#text {
+  display: inline;
 }
 
 </style>

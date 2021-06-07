@@ -4,7 +4,10 @@
       <enf-chefe-menu> </enf-chefe-menu>
     </div>
     <div>
-      <enf-chefebar :title="'Lista de Pacientes'" kindUser="Enfermeiro Chefe">
+      <enf-chefebar 
+        :title="'Lista de Pacientes'" 
+        kindUser="Enfermeiro Chefe"
+      >
       </enf-chefebar>
     </div>
     <div class="filtro">
@@ -81,5 +84,9 @@ label {
 }
 thead{
   background-color: rgb(238, 238, 238);
+}
+
+#text {
+  display: inline;
 }
 </style>

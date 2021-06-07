@@ -91,4 +91,8 @@ button {
 thead{
   background-color: rgb(238, 238, 238);
 }
+
+#date {
+  display: inline;
+}
 </style>
