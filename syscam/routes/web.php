@@ -44,6 +44,7 @@ Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMed
 
 Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
+Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
 
 /*
  Em processo Enfermeiro

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Paciente;
+use App\Models\Usuario;
 use App\Models\Prontuario;
 use App\Models\Agendamento_medicacao;
 use App\Models\Medicamento;
@@ -63,8 +64,20 @@ class EnfermeiroChefe extends Controller
 
     }
 
-    public function Alocar_Enfermeiro(){
-
+    public function Alocar_Enfermeiro(Request $request){
+        $nomeEnfermeiro = $request -> nome;
+        $idAgendamento = $request -> id;
+        $usuario = Usuario::firstWhere('nome','=',$nomeEnfermeiro);
+        $agendamento = Agendamento_medicacao::firstWhere('id', '=', $idAgendamento);
+        if($usuario && $agendamento){
+            if($usuario->id_Cargo == 2 || $usuario ->id_Cargo == 4){
+                $agendamento -> id_usuario = $usuario -> id;
+                $agendamento -> save();
+                return $agendamento;
+            }
+        }
+        else
+            return response('dados inválidos', 404); 
     }
 
     public function Emitir_Plantão(){
