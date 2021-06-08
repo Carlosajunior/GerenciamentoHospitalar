@@ -2,7 +2,11 @@
   <tr class="titulo">
     <th scope="col">{{ paciente }}</th>
     <th scope="col">{{ id }}</th>
-    <th scope="col">{{ prontuario }}</th>
+    <th scope="col"> <select v-model="prontuario">
+          <option disabled value="">Escolha o prontuário:</option>
+          <option >  {{idprontuario }} </option>
+        </select></th>
+    <th scope="col"> <button>Exibir</button> </th>
   </tr>
 </template>
 
@@ -13,7 +17,7 @@ export default {
   props: {
     paciente: null,
     id: null,
-    prontuario: null,
+    idprontuario: null,
   },
 };
 </script>

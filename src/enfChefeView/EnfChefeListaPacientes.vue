@@ -10,26 +10,23 @@
       >
       </enf-chefebar>
     </div>
-    <div class="filtro">
-      <label for="">Nome do paciente ou identificador: </label>
-      <input id="text" type="text" />
-      <button>Buscar</button>
-    </div>
 
     <table class="table">
       <thead>
         <th scope="col">Paciente</th>
         <th scope="col">Identificador</th>
         <th scope="col">Prontuário</th>
+        <th scope="col">Selecionar</th>
       </thead>
 
       <tbody v-for="(planeta, index) in response" :key="planeta">
         <enf-chefe-paciente
           :paciente="planeta.name"
           :id="index"
-          :prontuario="planeta.climate"
+          :idprontuario="index"
         >
         </enf-chefe-paciente>
+        
       </tbody>
     </table>
   </div>
@@ -39,6 +36,7 @@
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
 import EnfChefebar from "../components/adm/AdmBar.vue";
 import EnfChefePaciente from "../components/enfChefe/EnfChefePaciente.vue";
+
 import axios from "axios";
 export default {
   components: { EnfChefeMenu, EnfChefebar, EnfChefePaciente },
@@ -76,8 +74,9 @@ button {
   border: none;
   background-color: #2ba9f1;
   color: white;
-  padding: 3.2px;
-  margin-left: 5%;
+  padding: 4px;
+  border-radius: 3px;
+
 }
 label {
   margin-right: 1%;
