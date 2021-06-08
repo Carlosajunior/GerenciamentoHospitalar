@@ -8,7 +8,7 @@ use App\Models\Agendamento_medicacao;
 use App\Models\Medicamento;
 use Illuminate\Http\Request;
 
-class EnfermeiroChefe extends Controller
+class controllerEnfermeiroChefe extends Controller
 {
     public function Criar_Protuario(Request $request){
         $prontuario = new Prontuario();
@@ -75,9 +75,8 @@ class EnfermeiroChefe extends Controller
                 $agendamento -> save();
                 return $agendamento;
             }
-        }
-        else
-            return response('dados inválidos', 404); 
+        }        
+        return response('dados inválidos', 404); 
     }
 
     public function Emitir_Plantão(){

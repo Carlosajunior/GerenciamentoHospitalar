@@ -7,6 +7,7 @@ use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
 use App\Http\Controllers\controllerEnfermeiro;
+use App\Http\Controllers\controllerEnfermeiroChefe;
 use App\Models\log;
 /*
 |--------------------------------------------------------------------------
