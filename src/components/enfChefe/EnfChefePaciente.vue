@@ -21,7 +21,7 @@ export default {
   },
   methods:{
         exibir(){
-            this.$router.push("../enfChefeView/EnfChefeOpView.vue")
+            this.$router.push("../enfChefeView/EnfChefeOpView")
         }
   }
 };
