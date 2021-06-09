@@ -10,12 +10,12 @@
       >
       </enf-chefebar>
     </div>
-
-      <tbody planeta in response :key="planeta">
+ 
+      <tbody v-for="(planeta, index) in response" :key="planeta">
         <enf-chefe-op
           :paciente="planeta.name"
           :enfermeiro="planeta.name"
-          :cid="planeta.name"
+          :cid="index"
           :posologia="planeta.name"
           :quarto="planeta.name"
         >
