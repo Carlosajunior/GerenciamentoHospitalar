@@ -28,7 +28,6 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 });
 
 
-Route::group(['middleware'=> 'cors']),function(){
 
 Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
@@ -56,4 +55,3 @@ Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Planta
 Route::get("/AgendamentoBaixados", [controllerEnfermeiro::class, "historicoAgendamentos"]);
 Route::get("/MedicamentosPendentes", [controllerEnfermeiro::class, "MedicamentoPendentes"]);
 */
-});
