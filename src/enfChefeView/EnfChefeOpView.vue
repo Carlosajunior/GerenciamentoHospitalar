@@ -5,30 +5,23 @@
     </div>
     <div>
       <enf-chefebar 
-        :title="'Lista de Pacientes'" 
+        :title="'Prontuário'" 
         kindUser="Enfermeiro Chefe"
       >
       </enf-chefebar>
     </div>
 
-    <table class="table">
-      <thead>
-        <th scope="col">Paciente</th>
-        <th scope="col">Identificador</th>
-        <th scope="col">Prontuário</th>
-        <th scope="col">Selecionar</th>
-      </thead>
-
-      <tbody v-for="(planeta, index) in response" :key="planeta">
+      <tbody planeta in response :key="planeta">
         <enf-chefe-op
           :paciente="planeta.name"
-          :id="index"
-          :idprontuario="index"
+          :enfermeiro="planeta.name"
+          :cid="planeta.name"
+          :posologia="planeta.name"
+          :quarto="planeta.name"
         >
         </enf-chefe-op>
         
       </tbody>
-    </table>
   </div>
 </template>
 

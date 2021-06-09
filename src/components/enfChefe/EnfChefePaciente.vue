@@ -21,9 +21,7 @@ export default {
   },
   methods:{
         exibir(){
-            localStorage.setItem('admEditarUser',this.id);
-            console.log(localStorage.getItem('admEditarUser'));
-            this.$emit('EditarUser',this.id)
+            this.$router.push("../enfChefeView/EnfChefeOpView.vue")
         }
   }
 };

@@ -22,12 +22,10 @@ const routes = [{
         name: 'HomeAdm',
         component: () =>
             import ('../admViews/HomeAdm.vue'),
-        beforeEnter: (to,from,next) => {
-            if(localStorage.getItem('token') != undefined){
+        beforeEnter: (to, from, next) => {
+            if (localStorage.getItem('token') != undefined) {
                 next();
-            }
-
-            else {
+            } else {
                 next("/");
             }
         }
@@ -59,8 +57,8 @@ const routes = [{
         component: () =>
             import ('../admViews/AdmCadastrar.vue')
     },
-    
-    
+
+
     {
         path: '/admEditar',
         name: 'AdmEditar',
@@ -129,6 +127,12 @@ const routes = [{
         name: 'EnfChefeListaPacientes',
         component: () =>
             import ('../enfChefeView/EnfChefeListaPacientes.vue')
+    },
+    {
+        path: '/EnfChefeOpView',
+        name: 'EnfChefeOpView',
+        component: () =>
+            import ('../enfChefeView/EnfChefeOpView.vue')
     },
     {
         path: '/HomeEnf',
