@@ -67,7 +67,7 @@ class EnfermeiroChefe extends Controller
 
     }
 
-    public function Emitir_Plantão(){
+    public function Armazenar_Plantão(){
 
     }
 
@@ -85,25 +85,4 @@ class EnfermeiroChefe extends Controller
         return($array);
     }
 
-    public function Verificar_Agendamento(){
-
-    }
-
-    public function PrepararMedicamento(){
-
-    }
-
-    public function Emitir_Agendamentos(){
-        $array = collect([]);
-        foreach (Agendamento_medicacao::all() as $agendamento)
-            $array->push($agendamento);
-        return($array);
-    }
-
-    public function Emitir_Medicamentos(){
-        $array = collect([]);
-        foreach (Medicamento::all() as $medicamento)
-            $array->push($medicamento);
-        return($array);
-    }
 }
