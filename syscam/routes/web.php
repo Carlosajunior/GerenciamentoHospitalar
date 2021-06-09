@@ -22,9 +22,9 @@ use App\Models\log;
 
 //rotas que necessitam de autenticação para serem acessadas
 Route::group(['middleware' => ['auth:sanctum']], function(){
-    Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
-    Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
-    Route::get("/logs", [log::class, "mostrarLogs"]);
+Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
+Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
+Route::get("/logs", [log::class, "mostrarLogs"]);
 });
 
 
