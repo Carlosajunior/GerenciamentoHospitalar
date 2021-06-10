@@ -59,7 +59,11 @@ class EnfermeiroChefe extends Controller
         return $paciente;
     }
 
-    public function Cadastrar_Alarme(){
+    public function Cadastrar_Alarme(Request $request){
+        
+    }
+
+    public function Emitir_Alarme(Request $request){
 
     }
 
