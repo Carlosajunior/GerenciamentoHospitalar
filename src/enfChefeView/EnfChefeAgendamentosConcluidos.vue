@@ -1,10 +1,5 @@
 <template>
   <div class="formulario">
-    <div class="filtro">
-      <label for="">Data da baixa: </label>
-      <input id="date" type="date" />
-      <button>Filtrar</button>
-    </div>
     <div>
       <enf-chefe-menu> </enf-chefe-menu>
     </div>
@@ -73,24 +68,10 @@ export default {
   margin-top: 10%;
   margin-left: 30%;
 }
-label {
-  margin-right: 1%;
-}
-.filtro {
-  padding: 2%;
-}
-button {
-  border: none;
-  background-color: #35b736;
-  color: white;
-  padding: 3.2px;
-  margin-left: 5%;
-}
+
+
 thead {
   background-color: rgb(238, 238, 238);
 }
 
-#date {
-  display: inline;
-}
 </style>
