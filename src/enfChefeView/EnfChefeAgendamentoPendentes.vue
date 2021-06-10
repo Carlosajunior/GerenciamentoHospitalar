@@ -17,6 +17,8 @@
         <th scope="col">Horário</th>
         <th scope="col">Data</th>
         <th scope="col">Cadastrar alarme</th>
+        <th scope="col">Aperte</th>
+
       </thead>
 
       <tbody v-for="planeta in response" :key="planeta">
@@ -26,7 +28,7 @@
           :prontuario="planeta.population"
           :hora="planeta.orbital_period"
           :data="planeta.population"
-        :alarme="planeta.gravity"
+            :alarme="planeta.gravity"
              >
         </enf-chefe-pendentes>
       </tbody>

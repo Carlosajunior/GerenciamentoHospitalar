@@ -7,7 +7,7 @@
       </div>
       <div class="divs">
         <label for="">CPF</label>
-        <input class="input-for-menor" type="text"  placeholder="Ex.: 000.000.000-00" pattern="\d{3}.\d{3}.\d{3}-\d{2}" v-model="cpf" required />
+        <input class="input-for-menor" type="text"  pattern="\d{11}" v-model="cpf" required />
       </div>
       <div class="divs">
         <label for="">Email</label>

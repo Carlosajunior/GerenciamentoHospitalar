@@ -7,12 +7,15 @@
         <th scope="col">{{hora}}</th>
         <th scope="col">{{data}}</th>
         <th scope="col"><input type="text" v-model="alarmeCad">{{alarme}}</th>
+        <th scope="col"><button  @submit.prevent="postForm" type="submit" class="b-salvar">Cadastrar</button></th>
     </tr>
 
    
 </template>
 
 <script>
+import enfChefeAlarme from "../../services/enfChefeAlarme"
+
 export default {
     name:"EnfChefePendentes",
     data(){
