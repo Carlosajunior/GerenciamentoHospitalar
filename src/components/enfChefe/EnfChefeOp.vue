@@ -1,10 +1,10 @@
 <template>
     <tr>
-      <th scope="col">Nome do paciente: <br>{{paciente}}</th>
-      <th scope="col">Nome do Enfermeiro/Estágiario: <br>{{enfermeiro}}</th>
-      <th scope="col">CID: <br>{{cid}}</th>
-      <th scope="col">Posologia: <br>{{posologia}}</th>
-      <th scope="col">Quarto: <br>{{quarto}}</th>
+      <th scope="col">Nome do paciente: {{paciente}}</th>
+      <th scope="col">Nome do Enfermeiro/Estágiario: {{enfermeiro}}</th>
+      <th scope="col">CID: {{cid}}</th>
+      <th scope="col">Posologia: {{posologia}}</th>
+      <th scope="col">Quarto: {{quarto}}</th>
     </tr>
 </template>
 
@@ -20,3 +20,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>

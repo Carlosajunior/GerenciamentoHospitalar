@@ -5,8 +5,12 @@
     <th scope="col"> <select v-model="prontuario">
           <option disabled value="">Escolha o prontuário:</option>
           <option >  {{idprontuario }} </option>
+
+
         </select></th>
     <th scope="col"> <button @click="exibir">Exibir</button> </th>
+    <span>Selecionado: {{ prontuario }}</span>
+
   </tr>
 </template>
 
@@ -18,10 +22,19 @@ export default {
     paciente: null,
     id: null,
     idprontuario: null,
+    
+  },
+   data() {
+    return {
+      prontuario: '',
+    };
   },
   methods:{
         exibir(){
+          if(this.prontuario== this.idprontuario){
             this.$router.push("../enfChefeView/EnfChefeOpView")
+          }
+            
         }
   }
 };

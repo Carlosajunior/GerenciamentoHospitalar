@@ -53,3 +53,9 @@ export default {
   },
 };
 </script>
+
+<style>
+ tbody{
+  padding: 50%;
+}
+</style>
