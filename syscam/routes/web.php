@@ -44,3 +44,14 @@ Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMed
 
 Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
+
+//Rotas Enfermeiro chefe
+
+Route::post("/CriarProntuario", [controllerEnfermeiroChefe::class, "Criar_Prontuario"]);
+Route::post("/CriarAgendamento", [controllerEnfermeiroChefe::class, "Criar_Agendamento"]);
+
+Route::get("/EmitirPacientes", [controllerEnfermeiroChefe::class, "Emitir_Pacientes"]);
+Route::get("/EmitirResponsaveis", [controllerEnfermeiroChefe::class, "Emitir_Responsaveis_Agendamento"]);
+
+Route::patch("/CadastrarAlarme", [controllerEnfermeiroChefe::class, "Cadastrar_Alarme"]);
+Route::patch("/CriarPosologia", [controllerEnfermeiroChefe::class, "Criar_Posologia"]);

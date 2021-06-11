@@ -9,6 +9,7 @@ class agendamento_medicacao extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $table = 'agendamento_medicacao';
     protected $fillable = [
         'alarme',
         'data_hora',
@@ -17,4 +18,6 @@ class agendamento_medicacao extends Model
         'id_medicamento',
         'id_usuario',
     ];
+
+    
 }

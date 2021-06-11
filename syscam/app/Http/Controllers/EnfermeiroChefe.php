@@ -27,11 +27,11 @@ class EnfermeiroChefe extends Controller
         $agendamento = new Agendamento_medicacao();
         $agendamento = Agendamento_medicacao::create([
             'alarme' => $request ->alarme,
-            'data_hora' => $request -> data_hora,
+            
             'posologia'=> $request -> posologia,                
             'id_prontuario'=> $request -> id_prontuario,
             'id_medicamento'=> $request -> id_medicamento,
-            'id_usuario'=> $request -> id_usuario
+            
         ]);
         return $agendamento;
     }
@@ -42,6 +42,7 @@ class EnfermeiroChefe extends Controller
             if($request -> posologia != null)
                 $agendamento->posologia = $request->posologia;
         }
+        return $agendamento;
     }
 
     public function Cadastrar_Paciente(Request $request){
@@ -59,8 +60,14 @@ class EnfermeiroChefe extends Controller
         return $paciente;
     }
 
-    public function Cadastrar_Alarme(Request $request){
-        
+    public function Cadastrar_Alarme(Request $request, Request $id){
+        $agendamento = Agendamento_medicacao::firstWhere('id','=',$id);
+        $data = mktime($request->hora, $request->minuto, 00 , $request->mes, $request->dia, $request->ano);
+        if($agendamento != null){
+            if($request -> alarme != null)
+                $agendamento->alarme = $data;
+        }
+        return $agendamento;
     }
 
     public function Emitir_Alarme(Request $request){
