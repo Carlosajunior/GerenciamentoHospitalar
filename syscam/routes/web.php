@@ -53,7 +53,6 @@ Route::group(['middleware'=>['cors']], function(){
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
 });
 
-<<<<<<< HEAD
 Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
 Route::post("/login", [controllerLogin::class, "login"]);
@@ -73,8 +72,6 @@ Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMed
 
 Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
-=======
->>>>>>> 402c4b320c972ae02e2f8ff45f96442d7633971c
 
 /*
  Em processo Enfermeiro
