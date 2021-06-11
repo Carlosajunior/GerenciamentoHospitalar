@@ -6,6 +6,7 @@ use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
 use App\Http\Controllers\controllerEnfermeiro;
+use App\Http\Controllers\controllerCIDApi;
 use App\Models\log;
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,7 @@ Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPacient
 
 Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
 
-
+Route::get("/CID", [controllerCIDApi::class, "CID"]);
 // Rotas Enfermeiro e Estagiario :
 Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
 Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
