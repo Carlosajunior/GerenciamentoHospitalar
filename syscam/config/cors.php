@@ -15,9 +15,28 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie',
+    '/login','/VerificarAgendamentoEnf',
+    '/EstoqueMedicamentosEnf',
+    '/RelatorioPacienteEnf',
+    '/cadastrar-usuario',
+    '/cadastrar-paciente',
+    '/cadastrar-medicamento',
+    '/ListaPacientesEnf',
+    '/VerificarAgendamentoEnf',
+    '/RelatorioPacienteEnf',
+    '/PrepararMedicacaoEnf',
+    '/baixarAgendamentoEnf',
+    '/cadastrarPacienteEnf',
+    '/Designar_Agendamento',
+    '/Bater_Ponto',
+    '/mostrar-usuarios',
+    '/editar-cadastro',
+    '/logs'
+],
 
     'allowed_methods' => ['*'],
+    //s'access-control-allow-origin' => ['*'],
 
     'allowed_origins' => ['*'],
 

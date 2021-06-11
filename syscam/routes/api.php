@@ -7,6 +7,7 @@ use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
 use App\Http\Controllers\controllerEnfermeiro;
+use App\Http\Controllers\controllerEnfermeiroChefe;
 use App\Models\log;
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 });
 
+/*
 Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
 Route::post("/login", [controllerLogin::class, "login"]);
@@ -45,9 +47,12 @@ Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMed
 
 Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
-
+Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
+Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
+*/
 /*
  Em processo Enfermeiro
 Route::get("/AgendamentoBaixados", [controllerEnfermeiro::class, "historicoAgendamentos"]);
 Route::get("/MedicamentosPendentes", [controllerEnfermeiro::class, "MedicamentoPendentes"]);
 */
+

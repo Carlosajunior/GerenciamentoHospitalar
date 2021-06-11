@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerMedicamento;
+use App\Http\Controllers\controllerEnfermeiroChefe;
 use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
 use App\Http\Controllers\controllerEnfermeiro;
 use App\Http\Controllers\controllerCIDApi;
 use App\Models\log;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,12 +22,38 @@ use App\Models\log;
 */
 
 //rotas que necessitam de autenticação para serem acessadas
+/*
 Route::group(['middleware' => ['auth:sanctum']], function(){
-    Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
-    Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
-    Route::get("/logs", [log::class, "mostrarLogs"]);
+Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
+Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
+Route::get("/logs", [log::class, "mostrarLogs"]);
+});
+*/
+Route::group(['middleware'=>['cors']], function(){
+    Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
+
+    Route::post("/login", [controllerLogin::class, "login"]);
+    
+    Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
+    
+    Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
+    
+    
+    // Rotas Enfermeiro e Estagiario :
+    Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
+    Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
+    Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
+    Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
+    
+    Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
+    
+    Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
+    Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
+    Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
+    Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
 });
 
+<<<<<<< HEAD
 Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
 Route::post("/login", [controllerLogin::class, "login"]);
@@ -45,6 +73,8 @@ Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMed
 
 Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
+=======
+>>>>>>> 402c4b320c972ae02e2f8ff45f96442d7633971c
 
 /*
  Em processo Enfermeiro
