@@ -54,6 +54,7 @@ export default {
     },
     usuarios: {},
     created(){
+        const config = {headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}}
         axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios",headers:{'token':localStorage.getItem('token')}}).then(result =>{
             this.response = result.data;
             console.log("Não deu erro!");

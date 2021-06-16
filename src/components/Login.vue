@@ -71,7 +71,7 @@ export default {
           this.$emit("authenticaded",true);
           localStorage.setItem('token',teste.data.token)
           localStorage.setItem('user',this.apelido)
-          
+          localStorage.setItem('id_Cargo',teste.data.id_Cargo)
           if (this.selected==1){
             sessionStorage.setItem('kindUser','Administrador')
             this.$router.replace({name:'HomeAdm'})
