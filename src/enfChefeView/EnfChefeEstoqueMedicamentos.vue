@@ -47,7 +47,7 @@ export default {
   created() {
     axios({
       method: "GET",
-      url: " http://127.0.0.1:8000/mostrar-usuarios",
+      url: " http://127.0.0.1:8000/mostrar-medicamentos",
     }).then(
       (result) => {
         this.response = result.data;
