@@ -16,7 +16,8 @@ return [
     */
 
     'paths' => ['api/*', 'sanctum/csrf-cookie',
-    '/login','/VerificarAgendamentoEnf',
+    '/login',
+    '/VerificarAgendamentoEnf',
     '/EstoqueMedicamentosEnf',
     '/RelatorioPacienteEnf',
     '/cadastrar-usuario',

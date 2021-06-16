@@ -39,6 +39,7 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     
     Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
     
+    Route::get('/logs', [Log::class, "mostrarLogs"]);
     
     // Rotas Enfermeiro e Estagiario :
     Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
@@ -54,11 +55,13 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
 });
 
+
+
 Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 
 Route::post("/login", [controllerLogin::class, "login"]);
 
-Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
+//Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 
 Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
 
