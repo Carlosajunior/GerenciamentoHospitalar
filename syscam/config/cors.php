@@ -32,7 +32,9 @@ return [
     '/Bater_Ponto',
     '/mostrar-usuarios',
     '/editar-cadastro',
-    '/logs'
+    '/logs',
+    '/mostrar-medicamentos'
+
 ],
 
     'allowed_methods' => ['*'],

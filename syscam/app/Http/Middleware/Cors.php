@@ -17,8 +17,8 @@ class Cors
     public function handle(Request $request, Closure $next)
     {
         return $next($request)
-        ->header('Access-Control-Allow-Origin','*')
-        ->header('Acess-Control-Allow-Methods','GET','POST','PATCH')
-        ->header('Acess-Control-Allow-Headers','Accept,Authorization,Content-Type');
+        ->header('Access-Control-Allow-Origin:*')
+        ->header('Acess-Control-Allow-Methods','DELETE, POST, GET, PATCH, OPTIONS')
+        ->header('Acess-Control-Allow-Headers:*');
     }
 }
