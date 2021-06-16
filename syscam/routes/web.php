@@ -66,7 +66,6 @@ Route::get("/mostrar-medicamentos", [controllerMedicamento::class, "mostrarMedic
 
 Route::get("/CID", [controllerCIDApi::class, "CID"]);
 // Rotas Enfermeiro e Estagiario :
-Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
 Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
 Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
 Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
