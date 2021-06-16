@@ -4,23 +4,23 @@
     <form @submit.prevent="postForm">
       <div >
         <label for="">Paciente</label>
-        <input class="input-for" type="text" v-model="name" required />
+        <input class="input-for" type="text" v-model="paciente" required />
       </div>
       <div>
         <label for="">Enfermeiro/Estagiário</label>
-        <input class="input-for" type="text" v-model="cpf" required />
+        <input class="input-for" type="text" v-model="enf" required />
       </div>
       <div>
         <label for="">CID</label>
-        <input class="input-for" type="email"  v-model="email" required />
+        <input class="input-for" type="email"  v-model="cid" required />
       </div>
       <div>
         <label for="">Posologia</label>
-        <input class="input-for" type="text" v-model="telefone" required  />
+        <input class="input-for" type="text" v-model="posologia" required  />
       </div>
       <div>
         <label for="">Quarto</label>
-        <input class="input-for" type="text"  v-model="endereco" required  />
+        <input class="input-for" type="text"  v-model="quarto" required  />
       </div>
           <button type="submit" class="b-salvar">Salvar</button>
           <button class="b-cancelar">Cancelar</button>
@@ -39,13 +39,11 @@ export default {
   },
   data(){
     return{
-    name : null,
-    cpf : null,
-    enderco:null,
-    telefone:null,
-    email:null,
-    response : null,
-    cadastroData : this.cadastro
+    paciente : undefined,
+    enf : undefined,
+    cid: undefined,
+    posologia:undefined,
+    quarto:undefined,
     }
   },
 };

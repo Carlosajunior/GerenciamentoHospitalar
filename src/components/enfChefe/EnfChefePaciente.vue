@@ -9,7 +9,6 @@
 
         </select></th>
     <th scope="col"> <button @click="exibir">Exibir</button> </th>
-    <span>Selecionado: {{ prontuario }}</span>
 
   </tr>
 </template>
