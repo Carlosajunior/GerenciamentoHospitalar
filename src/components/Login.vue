@@ -69,20 +69,24 @@ export default {
         console.log(teste.data);
         if(teste){
           this.$emit("authenticaded",true);
-          localStorage.setItem('token',teste.toString())
+          localStorage.setItem('token',teste.data.token)
           localStorage.setItem('user',this.apelido)
+          
           if (this.selected==1){
-            this.$router.replace({name:'HomeAdm'})
             sessionStorage.setItem('kindUser','Administrador')
+            this.$router.replace({name:'HomeAdm'})
+           
           }
           else if (this.selected==2){
-              this.$router.replace({name:"HomeEnfChefe"})
               sessionStorage.setItem('kindUser','Enfermeiro Chefe')
+              this.$router.replace({name:"HomeEnfChefe"})
+              
           }
 
           else if (this.selected==3){
-            this.$router.replace({name:"HomeEnf"})
             sessionStorage.setItem('kindUser','Enfermeiro')
+            this.$router.replace({name:"HomeEnf"})
+            
           }
         }
         else{

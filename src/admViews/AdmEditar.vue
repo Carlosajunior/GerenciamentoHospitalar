@@ -54,7 +54,7 @@ export default {
     },
     usuarios: {},
     created(){
-        axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios"}).then(result =>{
+        axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios",headers:{'token':localStorage.getItem('token')}}).then(result =>{
             this.response = result.data;
             console.log("Não deu erro!");
             console.log(this.response);
