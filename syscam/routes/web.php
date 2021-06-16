@@ -8,6 +8,7 @@ use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
 use App\Http\Controllers\controllerEnfermeiro;
 use App\Http\Controllers\controllerCIDApi;
+use App\Http\Middleware\Cors;
 use App\Models\log;
 
 /*
@@ -29,7 +30,7 @@ Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 Route::get("/logs", [log::class, "mostrarLogs"]);
 });
 */
-Route::group(['middleware'=>['cors']], function(){
+Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
     Route::post("/login", [controllerLogin::class, "login"]);
@@ -53,7 +54,6 @@ Route::group(['middleware'=>['cors']], function(){
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
 });
 
-Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
 Route::post("/login", [controllerLogin::class, "login"]);
 
