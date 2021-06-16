@@ -60,18 +60,14 @@ export default {
     async login(){
       if (this.apelido != null && this.senha !=null){
         var loginDataLaravel = {"apelido" : this.apelido, "senha" : this.senha}
-      //  axios({methods:"POST", "url":"https://127.0.0.1:8000/login", "data": loginDataLaravel, "headers" : {"content-type": "aplication/json"}}).then(
-      //    result => {
-      //      this.response = result.data;
-      //    }
-      //  );
+
         var teste = await loginService.post(loginDataLaravel)
         console.log(teste.data);
         if(teste){
           this.$emit("authenticaded",true);
           localStorage.setItem('token',teste.data.token)
           localStorage.setItem('user',this.apelido)
-          localStorage.setItem('id_Cargo',teste.data.id_Cargo)
+          localStorage.setItem('id_cargo',teste.data.id_cargo)
           if (this.selected==1){
             sessionStorage.setItem('kindUser','Administrador')
             this.$router.replace({name:'HomeAdm'})

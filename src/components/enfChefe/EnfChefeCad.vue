@@ -3,7 +3,7 @@
     <form @submit.prevent="postForm">
       <div class="divs">
         <label for="">Nome completo</label>
-        <input class="input-for" type="text" v-model="nome" required />
+        <input class="input-for" type="text" v-model="name" required />
       </div>
       <div class="divs">
         <label for="">CPF</label>
@@ -61,7 +61,7 @@ export default {
     return{
     name : undefined,
     cpf : undefined,
-    enderco: undefined,
+    endereco: undefined,
     telefone: undefined,
     email: undefined,
     TipoSanguineo : undefined,
@@ -75,8 +75,8 @@ export default {
     async postForm(){
       console.log(this.cadastroData)
       var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
-      "email" : this.email, "TipoSanguineo" : this.TipoSanguineo, "NomeResponsavel": this.NomeResponsavel,
-      "endereco": this.enderco, "TelResponsavel" : this.TelResponsavel}
+      "email" : this.email, "fatorRH" : this.TipoSanguineo, "nome_responsavel": this.NomeResponsavel,
+      "endereco": this.endereco, "telefone_responsavel" : this.TelResponsavel}
       var cadastrar = await enfChefeServices.post(cadastroUser)
       console.log(cadastrar)
       }
