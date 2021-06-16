@@ -51,33 +51,26 @@ export default {
     async login(){
       if (this.apelido != null && this.senha !=null){
         var loginDataLaravel = {"apelido" : this.apelido, "senha" : this.senha}
-
-        var teste = await loginService.post(loginDataLaravel)
-        console.log(teste.data);
-        if(teste){
+        var login = await loginService.post(loginDataLaravel)
+        console.log(login.data);
+        if(login){
           this.$emit("authenticaded",true);
-          localStorage.setItem('token',teste.data.token)
+          localStorage.setItem('token',login.data.token)
           localStorage.setItem('user',this.apelido)
-          localStorage.setItem('id_cargo',teste.data.id_cargo)
+          localStorage.setItem('id_cargo',login.data.id_cargo)
+
           if (localStorage.getItem('id_cargo') == 1){
             sessionStorage.setItem('kindUser','Administrador')
-            this.$router.replace({name:'HomeAdm'})
-           
+            this.$router.replace({name:'HomeAdm'})           
           }
           else if (localStorage.getItem('id_cargo') == 2){
               sessionStorage.setItem('kindUser','Enfermeiro Chefe')
-              this.$router.replace({name:"HomeEnfChefe"})
-              
+              this.$router.replace({name:"HomeEnfChefe"})              
           }
-
           else if (localStorage.getItem('id_cargo') == 3 || localStorage.getItem('id_cargo') == 4){
             sessionStorage.setItem('kindUser','Enfermeiro')
-            this.$router.replace({name:"HomeEnf"})
-            
+            this.$router.replace({name:"HomeEnf"})            
           }
-        }
-        else{
-          alert("Dados incorretos");
         }
       }
     }
