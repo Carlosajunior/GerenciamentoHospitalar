@@ -62,7 +62,7 @@ Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPacient
 
 Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
 
-Route::get("/mostrar-medicamentos", [controllerMedicamento::class, "mostrarMedicamentos"])
+Route::get("/mostrar-medicamentos", [controllerMedicamento::class, "mostrarMedicamentos"]);
 
 Route::get("/CID", [controllerCIDApi::class, "CID"]);
 // Rotas Enfermeiro e Estagiario :
