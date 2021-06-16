@@ -26,13 +26,6 @@ class controllerEnfermeiro extends Controller
         return $paciente;
     } 
     //---------------------------------------------------------------------------------
-    public function EstoqueMedicamentos(){ //Gera uma lista com os Medicamentos em estoque 
-        $array = collect([]);
-        foreach (Medicamento::all() as $Medicamento)
-            $array->push($Medicamento);
-        return($array);
-    }
-    //---------------------------------------------------------------------------------
     public function ListarPacientes(){ //Gera uma lista com os Pacientes castrados 
         $array = collect([]);
         foreach (Paciente::all() as $Paciente)
