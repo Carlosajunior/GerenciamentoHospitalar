@@ -18,15 +18,6 @@
 
   </div>
   <div class="col-md-10 offset-md-3">
-    <select class= "form-select" v-model="selected">
-      <option disabled value="">Escolha um usuário</option>
-      <option value=1>Administrador</option>
-      <option value=2>Enfermeiro Chefe</option>
-      <option value=3>Enfermeiro</option>
-      <option value=4>Estágiario</option>
-    </select>
-  </div>
-  <div class="col-md-10 offset-md-3">
     <router-link to= "/about">Esqueceu a senha? </router-link>
   </div>
   <div class="col-md-10 offset-md-3" style="margin-top:3%">
@@ -68,18 +59,18 @@ export default {
           localStorage.setItem('token',teste.data.token)
           localStorage.setItem('user',this.apelido)
           localStorage.setItem('id_cargo',teste.data.id_cargo)
-          if (this.selected==1){
+          if (localStorage.getItem('id_cargo') == 1){
             sessionStorage.setItem('kindUser','Administrador')
             this.$router.replace({name:'HomeAdm'})
            
           }
-          else if (this.selected==2){
+          else if (localStorage.getItem('id_cargo') == 2){
               sessionStorage.setItem('kindUser','Enfermeiro Chefe')
               this.$router.replace({name:"HomeEnfChefe"})
               
           }
 
-          else if (this.selected==3){
+          else if (localStorage.getItem('id_cargo') == 3 || localStorage.getItem('id_cargo') == 4){
             sessionStorage.setItem('kindUser','Enfermeiro')
             this.$router.replace({name:"HomeEnf"})
             
