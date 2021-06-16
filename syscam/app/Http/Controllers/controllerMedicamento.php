@@ -15,4 +15,11 @@ class controllerMedicamento extends Controller
         ]);
         return $medicamento;
     }
+
+    public function mostrarMedicamentos(){
+        $array = collect([]);
+        foreach (Medicamento::all() as $Medicamento)
+            $array->push($Medicamento);
+        return($array);
+    }
 }
