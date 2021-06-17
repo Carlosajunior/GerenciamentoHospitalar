@@ -1,6 +1,6 @@
 <template>
 <div class="formulario">
-    <form @submit.prevent="editarForm">
+    <form>
       <div>
         <label for="">Nome completo</label>
         <input class="form-control" type="text" v-model="name" />
@@ -38,8 +38,8 @@
           <option value=3> Enfermeiro </option>
           <option value=4 > Estagiário </option>
         </select>
-          <button type="submit" class="btn btn-primary">Salvar</button>
-          <button class="btn btn-danger">Cancelar</button>      
+          <button  @click.prevent="editarForm" class="btn btn-primary">Salvar</button>
+          <button @click="()=>{this.$emit('sair')}" class="btn btn-danger">Cancelar</button>      
     </form>
 </div>
 </template>

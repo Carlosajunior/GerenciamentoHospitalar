@@ -16,10 +16,8 @@ export default {
             cargo : null,
             alteracao: null,
             data:null,
-            hora:null
-        
-    }
-    
+            hora:null        
+    }    
 }
 </script>
 
