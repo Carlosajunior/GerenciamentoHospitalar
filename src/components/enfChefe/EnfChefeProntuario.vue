@@ -3,7 +3,7 @@
      <tr>
         <th scope="col">{{paciente}}</th>
         <th scope="col">{{idProntuario}}</th>
-        <th scope="col"> <select v-model="TipoSanguineo">
+        <th scope="col"> <select v-model="status">
           <option disabled value="">Status da baixa:</option>
           <option value=1>Alta</option>
           <option value=2>Obito</option>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import enfChefeProntuario from "../../services/enfChefeProntuario"
 export default {
     name:"EnfChefeProntuario",
     props:{
@@ -24,6 +25,13 @@ export default {
       idProntuario : null,
   
     },
+     data(){
+    return{
+    status : '',
+    }
+  },
+  
+  
      methods:{
         editar(){
           if(this.prontuario== this.idprontuario){
@@ -31,12 +39,15 @@ export default {
           }
         },
           baixar(){
-          if(this.prontuario== this.idprontuario){
-            this.$router.push("../enfChefeView/EnfChefeOpView")
+          if(this.status != ''){
+            var cadastroUser ={"status" : this.status}
+            var cadastrar = enfChefeProntuario.post(cadastroUser)
+            console.log(cadastrar)
           }
           },
           exibir(){
-          if(this.prontuario== this.idprontuario){
+            var prontuario = this.idProntuario;
+          if(prontuario == this.idProntuario){
             this.$router.push("../enfChefeView/EnfChefeOpView")
           }
           }
