@@ -1,6 +1,5 @@
 <template>
-  <body class="formulario">
-    <h2></h2>
+
     <form @submit.prevent="postForm">
       <div >
         <label for="">Paciente</label>
@@ -12,7 +11,10 @@
       </div>
       <div>
         <label for="">CID</label>
-        <input class="input-for" type="email"  v-model="cid" required />
+         <select v-model="cid">
+          <option disabled value="">Escolha a CID:</option>
+          <option> {{cids}}  </option>
+         </select>
       </div>
       <div>
         <label for="">Posologia</label>
@@ -26,27 +28,40 @@
           <button class="b-cancelar">Cancelar</button>
       
     </form>
-  </body>
 </template>
 
 <script>
-//import axios from 'axios' 
+import enfChefeProntuario from "../../services/enfChefeProntuario"
+
 export default {
   nome: "EnfChefeProCad",
   props: {
-    h2Name : String,
-    cadastro : Boolean
+    cids: null,
   },
   data(){
     return{
     paciente : undefined,
     enf : undefined,
-    cid: undefined,
+    cid : '',
     posologia:undefined,
     quarto:undefined,
     }
   },
-};
+  
+    methods:{
+    
+    async postForm(){
+      console.log(this.cadastroData)
+      var cadastroUser ={"paciente" : this.paciente, "enf" : this.enf, "cid" : this.cid,
+      "posologia" : this.posologia, "quarto" : this.quarto}
+      var cadastrar = await enfChefeProntuario.post(cadastroUser)
+      console.log(cadastrar)
+      }
+      },
+
+}
+
+
 </script>
 
 <style>
@@ -59,11 +74,6 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 
-.formulario {
-  width: 800px;
-  margin-top: 8%;
-  margin-left: 30%;
-}
 
 
 .input-for {
@@ -97,10 +107,11 @@ button{
 }
 .b-salvar{
   margin-left: 100px;
-  background: blue;
+  background: #2BA9F1;
  
 }
 .b-cancelar{
-  background:crimson;
+  background: red;
   }
+
 </style>
