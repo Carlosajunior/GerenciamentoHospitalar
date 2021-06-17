@@ -28,7 +28,7 @@ class controllerLogin extends Controller
             if($codigoErro == 400)
                 $mensagem = $e->getMessage();
             http_response_code($codigoErro);
-            echo $mensagem;
-        }        
+        }
+        return response($mensagem, $codigoErro);        
     }
 }

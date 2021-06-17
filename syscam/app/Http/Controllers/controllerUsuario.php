@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
-use App\Models\Log;
+use App\Models\Logs_Alteracao;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -19,7 +19,7 @@ class controllerUsuario extends Controller
 
     public function editarCadastro(Request $request)
     {
-        try {
+        // try {
             $usuario = Usuario::firstWhere('id', '=', $request->id);
             if ($usuario != null) {
                 if ($request->nome != null)
@@ -44,7 +44,7 @@ class controllerUsuario extends Controller
                     else
                         return print('Este apelido já está em uso, escolha outro.');
                 }
-                $log = log::create([
+                $log = Logs_Alteracao::create([
                     'data_alteracao' => \Carbon\Carbon::now(),
                     'nome' => $request->nome,
                     'cpf' => $request->cpf,
@@ -57,9 +57,12 @@ class controllerUsuario extends Controller
                 $usuario->save();
                 return $usuario;
             }
-        } catch (Exception $e) {
-            echo $e->getCode();
-        }
+    //     } catch (Exception $e) {
+    //         $codigoErro = 400;
+    //         $mensagem = "Não foi possível realizar a edição. Dados inválidos";
+    //         http_response_code($codigoErro);
+    //     }
+    //     return response($mensagem, $codigoErro); 
     }
 
     public function criarUsuario(Request $request)

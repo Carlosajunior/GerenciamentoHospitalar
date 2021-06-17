@@ -10,6 +10,7 @@ use App\Http\Controllers\controllerEnfermeiro;
 use App\Http\Controllers\controllerCIDApi;
 use App\Http\Middleware\Cors;
 use App\Models\log;
+use App\Models\Logs_Alteracao;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     
     Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
     
-    Route::get('/logs', [Log::class, "mostrarLogs"]);
+    Route::get('/logs', [Logs_Alteracao::class, "mostrarLogs"]);
     
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 

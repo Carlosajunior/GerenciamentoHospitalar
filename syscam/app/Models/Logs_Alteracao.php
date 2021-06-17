@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Log extends Model
+class Logs_Alteracao extends Model
 {
     use HasFactory;
 
@@ -24,8 +24,9 @@ class Log extends Model
 
     public function mostrarLogs(){
         $array = collect([]);
-        foreach (log::all() as $Log)
+        foreach (Logs_Alteracao::all() as $Log)
             $array->push($Log);
         return($array);
     }
+    protected $table = 'logs_alteracao';
 }
