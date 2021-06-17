@@ -16,7 +16,8 @@ class controllerLogin extends Controller
                 $token = $usuario->createToken($apelido)->plainTextToken;
                 $response = [
                     'token' => $token,
-                    'id_cargo' => $usuario->id_Cargo
+                    'id_cargo' => $usuario->id_Cargo,
+                    'id' => $usuario ->id
                 ];
                 return response($response);
             }
