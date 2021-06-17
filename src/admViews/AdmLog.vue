@@ -13,19 +13,24 @@
               <table class="table">
                 <thead>
                   <th scope="col">Apelido</th>
-                  <th scope="col">Cargo</th>
-                  <th scope="col">Alteração</th>
-                  <th scope="col">Data</th>
-                  <th scope="col">Hora</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Senha</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">CPF</th>
+                  <th scope="col">Editor</th>
+                  <th scope="col">Data e Hora</th>
                 </thead>
-
                 <tbody v-for="(alt, index) in response" :key="index">
                   <adm-log-cell
                     :apelido="alt.apelido"
-                    :name="alt.cargo"
-                    :alteracao="'Editar usuário'"
-                    :cargo="'Administrador'"
-                    :data="alt.data_alteracao"
+                    :nome="alt.nome"
+                    :senha="alt.senha"
+                    :email="alt.email"
+                    :telefone="alt.telefone"
+                    :cpf="alt.cpf"
+                    :editor="alt.nome_editor"
+                    :data_hora="alt.data_alteracao"
                   ></adm-log-cell>
                 </tbody>
               </table>
@@ -53,11 +58,12 @@ export default {
     };
   },
   created() {
-    this.getServices;
+    this.getServices();
   },
   methods: {
     async getServices() {
-      this.response = await admServices.get().data;
+      admServices.get().then((response)=>{this.response = response.data});
+      console.log(await admServices.get().data);
     },
   },
 };

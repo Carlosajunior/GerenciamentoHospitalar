@@ -58,7 +58,6 @@ export default {
     }).then(
       (result) => {
         this.response = result.data;
-        console.log("Não deu erro!");
         console.log(this.response);
       },
       (error) => {

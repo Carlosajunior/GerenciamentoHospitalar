@@ -1,5 +1,5 @@
 <template>
-<div class="formulario">
+  <div class="formulario">
     <form>
       <div>
         <label for="">Nome completo</label>
@@ -11,71 +11,101 @@
       </div>
       <div>
         <label for="">Email</label>
-        <input class="form-control" type="email"  v-model="email" />
+        <input class="form-control" type="email" v-model="email" />
       </div>
       <div>
         <label for="">Telefone</label>
-        <input class="form-control" type="text" v-model="telefone"  />
+        <input class="form-control" type="text" v-model="telefone" />
       </div>
       <div>
         <label for="">Apelido</label>
-        <input class="form-control" type="text"  v-model="apelido"  />
+        <input class="form-control" type="text" v-model="apelido" />
       </div>
       <div>
         <label for="">Senha</label>
-        <input class="form-control" type="password" id="senha" v-model="senha"  />
+        <input
+          class="form-control"
+          type="password"
+          id="senha"
+          v-model="senha"
+        />
       </div>
-      <div v-if ="this.senha != null">
+      <div v-if="this.senha != null">
         <label for="">Repetir senha</label>
-        <input class="form-control" type="password" id="senha2" required  />
+        <input class="form-control" type="password" id="senha2" required />
       </div>
-    
-        <label for="">Cargo</label>
-        <select class="form-select" v-model="selected">
-          <option disabled value="">Escolha um cargo</option>
-          <option value=1>Administrador</option>
-          <option value=2> Enfermeiro-Chefe </option>
-          <option value=3> Enfermeiro </option>
-          <option value=4 > Estagiário </option>
-        </select>
-          <button  @click.prevent="editarForm" class="btn btn-primary">Salvar</button>
-          <button @click="()=>{this.$emit('sair')}" class="btn btn-danger">Cancelar</button>      
+
+      <label for="">Cargo</label>
+      <select class="form-select" v-model="selected">
+        <option disabled value="">Escolha um cargo</option>
+        <option value="1">Administrador</option>
+        <option value="2">Enfermeiro-Chefe</option>
+        <option value="3">Enfermeiro</option>
+        <option value="4">Estagiário</option>
+      </select>
+      <button @click.prevent="editarForm" class="btn btn-primary">
+        Salvar
+      </button>
+      <button
+        @click="
+          () => {
+            this.$emit('sair');
+          }
+        "
+        class="btn btn-danger"
+      >
+        Cancelar
+      </button>
     </form>
-</div>
+    <div v-show="hasErro" class="alert alert-danger" role="alert">
+      Não foi possível alterar o cadastro!
+    </div>
+  </div>
 </template>
 
 <script>
-import admEditarService from "../../services/admEditarService"
+import admEditarService from "../../services/admEditarService";
 
 export default {
   nome: "AdmEdit",
   props: {
-    h2Name : String,
-    cadastro : Boolean
+    h2Name: String,
+    cadastro: Boolean,
   },
-  data(){
-    return{
-    name : undefined,
-    cpf : undefined,
-    enderco:undefined,
-    telefone:undefined,
-    email:undefined,
-    senha : null,
-    apelido : undefined,
-    response : null,
-    selected: undefined
-    }
+  data() {
+    return {
+      name: undefined,
+      cpf: undefined,
+      endereco: undefined,
+      telefone: undefined,
+      email: undefined,
+      senha: null,
+      apelido: undefined,
+      response: null,
+      selected: undefined,
+      hasErro: false
+    };
   },
-  methods:{
-    async editarForm(){
-      var editarUser ={"id":sessionStorage.getItem('admEditarUser') ,"cpf": this.cpf,"nome" : this.name, "telefone" : this.telefone,
-      "email" : this.email, "apelido" : this.apelido, "senha": this.senha}
-      var editar = await admEditarService.editar(editarUser)
-      console.log(editar);
+  methods: {
+    async editarForm() {
+      var editarUser = {
+        id: sessionStorage.getItem("admEditarUser"),
+        cpf: this.cpf,
+        nome: this.name,
+        telefone: this.telefone,
+        email: this.email,
+        apelido: this.apelido,
+        senha: this.senha,
+        editor: sessionStorage.getItem("id_usuario"),
+      };
+      try{
+        this.response = await admEditarService.editar(editarUser);
+      }catch(response){
+        this.hasErro = true
+      }
     },
-  }
+  },
 };
-
 </script>
 
 <style>
@@ -91,48 +121,42 @@ export default {
 .formulario {
   width: 800px;
   margin-left: 30%;
-
 }
-
 
 .input-for {
-    border: 1px solid #ccc!important;
-    padding: 6px;
-    display: block;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: 50%;
-    padding: 1px 2px;
-    margin-bottom: 5px;
+  border: 1px solid #ccc !important;
+  padding: 6px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 50%;
+  padding: 1px 2px;
+  margin-bottom: 5px;
 }
-button, input {
-    overflow: visible;
+button,
+input {
+  overflow: visible;
 }
 
 input:focus {
   border: 3px solid #555;
 }
-.input-radio{
+.input-radio {
   margin-left: 3%;
 }
-button{
+button {
   display: inline-block;
   width: 15%;
   margin: 10px;
   border: none;
   padding: 4px;
   color: white;
-  
 }
-.b-salvar{
+.b-salvar {
   margin-left: 100px;
   background: blue;
- 
 }
-.b-cancelar{
-  background:crimson;
-  }
-
-
-
+.b-cancelar {
+  background: crimson;
+}
 </style>
