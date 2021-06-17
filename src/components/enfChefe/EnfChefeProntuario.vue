@@ -1,34 +1,59 @@
 <template>
-<div>
-    <div class="filtro">
-      <label for="">Nome do paciente: </label>
-      <input id="text" type="text" />
-      <button>Buscar</button>
-    </div>
+
      <tr>
-        <th scope="col">Nome do paciente</th>
-        <th scope="col">ID do prontuário</th>
-        <th scope="col">Editar prontuário</th>
-        <th scope="col">Baixa prontuário</th>
-        <th scope="col">Visualizar prontuário</th>
+        <th scope="col">{{paciente}}</th>
+        <th scope="col">{{idProntuario}}</th>
+        <th scope="col"> <select v-model="status">
+          <option disabled value="">Status da baixa:</option>
+          <option value=1>Alta</option>
+          <option value=2>Obito</option>
+        </select></th>
+        <th scope="col"> <button @click="editar">Editar </button> </th>
+        <th scope="col"> <button @click="baixar"> Dar baixa </button> </th>
+        <th scope="col"> <button @click="exibir"> Visualizar</button></th>
     </tr>
-</div>
+
    
 </template>
 
 <script>
+import enfChefeProntuario from "../../services/enfChefeProntuario"
 export default {
     name:"EnfChefeProntuario",
     props:{
       paciente:null,
       idProntuario : null,
-      editarProntuario: null,
-      baixaProntuário:null,
-      visualizarProntuário:null
   
+    },
+     data(){
+    return{
+    status : '',
     }
-    
+  },
+  
+  
+     methods:{
+        editar(){
+          if(this.prontuario== this.idprontuario){
+            this.$router.push("../enfChefeView/EnfChefeOpView")
+          }
+        },
+          baixar(){
+          if(this.status != ''){
+            var cadastroUser ={"status" : this.status}
+            var cadastrar = enfChefeProntuario.post(cadastroUser)
+            console.log(cadastrar)
+          }
+          },
+          exibir(){
+            var prontuario = this.idProntuario;
+          if(prontuario == this.idProntuario){
+            this.$router.push("../enfChefeView/EnfChefeOpView")
+          }
+          }
 }
+}
+
 </script>
 
 <style>
