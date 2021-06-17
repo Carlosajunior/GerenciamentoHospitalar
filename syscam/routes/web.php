@@ -22,14 +22,6 @@ use App\Models\log;
 |
 */
 
-//rotas que necessitam de autenticação para serem acessadas
-/*
-Route::group(['middleware' => ['auth:sanctum']], function(){
-Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
-Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
-Route::get("/logs", [log::class, "mostrarLogs"]);
-});
-*/
 Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
@@ -41,6 +33,8 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     
     Route::get('/logs', [Log::class, "mostrarLogs"]);
     
+    Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
+
     // Rotas Enfermeiro e Estagiario :
     Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
     Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
