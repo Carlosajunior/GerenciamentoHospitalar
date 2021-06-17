@@ -1,5 +1,5 @@
 <template>
-<div class="formulario">
+  <div class="formulario">
     <form @submit.prevent="postForm">
       <div>
         <label for="">Nome completo</label>
@@ -11,98 +11,94 @@
       </div>
       <div>
         <label for="">Email</label>
-        <input class="form-control" type="email"  v-model="email" required />
+        <input class="form-control" type="email" v-model="email" required />
       </div>
       <div>
         <label for="">Telefone</label>
-        <input class="form-control" type="text" v-model="telefone" required  />
+        <input class="form-control" type="text" v-model="telefone" required />
       </div>
       <div>
         <label for="">Endereço</label>
-        <input class="form-control" type="text"  v-model="endereco" required  />
+        <input class="form-control" type="text" v-model="endereco" required />
       </div>
       <div>
         <label for="">Apelido</label>
-        <input class="form-control" type="text"  v-model="apelido" required  />
+        <input class="form-control" type="text" v-model="apelido" required />
       </div>
       <div>
         <label for="">Senha</label>
-        <input class="form-control" type="password" id="senha" v-model="senha" required  />
+        <input
+          class="form-control"
+          type="password"
+          id="senha"
+          v-model="senha"
+          required
+        />
       </div>
       <div>
         <label for="">Repetir senha</label>
-        <input class="form-control" type="password" id="senha2" required  />
+        <input class="form-control" type="password" id="senha2" required />
       </div>
-    
-        <label for="">Cargo</label>
-        <select class="form-select" v-model="selected">
-          <option disabled value="">Escolha um cargo</option>
-          <option value=1>Administrador</option>
-          <option value=2> Enfermeiro-Chefe </option>
-          <option value=3> Enfermeiro </option>
-          <option value=4 > Estagiário </option>
-        </select>
-        
-    
-          <button type="submit" class="btn btn-primary">Salvar</button>
-          <button class="btn btn-danger">Cancelar</button>
-      
+      <label for="">Cargo</label>
+      <select class="form-select" v-model="selected">
+        <option disabled value="">Escolha um cargo</option>
+        <option value="1">Administrador</option>
+        <option value="2">Enfermeiro-Chefe</option>
+        <option value="3">Enfermeiro</option>
+        <option value="4">Estagiário</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button class="btn btn-danger">Cancelar</button>
+      <div v-show="hasErro" class="alert alert-danger" role="alert">
+        Não foi possível concluir o cadastro!
+      </div>
     </form>
-</div>
+  </div>
 </template>
 
 <script>
-import admServices from "../../services/admServices"
-import admEditarService from "../../services/admEditarService"
+import admServices from "../../services/admServices";
 
 export default {
   nome: "AdmCad",
   props: {
-    h2Name : String,
-    cadastro : Boolean
+    h2Name: String,
   },
-  data(){
-    return{
-    name : undefined,
-    cpf : undefined,
-    enderco:undefined,
-    telefone:undefined,
-    email:undefined,
-    senha : null,
-    apelido : undefined,
-    response : null,
-    selected: undefined,
-    cadastroData : this.cadastro
-    }
+  data() {
+    return {
+      name: undefined,
+      cpf: undefined,
+      endereco: undefined,
+      telefone: undefined,
+      email: undefined,
+      senha: null,
+      apelido: undefined,
+      response: null,
+      selected: undefined,
+      hasErro: undefined,
+    };
   },
-  methods:{
-    async editarForm(){
-      var cadastroUser ={"cpf":sessionStorage.getItem('admEditarUser'),"nome" : this.name, "telefone" : this.telefone,
-      "email" : this.email, "apelido" : this.apelido, "senha": this.senha}
-      var editar = await admEditarService.editar(cadastroUser)
-      console.log(editar);
-    },
-    async postForm(){
-      var x = this.cadastroData
-      console.log(x)
-      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
-      "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
-     
-      if (this.cadastroData==true){
-        console.log("Cadastro") 
-        var cadastrar = await admServices.post(cadastroUser)
-        console.log(cadastrar)
-        //this.$router.push('HomeAdm')
-
-      }else{
-        console.log("Editar")
-        this.editarForm();
-        
+  methods: {
+    async postForm() {
+      var cadastroUser = {
+        nome: this.name,
+        cpf: this.cpf,
+        telefone: this.telefone,
+        email: this.email,
+        apelido: this.apelido,
+        senha: this.senha,
+        endereco: this.endereco,
+        id_Cargo: this.selected,
+      };
+      try {
+        var response = await admServices.post(cadastroUser);
+      } catch (response) {
+        this.hasErro = true;
       }
-    }
-  }
+      console.log(response);
+    },
+  },
 };
-
 </script>
 
 <style>
@@ -118,48 +114,42 @@ export default {
 .formulario {
   width: 800px;
   margin-left: 30%;
-
 }
-
 
 .input-for {
-    border: 1px solid #ccc!important;
-    padding: 6px;
-    display: block;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: 50%;
-    padding: 1px 2px;
-    margin-bottom: 5px;
+  border: 1px solid #ccc !important;
+  padding: 6px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 50%;
+  padding: 1px 2px;
+  margin-bottom: 5px;
 }
-button, input {
-    overflow: visible;
+button,
+input {
+  overflow: visible;
 }
 
 input:focus {
   border: 3px solid #555;
 }
-.input-radio{
+.input-radio {
   margin-left: 3%;
 }
-button{
+button {
   display: inline-block;
   width: 15%;
   margin: 10px;
   border: none;
   padding: 4px;
   color: white;
-  
 }
-.b-salvar{
+.b-salvar {
   margin-left: 100px;
   background: blue;
- 
 }
-.b-cancelar{
-  background:crimson;
-  }
-
-
-
+.b-cancelar {
+  background: crimson;
+}
 </style>
