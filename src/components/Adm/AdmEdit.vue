@@ -18,10 +18,6 @@
         <input class="form-control" type="text" v-model="telefone"  />
       </div>
       <div>
-        <label for="">Endereço</label>
-        <input class="form-control" type="text"  v-model="endereco"  />
-      </div>
-      <div>
         <label for="">Apelido</label>
         <input class="form-control" type="text"  v-model="apelido"  />
       </div>
@@ -72,7 +68,7 @@ export default {
   },
   methods:{
     async editarForm(){
-      var editarUser ={"id":"" ,"cpf": this.cpf,"nome" : this.name, "telefone" : this.telefone,
+      var editarUser ={"id":sessionStorage.getItem('admEditarUser') ,"cpf": this.cpf,"nome" : this.name, "telefone" : this.telefone,
       "email" : this.email, "apelido" : this.apelido, "senha": this.senha}
       var editar = await admEditarService.editar(editarUser)
       console.log(editar);

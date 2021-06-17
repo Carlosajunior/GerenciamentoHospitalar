@@ -24,10 +24,7 @@ export default {
             nickname : sessionStorage.getItem('admEditarUser')
         }
     }
-    
 }
-
-console.log(sessionStorage.getItem('admEditarUser'));
 </script>
 
 <style>

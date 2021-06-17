@@ -52,29 +52,22 @@ export default {
             idEd : undefined
         }
     },
-    usuarios: {},
     created(){
         axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios"}).then(result =>{
             this.response = result.data;
             console.log("Não deu erro!");
-            console.log(this.response);
-           
+            console.log(this.response);           
         }, error =>{
             console.log("Erro");
             console.error(error);
         });
     },
-
     methods:{
         editar(valeu){
-            console.log(valeu + "Evento ouvido")
-        
-            this.view = false
-            
+            console.log(valeu + "Evento ouvido")        
+            this.view = false            
         }
     }
-
-    
 }
 </script>
 

@@ -25,6 +25,9 @@
   </div>
   </div>
 </form>
+  <div v-show = "hasErro"  class="alert alert-danger" role="alert">
+    Credenciais inválidas!
+  </div>
   </div>
   </div>
 
@@ -42,7 +45,7 @@ export default {
       senha : null,
       hasErro: false,
       response : null,
-      selected : null,
+      selected : null
     }
   },
 
@@ -51,8 +54,11 @@ export default {
     async login(){
       if (this.apelido != null && this.senha !=null){
         var loginDataLaravel = {"apelido" : this.apelido, "senha" : this.senha}
+        try{        
         var login = await loginService.post(loginDataLaravel)
-        console.log(login.data);
+        }catch(login){
+          this.hasErro = true
+        }
         if(login){
           this.$emit("authenticaded",true);
           sessionStorage.setItem('token',login.data.token)
