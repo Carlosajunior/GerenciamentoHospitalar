@@ -18,15 +18,6 @@
 
   </div>
   <div class="col-md-10 offset-md-3">
-    <select class= "form-select" v-model="selected">
-      <option disabled value="">Escolha um usuário</option>
-      <option value=1>Administrador</option>
-      <option value=2>Enfermeiro Chefe</option>
-      <option value=3>Enfermeiro</option>
-      <option value=4>Estágiario</option>
-    </select>
-  </div>
-  <div class="col-md-10 offset-md-3">
     <router-link to= "/about">Esqueceu a senha? </router-link>
   </div>
   <div class="col-md-10 offset-md-3" style="margin-top:3%">
@@ -60,33 +51,26 @@ export default {
     async login(){
       if (this.apelido != null && this.senha !=null){
         var loginDataLaravel = {"apelido" : this.apelido, "senha" : this.senha}
-      //  axios({methods:"POST", "url":"https://127.0.0.1:8000/login", "data": loginDataLaravel, "headers" : {"content-type": "aplication/json"}}).then(
-      //    result => {
-      //      this.response = result.data;
-      //    }
-      //  );
-        var teste = await loginService.post(loginDataLaravel)
-        console.log(teste.data);
-        if(teste){
+        var login = await loginService.post(loginDataLaravel)
+        console.log(login.data);
+        if(login){
           this.$emit("authenticaded",true);
-          localStorage.setItem('token',teste.toString())
+          localStorage.setItem('token',login.data.token)
           localStorage.setItem('user',this.apelido)
-          if (this.selected==1){
-            this.$router.replace({name:'HomeAdm'})
-            sessionStorage.setItem('kindUser','Administrador')
-          }
-          else if (this.selected==2){
-              this.$router.replace({name:"HomeEnfChefe"})
-              sessionStorage.setItem('kindUser','Enfermeiro Chefe')
-          }
+          localStorage.setItem('id_cargo',login.data.id_cargo)
 
-          else if (this.selected==3){
-            this.$router.replace({name:"HomeEnf"})
-            sessionStorage.setItem('kindUser','Enfermeiro')
+          if (localStorage.getItem('id_cargo') == 1){
+            sessionStorage.setItem('kindUser','Administrador')
+            this.$router.replace({name:'HomeAdm'})           
           }
-        }
-        else{
-          alert("Dados incorretos");
+          else if (localStorage.getItem('id_cargo') == 2){
+              sessionStorage.setItem('kindUser','Enfermeiro Chefe')
+              this.$router.replace({name:"HomeEnfChefe"})              
+          }
+          else if (localStorage.getItem('id_cargo') == 3 || localStorage.getItem('id_cargo') == 4){
+            sessionStorage.setItem('kindUser','Enfermeiro')
+            this.$router.replace({name:"HomeEnf"})            
+          }
         }
       }
     }
