@@ -18,8 +18,8 @@ class Logs_Alteracao extends Model
         'email',
         'senha',
         'apelido',
-        'id_Cargo'
-
+        'id_Cargo',
+        'nome_editor'
     ];
 
     public function mostrarLogs(){
