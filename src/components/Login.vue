@@ -9,12 +9,12 @@
   <div class="col-md-10 offset-md-3">
 
     <label for="exampleInputEmail1" class="form-label">Usuário</label>
-    <input v-model="apelido"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apelido">
+    <input v-model="apelido"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apelido" required>
     <p class="subtitle">Não compartilhe seu nome de usuário e senha com mais ninguém</p>
   </div>
   <div class="col-md-10 offset-md-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
-    <input v-model="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    <input v-model="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" required>
 
   </div>
   <div class="col-md-10 offset-md-3">
@@ -55,11 +55,11 @@ export default {
         console.log(login.data);
         if(login){
           this.$emit("authenticaded",true);
-          localStorage.setItem('token',login.data.token)
-          localStorage.setItem('user',this.apelido)
-          localStorage.setItem('id_cargo',login.data.id_cargo)
+          sessionStorage.setItem('token',login.data.token)
+          sessionStorage.setItem('user',this.apelido)
+          sessionStorage.setItem('id_cargo',login.data.id_cargo)
 
-          if (localStorage.getItem('id_cargo') == 1){
+          if (sessionStorage.getItem('id_cargo') == 1){
             sessionStorage.setItem('kindUser','Administrador')
             this.$router.replace({name:'HomeAdm'})           
           }
