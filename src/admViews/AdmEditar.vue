@@ -3,7 +3,7 @@
             <adm-menu></adm-menu>
         <div id="main-content">
             <adm-bar :title="'Editar Usuário'" :cadastro="false"></adm-bar>
-            <div v-show="!view"> <adm-cad :cadastro="false" /> </div>
+            <div v-show="!view"> <adm-edit /> </div>
         </div>
         <div class="row" style="margin-top:50px" v-show="view">
             <div class="col-md-3"/>
@@ -22,7 +22,7 @@
                 <tbody v-for="(users) in response" :key="users">
                     
                      <adm-users :name="users.nome" :apelido="users.apelido" :cargo="users.id_Cargo" 
-                     :id="users.cpf" @EditarUser="this.editar"/>
+                     :id="users.id" @EditarUser="this.editar"/>
                   
                 </tbody>
             </table>
@@ -38,12 +38,12 @@
 import AdmBar from '../components/adm/AdmBar.vue'
 import AdmMenu from '../components/adm/AdmMenu.vue'
 import AdmUsers from '../components/adm/AdmUsers.vue'
-import AdmCad from '../components/adm/AdmCad.vue'
+import AdmEdit from '../components/adm/AdmEdit.vue'
 import axios from 'axios'
 export default {
-    name: 'AdmCadastrar',
+    name: 'AdmEditar',
     components: {AdmBar,
-    AdmMenu,AdmUsers,AdmCad},
+    AdmMenu,AdmUsers,AdmEdit},
     data(){
         return{
             response : null,
@@ -54,8 +54,7 @@ export default {
     },
     usuarios: {},
     created(){
-        const config = {headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}}
-        axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios",config}).then(result =>{
+        axios({method:"GET","url":" http://127.0.0.1:8000/mostrar-usuarios"}).then(result =>{
             this.response = result.data;
             console.log("Não deu erro!");
             console.log(this.response);

@@ -1,35 +1,35 @@
 <template>
 <div class="formulario">
-    <form @submit.prevent="postForm">
+    <form @submit.prevent="editarForm">
       <div>
         <label for="">Nome completo</label>
-        <input class="form-control" type="text" v-model="name" required />
+        <input class="form-control" type="text" v-model="name" />
       </div>
       <div>
         <label for="">CPF</label>
-        <input class="form-control" type="text" v-model="cpf" required />
+        <input class="form-control" type="text" v-model="cpf" />
       </div>
       <div>
         <label for="">Email</label>
-        <input class="form-control" type="email"  v-model="email" required />
+        <input class="form-control" type="email"  v-model="email" />
       </div>
       <div>
         <label for="">Telefone</label>
-        <input class="form-control" type="text" v-model="telefone" required  />
+        <input class="form-control" type="text" v-model="telefone"  />
       </div>
       <div>
         <label for="">Endereço</label>
-        <input class="form-control" type="text"  v-model="endereco" required  />
+        <input class="form-control" type="text"  v-model="endereco"  />
       </div>
       <div>
         <label for="">Apelido</label>
-        <input class="form-control" type="text"  v-model="apelido" required  />
+        <input class="form-control" type="text"  v-model="apelido"  />
       </div>
       <div>
         <label for="">Senha</label>
-        <input class="form-control" type="password" id="senha" v-model="senha" required  />
+        <input class="form-control" type="password" id="senha" v-model="senha"  />
       </div>
-      <div>
+      <div v-if ="this.senha != null">
         <label for="">Repetir senha</label>
         <input class="form-control" type="password" id="senha2" required  />
       </div>
@@ -42,21 +42,17 @@
           <option value=3> Enfermeiro </option>
           <option value=4 > Estagiário </option>
         </select>
-        
-    
           <button type="submit" class="btn btn-primary">Salvar</button>
-          <button class="btn btn-danger">Cancelar</button>
-      
+          <button class="btn btn-danger">Cancelar</button>      
     </form>
 </div>
 </template>
 
 <script>
-import admServices from "../../services/admServices"
 import admEditarService from "../../services/admEditarService"
 
 export default {
-  nome: "AdmCad",
+  nome: "AdmEdit",
   props: {
     h2Name : String,
     cadastro : Boolean
@@ -71,35 +67,16 @@ export default {
     senha : null,
     apelido : undefined,
     response : null,
-    selected: undefined,
-    cadastroData : this.cadastro
+    selected: undefined
     }
   },
   methods:{
     async editarForm(){
-      var cadastroUser ={"cpf":sessionStorage.getItem('admEditarUser'),"nome" : this.name, "telefone" : this.telefone,
+      var editarUser ={"id":"" ,"cpf": this.cpf,"nome" : this.name, "telefone" : this.telefone,
       "email" : this.email, "apelido" : this.apelido, "senha": this.senha}
-      var editar = await admEditarService.editar(cadastroUser)
+      var editar = await admEditarService.editar(editarUser)
       console.log(editar);
     },
-    async postForm(){
-      var x = this.cadastroData
-      console.log(x)
-      var cadastroUser ={"nome" : this.name, "cpf" : this.cpf, "telefone" : this.telefone,
-      "email" : this.email, "apelido" : this.apelido, "senha": this.senha, "endereco": this.enderco, "id_Cargo" : this.selected}
-     
-      if (this.cadastroData==true){
-        console.log("Cadastro") 
-        var cadastrar = await admServices.post(cadastroUser)
-        console.log(cadastrar)
-        //this.$router.push('HomeAdm')
-
-      }else{
-        console.log("Editar")
-        this.editarForm();
-        
-      }
-    }
   }
 };
 

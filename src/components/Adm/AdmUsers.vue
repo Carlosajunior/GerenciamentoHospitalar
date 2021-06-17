@@ -21,8 +21,8 @@ export default {
     },
     methods:{
         editar(){
-            localStorage.setItem('admEditarUser',this.id);
-            console.log(localStorage.getItem('admEditarUser'));
+            sessionStorage.setItem('admEditarUser',this.id);
+            console.log(sessionStorage.getItem('admEditarUser'));
             this.$emit('EditarUser',this.id)
         }
     }

@@ -22,8 +22,8 @@ export default {
 
   data: function(){
     return {
-      userActivate: localStorage.user,
-      kindUser : localStorage.kindUser
+      userActivate: sessionStorage.user,
+      kindUser : sessionStorage.kindUser
     };
   },
   props:{

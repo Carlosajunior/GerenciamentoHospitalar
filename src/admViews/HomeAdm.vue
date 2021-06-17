@@ -26,9 +26,9 @@ export default
         AdmBar
     },
     mounted(){
-        if (localStorage.user){
+        if (sessionStorage.user){
             console.log("Graças a deus")
-            console.log(localStorage.user)
+            console.log(sessionStorage.user)
         }
     }
     }
