@@ -16,7 +16,7 @@
           </a>
           </router-link>
         </li>
-        <li>
+        <li v-show="carg == 3">
           <router-link to="EnfCadastrarPaciente" active-class="ativo">
           <a href="">
             <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
@@ -66,7 +66,15 @@
 
 <script>
 export default {
-  name: 'EnfMenu'
+  name: 'EnfMenu',
+  data () {
+    return{
+      carg : undefined
+    }
+  },
+  created(){
+    this.carg = sessionStorage.getItem("id_Cargo")
+  }
 }
 </script>
 

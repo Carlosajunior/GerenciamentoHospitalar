@@ -82,10 +82,15 @@ export default {
             sessionStorage.setItem("kindUser", "Enfermeiro Chefe");
             this.$router.replace({ name: "HomeEnfChefe" });
           } else if (
-            sessionStorage.getItem("id_cargo") == 3 ||
-            sessionStorage.getItem("id_cargo") == 4
-          ) {
-            sessionStorage.setItem("kindUser", "Enfermeiro");
+            sessionStorage.getItem("id_cargo") == 3 ){
+              sessionStorage.setItem("kindUser", "Enfermeiro");
+              this.$router.replace({name:"HomeEnf"});
+              
+            }
+            
+          else if (sessionStorage.getItem("id_cargo") == 4)  
+          {
+            sessionStorage.setItem("kindUser", "Estagiário");
             this.$router.replace({ name: "HomeEnf" });
           }
         }
