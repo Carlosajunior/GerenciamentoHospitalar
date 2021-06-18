@@ -25,8 +25,6 @@ use App\Models\Logs_Alteracao;
 
 Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
-
-    Route::post("/login", [controllerLogin::class, "login"]);
     
     Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
     
@@ -35,6 +33,8 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/logs', [Logs_Alteracao::class, "mostrarLogs"]);
     
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
+
+    Route::delete('/logout',[controllerLogin::class, "logout"]);
 
     // Rotas Enfermeiro e Estagiario :
     Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
@@ -50,13 +50,11 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
 });
 
-
-
 Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 
 Route::post("/login", [controllerLogin::class, "login"]);
 
-//Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
+Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 
 Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
 
