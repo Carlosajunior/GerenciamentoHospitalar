@@ -16,7 +16,8 @@ class controllerPaciente extends Controller
             'cpf'=> $request -> cpf,
             'telefone_responsavel'=> $request -> telefone_responsavel,
             'endereco'=> $request -> endereco,
-            'fatorRH' => $request -> fatorRH
+            'fatorRH' => $request -> fatorRH,
+            'internado' => true
         ]);
         return $paciente;        
     } 

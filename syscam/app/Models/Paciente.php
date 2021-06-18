@@ -16,7 +16,8 @@ class Paciente extends Model
         'cpf',
         'telefone_responsavel',
         'endereco',
-        'fatorRH'
+        'fatorRH',
+        'internado'
     ];
 
     protected $hidden = [
