@@ -23,7 +23,7 @@ const routes = [{
         component: () =>
             import ('../admViews/HomeAdm.vue'),
         beforeEnter: (to, from, next) => {
-            if (localStorage.getItem('token') != undefined) {
+            if (sessionStorage.getItem('token') != undefined) {
                 next();
             } else {
                 next("/");

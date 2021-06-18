@@ -36,7 +36,8 @@ import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
 import EnfChefebar from "../components/adm/AdmBar.vue";
 //import EnfChefeMedicamentos from '../components/enfChefe/EnfChefeMedicamentos.vue'
 import EnfChefeMedicamentosCell from "../components/enfChefe/EnfChefeMedicamentosCell.vue";
-import axios from "axios";
+//import axios from "axios";
+import medicamentosServices from "../services/medicamentosServices.js"
 export default {
   data() {
     return {
@@ -45,21 +46,14 @@ export default {
   },
   components: { EnfChefeMenu, EnfChefebar, EnfChefeMedicamentosCell },
   created() {
-    axios({
-      method: "GET",
-      url: " http://127.0.0.1:8000/mostrar-medicamentos",
-    }).then(
-      (result) => {
-        this.response = result.data;
-        console.log("Não deu erro!");
-        console.log(this.response);
-      },
-      (error) => {
-        console.log("Erro");
-        console.error(error);
-      }
-    );
+   this.gerarMedicamentos();
   },
+
+  methods : {
+    async gerarMedicamentos(){
+      medicamentosServices.get().then((response)=> {this.response = response.data});
+    } 
+  }
 };
 </script>
 
