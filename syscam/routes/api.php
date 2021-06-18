@@ -25,9 +25,8 @@ use App\Models\Logs_Alteracao;
 //rotas protegidas que requerem autenticação para serem acessadas
 Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
-    Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
-    Route::post("/login", [controllerLogin::class, "login"]);
+    Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
     
     Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
     
@@ -37,6 +36,8 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 
+    Route::delete('/logout',[controllerLogin::class, "logout"]);
+    
     // Rotas Enfermeiro e Estagiario :
     Route::get("/EstoqueMedicamentosEnf", [controllerMedicamento::class, "mostrarMedicamentos"]);
     Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
@@ -51,4 +52,4 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
 });
 
-
+Route::post("/login", [controllerLogin::class, "login"]);

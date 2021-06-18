@@ -32,4 +32,9 @@ class controllerLogin extends Controller
         }
         return response($mensagem, $codigoErro);        
     }
+
+    public function logout(Request $request){
+        $usuario = Usuario::firstWhere('id', "=", $request->id);
+        $usuario->tokens()->where('tokenable_id', "=", $request->id)->delete();
+    }
 }
