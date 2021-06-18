@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 
     // Rotas Enfermeiro e Estagiario :
-    Route::get("/EstoqueMedicamentosEnf", [controllerEnfermeiro::class, "EstoqueMedicamentos"]);
+    Route::get("/EstoqueMedicamentosEnf", [controllerMedicamento::class, "mostrarMedicamentos"]);
     Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
     Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
     Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
