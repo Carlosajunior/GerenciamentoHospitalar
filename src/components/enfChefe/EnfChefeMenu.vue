@@ -2,7 +2,7 @@
     <div class="sidebar">
       <div class="sidebar-brand">
         <router-link to= 'HomeEnfChefe'>
-        <h2> <span>Enfermeiro Chefe</span>
+        <h2> <span>Syscam</span>
         </h2>
         </router-link>
       </div>

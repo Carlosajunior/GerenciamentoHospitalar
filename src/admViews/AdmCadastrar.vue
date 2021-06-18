@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div> 
     <input type="checkbox" id="nav-toggle" />
 
     <adm-menu> </adm-menu>
     <div id="main-content">
       <adm-bar :title="'Cadastrar Usuário'" kindUser="Admnistrador"> </adm-bar>
+      <div class="org">
       <adm-cad h2Name="CadastrarUsuário" :cadastro="true"> </adm-cad>
-    
+      </div>
     </div>
   </div>
 </template>
@@ -25,5 +26,9 @@ export default {
 .main-content {
   transition: margin-left 400ms;
   margin-left: 345px;
+}
+
+.org {
+  margin-top: 10%;
 }
 </style>

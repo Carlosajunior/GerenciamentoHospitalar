@@ -1,43 +1,44 @@
 <template>
-  <div class="formulario">
+<body class="formulario">
+  <div>
     <form @submit.prevent="postForm">
-      <div>
+      <div class="divs">
         <label for="">Nome completo</label>
         <input class="form-control" type="text" v-model="name" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">CPF</label>
-        <input class="form-control" type="text" v-model="cpf" required />
+        <input class="input-for" type="text" v-model="cpf" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Email</label>
-        <input class="form-control" type="email" v-model="email" required />
+        <input class="input-for-menor" type="email" v-model="email" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Telefone</label>
-        <input class="form-control" type="text" v-model="telefone" required />
+        <input class="input-for-menor" type="text" v-model="telefone" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Endereço</label>
         <input class="form-control" type="text" v-model="endereco" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Apelido</label>
-        <input class="form-control" type="text" v-model="apelido" required />
+        <input class="input-for-menor" type="text" v-model="apelido" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Senha</label>
         <input
-          class="form-control"
+          class="input-for-menor"
           type="password"
           id="senha"
           v-model="senha"
           required
         />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Repetir senha</label>
-        <input class="form-control" type="password" id="senha2" required />
+        <input class="input-for-menor" type="password" id="senha2" required />
       </div>
       <label for="">Cargo</label>
       <select class="form-select" v-model="selected">
@@ -48,12 +49,13 @@
         <option value="4">Estagiário</option>
       </select>
       <button type="submit" class="btn btn-primary">Salvar</button>
-      <button class="btn btn-danger">Cancelar</button>
+      <button class="btn btn-danger" @click="cancelar()">Cancelar</button>
       <div v-show="hasErro" class="alert alert-danger" role="alert">
         Não foi possível concluir o cadastro!
       </div>
     </form>
   </div>
+</body>
 </template>
 
 <script>
@@ -97,6 +99,11 @@ export default {
       }
       console.log(response);
     },
+
+    cancelar(){
+      this.$router.replace({name:"HomeAdm"})
+    }
+
   },
 };
 </script>
@@ -151,5 +158,27 @@ button {
 }
 .b-cancelar {
   background: crimson;
+}
+.divs {
+  padding: 3px;
+}
+input,
+select {
+  border: 1px solid #ccc !important;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 3px 3px;
+  border-radius: 5px;
+}
+select {
+  width: 30%;
+}
+.input-for {
+  width: 60%;
+}
+
+.input-for-menor {
+  width: 30%;
 }
 </style>

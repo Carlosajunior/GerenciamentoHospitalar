@@ -191,4 +191,5 @@ label {
 .b-cancelar {
   background: red;
 }
+
 </style>
