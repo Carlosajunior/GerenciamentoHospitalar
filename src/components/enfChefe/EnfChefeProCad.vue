@@ -1,26 +1,23 @@
 <template>
 
     <form @submit.prevent="postForm">
-      <div >
+      <div class="divs">
         <label for="">Paciente</label>
         <input class="input-for" type="text" v-model="paciente" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Enfermeiro/Estagiário</label>
         <input class="input-for" type="text" v-model="enf" required />
       </div>
-      <div>
+      <div class="divs">
         <label for="">CID</label>
-         <select v-model="cid">
-          <option disabled value="">Escolha a CID:</option>
-          <option> {{cids}}  </option>
-         </select>
+        <input class="input-for" type="text" v-model="cid" required  />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Posologia</label>
         <input class="input-for" type="text" v-model="posologia" required  />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Quarto</label>
         <input class="input-for" type="text"  v-model="quarto" required  />
       </div>
@@ -35,14 +32,11 @@ import enfChefeProntuario from "../../services/enfChefeProntuario"
 
 export default {
   nome: "EnfChefeProCad",
-  props: {
-    cids: null,
-  },
   data(){
     return{
     paciente : undefined,
     enf : undefined,
-    cid : '',
+    cid : undefined,
     posologia:undefined,
     quarto:undefined,
     }
@@ -64,7 +58,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 * {
   padding: 0;
   margin: 0;
@@ -74,8 +68,9 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 
-
-
+.divs{
+ text-align: left;
+}
 .input-for {
     border: 1px solid #ccc!important;
     padding: 6px;
@@ -97,13 +92,12 @@ input:focus {
   margin-left: 3%;
 }
 button{
-  display: inline-block;
+  display: inline-table;
   width: 15%;
   margin: 10px;
   border: none;
   padding: 4px;
   color: white;
-  
 }
 .b-salvar{
   margin-left: 100px;

@@ -14,7 +14,7 @@
     <table class="table">
       <thead>
         <th scope="col">Paciente</th>
-        <th scope="col">Identificador</th>
+        <th scope="col">Identificador do paciente</th>
         <th scope="col">Prontuário</th>
         <th scope="col">Selecionar</th>
       </thead>
@@ -64,7 +64,7 @@ export default {
 <style>
 .formulario {
   width: 800px;
-  margin-top: 10%;
+  margin-top: 8%;
   margin-left: 30%;
 }
 .filtro {

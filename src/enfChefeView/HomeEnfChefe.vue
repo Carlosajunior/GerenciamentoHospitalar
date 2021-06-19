@@ -42,7 +42,7 @@ export default {
     padding-bottom: 8%;
 }
 .plantao{
-    margin-top: 8%;
+    margin-top: 7%;
     margin-left: 20%;
 }
 

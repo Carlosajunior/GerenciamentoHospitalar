@@ -1,9 +1,5 @@
 <template>
   <div class="formulario">
-    <div class="filtro">
-      <input id="date" type="date" />
-      <button>Filtrar</button>
-    </div>
     <div>
       <enf-chefe-menu> </enf-chefe-menu>
     </div>

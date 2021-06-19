@@ -62,7 +62,6 @@ width: 100%;
 }
 
 .b-salvar{
- margin-right: 3%;
   background: #2ba9f1;
 }
 

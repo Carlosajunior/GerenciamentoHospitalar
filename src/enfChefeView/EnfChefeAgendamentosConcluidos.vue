@@ -65,7 +65,7 @@ export default {
 <style>
 .formulario {
   width: 800px;
-  margin-top: 10%;
+    margin-top: 8%;
   margin-left: 30%;
 }
 

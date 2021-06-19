@@ -68,7 +68,6 @@ button {
   background-color: #2BA9F1;
   color: white;
   padding: 3.2px;
-  margin-left: 5%;
 }
 
 th {

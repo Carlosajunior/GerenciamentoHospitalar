@@ -71,13 +71,8 @@ data() {
 
 .formulario {
   width: 800px;
-  margin-top: 10%;
+  margin-top: 8%;
   margin-left: 30%;
-}
-
-.table{
-    width: 50px;
-
 }
 
 thead {
