@@ -13,6 +13,8 @@
       <thead>
        <th scope="col">Nome do paciente</th>
         <th scope="col">Enfermeiro/Estagiário</th>
+        <th scope="col">Insira o Enfermeiro/Estagiário </th>
+        <th scope="col">Aperte</th>
         <th scope="col">Prontuário</th>
         <th scope="col">Horário</th>
         <th scope="col">Data</th>
@@ -73,6 +75,10 @@ data() {
   margin-left: 30%;
 }
 
+.table{
+    width: 50px;
+
+}
 
 thead {
   background-color: rgb(238, 238, 238);
