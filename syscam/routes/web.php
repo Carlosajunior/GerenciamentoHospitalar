@@ -4,6 +4,7 @@ use App\Http\Controllers\controllerUsuario;
 use App\Http\Controllers\controllerLogin;
 use App\Http\Controllers\controllerPaciente;
 use App\Http\Controllers\controllerEnfermeiro;
+use App\Http\Controllers\controllerBanco;
 use App\Models\log;
 use Illuminate\Support\Facades\Route;
 /*
@@ -55,3 +56,6 @@ Route::get("/EmitirResponsaveis", [controllerEnfermeiroChefe::class, "Emitir_Res
 
 Route::patch("/CadastrarAlarme", [controllerEnfermeiroChefe::class, "Cadastrar_Alarme"]);
 Route::patch("/CriarPosologia", [controllerEnfermeiroChefe::class, "Criar_Posologia"]);
+
+// Banco de dados
+Route::get("/criaBackup", [controllerBanco::class, "criaBackup"]);

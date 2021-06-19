@@ -12,7 +12,7 @@ class Medicamento extends Model
     protected $fillable = [
         'lote',
         'quantidade',
-        'nome', // Estava escrito senha;
+        'nome', 
         'id_baixaMedicamento'
     ];
 }

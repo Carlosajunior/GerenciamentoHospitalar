@@ -87,16 +87,11 @@ class controllerEnfermeiro extends Controller
     //-----------------------------------------------------------------------------------
     public function baixarAgendamento(Request $request){ //Gera um novo agendamento
         $novaBaixa = new agendamento_medicacao;
-        $novaBaixa = agendamento_medicacao::create([
-            'alarme' => $request -> alarme,
-            'data_hora' => $request -> data_hora,
-            'posologia' => $request -> posologia,
-            'id_prontuario' => $request -> id_prontuario,
-            'id_medicamento' => $request -> id_medicamento,
-            'id_usuario' => $request -> id_usuario
-        ]);
-        $novaBaixa->save();
-        return $novaBaixa;
+        $novaBaixa = agendamento_medicacao::firstWhere('id','=',$request->id);
+        if($novaBaixa != null){          
+            if($request -> feito != null)
+            $novaBaixa -> feito = $request -> feito;
+        }
     }
     
     //-----------------------------------------------------------------------------------
