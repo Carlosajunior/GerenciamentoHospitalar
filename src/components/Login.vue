@@ -78,14 +78,19 @@ export default {
           if (sessionStorage.getItem("id_cargo") == 1) {
             sessionStorage.setItem("kindUser", "Administrador");
             this.$router.replace({ name: "HomeAdm" });
-          } else if (localStorage.getItem("id_cargo") == 2) {
+          } else if (sessionStorage.getItem("id_cargo") == 2) {
             sessionStorage.setItem("kindUser", "Enfermeiro Chefe");
             this.$router.replace({ name: "HomeEnfChefe" });
           } else if (
-            localStorage.getItem("id_cargo") == 3 ||
-            localStorage.getItem("id_cargo") == 4
-          ) {
-            sessionStorage.setItem("kindUser", "Enfermeiro");
+            sessionStorage.getItem("id_cargo") == 3 ){
+              sessionStorage.setItem("kindUser", "Enfermeiro");
+              this.$router.replace({name:"HomeEnf"});
+              
+            }
+            
+          else if (sessionStorage.getItem("id_cargo") == 4)  
+          {
+            sessionStorage.setItem("kindUser", "Estagiário");
             this.$router.replace({ name: "HomeEnf" });
           }
         }

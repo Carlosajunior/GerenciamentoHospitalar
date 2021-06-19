@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <body>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <div class="container">
     <div class="row">
@@ -14,7 +14,7 @@
       
     </div>
     </div>
-  </div>
+  </body>
 </template>
 
 <script>

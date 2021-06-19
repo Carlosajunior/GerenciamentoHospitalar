@@ -23,7 +23,7 @@ const routes = [{
         component: () =>
             import ('../admViews/HomeAdm.vue'),
         beforeEnter: (to, from, next) => {
-            if (localStorage.getItem('token') != undefined) {
+            if (sessionStorage.getItem('token') != undefined) {
                 next();
             } else {
                 next("/");
@@ -35,27 +35,63 @@ const routes = [{
         path: '/homeEnfChefe',
         name: 'HomeEnfChefe',
         component: () =>
-            import ('../enfChefeView/HomeEnfChefe.vue')
+            import ('../enfChefeView/HomeEnfChefe.vue'),
+        beforeEnter : (to,from,next) =>{
+            if(sessionStorage.getItem('token') != undefined){
+                next();
+            }
+
+            else{
+                next("/");
+            }
+        }
     },
 
     {
         path: '/homeEnf',
         name: 'HomeEnf',
         component: () =>
-            import ('../enfViews/HomeEnf.vue')
+            import ('../enfViews/HomeEnf.vue'),
+
+        beforeEnter : (to,from,next) =>{
+            if(sessionStorage.getItem('token') != undefined){
+                next();
+            }
+            else{
+                next("/");
+            }
+        }
     },
 
     {
         path: '/admBackup',
         name: 'AdmBackup',
         component: () =>
-            import ('../admViews/AdmBackup.vue')
+            import ('../admViews/AdmBackup.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/admCadastrar',
         name: 'AdmCadastrar',
         component: () =>
-            import ('../admViews/AdmCadastrar.vue')
+            import ('../admViews/AdmCadastrar.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
 
 
@@ -63,20 +99,47 @@ const routes = [{
         path: '/admEditar',
         name: 'AdmEditar',
         component: () =>
-            import ('../admViews/AdmEditar.vue')
+            import ('../admViews/AdmEditar.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/admEditarForm',
         name: 'AdmEditarForm',
         component: () =>
-            import ('../admViews/AdmEditarForm.vue')
+            import ('../admViews/AdmEditarForm.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
 
     {
         path: '/admLog',
         name: 'AdmLog',
         component: () =>
-            import ('../admViews/AdmLog.vue')
+            import ('../admViews/AdmLog.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
 
 
@@ -84,128 +147,233 @@ const routes = [{
         path: '/EnfChefeCadastrarPaciente',
         name: 'EnfChefeCadastrarPaciente',
         component: () =>
-            import ('../enfChefeView/EnfChefeCadastrarPaciente.vue')
+            import ('../enfChefeView/EnfChefeCadastrarPaciente.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeAcompanhaProntuario',
         name: 'EnfChefeAcompanhaProntuario',
         component: () =>
-            import ('../enfChefeView/EnfChefeAcompanhaProntuario.vue')
+            import ('../enfChefeView/EnfChefeAcompanhaProntuario.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeAgendamentoPendentes',
         name: 'EnfChefeAgendamentoPendentes',
         component: () =>
-            import ('../enfChefeView/EnfChefeAgendamentoPendentes.vue')
+            import ('../enfChefeView/EnfChefeAgendamentoPendentes.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeAgendamentosConcluidos',
         name: 'EnfChefeAgendamentosConcluidos',
         component: () =>
-            import ('../enfChefeView/EnfChefeAgendamentosConcluidos.vue')
+            import ('../enfChefeView/EnfChefeAgendamentosConcluidos.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeEstoqueMedicamentos',
         name: 'EnfChefeEstoqueMedicamentos',
         component: () =>
-            import ('../enfChefeView/EnfChefeEstoqueMedicamentos.vue')
+            import ('../enfChefeView/EnfChefeEstoqueMedicamentos.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeIniciarProntuario',
         name: 'EnfChefeIniciarProntuario',
         component: () =>
-            import ('../enfChefeView/EnfChefeIniciarProntuario')
+            import ('../enfChefeView/EnfChefeIniciarProntuario'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeRelatorio',
         name: 'EnfChefeRelatorio',
         component: () =>
-            import ('../enfChefeView/EnfChefeRelatorio.vue')
+            import ('../enfChefeView/EnfChefeRelatorio.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeListaPacientes',
         name: 'EnfChefeListaPacientes',
         component: () =>
-            import ('../enfChefeView/EnfChefeListaPacientes.vue')
+            import ('../enfChefeView/EnfChefeListaPacientes.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/EnfChefeOpView',
         name: 'EnfChefeOpView',
         component: () =>
-            import ('../enfChefeView/EnfChefeOpView.vue')
+            import ('../enfChefeView/EnfChefeOpView.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
     },
     {
         path: '/HomeEnf',
         name: 'HomeEnf',
         component: () =>
-            import ('../enfViews/HomeEnf.vue')
+            import ('../enfViews/HomeEnf.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
 
     },
     {
         path: '/EnfCadastrarPaciente',
         name: 'EnfCadastrarPaciente',
         component: () =>
-            import ('../enfViews/EnfCadastrarPaciente.vue')
+            import ('../enfViews/EnfCadastrarPaciente.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
 
     },
     {
         path: '/EnfAgendamentoPendentes',
         name: 'EnfAgendamentoPendentes',
         component: () =>
-            import ('../enfViews/EnfAgendamentoPendentes.vue')
+            import ('../enfViews/EnfAgendamentoPendentes.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
 
     },
     {
         path: '/EnfEstoqueMedicamentos',
         name: 'EnfEstoqueMedicamentos',
         component: () =>
-            import ('../enfViews/EnfEstoqueMedicamentos.vue')
+            import ('../enfViews/EnfEstoqueMedicamentos.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
 
     },
     {
         path: '/EnfRelatorioPaciente',
         name: 'EnfRelatorioPaciente',
         component: () =>
-            import ('../enfViews/EnfRelatorioPaciente.vue')
+            import ('../enfViews/EnfRelatorioPaciente.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
 
     },
     {
         path: '/EnfAgendamentoConcluidos',
         name: 'EnfAgendamentoConcluidos',
         component: () =>
-            import ('../enfViews/EnfAgendamentoConcluidos.vue')
+            import ('../enfViews/EnfAgendamentoConcluidos.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+            }
 
-    }, {
-        path: '/HomeEstag',
-        name: 'HomeEstag',
-        component: () =>
-            import ('../estagViews/HomeEstag.vue')
-
-    }, {
-        path: '/EstagAgendamentoPendentes',
-        name: 'EstagAgendamentoPendentes',
-        component: () =>
-            import ('../estagViews/EstagAgendamentoPendentes.vue')
-
-    }, {
-        path: '/EstagEstoqueMedicamentos',
-        name: 'EstagEstoqueMedicamentos',
-        component: () =>
-            import ('../estagViews/EstagEstoqueMedicamentos.vue')
-
-    }, {
-        path: '/EstagRelatorioPaciente',
-        name: 'EstagRelatorioPaciente',
-        component: () =>
-            import ('../estagViews/EstagRelatorioPaciente.vue')
-
-    }, {
-        path: '/EstagAgendamentoConcluidos',
-        name: 'EstagAgendamentoConcluidos',
-        component: () =>
-            import ('../estagViews/EstagAgendamentoConcluidos.vue')
-
-    },
+    }
 ]
 
 const router = createRouter({

@@ -36,14 +36,14 @@
         <label for="">Tipo sanguíneo </label>
         <select v-model="TipoSanguineo">
           <option disabled value="">Escolha um tipo sanguíneo:</option>
-          <option value="1">A+</option>
-          <option value="2">A-</option>
-          <option value="3">B+</option>
-          <option value="4">B-</option>
-          <option value="5">AB+</option>
-          <option value="6">AB-</option>
-          <option value="7">O+</option>
-          <option value="8">O-</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
         </select>
       </div>
       <div class="divs">
@@ -68,6 +68,12 @@
       <button type="submit" class="b-salvar">Salvar</button>
       <button class="b-cancelar">Cancelar</button>
     </form>
+  <div v-show="show" class="alert alert-danger d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+    Não foi possível realizar cadastro!
+  </div>
+</div>
   </body>
 </template>
 
@@ -86,6 +92,7 @@ export default {
       NomeResponsavel: undefined,
       TelResponsavel: undefined,
       cadastroData: this.cadastro,
+      show : false
     };
   },
   methods: {
@@ -101,8 +108,14 @@ export default {
         endereco: this.endereco,
         telefone_responsavel: this.TelResponsavel,
       };
+      try{
+      console.log(cadastroUser);
       var cadastrar = await enfChefeServices.post(cadastroUser);
       console.log(cadastrar);
+      }
+      catch(cadastrar){
+        this.show = true;
+      }
     },
   },
 };
@@ -178,4 +191,5 @@ label {
 .b-cancelar {
   background: red;
 }
+
 </style>

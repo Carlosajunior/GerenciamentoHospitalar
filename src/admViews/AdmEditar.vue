@@ -3,7 +3,7 @@
     <adm-menu></adm-menu>
     <div id="main-content">
       <adm-bar :title="'Editar Usuário'" :cadastro="false"></adm-bar>
-      <div v-show="!view"><adm-edit @sair='view = !view' /></div>
+      <div v-show="!view" class="main"><adm-edit @sair='view = !view' /></div>
     </div>
     <div class="row" style="margin-top: 50px" v-show="view">
       <div class="col-md-3" />

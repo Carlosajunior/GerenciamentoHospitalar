@@ -1,38 +1,38 @@
 <template>
-  <div class="formulario">
+  <body class="formulario">
     <form>
-      <div>
+      <div class="divs">
         <label for="">Nome completo</label>
         <input class="form-control" type="text" v-model="name" />
       </div>
-      <div>
+      <div class="divs">
         <label for="">CPF</label>
         <input class="form-control" type="text" v-model="cpf" />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Email</label>
-        <input class="form-control" type="email" v-model="email" />
+        <input class="form-for-menor" type="email" v-model="email" />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Telefone</label>
         <input class="form-control" type="text" v-model="telefone" />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Apelido</label>
-        <input class="form-control" type="text" v-model="apelido" />
+        <input class="form-for-menor" type="text" v-model="apelido" />
       </div>
-      <div>
+      <div class="divs">
         <label for="">Senha</label>
         <input
-          class="form-control"
+          class="input-for-menor"
           type="password"
           id="senha"
           v-model="senha"
         />
       </div>
-      <div v-if="this.senha != null">
+      <div v-if="this.senha != null" class="divs">
         <label for="">Repetir senha</label>
-        <input class="form-control" type="password" id="senha2" required />
+        <input class="input-form-menor" type="password" id="senha2" required />
       </div>
 
       <label for="">Cargo</label>
@@ -60,7 +60,7 @@
     <div v-show="hasErro" class="alert alert-danger" role="alert">
       Não foi possível alterar o cadastro!
     </div>
-  </div>
+  </body>
 </template>
 
 <script>
@@ -119,7 +119,7 @@ export default {
 }
 
 .formulario {
-  width: 800px;
+  margin-top: 50%;
   margin-left: 30%;
 }
 
@@ -158,5 +158,30 @@ button {
 }
 .b-cancelar {
   background: crimson;
+}
+
+
+.divs {
+  padding: 3px;
+}
+
+input,
+select {
+  border: 1px solid #ccc !important;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 3px 3px;
+  border-radius: 5px;
+}
+select {
+  width: 30%;
+}
+.input-for {
+  width: 60%;
+}
+
+.input-for-menor {
+  width: 30%;
 }
 </style>
