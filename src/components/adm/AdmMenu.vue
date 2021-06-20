@@ -46,7 +46,7 @@
           </li>
           <li>
             <a style="margin-left:10%" href="">
-            <button class='btn btn-link' active-class="ativo" @click='logout()'>
+            <button class='btn btn-link' active-class="ativo" @click ='logout()'>
             </button>
             Sair
             </a>
@@ -63,12 +63,14 @@ export default {
     name: 'AdmMenu',
     methods:{
       async logout(){
+        console.log('Ola sou Lara Esquivel')
         var id = sessionStorage.getItem('id_usuario');
-        await admServices.logout({'id': id});
         sessionStorage.clear();
-        this.$router.replace({
-          name:'Home'
-        });
+        await admServices.logout({'id': id});
+       
+        //this.$router.replace({
+        //  name:'Home'
+        //});
       }
     }
 }
