@@ -15,16 +15,13 @@
         <th scope="col">Medicação</th>
         <th scope="col">Lote</th>
         <th scope="col">Quantidade</th>
-        <th scope="col">Data de validade</th>
-        <th scope="col">Farmacêutico</th>
+        
       </thead>
       <t-body v-for="medicamentos in response" :key="medicamentos">
         <enf-chefe-medicamentos-cell
           :medicacao="medicamentos.nome"
-          :lote="medicamentos.cpf"
-          :farmaceutico="medicamentos.apelido"
-          :quantidade="medicamentos.cpf"
-          :validade="medicamentos.cpf"
+          :lote="medicamentos.lote"
+          :quantidade="medicamentos.quantidade"
         />
       </t-body>
     </table>
