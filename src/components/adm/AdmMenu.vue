@@ -45,7 +45,7 @@
             </router-link>
           </li>
           <li>
-            <a style="margin-left:9,9%" href="">
+            <a style="margin-left:10%" href="">
             <button class='btn btn-link' active-class="ativo" @click='logout()'>
             </button>
             Sair
