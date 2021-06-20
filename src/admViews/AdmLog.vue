@@ -62,7 +62,9 @@ export default {
   },
   methods: {
     async getServices() {
-      admServices.get().then((response)=>{this.response = response.data});
+      admServices.get().then((response) => {
+        this.response = response.data;
+      });
       console.log(await admServices.get().data);
     },
   },

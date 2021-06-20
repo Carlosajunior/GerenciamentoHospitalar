@@ -1,61 +1,76 @@
 <template>
-<body class="formulario">
-  <div>
-    <form @submit.prevent="postForm">
-      <div class="divs">
-        <label for="">Nome completo</label>
-        <input class="form-control" type="text" v-model="name" required />
-      </div>
-      <div class="divs">
-        <label for="">CPF</label>
-        <input class="input-for" type="text" v-model="cpf" required />
-      </div>
-      <div class="divs">
-        <label for="">Email</label>
-        <input class="input-for-menor" type="email" v-model="email" required />
-      </div>
-      <div class="divs">
-        <label for="">Telefone</label>
-        <input class="input-for-menor" type="text" v-model="telefone" required />
-      </div>
-      <div class="divs">
-        <label for="">Endereço</label>
-        <input class="form-control" type="text" v-model="endereco" required />
-      </div>
-      <div class="divs">
-        <label for="">Apelido</label>
-        <input class="input-for-menor" type="text" v-model="apelido" required />
-      </div>
-      <div class="divs">
-        <label for="">Senha</label>
-        <input
-          class="input-for-menor"
-          type="password"
-          id="senha"
-          v-model="senha"
-          required
-        />
-      </div>
-      <div class="divs">
-        <label for="">Repetir senha</label>
-        <input class="input-for-menor" type="password" id="senha2" required />
-      </div>
-      <label for="">Cargo</label>
-      <select class="form-select" v-model="selected">
-        <option disabled value="">Escolha um cargo</option>
-        <option value="1">Administrador</option>
-        <option value="2">Enfermeiro-Chefe</option>
-        <option value="3">Enfermeiro</option>
-        <option value="4">Estagiário</option>
-      </select>
-      <button type="submit" class="btn btn-primary">Salvar</button>
-      <button class="btn btn-danger" @click="cancelar()">Cancelar</button>
-      <div v-show="hasErro" class="alert alert-danger" role="alert">
-        Não foi possível concluir o cadastro!
-      </div>
-    </form>
-  </div>
-</body>
+  <body class="formulario">
+    <div>
+      <form @submit.prevent="postForm">
+        <div class="divs">
+          <label for="">Nome completo</label>
+          <input class="form-control" type="text" v-model="name" required />
+        </div>
+        <div class="divs">
+          <label for="">CPF</label>
+          <input class="input-for" type="text" v-model="cpf" required />
+        </div>
+        <div class="divs">
+          <label for="">Email</label>
+          <input
+            class="input-for-menor"
+            type="email"
+            v-model="email"
+            required
+          />
+        </div>
+        <div class="divs">
+          <label for="">Telefone</label>
+          <input
+            class="input-for-menor"
+            type="text"
+            v-model="telefone"
+            required
+          />
+        </div>
+        <div class="divs">
+          <label for="">Endereço</label>
+          <input class="form-control" type="text" v-model="endereco" required />
+        </div>
+        <div class="divs">
+          <label for="">Apelido</label>
+          <input
+            class="input-for-menor"
+            type="text"
+            v-model="apelido"
+            required
+          />
+        </div>
+        <div class="divs">
+          <label for="">Senha</label>
+          <input
+            class="input-for-menor"
+            type="password"
+            id="senha"
+            v-model="senha"
+            required
+          />
+        </div>
+        <div class="divs">
+          <label for="">Repetir senha</label>
+          <input class="input-for-menor" type="password" id="senha2" required />
+        </div>
+        <label for="">Cargo</label>
+        <select class="form-select" v-model="selected">
+          <option disabled value="">Escolha um cargo</option>
+          <option value="1">Administrador</option>
+          <option value="2">Enfermeiro-Chefe</option>
+          <option value="3">Enfermeiro</option>
+          <option value="4">Estagiário</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button class="btn btn-danger" @click="cancelar()">Cancelar</button>
+        <div v-show="hasErro" class="alert alert-danger" role="alert">
+          Não foi possível concluir o cadastro!
+        </div>
+      </form>
+    </div>
+  </body>
 </template>
 
 <script>
@@ -100,10 +115,9 @@ export default {
       console.log(response);
     },
 
-    cancelar(){
-      this.$router.replace({name:"HomeAdm"})
-    }
-
+    cancelar() {
+      this.$router.replace({ name: "HomeAdm" });
+    },
   },
 };
 </script>

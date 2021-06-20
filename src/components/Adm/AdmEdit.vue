@@ -34,7 +34,6 @@
         <label for="">Repetir senha</label>
         <input class="input-form-menor" type="password" id="senha2" required />
       </div>
-
       <label for="">Cargo</label>
       <select class="form-select" v-model="selected">
         <option disabled value="">Escolha um cargo</option>
@@ -83,7 +82,7 @@ export default {
       apelido: undefined,
       response: null,
       selected: undefined,
-      hasErro: false
+      hasErro: false,
     };
   },
   methods: {
@@ -98,10 +97,10 @@ export default {
         senha: this.senha,
         editor: sessionStorage.getItem("id_usuario"),
       };
-      try{
+      try {
         this.response = await admEditarService.editar(editarUser);
-      }catch(response){
-        this.hasErro = true
+      } catch (response) {
+        this.hasErro = true;
       }
     },
   },
@@ -159,7 +158,6 @@ button {
 .b-cancelar {
   background: crimson;
 }
-
 
 .divs {
   padding: 3px;

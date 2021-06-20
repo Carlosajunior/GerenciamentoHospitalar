@@ -9,7 +9,7 @@
         <enf-chefebar :title="'Cadastrar Paciente'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
-    <div>
+    <div style="margin-top:10%">
         <enf-chefe-cad >
         </enf-chefe-cad>
     </div>   

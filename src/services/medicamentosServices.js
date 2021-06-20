@@ -3,8 +3,8 @@ import auth from "./Authorization.js"
 
 export default {
 
-get:() =>{
-    return api.get("/api/EstoqueMedicamentosEnf",auth)
-}
+    get: () => {
+        return api.get("/api/EstoqueMedicamentosEnf", auth)
+    }
 
 }

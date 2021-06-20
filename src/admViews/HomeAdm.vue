@@ -1,38 +1,31 @@
 <template>
-    <div class="color">
-    <input type="checkbox" id="nav-toggle">
+  <div class="color">
+    <input type="checkbox" id="nav-toggle" />
 
-        <adm-menu>
-        </adm-menu>
-        <div id="main-content">
-            <adm-bar>
-            </adm-bar>
-            
-            <img class="img-fluid" src="../assets/enfCapa.jpg">
-        </div>
+    <adm-menu> </adm-menu>
+    <div id="main-content">
+      <adm-bar> </adm-bar>
+
+      <img class="img-fluid" src="../assets/enfCapa.jpg" />
     </div>
+  </div>
 </template>
 
 <script>
-
-
-import AdmBar from '../components/adm/AdmBar.vue'
-import AdmMenu from '../components/adm/AdmMenu.vue'
-export default 
-{
-    name: 'HomeAdm',
-    components:{
-        AdmMenu,
-        AdmBar
-    },
-    mounted(){
-        if (sessionStorage.user){
-            console.log("Graças a deus")
-            console.log(sessionStorage.user)
-        }
+import AdmBar from "../components/adm/AdmBar.vue";
+import AdmMenu from "../components/adm/AdmMenu.vue";
+export default {
+  name: "HomeAdm",
+  components: {
+    AdmMenu,
+    AdmBar,
+  },
+  mounted() {
+    if (sessionStorage.user) {
+      console.log(sessionStorage.user);
     }
-    }
-
+  },
+};
 </script>
 
 <style>
@@ -40,8 +33,8 @@ export default
   transition: margin-left 400ms;
   margin-left: 345px;
 }
-.img-fluid{
-    padding: 10%;
+.img-fluid {
+  padding: 10%;
 }
 main {
   margin-top: 85px;
@@ -49,7 +42,7 @@ main {
   min-height: calc(100vh - 90px);
 }
 
-.color{
-    background: white;
+.color {
+  background: white;
 }
 </style>

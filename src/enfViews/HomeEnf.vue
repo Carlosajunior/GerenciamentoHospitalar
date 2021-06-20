@@ -9,8 +9,9 @@
             kindUser="Enfermeiro"
         >
         </enf-bar>
+    <div>
         <img class="img-fluid" src="../assets/enfCapa.jpg">
-
+    </div>
     </div>
         
  

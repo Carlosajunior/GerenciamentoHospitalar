@@ -45,11 +45,19 @@
             </router-link>
           </li>
           <li>
-            <router-link to= "/" active-class="ativo">
-              <a href="">
+<<<<<<< HEAD
+            <a style="margin-left:10%" href="">
+            <button class='btn btn-link' active-class="ativo" @click ='logout()'>
+=======
+            <button @click='logout()'>
+              Sair
+>>>>>>> parent of 54ff7e1 (css do butão sair)
+            </button>
+            <!-- <router-link to= "/" active-class="ativo">
+            <a href="">
               <span class="las la-shopping-bag"></span><span>Sair</span>
             </a>
-            </router-link>
+            </router-link> -->
           </li>
         </ul>
       </div>
@@ -58,13 +66,31 @@
 </template>
 
 <script>
+import admServices from "../../services/admServices";
 export default {
-    name: 'AdmMenu'
+    name: 'AdmMenu',
+    methods:{
+      async logout(){
+<<<<<<< HEAD
+        console.log('Ola sou Lara Esquivel')
+        var id = sessionStorage.getItem('id_usuario');
+=======
+        await admServices.logout({'id': sessionStorage.getItem('id_usuario')});
+>>>>>>> parent of 54ff7e1 (css do butão sair)
+        sessionStorage.clear();
+        await admServices.logout({'id': id});
+       
+        //this.$router.replace({
+        //  name:'Home'
+        //});
+      }
+    }
 }
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');  
+
 
 :root {
   --main-color: #f2f2f2;
