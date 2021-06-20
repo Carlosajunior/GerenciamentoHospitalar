@@ -10,7 +10,8 @@
         </enf-chefebar>
     </div>
        
-    <div style="margin-top:18%">
+    <div>
+        
         <enf-chefe-pro-cad>
         </enf-chefe-pro-cad>
         </div>
@@ -25,7 +26,6 @@ import EnfChefeProCad from '../components/enfChefe/EnfChefeProCad.vue'
 
 export default {
     components:{EnfChefeMenu, EnfChefebar, EnfChefeProCad},
-    name : "EnfChefeIniciarProntuario"
 
 }
 </script>

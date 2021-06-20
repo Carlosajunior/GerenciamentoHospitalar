@@ -9,8 +9,5 @@ export default{
     },
     logout:(obj)=>{
         return api.post("/api/logout", obj, auth)
-    },
-    backup:()=>{
-        return api.get("/api/Backup", auth)
     }
 }

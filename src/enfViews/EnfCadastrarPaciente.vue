@@ -9,7 +9,7 @@
             kindUser="Enfermeiro">
         </enf-bar>
     </div>
-    <div style="margin-top:10%">
+    <div>
 
         <enf-chefe-cad>
         </enf-chefe-cad>

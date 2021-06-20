@@ -16,7 +16,7 @@
           </a>
           </router-link>
         </li>
-        <li v-show="carg !=4">
+        <li v-show="carg == 3">
           <router-link to="EnfCadastrarPaciente" active-class="ativo">
           <a href="">
             <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
@@ -72,11 +72,8 @@ export default {
       carg : undefined
     }
   },
-  beforeCreate(){
+  created(){
     this.carg = sessionStorage.getItem("id_Cargo")
-  },
-  props : {
-    thisisestagiario : Boolean
   }
 }
 </script>

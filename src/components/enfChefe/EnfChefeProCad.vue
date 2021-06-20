@@ -12,7 +12,6 @@
       <div class="divs">
         <label for="">CID</label>
         <input class="input-for" type="text" v-model="cid" required  />
-        <a href="https://www.medicinanet.com.br/cid10/b.htm"> Buscar CID </a>
       </div>
       <div class="divs">
         <label for="">Posologia</label>
@@ -22,11 +21,8 @@
         <label for="">Quarto</label>
         <input class="input-for" type="text"  v-model="quarto" required  />
       </div>
-      <div class="botao">
           <button type="submit" class="b-salvar">Salvar</button>
-          <button @click="cancelar" class="b-cancelar">Cancelar</button>
-      </div>
-        
+          <button class="b-cancelar">Cancelar</button>
       
     </form>
 </template>
@@ -56,9 +52,6 @@ export default {
       console.log(cadastrar)
       }
       },
-    cancelar(){
-            this.$router.push("../enfChefeView/HomeEnfChefe")
-    }
 
 }
 
@@ -99,23 +92,20 @@ input:focus {
   margin-left: 3%;
 }
 button{
-  display: inline-block;
+  display: inline-table;
   width: 15%;
   margin: 10px;
   border: none;
   padding: 4px;
   color: white;
-  
-
 }
 .b-salvar{
+  margin-left: 100px;
   background: #2BA9F1;
  
 }
 .b-cancelar{
   background: red;
   }
-.botao{
-  margin-right: 400px;
-}
+
 </style>

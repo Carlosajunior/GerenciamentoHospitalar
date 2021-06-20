@@ -45,19 +45,11 @@
             </router-link>
           </li>
           <li>
-<<<<<<< HEAD
-            <a style="margin-left:10%" href="">
-            <button class='btn btn-link' active-class="ativo" @click ='logout()'>
-=======
-            <button @click='logout()'>
-              Sair
->>>>>>> parent of 54ff7e1 (css do butão sair)
+            <a style="margin-left:9,9%" href="">
+            <button class='btn btn-link' active-class="ativo" @click='logout()'>
             </button>
-            <!-- <router-link to= "/" active-class="ativo">
-            <a href="">
-              <span class="las la-shopping-bag"></span><span>Sair</span>
+            Sair
             </a>
-            </router-link> -->
           </li>
         </ul>
       </div>
@@ -71,18 +63,12 @@ export default {
     name: 'AdmMenu',
     methods:{
       async logout(){
-<<<<<<< HEAD
-        console.log('Ola sou Lara Esquivel')
         var id = sessionStorage.getItem('id_usuario');
-=======
-        await admServices.logout({'id': sessionStorage.getItem('id_usuario')});
->>>>>>> parent of 54ff7e1 (css do butão sair)
-        sessionStorage.clear();
         await admServices.logout({'id': id});
-       
-        //this.$router.replace({
-        //  name:'Home'
-        //});
+        sessionStorage.clear();
+        this.$router.replace({
+          name:'Home'
+        });
       }
     }
 }
@@ -96,6 +82,10 @@ export default {
   --main-color: #f2f2f2;
   --color-dark: #1d2231;
   --text-grey: #8390a2;
+}
+
+#sair{
+  text-decoration: none;
 }
 
 * {
@@ -238,4 +228,31 @@ header label span {
   font-size: 1.7rem;
   padding-right: 1rem;
 } 
+
+.sidebar-menu button {
+  padding-left: 1rem;
+  display: block;
+  color: black;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.sidebar-menu button:hover{
+  background: #9C4747;
+  font-size: 110%;
+  color: white;
+  border-radius: 30px 0px 0px 30px;
+}
+
+.sidebar-menu button.ativo{
+  background: #9C4747;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: -1px 5px 5px 1px black;
+  color: #fff;
+}
+
+button.ativo span{
+  color: #fff
+}
+
 </style>
