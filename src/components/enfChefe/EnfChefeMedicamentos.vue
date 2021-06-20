@@ -5,8 +5,7 @@
       <th scope="col">Medicação</th>
       <th scope="col">Lote</th>
       <th scope="col">Quantidade</th>
-      <th scope="col">Data de validade</th>
-      <th scope="col">Farmacêutico</th>
+    
     </thead>
   </div>
 </template>

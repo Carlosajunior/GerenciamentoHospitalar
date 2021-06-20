@@ -21,10 +21,8 @@
       <t-body v-for="medicamentos in response" :key="medicamentos">
         <enf-chefe-medicamentos-cell
           :medicacao="medicamentos.nome"
-          :lote="medicamentos.cpf"
-          :farmaceutico="medicamentos.apelido"
-          :quantidade="medicamentos.cpf"
-          :validade="medicamentos.cpf"
+          :lote="medicamentos.lote"
+          :quantidade="medicamentos.quantidade"
         />
       </t-body>
     </table>
