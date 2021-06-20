@@ -45,11 +45,14 @@
             </router-link>
           </li>
           <li>
-            <router-link to= "/" active-class="ativo">
-              <a href="">
+            <button @click='logout()'>
+              Sair
+            </button>
+            <!-- <router-link to= "/" active-class="ativo">
+            <a href="">
               <span class="las la-shopping-bag"></span><span>Sair</span>
             </a>
-            </router-link>
+            </router-link> -->
           </li>
         </ul>
       </div>
@@ -58,13 +61,24 @@
 </template>
 
 <script>
+import admServices from "../../services/admServices";
 export default {
-    name: 'AdmMenu'
+    name: 'AdmMenu',
+    methods:{
+      async logout(){
+        await admServices.logout({'id': sessionStorage.getItem('id_usuario')});
+        sessionStorage.clear();
+        this.$router.replace({
+          name:'Home'
+        });
+      }
+    }
 }
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');  
+
 
 :root {
   --main-color: #f2f2f2;
