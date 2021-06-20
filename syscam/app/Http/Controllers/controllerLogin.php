@@ -36,5 +36,6 @@ class controllerLogin extends Controller
     public function logout(Request $request){
         $usuario = Usuario::firstWhere('id', "=", $request->id);
         $usuario->tokens()->where('tokenable_id', "=", $request->id)->delete();
+        return 'usuário desconectado.';
     }
 }

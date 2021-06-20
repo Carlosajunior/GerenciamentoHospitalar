@@ -34,7 +34,10 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 
-    Route::delete('/logout',[controllerLogin::class, "logout"]);
+    Route::post('/logout',[controllerLogin::class, "logout"]);
+
+    // Banco de dados
+    Route::get("/Backup", [controllerBanco::class, "Backup"]);
 
     // Rotas Enfermeiro e Estagiario :
     Route::get("/EstoqueMedicamentosEnf", [controllerMedicamento::class, "mostrarMedicamentos"]);

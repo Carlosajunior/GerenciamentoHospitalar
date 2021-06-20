@@ -34,7 +34,9 @@ return [
     '/mostrar-usuarios',
     '/editar-cadastro',
     '/logs',
-    '/mostrar-medicamentos'
+    '/mostrar-medicamentos',
+    '/logout',
+    '/Backup'
 
 ],
 
