@@ -31,7 +31,7 @@
 
 <script>
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
-import EnfChefebar from "../components/adm/AdmBar.vue";
+import EnfChefebar from "components/adm/AdmBar.vue";
 //import EnfChefeMedicamentos from '../components/enfChefe/EnfChefeMedicamentos.vue'
 import EnfChefeMedicamentosCell from "../components/enfChefe/EnfChefeMedicamentosCell.vue";
 //import axios from "axios";
