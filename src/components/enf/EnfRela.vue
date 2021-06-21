@@ -2,7 +2,9 @@
   <tr class="titulo">
     <th  style=" width:400px" scope="col">{{paciente}}</th>
     <th  style=" width:100px" scope="col">{{id}}</th>
-    <th  style=" width:300px" scope="col">{{prontuario}}</th>
+    <th  style=" width:300px" scope="col">
+      <button class="btn btn-primary"  @click="this.$emit('ExibirProntEnf',prontuario)">Emitir Prontuários</button>
+    </th>
   </tr>
 </template>
 
@@ -13,7 +15,7 @@ export default {
     paciente: null,
     id: null,
     prontuario: null,
-  },
+  }
 };
 </script>
 

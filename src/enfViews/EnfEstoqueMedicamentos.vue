@@ -13,7 +13,7 @@
     </div>        
     <table class="table">
         <thead>
-            <th scope="col">Medicação</th>
+            <th scope="col">Medicação </th>
             <th scope="col">Lote</th>
             <th scope="col">Quantidade</th>
             <th scope="col">Quantidade a ser retirada</th>
