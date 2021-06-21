@@ -23,15 +23,15 @@
       </div>
       <div>
         <label for="">Tipo sanguíneo</label>
-        <input class="input-for" type="text"  name="Tipo sanguineo" required  />
+        <input class="input-for" type="text"  v-model="fatorRH" required  />
       </div>
       <div>
         <label for="">Nome do responsável</label>
-        <input class="input-for" type="text"  name="Nome do responsavel" required  />
+        <input class="input-for" type="text"  v-model="nome_responsavel" required  />
       </div>
       <div>
         <label for="">Telefone do responsável</label>
-        <input class="input-for" type="text"  name="Telefone do responsavel" required  />
+        <input class="input-for" type="text"  v-model="telefone_responsavel" required  />
       </div>    
     
           <button type="submit" class="b-salvar">Salvar</button>
@@ -43,6 +43,7 @@
 
 <script>
 //import axios from 'axios' 
+import enfChefeServices from "../../services/enfChefeServices.js"
 export default {
   nome: "EnfCad",
   props: {
@@ -57,9 +58,27 @@ export default {
     telefone:null,
     email:null,
     response : null,
-    cadastroData : this.cadastro
+    nome_responsavel : null,
+    telefone_responsavel: null,
+    fatorRH : null,
+    cadastroData : this.cadastro,
     }
   },
+
+  methods : {
+    async postForm(){
+      var data = {"nome":this.name,"email":this.email,"cpf":this.cpf,"nome_responsavel":this.nome_responsavel,
+      "telefone":this.telefone,"telefone_responsavel":this.telefone_responsavel,"fatorRH":this.fatorRH,"endereco":this.enderco}
+        var result;
+        try{
+        var result = await enfChefeServices.post(data)
+        }
+
+        catch(result){
+            this.$$emit("Erro");
+        }
+    }
+  }
 };
 </script>
 

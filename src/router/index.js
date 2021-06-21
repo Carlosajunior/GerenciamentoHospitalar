@@ -330,7 +330,7 @@ const routes = [{
         path: '/EnfEstoqueMedicamentos',
         name: 'EnfEstoqueMedicamentos',
         component: () =>
-            import ('../enfViews/EnfEstoqueMedicamentos.vue'),
+            import ('../enfViews/EnfMedicamento.vue'),
             beforeEnter : (to,from,next) =>{
                 if(sessionStorage.getItem('token') != undefined){
                     next();

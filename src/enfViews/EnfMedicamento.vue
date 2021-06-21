@@ -20,9 +20,9 @@
             
         </thead>
 
-        <t-body v-for="medicamentos in response" :key="medicamentos">
+        <t-body v-for="(medicamento ,index) in response" :key="index">
             <enf-medicamentos
-            :medicacao="'Paracetamol'"
+            :medicacao="'blabla'"
             :lote="'12345'"
             :quantidade="'100'"
           />

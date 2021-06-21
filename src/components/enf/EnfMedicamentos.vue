@@ -1,7 +1,8 @@
 <template>
    
     <tr>
-      <th scope="col">{{medicacao}}</th>
+      <th scope="col" style="width:400px">{{medicacao}}</th>
+
       <th scope="col">{{lote}}</th>
       <th scope="col">{{quantidade}}</th>
       <th scope="col">   
@@ -61,7 +62,5 @@ button {
   margin-left: 5%;
 }
 
-th[scope="col"] {
-  padding: 10px;
-}
+
 </style>
