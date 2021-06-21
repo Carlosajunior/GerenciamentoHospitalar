@@ -1,8 +1,6 @@
 <template>
 <div class="formulario">
-    <div class="filtro">
-      <h2></h2>
-    </div>
+    
     <div>
         <enf-menu> </enf-menu>
     </div>
@@ -13,23 +11,21 @@
         >
         </enf-bar>
     </div>        
-    <table class="table" id="tableM">
+    <table class="table">
         <thead>
             <th scope="col">Medicação</th>
             <th scope="col">Lote</th>
             <th scope="col">Quantidade</th>
-            <th scope="col">Data de validade</th>
-            <th scope="col">Farmacêutico</th>
+            <th scope="col">Quantidade a ser retirada</th>
+            
         </thead>
 
         <t-body v-for="medicamentos in response" :key="medicamentos">
             <enf-medicamentos
-            :medicacao="medicamentos.nome"
-            :lote="medicamentos.cpf"
-            :farmaceutico="medicamentos.apelido"
-            :quantidade="medicamentos.cpf"
-            :validade="medicamentos.cpf"
-            />
+            :medicacao="'Paracetamol'"
+            :lote="'12345'"
+            :quantidade="'100'"
+          />
         </t-body>
     </table>
 </div>
@@ -50,12 +46,12 @@ export default {
     created() {
         axios({
             method: "GET",
-            url: " http://127.0.0.1:8000/mostrar-usuarios",
+            url: "https://swapi.dev/api/people",
         }).then(
             (result) => {
                 this.response = result.data;
                 console.log("Não deu erro!");
-                console.log(this.response);
+                console.log(this.response.results);
             },
             (error) => {
                 console.log("Erro");
@@ -69,13 +65,30 @@ export default {
 <style>
 
 .formulario {
-    width: 800px;
-    margin-top: 8%;
-    margin-left: 30%;
+  width: 800px;
+  margin-top: 10%;
+  margin-left: 30%;
+}
+.filtro {
+  padding: 2%;
+}
+button {
+  border: none;
+  background-color: #2ba9f1;
+  color: white;
+  padding: 4px;
+  border-radius: 3px;
+
+}
+label {
+  margin-right: 1%;
+}
+thead{
+  background-color: rgb(238, 238, 238);
 }
 
-.formulario #tableM {
-    margin-top: 5.4% !important;
+#text {
+  display: inline;
 }
 
 </style>

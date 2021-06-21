@@ -4,22 +4,45 @@
       <th scope="col">{{medicacao}}</th>
       <th scope="col">{{lote}}</th>
       <th scope="col">{{quantidade}}</th>
-      <th scope="col">{{validade}}</th>
-      <th scope="col">{{farmaceutica}}</th>
+      <th scope="col">   
+      <input class="form-control" v-model="baixarQuantidade">
+      </th>
+      <th scope="col"><button class="btn btn-secondary" @click="baixarMedicamento">Baixar</button></th>
     </tr>
   </div>
 </template>
 
 <script>
+import enfermeiroServices from "../../services/enfermeiroServices.js";
 export default {
   name: "EnfMedicamentos",
   props: {
     medicacao: null,
     lote: null,
     quantidade: null,
-    validade: null,
-    farmaceutico: null,
+    id : null
   },
+  data(){
+    return{
+      baixarQuantidade : undefined
+    }
+  },
+
+  methods:{
+    async  baixarMedicamento(){
+      var send = {"id" : this.id,"quantidade" : this.baixarQuantidade };
+      var response = undefined;
+      try{
+      response = await enfermeiroServices.baixarMedicamento(send)
+      console.log(response)
+      }
+
+      catch(response){
+          this.$emit("FalhaBaixaMedicamento",false);
+      }
+          
+          }
+  }
 };
 </script>
 
@@ -30,7 +53,6 @@ label {
 .filtro {
   padding: 2%;
 }
-
 button {
   border: none;
   background-color: #35b736;
@@ -41,6 +63,5 @@ button {
 
 th[scope="col"] {
   padding: 10px;
-  background-color: rgb(238, 238, 238);
 }
 </style>
