@@ -1,10 +1,5 @@
 <template>
   <div class="formulario">
-    <div class="filtro">
-      <label for="">Data da baixa: </label>
-      <input id="date" type="date" />
-      <button>Filtrar</button>
-    </div>
     <div>
       <enf-menu> </enf-menu>
     </div>
@@ -23,11 +18,11 @@
         <th scope="col">Dosagem</th>
         <th scope="col">Quarto</th>
         <th scope="col">Data</th>
-        <th scope="col">Horário </th>
       </thead>
 
-      <tbody >
-          <enf-agendamentos-concluidos-cell/>
+      <tbody v-for="agendamentos in response" :key="agendamentos" >
+          <enf-agendamentos-concluidos-cell :id="'00'" :medicacao="'Paracetamol'" 
+          :dosagem="'12'" :quarto="'A2'" :data="'A de hoje seu merda'" />
       </tbody>
     </table>
   </div>
@@ -41,8 +36,26 @@ import axios from 'axios';
 export default {
   name : 'EnfAgendamentoConcluido',
   components: { EnfMenu, EnfBar,EnfAgendamentosConcluidosCell },
-  created(){
-    axios({method:'GET','url':'ps://swapi.dev/api/people/'})
+  data() {
+    return{
+      response : null
+    }
+  },
+  created() {
+        axios({
+            method: "GET",
+            url: "https://swapi.dev/api/people",
+        }).then(
+            (result) => {
+                this.response = result.data;
+                console.log("Não deu erro!");
+                console.log(this.response.results);
+            },
+            (error) => {
+                console.log("Erro");
+                console.error(error);
+            }
+        );
   }
 }
 </script>

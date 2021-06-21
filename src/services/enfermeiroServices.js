@@ -14,5 +14,8 @@ export default {
     },
     agendamentosConcluidos: () => {
         return api.get("", auth)
+    },
+    baixarMedicamento: (obj) => {
+        return api.post("",obj,auth)
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>    
+   
     <tr>
       <th scope="col">{{medicacao}}</th>
       <th scope="col">{{lote}}</th>
@@ -9,7 +9,7 @@
       </th>
       <th scope="col"><button class="btn btn-secondary" @click="baixarMedicamento">Baixar</button></th>
     </tr>
-  </div>
+  
 </template>
 
 <script>
