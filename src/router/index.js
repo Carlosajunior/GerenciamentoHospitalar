@@ -293,12 +293,24 @@ const routes = [{
         path: '/EnfEstoqueMedicamentos',
         name: 'EnfEstoqueMedicamentos',
         component: () =>
+<<<<<<< HEAD
             import ('../enfViews/EnfEstoqueMedicamentos.vue'),
         beforeEnter: (to, from, next) => {
             if (sessionStorage.getItem('token') != undefined) {
                 next();
             } else {
                 next("/");
+=======
+            import ('../enfViews/EnfMedicamento.vue'),
+            beforeEnter : (to,from,next) =>{
+                if(sessionStorage.getItem('token') != undefined){
+                    next();
+                }
+    
+                else{
+                    next("/");
+                }
+>>>>>>> 68850ae1e7d7f0233f3a66afc55c41e45b91dbbe
             }
         }
 
