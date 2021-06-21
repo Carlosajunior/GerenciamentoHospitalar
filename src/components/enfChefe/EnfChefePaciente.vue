@@ -21,7 +21,7 @@ export default {
     paciente: null,
     id: null,
     idprontuario: null,
-    
+    index: null
   },
    data() {
     return {
@@ -31,6 +31,8 @@ export default {
   methods:{
         exibir(){
           if(this.prontuario== this.idprontuario){
+            sessionStorage.setItem("idProntuario",this.idprontuario),
+            sessionStorage.setItem("index",this.index),
             this.$router.push("../enfChefeView/EnfChefeOpView")
           }
             
