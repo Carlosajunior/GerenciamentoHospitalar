@@ -2,10 +2,8 @@
     <tr>
         <th scope="col">{{id}}</th>
         <th scope="col">{{medicacao}}</th>
-        <th scope="col">{{dosagem}}</th>
-        <th scope="col">{{quarto}}</th>
         <th scope="col">{{data}}</th>
-        <th scope="col">{{horario}}</th>
+        
     </tr>
 </template>
 

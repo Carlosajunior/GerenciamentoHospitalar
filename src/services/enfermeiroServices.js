@@ -4,7 +4,7 @@ import auth from "./Authorization.js"
 export default {
 
     agendamentoPendentesBaixa: (obj) => {
-        return api.post("/api/baixarAgendamentoEnf", obj, auth)
+        return api.post("/api/baixaAgendamentoEnf", obj, auth)
     },
     estoqueMedicamentos: () => {
         return api.get("/api/EstoqueMedicamentosEnf", auth)
@@ -12,8 +12,8 @@ export default {
     relatorioPacientes: () => {
         return api.get("/api/RelatorioPacienteEnf", auth)
     },
-    agendamentosConcluidos: () => {
-        return api.get("", auth)
+    agendamentosConcluidos: (obj) => {
+        return api.post("/api/AgendamentosConcluidosEnf",obj, auth)
     },
     baixarMedicamento: (obj) => {
         return api.patch("/api/PrepararMedicacaoEnf",obj,auth)

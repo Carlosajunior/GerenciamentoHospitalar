@@ -23,11 +23,11 @@ export default {
     },
     methods:{
       async baixa(){
-      var data = {"nome" : this.nome,"data" : this.data, "id_medicamento" : this.medicamento};
-      var response;
-      console.log(response);
+      var data = {"id" : this.nome};
+      
         try{
-          response = await enfermeiroService.agendamentoPendentesBaixa(data)
+          var response = await enfermeiroService.agendamentoPendentesBaixa(data)
+          console.log(response);
         }
         catch(response){
           this.$emit("Erro");

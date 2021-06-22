@@ -13,16 +13,16 @@
     
     <table class="table">
       <thead>
-        <th scope="col">Identificador do Paciente</th>
-        <th scope="col">Medicação</th>
-        <th scope="col">Dosagem</th>
-        <th scope="col">Quarto</th>
+        <th scope="col">Identificador do Prontuario</th>
+        <th scope="col">Posologia</th>
+    
         <th scope="col">Data</th>
       </thead>
 
       <tbody v-for="agendamentos in response" :key="agendamentos" >
-          <enf-agendamentos-concluidos-cell :id="'00'" :medicacao="'Paracetamol'" 
-          :dosagem="'12'" :quarto="'A2'" :data="'A de hoje seu merda'" />
+          <enf-agendamentos-concluidos-cell 
+          :id="agendamentos.id" :medicacao="agendamentos.posologia" 
+          :data="agendamentos.data_hora" />
       </tbody>
     </table>
   </div>
@@ -32,7 +32,8 @@
 import EnfMenu from "../components/enf/EnfMenu.vue";
 import EnfBar from '../components/adm/AdmBar.vue'
 import EnfAgendamentosConcluidosCell from '../components/enf/EnfAgendamentosConcluidosCell'
-import axios from 'axios';
+
+import enfermeiroServices from '../services/enfermeiroServices';
 export default {
   name : 'EnfAgendamentoConcluido',
   components: { EnfMenu, EnfBar,EnfAgendamentosConcluidosCell },
@@ -41,21 +42,16 @@ export default {
       response : null
     }
   },
+  methods:{
+      async concluidos(){
+        var data = {"id" : sessionStorage.getItem("id_usuario")}
+        var res = (await enfermeiroServices.agendamentosConcluidos(data));
+        console.log(res);
+        this.response = res.data;
+      }
+  },
   created() {
-        axios({
-            method: "GET",
-            url: "https://swapi.dev/api/people",
-        }).then(
-            (result) => {
-                this.response = result.data;
-                console.log("Não deu erro!");
-                console.log(this.response.results);
-            },
-            (error) => {
-                console.log("Erro");
-                console.error(error);
-            }
-        );
+    this.concluidos();
   }
 }
 </script>
