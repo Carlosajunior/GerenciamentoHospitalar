@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
-    Route::get("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
+    Route::post("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
 
     Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 
