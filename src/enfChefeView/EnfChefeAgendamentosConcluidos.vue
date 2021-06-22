@@ -53,11 +53,12 @@ export default {
     };
   },
   methods:{
-    agendamentosConcluidos(){
+    async agendamentosConcluidos(){
         var result;
         try{
           result = await enfChefeServices.agendamentosConcluidos();
-          this.response = result;
+          this.response = result.data;
+          console.log(this.response);
         }
         catch(result){
           this.view = true;

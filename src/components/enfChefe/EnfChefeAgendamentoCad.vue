@@ -48,13 +48,14 @@ export default {
     methods:{
         async agendar(){
           var data = {"alarme" : this.alarme,"data_hora" : this.hora, "posologia" : this.posologia,
-          "id_prontuario" : sessionStorage.get("id_prontuario"), "id_medicamento"  : this.id_medicacao, "id_usuario" :id }
-            var response;
+          "id_prontuario" : sessionStorage.get("id_prontuario"), "id_medicamento"  : this.id_medicacao, "id_usuario" :this.id }
+            var result;
             try {
-            response = await enfChefeServices.cadastrarAgendamento(data);
+            result = await enfChefeServices.cadastrarAgendamento(data);
+            console.log(result);
             }
-            catch(response){
-                view = true;
+            catch(result){
+                this.view = true;
             }
         }
     }
