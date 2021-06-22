@@ -43,11 +43,13 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get("/EstoqueMedicamentosEnf", [controllerMedicamento::class, "mostrarMedicamentos"]);
     Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
     Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
+    Route::get("/HistoricoAgendamentosEnf", [controllerEnfermeiro::class, "historicoAgendamentos"]);
+    Route::get("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
     Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
     
     Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
-    
-    Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
+    Route::patch("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
+
     Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
     Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
@@ -64,18 +66,3 @@ Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarM
 Route::get("/mostrar-medicamentos", [controllerMedicamento::class, "mostrarMedicamentos"]);
 
 Route::get("/CID", [controllerCIDApi::class, "CID"]);
-// Rotas Enfermeiro e Estagiario :
-Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
-Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
-Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
-
-Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
-
-Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
-Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
-
-/*
- Em processo Enfermeiro
-Route::get("/AgendamentoBaixados", [controllerEnfermeiro::class, "historicoAgendamentos"]);
-Route::get("/MedicamentosPendentes", [controllerEnfermeiro::class, "MedicamentoPendentes"]);
-*/
