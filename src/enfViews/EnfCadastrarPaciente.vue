@@ -10,11 +10,9 @@
             kindUser="Enfermeiro">
         </enf-bar>
     
-        <enf-chefe-cad v-on:Erro="levantarErro"/>
+        <enf-chefe-cad/>
     </div>
-    <div class="alert alert-danger" role="alert" v-show="view">
-        Não foi possível cadastrar paciente, tente novamente!
-    </div>
+  
 
  </div>
 </template>
@@ -31,11 +29,8 @@ export default {
             view : false
         }
     },
-    methods:{
-        levantarErro(){
-            this.view = true;
-        }
-    }
+
+    
 }
 </script>
 

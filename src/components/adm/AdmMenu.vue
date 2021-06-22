@@ -46,7 +46,7 @@
           </li>
           <li>
             <a style="margin-left:9,9%" href="">
-            <button class='btn btn-link' active-class="ativo" @click='logout()'>
+            <button class='btn btn-link' active-class="ativo" @click='logout'>
             </button>
             Sair
             </a>
@@ -66,9 +66,9 @@ export default {
         var id = sessionStorage.getItem('id_usuario');
         await admServices.logout({'id': id});
         sessionStorage.clear();
-        this.$router.replace({
-          name:'Home'
-        });
+       // this.$router.replace({
+        //  name:'Home'
+        //});
       }
     }
 }

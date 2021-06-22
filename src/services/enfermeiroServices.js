@@ -3,8 +3,8 @@ import auth from "./Authorization.js"
 
 export default {
 
-    agendamentoPendentes: (obj) => {
-        return api.post("", obj, auth)
+    agendamentoPendentesBaixa: (obj) => {
+        return api.post("/api/baixarAgendamentoEnf", obj, auth)
     },
     estoqueMedicamentos: () => {
         return api.get("/api/EstoqueMedicamentosEnf", auth)
@@ -17,5 +17,8 @@ export default {
     },
     baixarMedicamento: (obj) => {
         return api.post("",obj,auth)
+    },
+    agendamentoPendentes: (obj) =>{
+        return api.post("/",obj,auth)
     }
 }

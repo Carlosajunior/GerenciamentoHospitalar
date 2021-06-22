@@ -16,7 +16,7 @@
           </a>
           </router-link>
         </li>
-        <li v-show="carg == 3">
+        <li>
           <router-link to="EnfCadastrarPaciente" active-class="ativo">
           <a href="">
             <span class="las la-igloo"></span><span>Cadastrar Paciente</span>
