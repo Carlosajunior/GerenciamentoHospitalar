@@ -110,10 +110,11 @@ export default {
       };
       try{
       console.log(cadastroUser);
-      var cadastrar = await enfChefeServices.post(cadastroUser);
-      console.log(cadastrar);
+      await enfChefeServices.post(cadastroUser);
+
       }
-      catch(cadastrar){
+      catch(erro){
+        console.log(erro);
         this.show = true;
       }
     },

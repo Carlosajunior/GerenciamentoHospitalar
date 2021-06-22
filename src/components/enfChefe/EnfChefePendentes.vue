@@ -2,10 +2,10 @@
 
      <tr>
         <th scope="col">{{paciente}}</th>
-        <th scope="col">{{idEnf}}</th>
+        <th scope="col">{{popo}}</th>
         <th scope="col"><input type="text" class="enfcad" v-model="enfCad"></th>
         <th scope="col"><button   @click="cadastrarEnf" class="btn btn-success">Cadastrar</button></th>
-        <th scope="col">{{prontuario}}</th>
+        <th scope="col">{{medicamento}}</th>
     
         <th scope="col">{{data}}</th>
        
@@ -28,9 +28,9 @@ export default {
     props:{
       paciente:null,
       idEnf : null,
-      prontuario: null,
+      medicamento: null,
       id : null,
-     
+      popo : null,
       data:null,
        
     },

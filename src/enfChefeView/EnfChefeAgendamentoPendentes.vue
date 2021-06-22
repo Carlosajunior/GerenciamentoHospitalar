@@ -15,7 +15,7 @@
         <th scope="col">Posologia</th>
         <th scope="col">Insira o Enfermeiro/Estagiário </th>
         <th scope="col">Aperte</th>
-        <th scope="col">Prontuário</th>
+        <th scope="col">Medicamento</th>
         <th scope="col">Data</th>
      
         
@@ -24,10 +24,10 @@
 
       <tbody v-for="planeta in response" :key="planeta">
           <enf-chefe-pendentes
-          :paciente="planeta.name"
-          :idEnf="planeta.orbital_period"
-          :prontuario="planeta.population"
-          :data="planeta.population"
+          :paciente="planeta.nome"
+          :popo="planeta.posologia"
+          :medicamento="planeta.medicamento"
+          :data="planeta.data"
           :id ="planeta.id"
             
              >
@@ -53,7 +53,7 @@ data() {
   },
   methods :{
       async agendamentos(){
-          this.response = await enfChefeServices.agendamentosPendentes();
+          this.response = (await enfChefeServices.agendamentosPendentes()).data;
           console.log(this.response)
       }
   },
