@@ -11,7 +11,7 @@ export default {
         return api.get("/api/agendamentosPendentes",auth)
     },
     agendamentosConcluidos : () => {
-        return api.get("/api/rotax",auth)
+        return api.get("/api/agendamentosConcluidos",auth)
     },
     cadastrarAgendamento : (obj) =>
     {
