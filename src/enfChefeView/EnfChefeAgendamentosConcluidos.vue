@@ -57,6 +57,7 @@ export default {
         var result;
         try{
           result = await enfChefeServices.agendamentosConcluidos();
+          console.log(this.response);
           this.response = result.data;
           console.log(this.response);
         }
