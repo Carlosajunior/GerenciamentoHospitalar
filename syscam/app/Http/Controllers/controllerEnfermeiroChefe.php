@@ -86,12 +86,11 @@ class controllerEnfermeiroChefe extends Controller
         return response('dados inválidos', 404);
     }
     //TA BUGADO
-
     public function armazenar_Plantao(Request $request)
     {
         $usuario = Usuario::firstWhere('id', '=', $request->id);
         if ($usuario) {
-            $ponto_digital = Ponto_digital::Where('id_usuario', '=', $request->id);
+            $ponto_digital = Ponto_digital::where('id_usuario', '=', $request->id)->get();
             if (!$ponto_digital && $usuario) {
                 $ponto_digital = new Ponto_digital;
                 $ponto_digital = Ponto_digital::create([
@@ -99,10 +98,19 @@ class controllerEnfermeiroChefe extends Controller
                     'id_usuario' => $request->id
                 ]);
                 return $ponto_digital;
-            } else if ($ponto_digital) {
-                $ponto_digital = $ponto_digital->firstWhere('data_hora_saida', null);
+            }
+            $ponto_digital = $ponto_digital->firstWhere('data_hora_saida','=', null); 
+            if ($ponto_digital) {
                 $ponto_digital->data_hora_saida = \Carbon\Carbon::now();
                 $ponto_digital->save();
+                return $ponto_digital;
+            }
+            else if(!$ponto_digital){
+                $ponto_digital = new Ponto_digital;
+                $ponto_digital = Ponto_digital::create([
+                    'data_hora_entrada' => \Carbon\Carbon::now(),
+                    'id_usuario' => $request->id
+                ]);
                 return $ponto_digital;
             }
         }
