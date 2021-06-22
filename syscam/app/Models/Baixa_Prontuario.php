@@ -11,5 +11,9 @@ class Baixa_Prontuario extends Model
     protected $table = 'baixa_prontuario';
     public $timestamps = false;
 
-    
+    protected $fillable =[
+        'data_baixa',
+        'tipo_baixa',
+        'id_usuario'
+    ];
 }
