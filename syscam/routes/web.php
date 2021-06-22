@@ -31,6 +31,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
 
+    Route::get("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
+
     Route::get('/logs', [Logs_Alteracao::class, "mostrarLogs"]);
 
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);

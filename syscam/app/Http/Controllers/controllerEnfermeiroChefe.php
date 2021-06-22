@@ -17,11 +17,10 @@ class controllerEnfermeiroChefe extends Controller
         $prontuario = new Prontuario();
         $prontuario = Prontuario::create([
             'numero_quarto' => $request->numero_quarto,
-            'data_internacao' => \Carbon\Carbon::now(),
-            'nome_responsavel' => $request->nome_responsavel,
+            'data_internacao' => $request->data_internacao,
             'id_paciente' => $request->id_paciente,
             'idCID' => $request->idCID,
-            'data_diagnostico' => \Carbon\Carbon::now()
+            'data_diagnostico' => $request->data_diagnostico
         ]);
         return $prontuario;
     }
@@ -35,7 +34,8 @@ class controllerEnfermeiroChefe extends Controller
             'posologia' => $request->posologia,
             'id_prontuario' => $request->id_prontuario,
             'id_medicamento' => $request->id_medicamento,
-            'id_usuario' => $request->id_usuario
+            'id_usuario' => $request->id_usuario,
+            'feito' => false
         ]);
         return $agendamento;
     }
@@ -84,12 +84,13 @@ class controllerEnfermeiroChefe extends Controller
         }
         return response('dados inválidos', 404);
     }
+    //TA BUGADO
 
     public function armazenar_Plantao(Request $request)
     {
         $usuario = Usuario::firstWhere('id', '=', $request->id);
         if ($usuario) {
-            $ponto_digital = Ponto_digital::firstWhere('id_usuario', '=', $request->id)->firstWhere('data_hora_saida', '=', null);
+            $ponto_digital = Ponto_digital::Where('id_usuario', '=', $request->id);
             if (!$ponto_digital && $usuario) {
                 $ponto_digital = new Ponto_digital;
                 $ponto_digital = Ponto_digital::create([
@@ -97,7 +98,8 @@ class controllerEnfermeiroChefe extends Controller
                     'id_usuario' => $request->id
                 ]);
                 return $ponto_digital;
-            } else if ($ponto_digital) {
+            } else if ($ponto_digital ) {
+                $ponto_digital = $ponto_digital->firstWhere('data_hora_saida',null);
                 $ponto_digital->data_hora_saida = \Carbon\Carbon::now();
                 $ponto_digital->save();
                 return $ponto_digital;
