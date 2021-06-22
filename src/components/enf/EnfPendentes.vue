@@ -1,38 +1,39 @@
 <template>
-<div>
-    <div class="filtro">
-      <label for="">Nome do paciente: </label>
-      <input id="text" type="text" />
-      <button>Buscar</button>
-    </div>
-     <tr class="titulo">
-        <th scope="col">Nome do paciente</th>
-        <th scope="col">Enfermeiro/Estagiário</th>
-        <th scope="col">Prontuário</th>
-        <th scope="col">Horário</th>
-        <th scope="col">Data</th>
-        <th scope="col">Cadastrar alarme</th>
-    </tr>
-</div>
+  <tr>
+    <th scope="col">{{nome}}</th>
+    <th scope="col">{{data}} </th>
+    <th scope="col">{{medicamento}} </th>
+    <th scope="col">
+      <button class="btn btn-secondary" @click="baixa">Baixar</button>
+    </th>
+  </tr>
    
 </template>
 
 <script>
-import axios from 'axios'
+import enfermeiroService from "../../services/enfermeiroServices.js"
 export default {
     name:"EnfPendentes",
     props:{
-      paciente:null,
-      idEnf : null,
-      prontuario: null,
-      hora:null,
-      data:null,
-      alarme:null
+      nome : null,
+      data : null,
+      medicamento : null,
+
         
     },
-    created(){
-        axios.get('http://127.0.0.1:8000/')
-    }  
+    methods:{
+      async baixa(){
+      var data = {"nome" : this.nome,"data" : this.data, "id_medicamento" : this.medicamento};
+      var response;
+      console.log(response);
+        try{
+          response = await enfermeiroService.agendamentoPendentesBaixa(data)
+        }
+        catch(response){
+          this.$emit("Erro");
+        }
+      }
+    }
     
 }
 </script>

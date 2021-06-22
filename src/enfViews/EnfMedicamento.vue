@@ -17,16 +17,16 @@
             <th scope="col">Lote</th>
             <th scope="col">Quantidade</th>
             <th scope="col">Quantidade a ser retirada</th>
-            
+            <th scope="col">Baixar Medicamento </th>
         </thead>
 
-        <t-body v-for="(medicamento ,index) in response" :key="index">
+        <tbody v-for="(medicamento ,index) in response" :key="index">
             <enf-medicamentos
             :medicacao="'blabla'"
             :lote="'12345'"
             :quantidade="'100'"
           />
-        </t-body>
+        </tbody>
     </table>
 </div>
 </template>

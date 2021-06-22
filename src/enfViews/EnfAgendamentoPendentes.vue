@@ -16,6 +16,7 @@
             <th scope="col">Nome do paciente</th>
             <th scope="col">Data</th>
             <th scope ="col"> Medicamento </th>
+            <th scope="col"> Dar baixa</th>
             </thead>
 
         <tbody>
