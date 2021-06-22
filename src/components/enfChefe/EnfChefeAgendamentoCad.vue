@@ -3,40 +3,59 @@
         <form @submit.prevent="">
             <div class="divs">
                 <label for="">Posologia</label>
-                <input class="input-for" type="text" v-model="name" required />
+                <input class="input-for" type="text" v-model="posologia" required />
             </div>
-            <div class="divs">
-                <label for="">Posologia</label>
-                <input class="input-for" type="text" v-model="name" required />
-            </div>
+          
              <div class="divs">
                 <label for="">Hora do Alarme</label>
-                <input class="input-for" type="text" v-model="name"/>
+                <input class="input-for" type="text" v-model="alarme"/>
             </div>
 
             <div class="divs">
                 <label for="">Hora da Medicação</label>
-                <input class="input-for" type="text" v-model="name"/>
+                <input class="input-for" type="text" v-model="hora"/>
             </div>
 
              <div class="divs">
                 <label for="">Identificador da Medicação</label>
-                <input class="input-for-menor" type="text" v-model="name"/>
+                <input class="input-for-menor" type="text" v-model="id_medicacao"/>
             </div>
 
             <div class="divs">
                 <label for="">Identificador do Enfermeiro/Estagiário</label>
-                <input class="input-for-menor" type="text" v-model="name"/>
+                <input class="input-for-menor" type="text" v-model="id"/>
             </div>
         </form>
+                <div class="alert alert-danger" role="alert" v-show="view">
+                    Não foi possível cadastrar um agendamento, verifique a sua conexão!
+        </div>
     </body>
 </template>
 <script>
+import enfChefeServices from '../../services/enfChefeServices'
 export default {
     name:"EnfChefeAgendamentoCad",
+    data() {
+      return{
+        posologia = null,
+        alarme = null,
+        hora = null,
+        id_medicacao = null,
+        id = null,
+        view = false
+      }
+    }, 
     methods:{
         async agendar(){
-            
+          var data = {"alarme" : this.alarme,"data_hora" : this.hora, "posologia" : this.posologia,
+          "id_prontuario" : sessionStorage.get("id_prontuario"), "id_medicamento"  : this.id_medicacao, "id_usuario" :id }
+            var response;
+            try {
+            response = await enfChefeServices.cadastrarAgendamento(data);
+            }
+            catch(response){
+                view = true;
+            }
         }
     }
 }
