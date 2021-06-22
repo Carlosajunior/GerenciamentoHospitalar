@@ -23,18 +23,19 @@ use App\Models\Logs_Alteracao;
 |
 */
 
-Route::group(['middleware'=>['auth:sanctum']], function(){
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
-    
+
     Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
-    
+
     Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
-    
+
     Route::get('/logs', [Logs_Alteracao::class, "mostrarLogs"]);
-    
+
     Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 
-    Route::post('/logout',[controllerLogin::class, "logout"]);
+    Route::post('/logout', [controllerLogin::class, "logout"]);
 
     // Banco de dados
     Route::get("/Backup", [controllerBanco::class, "Backup"]);
@@ -46,23 +47,25 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get("/HistoricoAgendamentosEnf", [controllerEnfermeiro::class, "historicoAgendamentos"]);
     Route::get("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
     Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
-    
+
     Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
     Route::patch("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
 
     Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
     Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
+    Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
+
+    Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
+
+    Route::get("/mostrar-medicamentos", [controllerMedicamento::class, "mostrarMedicamentos"]);
+    
+    Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
 });
 
-Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
+
 
 Route::post("/login", [controllerLogin::class, "login"]);
 
-Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
-
-Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
-
-Route::get("/mostrar-medicamentos", [controllerMedicamento::class, "mostrarMedicamentos"]);
 
 Route::get("/CID", [controllerCIDApi::class, "CID"]);

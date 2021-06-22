@@ -12,14 +12,13 @@ use Illuminate\Http\Request;
 
 class controllerEnfermeiroChefe extends Controller
 {
-    public function Criar_Protuario(Request $request)
+    public function Criar_Prontuario(Request $request)
     {
         $prontuario = new Prontuario();
         $prontuario = Prontuario::create([
             'numero_quarto' => $request->numero_quarto,
             'data_internacao' => $request->data_internacao,
             'nome_responsavel' => $request->nome_responsavel,
-            'id_baixa_prontuario' => $request->id_baixa_prontuario,
             'id_paciente' => $request->id_paciente,
             'idCID' => $request->idCID,
             'data_diagnostico' => $request->data_diagnostico
