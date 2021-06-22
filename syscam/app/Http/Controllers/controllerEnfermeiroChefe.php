@@ -76,7 +76,7 @@ class controllerEnfermeiroChefe extends Controller
         $usuario = Usuario::firstWhere('nome', '=', $nomeEnfermeiro);
         $agendamento = Agendamento_medicacao::firstWhere('id', '=', $idAgendamento);
         if ($usuario && $agendamento) {
-            if ($usuario->id_Cargo == 2 || $usuario->id_Cargo == 4) {
+            if ($usuario->id_Cargo == 3 || $usuario->id_Cargo == 4) {
                 $agendamento->id_usuario = $usuario->id;
                 $agendamento->save();
                 return $agendamento;
