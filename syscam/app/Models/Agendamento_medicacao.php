@@ -18,5 +18,6 @@ class Agendamento_Medicacao extends Model
         'id_prontuario',
         'id_medicamento',
         'id_usuario',
+        'feito'
     ];
 }
