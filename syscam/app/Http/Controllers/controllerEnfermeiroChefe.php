@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Acao;
 use App\Models\Paciente;
 use App\Models\Usuario;
 use App\Models\Prontuario;
@@ -98,8 +98,8 @@ class controllerEnfermeiroChefe extends Controller
                     'id_usuario' => $request->id
                 ]);
                 return $ponto_digital;
-            } else if ($ponto_digital ) {
-                $ponto_digital = $ponto_digital->firstWhere('data_hora_saida',null);
+            } else if ($ponto_digital) {
+                $ponto_digital = $ponto_digital->firstWhere('data_hora_saida', null);
                 $ponto_digital->data_hora_saida = \Carbon\Carbon::now();
                 $ponto_digital->save();
                 return $ponto_digital;
@@ -127,10 +127,10 @@ class controllerEnfermeiroChefe extends Controller
     public function agendamentosPendentes()
     {
         $array = collect([]);
-        foreach (Agendamento_medicacao::where('feito',false)->get() as $agendamentoPendente){
-            $prontuario = Prontuario::firstWhere('id','=',$agendamentoPendente->id_prontuario);
-            $paciente = Paciente::firstWhere('id','=', $prontuario->id_paciente);
-            $medicamento = Medicamento::firstWhere('id','=', $agendamentoPendente->id_medicamento);
+        foreach (Agendamento_medicacao::where('feito', false)->get() as $agendamentoPendente) {
+            $prontuario = Prontuario::firstWhere('id', '=', $agendamentoPendente->id_prontuario);
+            $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
+            $medicamento = Medicamento::firstWhere('id', '=', $agendamentoPendente->id_medicamento);
             $agendamento = (object) [
                 'nome' => $paciente->nome,
                 'posologia' => $agendamentoPendente->posologia,
@@ -142,7 +142,28 @@ class controllerEnfermeiroChefe extends Controller
         }
         return ($array);
     }
-    
+
+    public function agendamentosConcluidos()
+    {
+        $array = collect([]);
+        foreach (Agendamento_medicacao::where('feito', true)->get() as $agendamentoConcluido) {
+            $prontuario = Prontuario::firstWhere('id', '=', $agendamentoConcluido->id_prontuario);
+            $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
+            $medicamento = Medicamento::firstWhere('id', '=', $agendamentoConcluido->id_medicamento);
+            $usuario = Usuario::firstWhere('id','=', $agendamentoConcluido->id_usuario);
+            $acao = Acao::firstWhere('id_usuario','=', $agendamentoConcluido->id_usuario);
+            $agendamento = (object) [
+                'nome' => $paciente->nome,
+                'posologia' => $agendamentoConcluido->posologia,
+                'medicamento' => $medicamento->nome,
+                'aplicador' => $usuario->nome,
+                'data' => $acao->data_hora_acao
+            ];
+            json_encode($agendamento);
+            $array->push($agendamento);
+        }
+        return ($array);
+    }
 
     public function PrepararMedicamento()
     {

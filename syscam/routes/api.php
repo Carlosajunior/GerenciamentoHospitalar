@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get("/agendamentosPendentes", [controllerEnfermeiroChefe::class, "agendamentosPendentes"]);
     Route::post("/cadastrarAgendamento", [controllerEnfermeiroChefe::class, "Criar_Agendamento"]);
     Route::post("/cadastrarProntuario", [controllerEnfermeiroChefe::class, 'Criar_Prontuario']);
+    Route::get("/agendamentosConcluidos", [controllerEnfermeiroChefe::class, 'agendamentosConcluidos']);
 });
 
 Route::post("/login", [controllerLogin::class, "login"]);
