@@ -4,7 +4,7 @@
         <th scope="col">{{paciente}}</th>
         <th scope="col">{{idProntuario}}</th>
         <th scope="col"> <button @click="cadastrar" class="btn btn-success">Cadastrar </button> </th>
-        <th scope="col"> <button @click="baixar" class="btn btn-primary"> Dar baixa </button> </th>
+        <th scope="col"> <button @click="baixa" class="btn btn-primary"> Dar baixa </button> </th>
         
     </tr>
 
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import enfChefeServices from "../../services/enfChefeServices.js"
 export default {
     name:"EnfChefeProntuario",
     props:{
@@ -31,7 +32,17 @@ export default {
 
         },
 
-        baixa(){}
+        async baixa(){
+          var data = {"id_usuario" : sessionStorage.getItem("id_usuario"), "tipo_baixa" : "Alta"};
+          try{
+            var response = await enfChefeServices.baixarProntuario(data);
+            console.log(response);
+          }
+          catch(erro){
+             console.log("deu ruim");
+          }
+
+        }
 }
 }
 

@@ -13,7 +13,7 @@
     <div v-show="view">
       <table class="table" style="margin-top:18%">
         <h2> Prontuarios Associados</h2> 
-        <enf-chef-op-view/>
+        <enf-chef-op-view :lista="lista3" />
       </table>
     </div>
     <table class="table" v-show="!view">
@@ -50,6 +50,7 @@ export default {
       response: {},
       lista1 : [],
       lista2 : [],
+      lista3 : [],
       view : false
     };
   },
@@ -62,8 +63,9 @@ export default {
       console.log(this.lista1);
       console.log(this.lista2);
     },
-    showProntuarios(){
+    showProntuarios(obj){
         this.view = true;
+        this.lista3 = obj;
     }
   }
   ,

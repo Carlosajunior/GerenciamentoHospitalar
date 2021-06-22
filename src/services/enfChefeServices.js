@@ -18,5 +18,8 @@ export default {
         return api.post("/api/cadastrarAgendamento",obj,auth)
     },
 
-   // baixarProntuario : () =>
+     baixarProntuario : (obj) =>{
+
+        return api.post("/api/baixaProntuario",obj,auth)
+     }
 }

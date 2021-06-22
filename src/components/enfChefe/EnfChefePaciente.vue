@@ -5,6 +5,7 @@
     
     <th scope="col"> <button @click="exibir">Exibir</button> </th>
 
+    
   </tr>
 </template>
 
@@ -24,7 +25,7 @@ export default {
   },
   methods:{
         exibir(){
-            this.$emit("Prontuarios")
+            this.$emit("Prontuarios",this.Eprontuario)
           }
             
         }
