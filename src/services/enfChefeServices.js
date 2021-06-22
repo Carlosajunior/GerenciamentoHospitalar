@@ -9,5 +9,8 @@ export default {
     },
     agendamentosPendentes : () =>{
         return api.get("/api/",auth)
+    },
+    agendamentosConcluidos : () => {
+        return api.get("/api/",auth)
     }
 }

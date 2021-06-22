@@ -14,8 +14,7 @@
     <table class="table">
       <thead>
         <th scope="col">Enfermeiro/Estágiario</th>
-        <th scope="col">Nome do paciente</th>
-        <th scope="col">Hora da baixa</th>
+        <th scope="col">Identificador do paciente</th>
         <th scope="col">Data da baixa</th>
         <th scope="col">Medicação</th>
       </thead>
@@ -30,6 +29,11 @@
         >
         </enf-chefe-concluidos>
       </tbody>
+      <div v-show="view">
+        <div class="alert alert-danger" role="alert">
+            Algo aconteceu, verifique sua conexão!
+        </div>
+      </div>
     </table>
   </div>
 </template>
@@ -38,13 +42,27 @@
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
 import EnfChefebar from "../components/adm/AdmBar.vue";
 import EnfChefeConcluidos from "../components/enfChefe/EnfChefeConcluidos.vue";
+import enfChefeServices from '../services/enfChefeServices';
 
 export default {
   components: { EnfChefeMenu, EnfChefebar, EnfChefeConcluidos },
   data() {
     return {
       response: {},
+      view : false
     };
+  },
+  methods:{
+    agendamentosConcluidos(){
+        var result;
+        try{
+          result = await enfChefeServices.agendamentosConcluidos();
+          this.response = result;
+        }
+        catch(result){
+          this.view = true;
+        }
+    }
   },
   created() {
   

@@ -2,7 +2,7 @@
   <tr class="titulo">
     <th scope="col">{{ enfermeiro }}</th>
     <th scope="col">{{ paciente }}</th>
-    <th scope="col">{{ horaBaixa }}</th>
+    
     <th scope="col">{{ dataBaixa }}</th>
     <th scope="col">{{ medicacao }}</th>
   </tr>
