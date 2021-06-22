@@ -37,12 +37,12 @@ export default {
     name:"EnfChefeAgendamentoCad",
     data() {
       return{
-        posologia = null,
-        alarme = null,
-        hora = null,
-        id_medicacao = null,
-        id = null,
-        view = false
+        posologia : null,
+        alarme : null,
+        hora : null,
+        id_medicacao : null,
+        id : null,
+        view : false
       }
     }, 
     methods:{

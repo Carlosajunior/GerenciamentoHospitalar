@@ -12,7 +12,7 @@
     <table class="table">
       <thead>
        <th scope="col">Nome do paciente</th>
-        <th scope="col">Enfermeiro/Estagiário</th>
+        <th scope="col">Posologia</th>
         <th scope="col">Insira o Enfermeiro/Estagiário </th>
         <th scope="col">Aperte</th>
         <th scope="col">Prontuário</th>
@@ -54,6 +54,7 @@ data() {
   methods :{
       async agendamentos(){
           this.response = await enfChefeServices.agendamentosPendentes();
+          console.log(this.response)
       }
   },
   created() {
