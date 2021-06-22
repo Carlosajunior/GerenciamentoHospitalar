@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
 
-    Route::post("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
+    
 
     Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 
@@ -49,19 +49,20 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get("/ListaPacientesEnf", [controllerEnfermeiro::class, "ListarPacientes"]);
     Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
     Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
-
     Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
-
     Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
     Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
+    Route::post("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
+    
     Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
     Route::get("/agendamentosPendentes", [controllerEnfermeiroChefe::class, "agendamentosPendentes"]);
     Route::post("/cadastrarAgendamento", [controllerEnfermeiroChefe::class, "Criar_Agendamento"]);
     Route::post("/cadastrarProntuario", [controllerEnfermeiroChefe::class, 'Criar_Prontuario']);
     Route::get("/agendamentosConcluidos", [controllerEnfermeiroChefe::class, 'agendamentosConcluidos']);
+    Route::post("/baixaProntuario", [controllerEnfermeiroChefe::class, 'baixaProntuario']); 
+
     Route::get("/mostrarProntuarios", [Prontuario::class, 'mostrarProntuarios']);
-    Route::post("/baixaProntuario", [controllerEnfermeiroChefe::class, 'baixaProntuario']);
 });
 
 Route::post("/login", [controllerLogin::class, "login"]);
