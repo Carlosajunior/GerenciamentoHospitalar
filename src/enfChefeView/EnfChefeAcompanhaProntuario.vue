@@ -9,14 +9,14 @@
         </enf-chefebar>
     </div>
     <div v-show="view">
-      <enf-chefe-agendamento-cad/>
+      <enf-chefe-agendamento-cad style="margin-top:10%"/>
     </div>
-      <table class="table">
+      <table class="table" v-show="!view">
       <thead>
     <tr>
         <th scope="col">Nome do paciente</th>
         <th scope="col">ID do prontuário</th>
-        <th scope="col">Status da baixa</th>
+        
         <th scope="col">Cadastrar Agendamento</th>
         <th scope="col">Baixa prontuário</th>
         
@@ -25,8 +25,8 @@
 
       <tbody v-for="planeta in response" :key="planeta">
           <enf-chefe-prontuario
-          :paciente="planeta.name"
-          :idProntuario="planeta.id_prontuario"
+          :paciente="planeta.id_paciente"
+          :idProntuario="planeta.id"
           v-on:Cadastrar="agendamento" >
         </enf-chefe-prontuario>
       </tbody>
@@ -63,15 +63,17 @@ data() {
       var result;
       try{
         result = await enfChefeServices.acompanharProntuario();
-        this.response = result 
+        this.response = result.data;
+        console.log(this.response);
       }
       catch(result){
         this.view2 = true;
       }
-    }
+    },
+
   },
   created() {
-   
+    this.acompanharProntuario();
   }
 
 };

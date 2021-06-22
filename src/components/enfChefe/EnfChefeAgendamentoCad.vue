@@ -25,6 +25,10 @@
                 <label for="">Identificador do Enfermeiro/Estagiário</label>
                 <input class="input-for-menor" type="text" v-model="id"/>
             </div>
+
+            <div class="divs">
+              <button @click="agendar" >Cadastrar</button>
+            </div>
         </form>
                 <div class="alert alert-danger" role="alert" v-show="view">
                     Não foi possível cadastrar um agendamento, verifique a sua conexão!
@@ -48,7 +52,7 @@ export default {
     methods:{
         async agendar(){
           var data = {"alarme" : this.alarme,"data_hora" : this.hora, "posologia" : this.posologia,
-          "id_prontuario" : sessionStorage.get("id_prontuario"), "id_medicamento"  : this.id_medicacao, "id_usuario" :this.id }
+          "id_prontuario" : sessionStorage.getItem("id_prontuario"), "id_medicamento"  : this.id_medicacao, "id_usuario" :this.id }
             var result;
             try {
             result = await enfChefeServices.cadastrarAgendamento(data);

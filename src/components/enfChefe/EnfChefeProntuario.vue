@@ -3,12 +3,7 @@
      <tr>
         <th scope="col">{{paciente}}</th>
         <th scope="col">{{idProntuario}}</th>
-        <th scope="col"> <select v-model="status">
-          <option disabled value="">Status da baixa:</option>
-          <option value=1>Alta</option>
-          <option value=2>Obito</option>
-        </select></th>
-        <th scope="col"> <button @click="editar" class="btn btn-success">Cadastrar </button> </th>
+        <th scope="col"> <button @click="cadastrar" class="btn btn-success">Cadastrar </button> </th>
         <th scope="col"> <button @click="baixar" class="btn btn-primary"> Dar baixa </button> </th>
         
     </tr>
@@ -31,7 +26,7 @@ export default {
   },
      methods:{
         cadastrar(){
-          sessionStorage.setItem("id_prontuario",this.idProntuario)
+          sessionStorage.setItem("id_prontuario",this.idProntuario);
           this.$emit("Cadastrar");
 
         },

@@ -25,7 +25,7 @@
           :enfermeiro="planeta.aplicador"
           :paciente="planeta.nome"
           :dataBaixa="planeta.data"
-          :medicacao="planeta.medicacao"
+          :medicacao="planeta.medicamento"
           :posologia ="planeta.posologia"
         >
         </enf-chefe-concluidos>

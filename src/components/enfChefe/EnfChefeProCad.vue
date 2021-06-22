@@ -10,6 +10,11 @@
         <label for="">Quarto</label>
         <input class="input-for" type="text"  v-model="quarto" required  />
       </div>
+
+       <div class="divs">
+        <label for="">CID</label>
+        <input class="input-for" type="text"  v-model="cid" required  />
+      </div>
           <button type="submit" class="b-salvar">Salvar</button>
           <button class="b-cancelar" @click="out">Cancelar</button>
       
@@ -35,8 +40,7 @@ export default {
     
     async postForm(){
       console.log(this.cadastroData)
-      var cadastroUser ={"id_paciente" : this.paciente, "enf" : this.enf, "cid" : this.cid,
-      "posologia" : this.posologia, "numero_quarto" : this.quarto, }
+      var cadastroUser ={"id_paciente" : this.paciente, "enf" : this.enf, "idCID" : this.cid, "numero_quarto" : this.quarto, }
       var cadastrar = await enfChefeProntuario.post(cadastroUser)
       console.log(cadastrar)
       },

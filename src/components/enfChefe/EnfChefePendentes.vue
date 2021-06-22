@@ -36,7 +36,7 @@ export default {
     },
     methods:{
     async cadastrarEnf(){
-      var  cadastroEnfAgendamento={"nome":this.enfCad, "id":this.id}
+      var  cadastroEnfAgendamento={"id":this.id}
       var cadastrar = await enfChefeCadEnfAgendamento.post(cadastroEnfAgendamento)
       console.log(cadastrar)
       console.log("Não deu erro! enf cad");

@@ -5,7 +5,7 @@ export default {
         return api.post("/api/cadastrar-paciente", obj,auth)
     },
     acompanharProntuario : () =>{
-        return api.get("/api/",auth)
+        return api.get("/api/mostrarProntuarios",auth)
     },
     agendamentosPendentes : () =>{
         return api.get("/api/agendamentosPendentes",auth)
@@ -16,5 +16,7 @@ export default {
     cadastrarAgendamento : (obj) =>
     {
         return api.post("/api/cadastrarAgendamento",obj,auth)
-    }
+    },
+
+   // baixarProntuario : () =>
 }
