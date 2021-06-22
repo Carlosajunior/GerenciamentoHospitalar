@@ -26,18 +26,14 @@ use App\Models\Prontuario;
 //rotas protegidas que requerem autenticação para serem acessadas
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get("/mostrar-usuarios", [controllerUsuario::class, "mostrarUsuarios"]);
-
     Route::post("/cadastrar-usuario", [controllerUsuario::class, "criarUsuario"]);
-
+    Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
     
-
     Route::post("/cadastrar-paciente", [controllerPaciente::class, "cadastrarPaciente"]);
 
     Route::post("/cadastrar-medicamento", [controllerMedicamento::class, "cadastrarMedicamento"]);
 
     Route::get('/logs', [Logs_Alteracao::class, "mostrarLogs"]);
-
-    Route::patch("/editar-cadastro", [controllerUsuario::class, "editarCadastro"]);
 
     Route::post('/logout', [controllerLogin::class, "logout"]);
 
@@ -53,6 +49,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
     Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
     Route::post("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
+    Route::post("/AgendamentosConcluidosEnf", [controllerEnfermeiro::class, "historicoAgendamentos"]);
     
     Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
