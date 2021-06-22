@@ -9,5 +9,12 @@ export default {
     },
     agendamentosPendentes : () =>{
         return api.get("/api/agendamentosPendentes",auth)
+    },
+    agendamentosConcluidos : () => {
+        return api.get("/api/rotax",auth)
+    },
+    cadastrarAgendamento : (obj) =>
+    {
+        return api.post("/api/cadastrarAgendamento",obj,auth)
     }
 }
