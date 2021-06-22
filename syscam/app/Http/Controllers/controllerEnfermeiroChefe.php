@@ -17,10 +17,10 @@ class controllerEnfermeiroChefe extends Controller
         $prontuario = new Prontuario();
         $prontuario = Prontuario::create([
             'numero_quarto' => $request->numero_quarto,
-            'data_internacao' => $request->data_internacao,
+            'data_internacao' => \Carbon\Carbon::now(),
             'id_paciente' => $request->id_paciente,
             'idCID' => $request->idCID,
-            'data_diagnostico' => $request->data_diagnostico
+            'data_diagnostico' => \Carbon\Carbon::now()
         ]);
         return $prontuario;
     }
@@ -187,6 +187,6 @@ class controllerEnfermeiroChefe extends Controller
     }
 
     public function relatorioProfissionais(){
-        
+
     }
 }

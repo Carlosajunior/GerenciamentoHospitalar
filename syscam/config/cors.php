@@ -40,7 +40,6 @@ return [
     '/agendamentosPendentes',
     '/agendamentosConcluidos',
     '/mostrarProntuarios'
-
 ],
 
     'allowed_methods' => ['*'],
