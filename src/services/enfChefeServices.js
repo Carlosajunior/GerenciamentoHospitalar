@@ -8,6 +8,6 @@ export default {
         return api.get("/api/",auth)
     },
     agendamentosPendentes : () =>{
-        return api.get("/api/",auth)
+        return api.get("/api/agendamentosPendentes",auth)
     }
 }
