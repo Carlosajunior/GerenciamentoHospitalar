@@ -16,10 +16,9 @@
         <th scope="col">Insira o Enfermeiro/Estagiário </th>
         <th scope="col">Aperte</th>
         <th scope="col">Prontuário</th>
-        <th scope="col">Horário</th>
         <th scope="col">Data</th>
-        <th scope="col">Cadastrar alarme</th>
-        <th scope="col">Aperte</th>
+     
+        
 
       </thead>
 
@@ -28,9 +27,9 @@
           :paciente="planeta.name"
           :idEnf="planeta.orbital_period"
           :prontuario="planeta.population"
-          :hora="planeta.orbital_period"
           :data="planeta.population"
-            :alarme="planeta.gravity"
+          :id ="planeta.id"
+            
              >
         </enf-chefe-pendentes>
       </tbody>
@@ -42,7 +41,8 @@
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/adm/AdmBar.vue'
 import EnfChefePendentes from '../components/enfChefe/EnfChefePendentes.vue'
-import axios from "axios";
+import enfChefeServices from '../services/enfChefeServices';
+
 
 export default {
     components:{EnfChefeMenu, EnfChefebar, EnfChefePendentes},
@@ -51,18 +51,13 @@ data() {
       response: {},
     };
   },
-  created() {
-    axios({ method: "GET", url: " https://swapi.dev/api/planets/" }).then(
-      (result) => {
-        this.response = result.data.results;
-        console.log("Não deu erro!");
-        console.log(this.response);
-      },
-      (error) => {
-        console.log("Erro");
-        console.error(error);
+  methods :{
+      async agendamentos(){
+          this.response = await enfChefeServices.agendamentosPendentes();
       }
-    );
+  },
+  created() {
+      this.agendamentos();
   }
 };
 </script>

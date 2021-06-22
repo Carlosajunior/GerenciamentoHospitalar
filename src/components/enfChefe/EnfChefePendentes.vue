@@ -4,19 +4,18 @@
         <th scope="col">{{paciente}}</th>
         <th scope="col">{{idEnf}}</th>
         <th scope="col"><input type="text" class="enfcad" v-model="enfCad"></th>
-        <th scope="col"><button   @click="cadastrarEnf" type="submit" class="b-salvar">Cadastrar</button></th>
+        <th scope="col"><button   @click="cadastrarEnf" class="btn btn-success">Cadastrar</button></th>
         <th scope="col">{{prontuario}}</th>
-        <th scope="col">{{hora}}</th>
+    
         <th scope="col">{{data}}</th>
-        <th scope="col"><input class="alarme" type="text" v-model="alarmeCad">{{alarme}}</th>
-        <th scope="col"><button  @click="cadAlarme" type="submit" class="b-salvar">Cadastrar</button></th>
+       
     </tr>
 
    
 </template>
 
 <script>
-import enfChefeAlarme from "../../services/enfChefeAlarme"
+
 import enfChefeCadEnfAgendamento from "../../services/enfChefeCadEnfAgendamento"
 export default {
     name:"EnfChefePendentes",
@@ -30,20 +29,14 @@ export default {
       paciente:null,
       idEnf : null,
       prontuario: null,
-      hora:null,
+      id : null,
+     
       data:null,
-      alarme:null,      
+       
     },
     methods:{
-    
-    async cadAlarme(){
-      var cadastroAlarme ={"alarmeCad" : this.alarmeCad}
-      var cadastrar = await enfChefeAlarme.post(cadastroAlarme)
-      console.log(cadastrar)
-      console.log("Não deu erro! alarme cad");
-      },
     async cadastrarEnf(){
-      var  cadastroEnfAgendamento={"enfCad" : this.endCad}
+      var  cadastroEnfAgendamento={"nome":this.enfCad, "id":this.id}
       var cadastrar = await enfChefeCadEnfAgendamento.post(cadastroEnfAgendamento)
       console.log(cadastrar)
       console.log("Não deu erro! enf cad");

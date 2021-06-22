@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import enfChefeProntuario from "../../services/enfChefeProntuario"
 export default {
     name:"EnfChefeProntuario",
     props:{
@@ -30,27 +29,14 @@ export default {
     status : '',
     }
   },
-  
-  
      methods:{
-        editar(){
-          if(this.prontuario== this.idprontuario){
-            this.$router.push("../enfChefeView/EnfChefeOpView")
-          }
+        cadastrar(){
+          sessionStorage.setItem("id_prontuario",this.idProntuario)
+          this.$emit("Cadastrar");
+
         },
-          baixar(){
-          if(this.status != ''){
-            var cadastroUser ={"status" : this.status}
-            var cadastrar = enfChefeProntuario.post(cadastroUser)
-            console.log(cadastrar)
-          }
-          },
-          exibir(){
-            var prontuario = this.idProntuario;
-          if(prontuario == this.idProntuario){
-            this.$router.push("../enfChefeView/EnfChefeOpView")
-          }
-          }
+
+        baixa(){}
 }
 }
 

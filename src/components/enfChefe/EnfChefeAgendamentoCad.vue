@@ -23,14 +23,21 @@
                 <label for="">Identificador da Medicação</label>
                 <input class="input-for-menor" type="text" v-model="name"/>
             </div>
+
+            <div class="divs">
+                <label for="">Identificador do Enfermeiro/Estagiário</label>
+                <input class="input-for-menor" type="text" v-model="name"/>
+            </div>
         </form>
     </body>
 </template>
 <script>
 export default {
     name:"EnfChefeAgendamentoCad",
-    props: {
-        
+    methods:{
+        async agendar(){
+            
+        }
     }
 }
 </script>
