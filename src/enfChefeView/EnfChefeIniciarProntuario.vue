@@ -1,5 +1,4 @@
 <template>
-
     <div class="formulario">
         <div><enf-chefe-menu>
         </enf-chefe-menu>

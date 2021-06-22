@@ -36,12 +36,10 @@ const routes = [{
         name: 'HomeEnfChefe',
         component: () =>
             import ('../enfChefeView/HomeEnfChefe.vue'),
-        beforeEnter : (to,from,next) =>{
-            if(sessionStorage.getItem('token') != undefined){
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
                 next();
-            }
-
-            else{
+            } else {
                 next("/");
             }
         }
@@ -53,11 +51,10 @@ const routes = [{
         component: () =>
             import ('../enfViews/HomeEnf.vue'),
 
-        beforeEnter : (to,from,next) =>{
-            if(sessionStorage.getItem('token') != undefined){
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
                 next();
-            }
-            else{
+            } else {
                 next("/");
             }
         }
@@ -68,30 +65,26 @@ const routes = [{
         name: 'AdmBackup',
         component: () =>
             import ('../admViews/AdmBackup.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/admCadastrar',
         name: 'AdmCadastrar',
         component: () =>
             import ('../admViews/AdmCadastrar.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
 
 
@@ -100,30 +93,26 @@ const routes = [{
         name: 'AdmEditar',
         component: () =>
             import ('../admViews/AdmEditar.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/admEditarForm',
         name: 'AdmEditarForm',
         component: () =>
             import ('../admViews/AdmEditarForm.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
 
     {
@@ -131,15 +120,13 @@ const routes = [{
         name: 'AdmLog',
         component: () =>
             import ('../admViews/AdmLog.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
 
 
@@ -148,150 +135,130 @@ const routes = [{
         name: 'EnfChefeCadastrarPaciente',
         component: () =>
             import ('../enfChefeView/EnfChefeCadastrarPaciente.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeAcompanhaProntuario',
         name: 'EnfChefeAcompanhaProntuario',
         component: () =>
             import ('../enfChefeView/EnfChefeAcompanhaProntuario.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeAgendamentoPendentes',
         name: 'EnfChefeAgendamentoPendentes',
         component: () =>
             import ('../enfChefeView/EnfChefeAgendamentoPendentes.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeAgendamentosConcluidos',
         name: 'EnfChefeAgendamentosConcluidos',
         component: () =>
             import ('../enfChefeView/EnfChefeAgendamentosConcluidos.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeEstoqueMedicamentos',
         name: 'EnfChefeEstoqueMedicamentos',
         component: () =>
             import ('../enfChefeView/EnfChefeEstoqueMedicamentos.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeIniciarProntuario',
         name: 'EnfChefeIniciarProntuario',
         component: () =>
             import ('../enfChefeView/EnfChefeIniciarProntuario'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeRelatorio',
         name: 'EnfChefeRelatorio',
         component: () =>
             import ('../enfChefeView/EnfChefeRelatorio.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeListaPacientes',
         name: 'EnfChefeListaPacientes',
         component: () =>
             import ('../enfChefeView/EnfChefeListaPacientes.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/EnfChefeOpView',
         name: 'EnfChefeOpView',
         component: () =>
             import ('../enfChefeView/EnfChefeOpView.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
     },
     {
         path: '/HomeEnf',
         name: 'HomeEnf',
         component: () =>
             import ('../enfViews/HomeEnf.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
 
     },
     {
@@ -299,15 +266,13 @@ const routes = [{
         name: 'EnfCadastrarPaciente',
         component: () =>
             import ('../enfViews/EnfCadastrarPaciente.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
 
     },
     {
@@ -315,15 +280,13 @@ const routes = [{
         name: 'EnfAgendamentoPendentes',
         component: () =>
             import ('../enfViews/EnfAgendamentoPendentes.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
 
     },
     {
@@ -331,31 +294,28 @@ const routes = [{
         name: 'EnfEstoqueMedicamentos',
         component: () =>
             import ('../enfViews/EnfMedicamento.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
-
+        }
     },
+
+
     {
         path: '/EnfRelatorioPaciente',
         name: 'EnfRelatorioPaciente',
         component: () =>
             import ('../enfViews/EnfRelatorioPaciente.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
 
     },
     {
@@ -363,15 +323,13 @@ const routes = [{
         name: 'EnfAgendamentoConcluidos',
         component: () =>
             import ('../enfViews/EnfAgendamentoConcluidos.vue'),
-            beforeEnter : (to,from,next) =>{
-                if(sessionStorage.getItem('token') != undefined){
-                    next();
-                }
-    
-                else{
-                    next("/");
-                }
+        beforeEnter: (to, from, next) => {
+            if (sessionStorage.getItem('token') != undefined) {
+                next();
+            } else {
+                next("/");
             }
+        }
 
     }
 ]

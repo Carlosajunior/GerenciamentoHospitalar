@@ -24,6 +24,7 @@
           :paciente="planeta.name"
           :id="index"
           :idprontuario="index"
+          :index="index"
         >
         </enf-chefe-paciente>
         
