@@ -30,8 +30,15 @@ class controllerEnfermeiro extends Controller
     //Gera uma lista com os Pacientes castrados 
     public function ListarPacientes(){ 
         $array = collect([]);
-        foreach (Paciente::all() as $Paciente)
+        foreach (Paciente::all() as $paciente){
+            $prontuario = Prontuario::where('id_paciente','=',$paciente->id)->get();
+            $Paciente = (object)[
+                'paciente' => $paciente,
+                'prontuarios' => $prontuario
+            ];
+            json_encode($Paciente);
             $array->push($Paciente);
+        }
         return($array);
     }
 
