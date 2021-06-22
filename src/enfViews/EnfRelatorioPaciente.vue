@@ -63,6 +63,7 @@ import EnfMenu from '../components/enf/EnfMenu.vue'
 import EnfBar from '../components/adm/AdmBar.vue'
 import EnfRela from '../components/enf/EnfRela.vue'
 import axios from "axios";
+import enfermeiroServices from "../services/enfermeiroServices.js"
 import EnfProntuarioCell from "../components/enf/EnfProntuarioCell.vue"
 export default {
     components:{EnfMenu, EnfBar, EnfRela,EnfProntuarioCell},
@@ -82,6 +83,14 @@ export default {
       this.lista3 = valor;
       console.log(this.lista3)
       
+    }, 
+    async listar(){
+      this.response = (await enfermeiroServices.relatorioPacientes()).data;
+      console.log(this.response);
+      this.lista1 = this.response[0];
+    this.lista2 = this.response[1];
+    console.log(this.lista1);
+    console.log(this.lista2);
     }
   },
   created() {

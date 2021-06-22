@@ -46,8 +46,8 @@ export default {
     
     async postForm(){
       console.log(this.cadastroData)
-      var cadastroUser ={"paciente" : this.paciente, "enf" : this.enf, "cid" : this.cid,
-      "posologia" : this.posologia, "quarto" : this.quarto}
+      var cadastroUser ={"id_paciente" : this.paciente, "enf" : this.enf, "cid" : this.cid,
+      "posologia" : this.posologia, "numero_quarto" : this.quarto, "data_internacao" : (new Date)}
       var cadastrar = await enfChefeProntuario.post(cadastroUser)
       console.log(cadastrar)
       }

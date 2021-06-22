@@ -1,6 +1,6 @@
 <template>
     <tr>
-      <th scope="col">{{medicacao}}</th>
+      <th scope="col">{{nome}}</th>
       <th scope="col">{{lote}}</th>
       <th scope="col">{{quantidade}}</th>
       
@@ -11,11 +11,9 @@
 export default {
   name: "EnfChefeMedicamentos",
   props: {
-    medicacao: null,
+    nome: null,
     lote: null,
-    quantidade: null,
-    validade: null,
-    farmaceutico: null,
+    quantidade: null
   },
 };
 </script>

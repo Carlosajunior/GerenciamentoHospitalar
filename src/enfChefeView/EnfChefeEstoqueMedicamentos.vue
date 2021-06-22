@@ -17,13 +17,13 @@
         <th scope="col">Quantidade</th>
      
       </thead>
-      <t-body v-for="medicamentos in response" :key="medicamentos">
+      <tbody v-for="medicamentos in response" :key="medicamentos">
         <enf-chefe-medicamentos-cell
-          :medicacao="medicamentos.nome"
+          :nome="medicamentos.nome"
           :lote="medicamentos.lote"
           :quantidade="medicamentos.quantidade"
         />
-      </t-body>
+      </tbody>
     </table>
   </div>
 </template>
@@ -34,7 +34,8 @@ import EnfChefebar from "../components/adm/AdmBar.vue";
 //import EnfChefeMedicamentos from '../components/enfChefe/EnfChefeMedicamentos.vue'
 import EnfChefeMedicamentosCell from "../components/enfChefe/EnfChefeMedicamentosCell.vue";
 //import axios from "axios";
-import medicamentosServices from "../services/medicamentosServices.js"
+
+import enfermeiroServices from '../services/enfermeiroServices';
 export default {
   data() {
     return {
@@ -48,7 +49,8 @@ export default {
 
   methods : {
     async gerarMedicamentos(){
-      medicamentosServices.get().then((response)=> {this.response = response.data});
+      this.response = (await enfermeiroServices.estoqueMedicamentos()).data;
+      console.log(this.response);
     } 
   }
 };

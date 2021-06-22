@@ -234,19 +234,7 @@ const routes = [{
             }
         }
     },
-    {
-        path: '/EnfChefeOpView',
-        name: 'EnfChefeOpView',
-        component: () =>
-            import ('../enfChefeView/EnfChefeOpView.vue'),
-        beforeEnter: (to, from, next) => {
-            if (sessionStorage.getItem('token') != undefined) {
-                next();
-            } else {
-                next("/");
-            }
-        }
-    },
+
     {
         path: '/HomeEnf',
         name: 'HomeEnf',

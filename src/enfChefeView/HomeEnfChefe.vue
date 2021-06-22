@@ -4,14 +4,16 @@
         <enf-chefe-menu>
         </enf-chefe-menu>
     </div>
-    <div class="plantao">
+
+    <div id ="main-content">
+   
+        <enf-chefebar :title="'Home'" kindUser="Enfermeiro Chefe">
+        </enf-chefebar>
+    </div>
+     <div class="plantao" >
         <enf-chefe-plantao> 
 
         </enf-chefe-plantao>
-    </div>
-    <div id ="main-content">
-        <enf-chefebar :title="'Home'" kindUser="Enfermeiro Chefe">
-        </enf-chefebar>
     </div>
         <img class="img-fluid" src="../assets/enfCapa.jpg">
 </div>
@@ -42,7 +44,7 @@ export default {
     padding-bottom: 8%;
 }
 .plantao{
-    margin-top: 7%;
+    margin-top: 10%;
     margin-left: 20%;
 }
 

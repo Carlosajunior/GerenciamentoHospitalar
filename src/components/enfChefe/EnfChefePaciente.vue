@@ -2,12 +2,7 @@
   <tr class="titulo">
     <th scope="col">{{ paciente }}</th>
     <th scope="col">{{ id }}</th>
-    <th scope="col"> <select v-model="prontuario">
-          <option disabled value="">Escolha o prontuário:</option>
-          <option >  {{idprontuario }} </option>
-
-
-        </select></th>
+    
     <th scope="col"> <button @click="exibir">Exibir</button> </th>
 
   </tr>
@@ -20,8 +15,7 @@ export default {
   props: {
     paciente: null,
     id: null,
-    idprontuario: null,
-    index: null
+    Eprontuario : null
   },
    data() {
     return {
@@ -30,14 +24,11 @@ export default {
   },
   methods:{
         exibir(){
-          if(this.prontuario== this.idprontuario){
-            sessionStorage.setItem("idProntuario",this.idprontuario),
-            sessionStorage.setItem("index",this.index),
-            this.$router.push("../enfChefeView/EnfChefeOpView")
+            this.$emit("Prontuarios")
           }
             
         }
-  }
+  
 };
 </script>
 

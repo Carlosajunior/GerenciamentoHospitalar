@@ -1,15 +1,4 @@
 <template>
-  <div class="formulario">
-    <div>
-      <enf-chefe-menu> </enf-chefe-menu>
-    </div>
-    <div>
-      <enf-chefebar 
-        :title="'Prontuário'" 
-        kindUser="Enfermeiro Chefe"
-      >
-      </enf-chefebar>
-    </div>
  
       <tbody v-for="(planeta, index) in response" :key="planeta">
         <enf-chefe-op
@@ -22,17 +11,15 @@
         </enf-chefe-op>
         
       </tbody>
-  </div>
+  
 </template>
 
 <script>
-import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
-import EnfChefebar from "../components/adm/AdmBar.vue";
-import EnfChefeOp from "../components/enfChefe/EnfChefeOp.vue";
+import EnfChefeOp from "./EnfChefeOp.vue";
 
 import axios from "axios";
 export default {
-  components: { EnfChefeMenu, EnfChefebar, EnfChefeOp },
+  components: {  EnfChefeOp },
   data() {
     return {
       response: {},

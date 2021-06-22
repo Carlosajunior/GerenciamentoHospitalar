@@ -38,7 +38,7 @@
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
 import EnfChefebar from "../components/adm/AdmBar.vue";
 import EnfChefeConcluidos from "../components/enfChefe/EnfChefeConcluidos.vue";
-import axios from "axios";
+
 export default {
   components: { EnfChefeMenu, EnfChefebar, EnfChefeConcluidos },
   data() {
@@ -47,17 +47,7 @@ export default {
     };
   },
   created() {
-    axios({ method: "GET", url: " https://swapi.dev/api/planets/" }).then(
-      (result) => {
-        this.response = result.data.results;
-        console.log("Não deu erro!");
-        console.log(this.response);
-      },
-      (error) => {
-        console.log("Erro");
-        console.error(error);
-      }
-    );
+  
   },
 };
 </script>

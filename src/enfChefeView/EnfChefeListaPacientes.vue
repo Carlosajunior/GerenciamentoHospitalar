@@ -10,21 +10,25 @@
       >
       </enf-chefebar>
     </div>
-
-    <table class="table">
+    <div v-show="view">
+      <table class="table" style="margin-top:18%">
+        <h2> Prontuarios Associados</h2> 
+        <enf-chef-op-view/>
+      </table>
+    </div>
+    <table class="table" v-show="!view">
       <thead>
         <th scope="col">Paciente</th>
         <th scope="col">Identificador do paciente</th>
-        <th scope="col">Prontuário</th>
         <th scope="col">Selecionar</th>
       </thead>
 
-      <tbody v-for="(planeta, index) in response" :key="planeta">
+      <tbody v-for="(paciente, index) in lista1" :key="index" >
         <enf-chefe-paciente
-          :paciente="planeta.name"
-          :id="index"
-          :idprontuario="index"
-          :index="index"
+          :paciente="paciente.nome"
+          :id="paciente.id"
+          :Eprontuario="lista2[index]"
+          v-on:Prontuarios="showProntuarios"
         >
         </enf-chefe-paciente>
         
@@ -37,27 +41,36 @@
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
 import EnfChefebar from "../components/adm/AdmBar.vue";
 import EnfChefePaciente from "../components/enfChefe/EnfChefePaciente.vue";
-
-import axios from "axios";
+import enfermeiroServices from "../services/enfermeiroServices.js"
+import EnfChefOpView from "../components/enfChefe/EnfChefeOpView.vue"
 export default {
-  components: { EnfChefeMenu, EnfChefebar, EnfChefePaciente },
+  components: { EnfChefeMenu, EnfChefebar, EnfChefePaciente,EnfChefOpView },
   data() {
     return {
       response: {},
+      lista1 : [],
+      lista2 : [],
+      view : false
     };
   },
+  methods:{
+    async listar(){
+      this.response = (await enfermeiroServices.relatorioPacientes()).data;
+      console.log(this.response);
+      this.lista1 = this.response[0];
+      this.lista2 = this.response[1];
+      console.log(this.lista1);
+      console.log(this.lista2);
+    },
+    showProntuarios(){
+        this.view = true;
+    }
+  }
+  ,
   created() {
-    axios({ method: "GET", url: " https://swapi.dev/api/planets/" }).then(
-      (result) => {
-        this.response = result.data.results;
-        console.log("Não deu erro!");
-        console.log(this.response);
-      },
-      (error) => {
-        console.log("Erro");
-        console.error(error);
-      }
-    );
+    this.listar();
+    
+      
   },
 };
 </script>
