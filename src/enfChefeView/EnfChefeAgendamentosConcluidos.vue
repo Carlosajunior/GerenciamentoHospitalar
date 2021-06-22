@@ -17,15 +17,16 @@
         <th scope="col">Identificador do paciente</th>
         <th scope="col">Data da baixa</th>
         <th scope="col">Medicação</th>
+        <th scope="col">Posologia</th>
       </thead>
 
       <tbody v-for="planeta in response" :key="planeta">
         <enf-chefe-concluidos
-          :enfermeiro="planeta.climate"
-          :paciente="planeta.name"
-          :horaBaixa="planeta.orbital_period"
-          :dataBaixa="planeta.population"
-          :medicacao="planeta.gravity"
+          :enfermeiro="planeta.aplicador"
+          :paciente="planeta.nome"
+          :dataBaixa="planeta.data"
+          :medicacao="planeta.medicacao"
+          :posologia ="planeta.posologia"
         >
         </enf-chefe-concluidos>
       </tbody>
@@ -67,7 +68,7 @@ export default {
     }
   },
   created() {
-  
+    this.agendamentosConcluidos();
   },
 };
 </script>
