@@ -127,8 +127,19 @@ class controllerEnfermeiroChefe extends Controller
     public function agendamentosPendentes()
     {
         $array = collect([]);
-        foreach (Agendamento_medicacao::where('feito',false)->get() as $agendamentoPendente)
-            $array->push($agendamentoPendente);
+        foreach (Agendamento_medicacao::where('feito',false)->get() as $agendamentoPendente){
+            $prontuario = Prontuario::firstWhere('id','=',$agendamentoPendente->id_prontuario);
+            $paciente = Paciente::firstWhere('id','=', $prontuario->id_paciente);
+            $medicamento = Medicamento::firstWhere('id','=', $agendamentoPendente->id_medicamento);
+            $agendamento = (object) [
+                'nome' => $paciente->nome,
+                'posologia' => $agendamentoPendente->posologia,
+                'medicamento' => $medicamento->nome,
+                'data' => $agendamentoPendente->data_hora
+            ];
+            json_encode($agendamento);
+            $array->push($agendamento);
+        }
         return ($array);
     }
     
