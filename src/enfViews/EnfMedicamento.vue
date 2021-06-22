@@ -22,9 +22,11 @@
 
         <tbody v-for="(medicamento ,index) in response" :key="index">
             <enf-medicamentos
-            :medicacao="'blabla'"
-            :lote="'12345'"
-            :quantidade="'100'"
+            :medicacao="medicamento.nome"
+            :lote="medicamento.lote"
+            :quantidade="medicamento.quantidade"
+            :id="medicamento.id"
+            :idBaixa="medicamento.id_baixaMedicamento"
           />
         </tbody>
     </table>
@@ -35,7 +37,7 @@
 import EnfMenu from '../components/enf/EnfMenu.vue'
 import EnfBar from '../components/adm/AdmBar.vue'
 import EnfMedicamentos from '../components/enf/EnfMedicamentos.vue'
-import axios from "axios";
+import enfermeiroServices from "../services/enfermeiroServices.js"
 export default {
     data() {
         return {
@@ -43,21 +45,14 @@ export default {
         };
     },
     components:{EnfMenu, EnfBar, EnfMedicamentos},
+    methods:{
+      async gerarMedicamentos(){
+      this.response = (await enfermeiroServices.estoqueMedicamentos()).data;
+      console.log(this.response);
+    } 
+    },
     created() {
-        axios({
-            method: "GET",
-            url: "https://swapi.dev/api/people",
-        }).then(
-            (result) => {
-                this.response = result.data;
-                console.log("Não deu erro!");
-                console.log(this.response.results);
-            },
-            (error) => {
-                console.log("Erro");
-                console.error(error);
-            }
-        );
+      this.gerarMedicamentos();
     }, 
 };
 </script>

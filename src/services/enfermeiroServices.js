@@ -16,7 +16,7 @@ export default {
         return api.get("", auth)
     },
     baixarMedicamento: (obj) => {
-        return api.post("",obj,auth)
+        return api.patch("/api/PrepararMedicacaoEnf",obj,auth)
     },
     agendamentoPendentes: (obj) =>{
         return api.post("/",obj,auth)

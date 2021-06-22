@@ -30,7 +30,7 @@ export default {
 
   methods:{
     async  baixarMedicamento(){
-      var send = {"id" : this.id,"quantidade" : this.baixarQuantidade };
+      var send = {"id" : this.id,"quantidade" : parseInt(this.quantidade) - parseInt( this.baixarQuantidade) };
       var response = undefined;
       try{
       response = await enfermeiroServices.baixarMedicamento(send)
