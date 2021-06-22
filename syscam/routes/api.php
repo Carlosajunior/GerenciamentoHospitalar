@@ -46,11 +46,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get("/VerificarAgendamentoEnf", [controllerEnfermeiro::class, "verificarAgendamento"]);
     Route::get("/RelatorioPacienteEnf", [controllerEnfermeiro::class, "emitirRelatorioPaciente"]);
     Route::patch("/PrepararMedicacaoEnf", [controllerEnfermeiro::class, "prepararMedicacao"]);
-    Route::post("/baixarAgendamentoEnf", [controllerEnfermeiro::class, "baixarAgendamento"]);
+    Route::post("/baixaAgendamentoEnf", [controllerEnfermeiro::class, "baixaAgendamento"]);
     Route::post("/cadastrarPacienteEnf", [controllerEnfermeiro::class, "cadastrarPacienteEnf"]);
     Route::post("/AgendamentosPendentesEnf", [controllerEnfermeiro::class, "AgendamentosPendentes"]);
     Route::post("/AgendamentosConcluidosEnf", [controllerEnfermeiro::class, "historicoAgendamentos"]);
-    
+
     Route::post("/Designar_Agendamento", [controllerEnfermeiroChefe::class, "Alocar_Enfermeiro"]);
     Route::post("/Bater_Ponto", [controllerEnfermeiroChefe::class, "armazenar_Plantao"]);
     Route::get("/agendamentosPendentes", [controllerEnfermeiroChefe::class, "agendamentosPendentes"]);

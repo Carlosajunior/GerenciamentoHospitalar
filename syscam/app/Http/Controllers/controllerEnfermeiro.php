@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Paciente;
 use App\Models\Prontuario;
 use App\Models\Medicamento;
@@ -11,27 +12,29 @@ use Illuminate\Http\Request;
 class controllerEnfermeiro extends Controller
 {
     //Cadastra um novo Paciente 
-    public function cadastrarPacienteEnf(Request $request){   
+    public function cadastrarPacienteEnf(Request $request)
+    {
         $paciente = new Paciente;
         $paciente = Paciente::create([
-            'nome' => $request -> nome,
-            'email' => $request -> email,
-            'nome_responsavel'=> $request -> nome_responsavel,                
-            'telefone'=> $request -> telefone,
-            'cpf'=> $request -> cpf,
-            'telefone_responsavel'=> $request -> telefone_responsavel,
-            'fatorRH'=> $request -> fatorRH,
-            'endereco'=>$request ->endereco
+            'nome' => $request->nome,
+            'email' => $request->email,
+            'nome_responsavel' => $request->nome_responsavel,
+            'telefone' => $request->telefone,
+            'cpf' => $request->cpf,
+            'telefone_responsavel' => $request->telefone_responsavel,
+            'fatorRH' => $request->fatorRH,
+            'endereco' => $request->endereco
         ]);
-        $paciente -> save();
+        $paciente->save();
         return $paciente;
-    } 
+    }
     //---------------------------------------------------------------------------------
     //Gera uma lista com os Pacientes castrados 
-    public function ListarPacientes(){ 
+    public function ListarPacientes()
+    {
         $array = collect([]);
-        foreach (Paciente::all() as $paciente){
-            $prontuario = Prontuario::where('id_paciente','=',$paciente->id)->get();
+        foreach (Paciente::all() as $paciente) {
+            $prontuario = Prontuario::where('id_paciente', '=', $paciente->id)->get();
             $Paciente = (object)[
                 'paciente' => $paciente,
                 'prontuarios' => $prontuario
@@ -39,12 +42,13 @@ class controllerEnfermeiro extends Controller
             json_encode($Paciente);
             $array->push($Paciente);
         }
-        return($array);
+        return ($array);
     }
 
     //----------------------------------------------------------------------------------
     // Retorna a lista de pacientes e a lista de prontuario
-    public function emitirRelatorioPaciente(){ 
+    public function emitirRelatorioPaciente()
+    {
         $arrayPaciente = collect([]);
         $arrayProntuario = collect([]);
 
@@ -54,19 +58,19 @@ class controllerEnfermeiro extends Controller
         foreach (Prontuario::all() as $Prontuario)
             $arrayProntuario->push($Prontuario);
 
-        return [$arrayPaciente , $arrayProntuario];
+        return [$arrayPaciente, $arrayProntuario];
     }
 
     //----------------------------------------------------------------------------------
     // Faz alteração em uma medicação, alterando sua quantidade atual para a nova passada pelo request.
-    public function prepararMedicacao(Request $request){ 
+    public function prepararMedicacao(Request $request)
+    {
         $preparo = new Medicamento;
-        $preparo = Medicamento::firstWhere('id','=',$request->id);
-        if($preparo != null){          
-            if($request -> quantidade != null)
-            $preparo -> quantidade = $request -> quantidade;
-        }
-        else {
+        $preparo = Medicamento::firstWhere('id', '=', $request->id);
+        if ($preparo != null) {
+            if ($request->quantidade != null)
+                $preparo->quantidade = $request->quantidade;
+        } else {
             return print('Medicamento inválido.');
         }
         $preparo->save();
@@ -74,44 +78,49 @@ class controllerEnfermeiro extends Controller
 
     //-----------------------------------------------------------------------------------
     //Muda o estado do agendamento para "feito":
-    public function baixarAgendamento(Request $request){ 
-        $novaBaixa = new agendamento_medicacao;
-        $novaBaixa = agendamento_medicacao::firstWhere('id','=',$request->id);
-        if($novaBaixa != null){          
-            if($request -> feito != null)
-                $novaBaixa -> feito = $request -> feito;
-        }
+    public function baixaAgendamento(Request $request)
+    {
+        $baixaAgendamento = Agendamento_medicacao::firstWhere('id', '=', $request->id);
+        if ($baixaAgendamento)
+            if ($baixaAgendamento->feito == false) {
+                $baixaAgendamento->feito = true;
+                $baixaAgendamento->save();
+                return $baixaAgendamento;
+            }
     }
-        //---------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------
     //Retorna um array com todos os Agendamentos tendo como entrada o id_usuario do enfermeiro logado:
-    public function verificarAgendamento (Request $request){  
+    public function verificarAgendamento(Request $request)
+    {
         $array = collect([]);
-        foreach (agendamento_medicacao::all() as $agendamento_medicacao){
-            if($request ->id_usuario == $agendamento_medicacao->id_usuario)
+        foreach (agendamento_medicacao::all() as $agendamento_medicacao) {
+            if ($request->id_usuario == $agendamento_medicacao->id_usuario)
                 $array->push($agendamento_medicacao);
         }
-        return($array);
-    }    
+        return ($array);
+    }
     //-----------------------------------------------------------------------------------
     // Retorna um array com agendamentos já feitos pelo enfermeiro logado através do id_usuario:
-    public function historicoAgendamentos(Request $request){ 
+    public function historicoAgendamentos(Request $request)
+    {
         $array = collect([]);
-        foreach (Agendamento_medicacao::where('id_usuario',$request->id)->get() as $agendamento_medicacao){
-            if($agendamento_medicacao->feito == true)
+        foreach (Agendamento_medicacao::where('id_usuario', $request->id)->get() as $agendamento_medicacao) {
+            if ($agendamento_medicacao->feito == true)
                 $array->push($agendamento_medicacao);
         }
-        return($array);
+        return ($array);
     }
 
     //-----------------------------------------------------------------------------------------
     //Retorna um array com agendamentos pendentes para o enfermeiro logado através do id_usuario:
-    public function AgendamentosPendentes(Request $request){ 
+    public function AgendamentosPendentes(Request $request)
+    {
         $array = collect([]);
-        foreach (Agendamento_medicacao::where('id_usuario',$request->id)->get() as $agendamento_medicacao){
-            if($agendamento_medicacao->feito == false)
+        foreach (Agendamento_medicacao::where('id_usuario', $request->id)->get() as $agendamento_medicacao) {
+            if ($agendamento_medicacao->feito == false)
                 $array->push($agendamento_medicacao);
         }
-        return($array);
+        return ($array);
     }
     //------------------------------------------------------------------------------------------
 }
