@@ -33,7 +33,7 @@ export default {
         },
 
         async baixa(){
-          var data = {"id_usuario" : sessionStorage.getItem("id_usuario"), "tipo_baixa" : "Alta"};
+          var data = {"id_usuario" : sessionStorage.getItem("id_usuario"), "tipo_baixa" : "Alta","id" : this.idProntuario};
           try{
             var response = await enfChefeServices.baixarProntuario(data);
             console.log(response);

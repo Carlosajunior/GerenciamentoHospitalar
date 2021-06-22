@@ -13,15 +13,19 @@
     </div>
         <table class="table">
             <thead>
-            <th scope="col">Nome do paciente</th>
+            <th scope="col">Identificador</th>
             <th scope="col">Data</th>
-            <th scope ="col"> Medicamento </th>
+            <th scope ="col"> Posologia </th>
             <th scope="col"> Dar baixa</th>
             </thead>
 
-        <tbody>
+        <tbody v-for="(agendamento,index) in response" :key="index">
 
-        <enf-pendentes v-on:Erro="visualizar"/>
+          <enf-pendentes v-on:Erro="visualizar"
+          :nome="agendamento.id"
+          :data="agendamento.data_hora"
+          :medicamento="agendamento.posologia"
+          />
 
         </tbody>
         </table>
@@ -57,10 +61,10 @@ export default {
         },
 
         async getAgendamento (){
-            var data = {"id_usuario" : sessionStorage.getItem('id_usuario')}
+            var data = {"id" : sessionStorage.getItem('id_usuario')}
             var result;
             try{
-                result =  await enfermeiroServices.agendamentoPendentes(data);
+                result =  (await enfermeiroServices.agendamentoPendentes(data)).data;
                 this.response = result;
                 console.log(this.response);
                 }
@@ -70,7 +74,7 @@ export default {
                 }
             },
    created() {
-       this.getAgendamento
+       this.getAgendamento();
       
   },
 }
