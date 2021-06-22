@@ -106,9 +106,10 @@ class controllerEnfermeiro extends Controller
     //Retorna um array com agendamentos pendentes para o enfermeiro logado através do id_usuario:
     public function AgendamentosPendentes(Request $request){ 
         $array = collect([]);
-        foreach (Agendamento_medicacao::all() as $Agendamento_medicacao)
-            if($Agendamento_medicacao -> id_usuario == $request -> id_usuario  && $Agendamento_medicacao -> feito == 0)
-                $array->push($Agendamento_medicacao);
+        foreach (Agendamento_medicacao::where('id_usuario',$request->id)->get() as $agendamento_medicacao){
+            if($agendamento_medicacao->feito == false)
+                $array->push($agendamento_medicacao);
+        }
         return($array);
     }
     //------------------------------------------------------------------------------------------
