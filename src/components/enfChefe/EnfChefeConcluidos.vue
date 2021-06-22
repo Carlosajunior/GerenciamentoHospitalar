@@ -5,6 +5,7 @@
     
     <th scope="col">{{ dataBaixa }}</th>
     <th scope="col">{{ medicacao }}</th>
+    <th scope="col">{{posologia}}</th>
   </tr>
   
 </template>
@@ -18,6 +19,7 @@ export default {
     horaBaixa: null,
     dataBaixa: null,
     medicacao: null,
+    posologia : null
   },
 };
 </script>
