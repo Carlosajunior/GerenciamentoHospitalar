@@ -132,6 +132,7 @@ class controllerEnfermeiroChefe extends Controller
             $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
             $medicamento = Medicamento::firstWhere('id', '=', $agendamentoPendente->id_medicamento);
             $agendamento = (object) [
+                'id' => $agendamentoPendente->id,
                 'nome' => $paciente->nome,
                 'posologia' => $agendamentoPendente->posologia,
                 'medicamento' => $medicamento->nome,
