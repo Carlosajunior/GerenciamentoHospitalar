@@ -122,9 +122,14 @@ class controllerEnfermeiroChefe extends Controller
         return ($array);
     }
 
-    public function Verificar_Agendamento()
+    public function agendamentosPendentes()
     {
+        $array = collect([]);
+        foreach (Agendamento_medicacao::where('feito',false)->get() as $agendamentoPendente)
+            $array->push($agendamentoPendente);
+        return ($array);
     }
+    
 
     public function PrepararMedicamento()
     {

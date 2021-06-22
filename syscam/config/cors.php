@@ -36,7 +36,8 @@ return [
     '/logs',
     '/mostrar-medicamentos',
     '/logout',
-    '/Backup'
+    '/Backup',
+    '/agendamentosPendentes'
 
 ],
 
