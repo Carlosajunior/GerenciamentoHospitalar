@@ -39,7 +39,8 @@ return [
     '/Backup',
     '/agendamentosPendentes',
     '/agendamentosConcluidos',
-    '/mostrarProntuarios'
+    '/mostrarProntuarios',
+    '/baixaProntuario'
 ],
 
     'allowed_methods' => ['*'],

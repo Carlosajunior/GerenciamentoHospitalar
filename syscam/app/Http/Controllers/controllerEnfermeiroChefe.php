@@ -6,6 +6,7 @@ use App\Models\Paciente;
 use App\Models\Usuario;
 use App\Models\Prontuario;
 use App\Models\Agendamento_medicacao;
+use App\Models\Baixa_Prontuario;
 use App\Models\Medicamento;
 use App\Models\Ponto_digital;
 use Illuminate\Http\Request;
@@ -106,6 +107,18 @@ class controllerEnfermeiroChefe extends Controller
             }
         }
         return response('dados inválidos', 404);
+    }
+
+    public function baixaProntuario(Request $request){
+        $baixa_prontuario = Baixa_Prontuario::create([
+            'data_baixa' => \Carbon\Carbon::now(),
+            'tipo_baixa' => $request->tipo_baixa,
+            'id_usuario' => $request->id_usuario
+        ]);
+        $prontuario = Prontuario::firstWhere('id','=',$request->id);
+        $prontuario->id_baixa_prontuario = $baixa_prontuario->id;
+        $prontuario->save();
+        return $baixa_prontuario;
     }
 
     public function Emitir_Pacientes()
