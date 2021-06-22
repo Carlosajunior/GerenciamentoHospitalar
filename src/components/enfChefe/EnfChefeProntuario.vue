@@ -8,9 +8,9 @@
           <option value=1>Alta</option>
           <option value=2>Obito</option>
         </select></th>
-        <th scope="col"> <button @click="editar">Editar </button> </th>
-        <th scope="col"> <button @click="baixar"> Dar baixa </button> </th>
-        <th scope="col"> <button @click="exibir"> Visualizar</button></th>
+        <th scope="col"> <button @click="editar" class="btn btn-success">Cadastrar </button> </th>
+        <th scope="col"> <button @click="baixar" class="btn btn-primary"> Dar baixa </button> </th>
+        
     </tr>
 
    

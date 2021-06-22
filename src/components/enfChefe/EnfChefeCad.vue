@@ -3,7 +3,7 @@
     <form @submit.prevent="postForm">
       <div class="divs">
         <label for="">Nome completo</label>
-        <input class="input-for" type="text" v-model="name" required />
+        <input class="input-for" type="text" v-model="name" />
       </div>
       <div class="divs">
         <label for="">CPF</label>
@@ -17,7 +17,7 @@
       </div>
       <div class="divs">
         <label for="">Email</label>
-        <input class="input-for" type="email" v-model="email" required />
+        <input class="input-for" type="email" v-model="email"/>
       </div>
       <div class="divs">
         <label for="">Telefone</label>
@@ -30,7 +30,7 @@
       </div>
       <div class="divs">
         <label for="">Endereço</label>
-        <input class="input-for" type="text" v-model="endereco" required />
+        <input class="input-for" type="text" v-model="endereco" />
       </div>
       <div class="divs">
         <label for="">Tipo sanguíneo </label>
@@ -52,7 +52,7 @@
           class="input-for"
           type="text"
           v-model="NomeResponsavel"
-          required
+        
         />
       </div>
       <div class="divs">
@@ -61,7 +61,7 @@
           class="input-for-menor"
           type="text"
           v-model="TelResponsavel"
-          required
+        
         />
       </div>
 

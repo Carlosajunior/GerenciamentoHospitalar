@@ -19,6 +19,6 @@ export default {
         return api.patch("/api/PrepararMedicacaoEnf",obj,auth)
     },
     agendamentoPendentes: (obj) =>{
-        return api.post("/",obj,auth)
+        return api.post("/api/AgendamentosPendentesEnf",obj,auth)
     }
 }

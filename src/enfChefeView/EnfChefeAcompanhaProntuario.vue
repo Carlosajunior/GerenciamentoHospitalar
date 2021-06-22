@@ -14,9 +14,9 @@
         <th scope="col">Nome do paciente</th>
         <th scope="col">ID do prontuário</th>
         <th scope="col">Status da baixa</th>
-        <th scope="col">Editar prontuário</th>
+        <th scope="col">Cadastrar Agendamento</th>
         <th scope="col">Baixa prontuário</th>
-        <th scope="col">Visualizar prontuário</th>
+        
     </tr>
  </thead>
 

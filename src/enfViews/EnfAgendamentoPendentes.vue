@@ -62,6 +62,7 @@ export default {
             try{
                 result =  await enfermeiroServices.agendamentoPendentes(data);
                 this.response = result;
+                console.log(this.response);
                 }
             catch(result){
                 this.view = true;
@@ -70,6 +71,7 @@ export default {
             },
    created() {
        this.getAgendamento
+      
   },
 }
 </script>

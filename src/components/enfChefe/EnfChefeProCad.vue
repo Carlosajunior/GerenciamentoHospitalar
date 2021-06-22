@@ -2,27 +2,16 @@
 
     <form @submit.prevent="postForm">
       <div class="divs">
-        <label for="">Paciente</label>
+        <label for="">Identificador do Paciente</label>
         <input class="input-for" type="text" v-model="paciente" required />
       </div>
-      <div class="divs">
-        <label for="">Enfermeiro/Estagiário</label>
-        <input class="input-for" type="text" v-model="enf" required />
-      </div>
-      <div class="divs">
-        <label for="">CID</label>
-        <input class="input-for" type="text" v-model="cid" required  />
-      </div>
-      <div class="divs">
-        <label for="">Posologia</label>
-        <input class="input-for" type="text" v-model="posologia" required  />
-      </div>
+     
       <div class="divs">
         <label for="">Quarto</label>
         <input class="input-for" type="text"  v-model="quarto" required  />
       </div>
           <button type="submit" class="b-salvar">Salvar</button>
-          <button class="b-cancelar">Cancelar</button>
+          <button class="b-cancelar" @click="out">Cancelar</button>
       
     </form>
 </template>
@@ -47,9 +36,13 @@ export default {
     async postForm(){
       console.log(this.cadastroData)
       var cadastroUser ={"id_paciente" : this.paciente, "enf" : this.enf, "cid" : this.cid,
-      "posologia" : this.posologia, "numero_quarto" : this.quarto, "data_internacao" : (new Date)}
+      "posologia" : this.posologia, "numero_quarto" : this.quarto, }
       var cadastrar = await enfChefeProntuario.post(cadastroUser)
       console.log(cadastrar)
+      },
+
+      out(){
+        this.$router.replace({name:'HomeEnfChefe'});
       }
       },
 

@@ -1,6 +1,6 @@
 import api from "./api.js"
 export default {
     post: (obj) => {
-        return api.post("/cadastrar-prontuario", obj)
+        return api.post("/api/cadastarProntuario", obj)
     }
 }
