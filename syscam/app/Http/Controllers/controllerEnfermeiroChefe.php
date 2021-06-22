@@ -185,4 +185,8 @@ class controllerEnfermeiroChefe extends Controller
             $array->push($medicamento);
         return ($array);
     }
+
+    public function relatorioProfissionais(){
+        
+    }
 }

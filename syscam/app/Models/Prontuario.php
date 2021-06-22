@@ -17,10 +17,14 @@ class Prontuario extends Model
         'idCID',
         'data_diagnostico'
     ];
-    
-    protected $hidden = [
-        'id'
-    ];
     protected $table = 'prontuario';
     public $timestamps = false;
+
+    public function mostrarProntuarios()
+    {
+        $array = collect([]);
+        foreach (Prontuario::all() as $Prontuario)
+            $array->push($Prontuario);
+        return ($array);
+    }
 }

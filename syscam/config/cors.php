@@ -37,7 +37,9 @@ return [
     '/mostrar-medicamentos',
     '/logout',
     '/Backup',
-    '/agendamentosPendentes'
+    '/agendamentosPendentes',
+    '/agendamentosConcluidos',
+    '/mostrarProntuarios'
 
 ],
 

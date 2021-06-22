@@ -10,6 +10,7 @@ use App\Http\Controllers\controllerEnfermeiro;
 use App\Http\Controllers\controllerEnfermeiroChefe;
 use App\Http\Controllers\controllerBanco;
 use App\Models\Logs_Alteracao;
+use App\Models\Prontuario;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post("/cadastrarAgendamento", [controllerEnfermeiroChefe::class, "Criar_Agendamento"]);
     Route::post("/cadastrarProntuario", [controllerEnfermeiroChefe::class, 'Criar_Prontuario']);
     Route::get("/agendamentosConcluidos", [controllerEnfermeiroChefe::class, 'agendamentosConcluidos']);
+    Route::get("/mostrarProntuarios", [Prontuario::class, 'mostrarProntuarios']);
 });
 
 Route::post("/login", [controllerLogin::class, "login"]);
