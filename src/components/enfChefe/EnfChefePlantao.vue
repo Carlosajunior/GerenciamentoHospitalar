@@ -1,6 +1,6 @@
 <template>
-      <button button  @click="plantao" type="submit" class="b-salvar">Entrar em plantão</button>
-      <button class="b-cancelar">Sair do plantão</button>
+      <button button  @click="plantao"  class="b-salvar">Entrar em plantão</button>
+      <button class="b-cancelar" @click="plantao" >Sair do plantão</button>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
   methods:{
     async plantao(){
 
-      var data = {'id_usuario' : sessionStorage.getItem('id_usuario')};
+      var data = {'id' : sessionStorage.getItem('id_usuario')};
       var response = await plantao.post(data);
       console.log(response);
     }

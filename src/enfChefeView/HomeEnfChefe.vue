@@ -10,17 +10,21 @@
         <enf-chefebar :title="'Home'" kindUser="Enfermeiro Chefe">
         </enf-chefebar>
     </div>
-     
-        <img class="img-fluid" src="../assets/enfCapa.jpg" style="margin-top:10%">
+    <div class="plantao">
+        <enf-chefe-plantao>
+        </enf-chefe-plantao>
+    </div>
+        <img class="img-fluid" src="../assets/enfCapa.jpg">
 </div>
 </template>
 
 <script>
 import EnfChefeMenu from '../components/enfChefe/EnfChefeMenu.vue'
 import EnfChefebar from '../components/adm/AdmBar.vue'
+import EnfChefePlantao from '../components/enfChefe/EnfChefePlantao.vue'
 
 export default {
-    components:{EnfChefeMenu, EnfChefebar } 
+    components:{EnfChefeMenu, EnfChefebar,EnfChefePlantao } 
 }
 </script>
 
