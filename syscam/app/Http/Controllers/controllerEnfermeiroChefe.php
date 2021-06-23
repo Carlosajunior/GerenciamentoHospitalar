@@ -187,9 +187,6 @@ class controllerEnfermeiroChefe extends Controller
         return ($array);
     }
 
-    public function PrepararMedicamento()
-    {
-    }
 
     public function Emitir_Agendamentos()
     {
@@ -208,6 +205,11 @@ class controllerEnfermeiroChefe extends Controller
     }
 
     public function relatorioProfissionais(){
-
+        $array = collect([]);
+        foreach(Ponto_digital::where('data_hora_saida', null)->get() as $ponto_digital){
+            $usuario = Usuario::firstWhere('id',$ponto_digital->id_usuario);
+            $array->push($usuario);
+        }
+        return ($array);
     }
 }

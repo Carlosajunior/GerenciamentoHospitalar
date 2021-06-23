@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post("/cadastrarProntuario", [controllerEnfermeiroChefe::class, 'Criar_Prontuario']);
     Route::get("/agendamentosConcluidos", [controllerEnfermeiroChefe::class, 'agendamentosConcluidos']);
     Route::post("/baixaProntuario", [controllerEnfermeiroChefe::class, 'baixaProntuario']); 
+    Route::get("/relatorioProfissionais", [controllerEnfermeiroChefe::class, 'relatorioProfissionais']);
 
     Route::get("/mostrarProntuarios", [Prontuario::class, 'mostrarProntuarios']);
 });
