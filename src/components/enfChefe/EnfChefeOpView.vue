@@ -1,5 +1,6 @@
 <template>
  
+ 
       <tbody v-for="(planeta, index) in lista" :key="index">
         <enf-chefe-op
           :paciente="planeta.id_paciente"
