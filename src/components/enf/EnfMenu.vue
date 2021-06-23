@@ -69,12 +69,12 @@ export default {
   name: 'EnfMenu',
   data () {
     return{
-      carg : undefined
+      carg : sessionStorage.getItem("id_Cargo")
     }
   },
   created(){
     this.carg = sessionStorage.getItem("id_Cargo")
-  }
+  },
 }
 </script>
 
