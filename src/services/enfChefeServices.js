@@ -21,5 +21,9 @@ export default {
      baixarProntuario : (obj) =>{
 
         return api.post("/api/baixaProntuario",obj,auth)
+     },
+
+     relatorioProfissionais : () =>{
+         return api.get("/api/relatorioProfissionais",auth)
      }
 }

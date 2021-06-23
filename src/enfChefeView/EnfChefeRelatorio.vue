@@ -13,20 +13,20 @@
 
     <table class="table">
       <thead>
-        <th scope="col">Enfermeiro/Estagiário</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Agendamento</th>
-        <th scope="col">Data</th>
-        <th scope="col">Horário</th>
+        <th scope="col">Profissional de Saúde</th>
+        <th scope="col">Apelido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
+       
       </thead>
 
       <tbody v-for="planeta in response" :key="planeta">
         <enf-chefe-rela
-          :enfermeiro="planeta.climate"
-          :estado="planeta.name"
-          :hora="planeta.orbital_period"
-          :data="planeta.population"
-          :agendamento="planeta.gravity"
+          :enfermeiro="planeta.nome"
+          :estado="planeta.apelido"
+          :hora="planeta.email"
+          :data="planeta.telefone"
+          
         >
         </enf-chefe-rela>
       </tbody>
@@ -38,7 +38,8 @@
 import EnfChefeMenu from "../components/enfChefe/EnfChefeMenu.vue";
 import EnfChefebar from "../components/adm/AdmBar.vue";
 import EnfChefeRela from "../components/enfChefe/EnfChefeRela.vue";
-import axios from "axios";
+import enfChefeServices from '../services/enfChefeServices';
+
 export default {
   components: { EnfChefeMenu, EnfChefebar, EnfChefeRela },
   data() {
@@ -46,18 +47,15 @@ export default {
       response: {},
     };
   },
+  methods:{
+
+    async relatorio(){
+      this.response = (await enfChefeServices.relatorioProfissionais()).data;
+      console.log(this.response);
+    }
+  },
   created() {
-    axios({ method: "GET", url: " https://swapi.dev/api/planets/" }).then(
-      (result) => {
-        this.response = result.data.results;
-        console.log("Não deu erro!");
-        console.log(this.response);
-      },
-      (error) => {
-        console.log("Erro");
-        console.error(error);
-      }
-    );
+   this.relatorio();
   },
 };
 </script>

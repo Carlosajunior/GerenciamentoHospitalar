@@ -2,9 +2,10 @@
   <tr class="titulo">
     <th scope="col">{{ enfermeiro }}</th>
     <th scope="col">{{ estado }}</th>
-    <th scope="col">{{ agendamento }}</th>
-    <th scope="col">{{ data }}</th>
     <th scope="col">{{ hora }}</th>
+    
+    <th scope="col">{{ data }}</th>
+    
   </tr>
 </template>
 
