@@ -1,8 +1,8 @@
 <template>
     <tr>
-      <th scope="col">Nome do Enfermeiro/Estágiario: {{enfermeiro}}</th>
-      <th scope="col">CID: {{cid}}</th>
-      <th scope="col">Posologia: {{posologia}}</th>
+      <th scope="col">Identificador do paciente: {{paciente}}</th>
+      <th scope="col">Data da internação: {{cid}}</th>
+   
       <th scope="col">Quarto: {{quarto}}</th>
     </tr>
 </template>

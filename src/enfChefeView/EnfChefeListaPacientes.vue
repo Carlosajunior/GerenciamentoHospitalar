@@ -27,7 +27,7 @@
         <enf-chefe-paciente
           :paciente="paciente.nome"
           :id="paciente.id"
-          :Eprontuario="lista2[index]"
+          :Eprontuario="lista2"
           v-on:Prontuarios="showProntuarios"
         >
         </enf-chefe-paciente>
@@ -65,7 +65,15 @@ export default {
     },
     showProntuarios(obj){
         this.view = true;
-        this.lista3 = obj;
+        var idi = obj.id;
+        console.log(idi);
+        for(var i=0; i<this.lista2.length;i++){
+          var k = this.lista2[i];
+          if (k.id ==  idi){
+            this.lista3.push(k);
+          }
+        }
+        console.log(k);
     }
   }
   ,

@@ -1,12 +1,10 @@
 <template>
  
-      <tbody v-for="(planeta, index) in lista" :key="planeta">
+      <tbody v-for="(planeta, index) in lista" :key="index">
         <enf-chefe-op
-          :paciente="planeta.name"
-          :enfermeiro="planeta.name"
-          :cid="index"
-          :posologia="planeta.name"
-          :quarto="planeta.name"
+          :paciente="planeta.id_paciente"
+          :cid="planeta.data_internacao"
+          :quarto="planeta.numero_quarto"
         >
         </enf-chefe-op>
         

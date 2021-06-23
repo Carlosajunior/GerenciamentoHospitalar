@@ -25,7 +25,8 @@ export default {
   },
   methods:{
         exibir(){
-            this.$emit("Prontuarios",this.Eprontuario)
+            var data = {"protuarios" : this.Eprontuario, "id" : this.id}
+            this.$emit("Prontuarios",data);
           }
             
         }
