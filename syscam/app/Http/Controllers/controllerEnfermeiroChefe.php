@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Acao;
 use App\Models\Paciente;
 use App\Models\Usuario;
@@ -85,7 +86,7 @@ class controllerEnfermeiroChefe extends Controller
         }
         return response('dados inválidos', 404);
     }
-    
+
     public function armazenar_Plantao(Request $request)
     {
         $usuario = Usuario::firstWhere('id', '=', $request->id);
@@ -99,13 +100,12 @@ class controllerEnfermeiroChefe extends Controller
                 ]);
                 return $ponto_digital;
             }
-            $ponto_digital = $ponto_digital->firstWhere('data_hora_saida','=', null); 
+            $ponto_digital = $ponto_digital->firstWhere('data_hora_saida', '=', null);
             if ($ponto_digital) {
                 $ponto_digital->data_hora_saida = \Carbon\Carbon::now();
                 $ponto_digital->save();
                 return $ponto_digital;
-            }
-            else if(!$ponto_digital){
+            } else if (!$ponto_digital) {
                 $ponto_digital = new Ponto_digital;
                 $ponto_digital = Ponto_digital::create([
                     'data_hora_entrada' => \Carbon\Carbon::now(),
@@ -117,13 +117,14 @@ class controllerEnfermeiroChefe extends Controller
         return response('dados inválidos', 404);
     }
 
-    public function baixaProntuario(Request $request){
+    public function baixaProntuario(Request $request)
+    {
         $baixa_prontuario = Baixa_Prontuario::create([
             'data_baixa' => \Carbon\Carbon::now(),
             'tipo_baixa' => $request->tipo_baixa,
             'id_usuario' => $request->id_usuario
         ]);
-        $prontuario = Prontuario::firstWhere('id','=',$request->id);
+        $prontuario = Prontuario::firstWhere('id', '=', $request->id);
         $prontuario->id_baixa_prontuario = $baixa_prontuario->id;
         $prontuario->save();
         return $baixa_prontuario;
@@ -149,18 +150,22 @@ class controllerEnfermeiroChefe extends Controller
     {
         $array = collect([]);
         foreach (Agendamento_medicacao::where('feito', false)->get() as $agendamentoPendente) {
-            $prontuario = Prontuario::firstWhere('id', '=', $agendamentoPendente->id_prontuario);
-            $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
-            $medicamento = Medicamento::firstWhere('id', '=', $agendamentoPendente->id_medicamento);
-            $agendamento = (object) [
-                'id' => $agendamentoPendente->id,
-                'nome' => $paciente->nome,
-                'posologia' => $agendamentoPendente->posologia,
-                'medicamento' => $medicamento->nome,
-                'data' => $agendamentoPendente->data_hora
-            ];
-            json_encode($agendamento);
-            $array->push($agendamento);
+            if ($agendamentoPendente) {
+                if($agendamentoPendente->id_usuario == null){
+                    $prontuario = Prontuario::firstWhere('id', '=', $agendamentoPendente->id_prontuario);
+                    $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
+                    $medicamento = Medicamento::firstWhere('id', '=', $agendamentoPendente->id_medicamento);
+                    $agendamento = (object) [
+                        'id' => $agendamentoPendente->id,
+                        'nome' => $paciente->nome,
+                        'posologia' => $agendamentoPendente->posologia,
+                        'medicamento' => $medicamento->nome,
+                        'data' => $agendamentoPendente->data_hora
+                    ];
+                    json_encode($agendamento);
+                    $array->push($agendamento);     
+                }                
+            }
         }
         return ($array);
     }
@@ -172,8 +177,8 @@ class controllerEnfermeiroChefe extends Controller
             $prontuario = Prontuario::firstWhere('id', '=', $agendamentoConcluido->id_prontuario);
             $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
             $medicamento = Medicamento::firstWhere('id', '=', $agendamentoConcluido->id_medicamento);
-            $usuario = Usuario::firstWhere('id','=', $agendamentoConcluido->id_usuario);
-            $acao = Acao::firstWhere('id_usuario','=', $agendamentoConcluido->id_usuario);
+            $usuario = Usuario::firstWhere('id', '=', $agendamentoConcluido->id_usuario);
+            $acao = Acao::firstWhere('id_usuario', '=', $agendamentoConcluido->id_usuario);
             $agendamento = (object) [
                 'nome' => $paciente->nome,
                 'posologia' => $agendamentoConcluido->posologia,
@@ -204,10 +209,11 @@ class controllerEnfermeiroChefe extends Controller
         return ($array);
     }
 
-    public function relatorioProfissionais(){
+    public function relatorioProfissionais()
+    {
         $array = collect([]);
-        foreach(Ponto_digital::where('data_hora_saida', null)->get() as $ponto_digital){
-            $usuario = Usuario::firstWhere('id',$ponto_digital->id_usuario);
+        foreach (Ponto_digital::where('data_hora_saida', null)->get() as $ponto_digital) {
+            $usuario = Usuario::firstWhere('id', $ponto_digital->id_usuario);
             $array->push($usuario);
         }
         return ($array);
