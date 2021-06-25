@@ -1,51 +1,53 @@
 <template>
-
-     <tr>
-        <th scope="col">{{paciente}}</th>
-        <th scope="col">{{idProntuario}}</th>
-        <th scope="col"> <button @click="cadastrar" class="btn btn-success">Cadastrar </button> </th>
-        <th scope="col"> <button @click="baixa" class="btn btn-primary"> Dar baixa </button> </th>
-        
-    </tr>
-
-   
+  <tr>
+    <th scope="col">{{ paciente }}</th>
+    <th scope="col">{{ CID }}</th>
+    <th scope="col">{{ numeroQuarto }}</th>
+    <th scope="col">
+      <button @click="cadastrar" class="btn btn-success">Cadastrar</button>
+    </th>
+    <th scope="col">
+      <button @click="baixa" class="btn btn-primary">Dar baixa</button>
+    </th>
+  </tr>
 </template>
 
 <script>
-import enfChefeServices from "../../services/enfChefeServices.js"
+import enfChefeServices from "../../services/enfChefeServices.js";
 export default {
-    name:"EnfChefeProntuario",
-    props:{
-      paciente:null,
-      idProntuario : null,
-  
-    },
-     data(){
-    return{
-    status : '',
-    }
+  name: "EnfChefeProntuario",
+  props: {
+    paciente: null,
+    CID: null,
+    numeroQuarto: null,
+    idProntuario: null,
   },
-     methods:{
-        cadastrar(){
-          sessionStorage.setItem("id_prontuario",this.idProntuario);
-          this.$emit("Cadastrar");
+  data() {
+    return {
+      status: "",
+    };
+  },
+  methods: {
+    cadastrar() {
+      sessionStorage.setItem("id_prontuario", this.idProntuario);
+      this.$emit("Cadastrar");
+    },
 
-        },
-
-        async baixa(){
-          var data = {"id_usuario" : sessionStorage.getItem("id_usuario"), "tipo_baixa" : "Alta","id" : this.idProntuario};
-          try{
-            var response = await enfChefeServices.baixarProntuario(data);
-            console.log(response);
-          }
-          catch(erro){
-             console.log("deu ruim");
-          }
-
-        }
-}
-}
-
+    async baixa() {
+      var data = {
+        id_usuario: sessionStorage.getItem("id_usuario"),
+        tipo_baixa: "Alta",
+        id: this.idProntuario,
+      };
+      try {
+        var response = await enfChefeServices.baixarProntuario(data);
+        console.log(response);
+      } catch (erro) {
+        console.log("deu ruim");
+      }
+    },
+  },
+};
 </script>
 
 <style>
@@ -57,7 +59,7 @@ label {
 }
 button {
   border: none;
-  background-color: #2BA9F1;
+  background-color: #2ba9f1;
   color: white;
   padding: 3.2px;
 }

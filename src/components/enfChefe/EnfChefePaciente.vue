@@ -2,35 +2,30 @@
   <tr class="titulo">
     <th scope="col">{{ paciente }}</th>
     <th scope="col">{{ id }}</th>
-    
-    <th scope="col"> <button @click="exibir">Exibir</button> </th>
 
-    
+    <th scope="col"><button @click="exibir">Exibir</button></th>
   </tr>
 </template>
 
 <script>
-
 export default {
   name: "EnfChefePaciente",
   props: {
     paciente: null,
     id: null,
-    Eprontuario : null
+    Eprontuario: null,
   },
-   data() {
+  data() {
     return {
-      prontuario: '',
+      prontuario: "",
     };
   },
-  methods:{
-        exibir(){
-            var data = {"protuarios" : this.Eprontuario, "id" : this.id}
-            this.$emit("Prontuarios",data);
-          }
-            
-        }
-  
+  methods: {
+    exibir() {
+      var data = { protuarios: this.Eprontuario, id: this.id };
+      this.$emit("Prontuarios", data);
+    },
+  },
 };
 </script>
 

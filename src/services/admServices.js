@@ -9,5 +9,8 @@ export default{
     },
     logout:(obj)=>{
         return api.post("/api/logout", obj, auth)
+    },
+    mostrarUsuarios:()=>{
+        return api.get("/api/mostrar-usuarios", auth)
     }
 }

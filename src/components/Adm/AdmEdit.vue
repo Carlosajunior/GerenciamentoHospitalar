@@ -59,6 +59,9 @@
     <div v-show="hasErro" class="alert alert-danger" role="alert">
       Não foi possível alterar o cadastro!
     </div>
+    <div v-show="edited" class="alert alert-success" role="alert">
+      Edição concluída.
+    </div>
   </body>
 </template>
 
@@ -83,6 +86,7 @@ export default {
       response: null,
       selected: undefined,
       hasErro: false,
+      edited: false,
     };
   },
   methods: {
@@ -99,9 +103,11 @@ export default {
       };
       try {
         this.response = await admEditarService.editar(editarUser);
+        this.edited = true;
       } catch (response) {
         this.hasErro = true;
       }
+      
     },
   },
 };

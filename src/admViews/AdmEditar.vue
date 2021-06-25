@@ -39,7 +39,7 @@ import AdmBar from "../components/adm/AdmBar.vue";
 import AdmMenu from "../components/adm/AdmMenu.vue";
 import AdmUsers from "../components/adm/AdmUsers.vue";
 import AdmEdit from "../components/adm/AdmEdit.vue";
-import axios from "axios";
+import admServices from "../services/admServices";
 export default {
   name: "AdmEditar",
   components: { AdmBar, AdmMenu, AdmUsers, AdmEdit },
@@ -52,24 +52,15 @@ export default {
     };
   },
   created() {
-    axios({
-      method: "GET",
-      url: " http://127.0.0.1:8000/mostrar-usuarios",
-    }).then(
-      (result) => {
-        this.response = result.data;
-        console.log(this.response);
-      },
-      (error) => {
-        console.log("Erro");
-        console.error(error);
-      }
-    );
+    this.mostrarUsuarios();
   },
   methods: {
     editar(valeu) {
       console.log(valeu + "Evento ouvido");
       this.view = false;
+    },
+    async mostrarUsuarios(){
+      this.response =  (await admServices.mostrarUsuarios()).data;
     }
   },
 

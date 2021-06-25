@@ -15,18 +15,20 @@
       <thead>
     <tr>
         <th scope="col">Nome do paciente</th>
-        <th scope="col">ID do prontuário</th>
-        
+        <th scope="col">Número do Quarto</th>
+        <th scope="col">Cód. CID</th>
         <th scope="col">Cadastrar Agendamento</th>
         <th scope="col">Baixa prontuário</th>
         
     </tr>
  </thead>
 
-      <tbody v-for="planeta in response" :key="planeta">
+      <tbody v-for="paciente in response" :key="paciente">
           <enf-chefe-prontuario
-          :paciente="planeta.id_paciente"
-          :idProntuario="planeta.id"
+          :paciente="paciente.nome"
+          :idProntuario="paciente.id"
+          :CID='paciente.CID'
+          :numeroQuarto='paciente.numeroQuarto'
           v-on:Cadastrar="agendamento" >
         </enf-chefe-prontuario>
       </tbody>
