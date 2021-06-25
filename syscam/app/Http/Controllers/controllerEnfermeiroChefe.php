@@ -151,7 +151,6 @@ class controllerEnfermeiroChefe extends Controller
         $array = collect([]);
         foreach (Agendamento_medicacao::where('feito', false)->get() as $agendamentoPendente) {
             if ($agendamentoPendente) {
-                if($agendamentoPendente->id_usuario == null){
                     $prontuario = Prontuario::firstWhere('id', '=', $agendamentoPendente->id_prontuario);
                     $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
                     $medicamento = Medicamento::firstWhere('id', '=', $agendamentoPendente->id_medicamento);
@@ -163,8 +162,7 @@ class controllerEnfermeiroChefe extends Controller
                         'data' => $agendamentoPendente->data_hora
                     ];
                     json_encode($agendamento);
-                    $array->push($agendamento);     
-                }                
+                    $array->push($agendamento);                                     
             }
         }
         return ($array);
