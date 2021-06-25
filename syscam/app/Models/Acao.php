@@ -9,5 +9,10 @@ class Acao extends Model
 {
     use HasFactory;
     protected $table = 'acao';
+    protected $fillable =[
+        'data_hora_acao',
+        'acao',
+        'id_usuario'
+    ];
     public $timestamps = false;
 }

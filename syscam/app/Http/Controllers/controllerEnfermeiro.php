@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Acao;
 use App\Models\Paciente;
 use App\Models\Prontuario;
 use App\Models\Medicamento;
@@ -85,6 +86,12 @@ class controllerEnfermeiro extends Controller
             if ($baixaAgendamento->feito == false) {
                 $baixaAgendamento->feito = true;
                 $baixaAgendamento->save();
+                $acao = Acao::create([
+                    'data_hora_acao' => \Carbon\Carbon::now(),
+                    'acao' => $request->acao,
+                    'id_usuario' => $request->id_usuario
+                ]);
+                $acao->save();
                 return $baixaAgendamento;
             }
     }
