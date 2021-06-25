@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <th scope="col">{{ nome }}</th>
+    <th scope="col">{{ id }}</th>
     <th scope="col">{{ data }}</th>
     <th scope="col">{{ medicamento }}</th>
     <th scope="col">
@@ -14,16 +14,16 @@ import enfermeiroService from "../../services/enfermeiroServices.js";
 export default {
   name: "EnfPendentes",
   props: {
-    nome: null,
+    id: null,
     data: null,
     medicamento: null,
   },
   methods: {
     async baixa() {
       var data = {
-        id: this.nome,
+        id: this.id,
         acao: this.medicamento,
-        id_usuario: this.sessionStorage.getItem("id_usuario"),
+        id_usuario: this.sessionStorage.getItem('id_usuario'),
       };
       console.log(data);
       try {
