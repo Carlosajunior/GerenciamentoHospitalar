@@ -85,7 +85,7 @@ class controllerEnfermeiroChefe extends Controller
         }
         return response('dados inválidos', 404);
     }
-    //TA BUGADO
+    
     public function armazenar_Plantao(Request $request)
     {
         $usuario = Usuario::firstWhere('id', '=', $request->id);

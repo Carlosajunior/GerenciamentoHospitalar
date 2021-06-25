@@ -23,8 +23,23 @@ class Prontuario extends Model
     public function mostrarProntuarios()
     {
         $array = collect([]);
-        foreach (Prontuario::all() as $Prontuario)
-            $array->push($Prontuario);
+        foreach (Prontuario::all() as $prontuario) {
+            if ($prontuario) {
+                $paciente = Paciente::firstWhere('id', '=', $prontuario->id_paciente);
+                if ($paciente) {
+                    if ($prontuario->id_baixa_prontuario == null) {
+                        $Prontuario = (object)[
+                            'nome' => $paciente->nome,
+                            'numeroQuarto' => $prontuario->numero_quarto,
+                            'id' => $prontuario->id,
+                            'CID' => $prontuario->idCID
+                        ];
+                        json_encode($Prontuario);
+                        $array->push($Prontuario);
+                    }
+                }
+            }
+        }
         return ($array);
     }
 }
