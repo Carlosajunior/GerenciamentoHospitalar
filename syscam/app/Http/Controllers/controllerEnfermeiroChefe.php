@@ -182,7 +182,7 @@ class controllerEnfermeiroChefe extends Controller
                 'posologia' => $agendamentoConcluido->posologia,
                 'medicamento' => $medicamento->nome,
                 'aplicador' => $usuario->nome,
-                'data' => $acao->data_hora_acao
+                'data' => \Carbon\Carbon::now(),
             ];
             json_encode($agendamento);
             $array->push($agendamento);

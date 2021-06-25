@@ -85,13 +85,7 @@ class controllerEnfermeiro extends Controller
         if ($baixaAgendamento)
             if ($baixaAgendamento->feito == false) {
                 $baixaAgendamento->feito = true;
-                $baixaAgendamento->save();
-                $acao = Acao::create([
-                    'data_hora_acao' => \Carbon\Carbon::now(),
-                    'acao' => $request->acao,
-                    'id_usuario' => $request->id_usuario
-                ]);
-                $acao->save();
+                $baixaAgendamento->save();                
                 return $baixaAgendamento;
             }
     }
