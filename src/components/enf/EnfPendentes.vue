@@ -23,10 +23,9 @@ export default {
       var data = {
         id: this.id,
         acao: this.medicamento,
-        id_usuario: this.sessionStorage.getItem('id_usuario'),
-      };
+      }
       console.log(data);
-      try {
+      try {        
         var response = await enfermeiroService.agendamentoPendentesBaixa(data);
         console.log(response);
       } catch (response) {
