@@ -1,6 +1,6 @@
 <template>
   <body class="formulario">
-    <div>
+    <div style='margin-top:10%'>
       <form @submit.prevent="postForm">
         <div class="divs">
           <label for="">Nome completo</label>
