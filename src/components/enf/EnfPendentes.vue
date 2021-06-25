@@ -17,14 +17,12 @@ export default {
     props:{
       nome : null,
       data : null,
-      medicamento : null,
-
-        
+      medicamento : null,        
     },
     methods:{
       async baixa(){
-      var data = {"id" : this.nome};
-      
+      var data = {"id" : this.nome, "acao": this.medicamento, "id_usuario": this.sessionStorage.getItem('id_usuario')};
+      console.log(data);
         try{
           var response = await enfermeiroService.agendamentoPendentesBaixa(data)
           console.log(response);

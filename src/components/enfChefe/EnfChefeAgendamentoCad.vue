@@ -1,69 +1,74 @@
 <template>
-    <body class="formulario">
-        <form @submit.prevent="">
-            <div class="divs">
-                <label for="">Posologia</label>
-                <input class="input-for" type="text" v-model="posologia" required />
-            </div>
-          
-             <div class="divs">
-                <label for="">Hora do Alarme</label>
-                <input class="input-for" type="text" v-model="alarme"/>
-            </div>
+  <body class="formulario">
+    <form @submit.prevent="">
+      <div class="divs">
+        <label for="">Posologia</label>
+        <input class="input-for" type="text" v-model="posologia" required />
+      </div>
 
-            <div class="divs">
-                <label for="">Hora da Medicação</label>
-                <input class="input-for" type="text" v-model="hora"/>
-            </div>
+      <div class="divs">
+        <label for="">Hora do Alarme</label>
+        <input class="input-for" type="text" v-model="alarme" />
+      </div>
 
-             <div class="divs">
-                <label for="">Identificador da Medicação</label>
-                <input class="input-for-menor" type="text" v-model="id_medicacao"/>
-            </div>
+      <div class="divs">
+        <label for="">Hora da Medicação</label>
+        <input class="input-for" type="text" v-model="hora" />
+      </div>
 
-            <div class="divs">
-                <label for="">Identificador do Enfermeiro/Estagiário</label>
-                <input class="input-for-menor" type="text" v-model="id"/>
-            </div>
+      <div class="divs">
+        <label for="">Identificador da Medicação</label>
+        <input class="input-for-menor" type="text" v-model="id_medicacao" />
+      </div>
 
-            <div class="divs">
-              <button @click="agendar" >Cadastrar</button>
-            </div>
-        </form>
-                <div class="alert alert-danger" role="alert" v-show="view">
-                    Não foi possível cadastrar um agendamento, verifique a sua conexão!
-        </div>
-    </body>
+      <div class="divs">
+        <label for="">Identificador do Enfermeiro/Estagiário</label>
+        <input class="input-for-menor" type="text" v-model="id" />
+      </div>
+
+      <div class="divs">
+        <button @click="agendar">Cadastrar</button>
+      </div>
+    </form>
+    <div class="alert alert-danger" role="alert" v-show="view">
+      Não foi possível cadastrar um agendamento, verifique a sua conexão!
+    </div>
+  </body>
 </template>
 <script>
-import enfChefeServices from '../../services/enfChefeServices'
+import enfChefeServices from "../../services/enfChefeServices";
 export default {
-    name:"EnfChefeAgendamentoCad",
-    data() {
-      return{
-        posologia : null,
-        alarme : null,
-        hora : null,
-        id_medicacao : null,
-        id : null,
-        view : false
+  name: "EnfChefeAgendamentoCad",
+  data() {
+    return {
+      posologia: null,
+      alarme: null,
+      hora: null,
+      id_medicacao: null,
+      id: null,
+      view: false,
+    };
+  },
+  methods: {
+    async agendar() {
+      var data = {
+        alarme: this.alarme,
+        data_hora: this.hora,
+        posologia: this.posologia,
+        id_prontuario: sessionStorage.getItem("id_prontuario"),
+        id_medicamento: this.id_medicacao,
+        id_usuario: this.id,
+      };
+      var result;
+      try {
+        result = await enfChefeServices.cadastrarAgendamento(data);
+        console.log(result);
+      } catch (result) {
+        this.view = true;
       }
-    }, 
-    methods:{
-        async agendar(){
-          var data = {"alarme" : this.alarme,"data_hora" : this.hora, "posologia" : this.posologia,
-          "id_prontuario" : sessionStorage.getItem("id_prontuario"), "id_medicamento"  : this.id_medicacao, "id_usuario" :this.id }
-            var result;
-            try {
-            result = await enfChefeServices.cadastrarAgendamento(data);
-            console.log(result);
-            }
-            catch(result){
-                this.view = true;
-            }
-        }
-    }
-}
+    },
+  },
+};
 </script>
 <style>
 * {
@@ -135,5 +140,4 @@ label {
 .b-cancelar {
   background: red;
 }
-
 </style>

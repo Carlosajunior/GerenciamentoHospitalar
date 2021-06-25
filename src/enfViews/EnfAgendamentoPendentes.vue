@@ -1,83 +1,71 @@
 <template>
-<div class="formulario">
+  <div class="formulario">
     <div>
-        <enf-menu>
-        </enf-menu>
+      <enf-menu> </enf-menu>
     </div>
-    <div id ="main-content">
-        <enf-bar
-            :title="'Agendamentos Pendentes'"
-            kindUser="Enfermeiro"
-        >
-        </enf-bar>
+    <div id="main-content">
+      <enf-bar :title="'Agendamentos Pendentes'" kindUser="Enfermeiro">
+      </enf-bar>
     </div>
-        <table class="table">
-            <thead>
-            <th scope="col">Identificador</th>
-            <th scope="col">Data</th>
-            <th scope ="col"> Posologia </th>
-            <th scope="col"> Dar baixa</th>
-            </thead>
+    <table class="table">
+      <thead>
+        <th scope="col">Identificador</th>
+        <th scope="col">Data</th>
+        <th scope="col">Posologia</th>
+        <th scope="col">Dar baixa</th>
+      </thead>
 
-        <tbody v-for="(agendamento,index) in response" :key="index">
-
-          <enf-pendentes v-on:Erro="visualizar"
-          :nome="agendamento.id"
+      <tbody v-for="(agendamento, index) in response" :key="index">
+        <enf-pendentes
+          v-on:Erro="visualizar"
+          :id="agendamento.id"
           :data="agendamento.data_hora"
           :medicamento="agendamento.posologia"
-          />
-
-        </tbody>
-        </table>
+        />
+      </tbody>
+    </table>
 
     <div class="alert alert-danger" role="alert" v-show="view">
-        Não foi possível baixar o agendamento
+      Não foi possível baixar o agendamento
     </div>
-
-    
-    <div>
-       
-    </div>
-</div> 
+  </div>
 </template>
 
 <script>
-import EnfMenu from '../components/enf/EnfMenu.vue'
-import EnfBar from '../components/adm/AdmBar.vue'
-import EnfPendentes from '../components/enf/EnfPendentes.vue'
-import enfermeiroServices from '../services/enfermeiroServices.js'
+import EnfMenu from "../components/enf/EnfMenu.vue";
+import EnfBar from "../components/adm/AdmBar.vue";
+import EnfPendentes from "../components/enf/EnfPendentes.vue";
+import enfermeiroServices from "../services/enfermeiroServices.js";
 export default {
-    components:{EnfMenu, EnfBar,EnfPendentes},
-    name: "EnfAgendamentoPendentes",
-    data(){
-        return {
-            view : false,
-            response : null
-        }
-    },
-    methods: {
-        visualizar(){
-            this.view = true;
-        },
-
-        async getAgendamento (){
-            var data = {"id" : sessionStorage.getItem('id_usuario')}
-            var result;
-            try{
-                result =  (await enfermeiroServices.agendamentoPendentes(data)).data;
-                this.response = result;
-                console.log(this.response);
-                }
-            catch(result){
-                this.view = true;
-            }
-                }
-            },
-   created() {
-       this.getAgendamento();
-      
+  components: { EnfMenu, EnfBar, EnfPendentes },
+  name: "EnfAgendamentoPendentes",
+  data() {
+    return {
+      view: false,
+      response: null,
+    };
   },
-}
+  methods: {
+    visualizar() {
+      this.view = true;
+    },
+
+    async getAgendamento() {
+      var data = { id: sessionStorage.getItem("id_usuario") };
+      var result;
+      try {
+        result = (await enfermeiroServices.agendamentoPendentes(data)).data;
+        this.response = result;
+        console.log(this.response);
+      } catch (result) {
+        this.view = true;
+      }
+    },
+  },
+  created() {
+    this.getAgendamento();
+  },
+};
 </script>
 
 <style>
@@ -109,7 +97,7 @@ label {
   margin-right: 1%;
 }
 
-thead{
+thead {
   background-color: rgb(238, 238, 238);
 }
 
